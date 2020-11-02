@@ -14,9 +14,9 @@
 
         </section>
         <section>
-            @if (session()->has('banner'))
+            @if (session()->has('conference'))
                 <section class="alert alert-danger">
-                    <h3>{{ session('banner') }}</h3>
+                    <h3>{{ session('conference') }}</h3>
                 </section>
             @endif
 
@@ -24,13 +24,22 @@
         <table class="table table-hover table-bordered">
             <thead class="bg-success" style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
             <td>
+                <label style="color: white"> ردیف </label>
+            </td>
+            <td>
                 <label style="color: white"> عنوان </label>
+            </td>
+            <td>
+                <label style="color: white"> سخنران </label>
             </td>
             <td>
                 <label style="color: white"> توضیحات </label>
             </td>
             <td>
-                <label style="color: white"> متن مرورگر تصویر </label>
+                <label style="color: white"> تاریخ </label>
+            </td>
+            <td>
+                <label style="color: white"> زمان</label>
             </td>
             <td>
                 <label style="color: white"> وضعیت </label>
@@ -45,16 +54,27 @@
 
             </thead>
             <tbody>
-            @foreach($banner as $item)
+
+            @foreach($conference as $item)
                 <tr style="text-align: justify">
+                    <td>
+                        <label style="color: black">{{++$row}}</label>
+                    </td>
+
                     <td>
                         <label style="color: black">{{$item->title}}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->caption}}</label>
+                        <label style="color: black">{{$item->speacher}}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->alt}}</label>
+                        <label style="color: black">{{$item->description}}</label>
+                    </td>
+                    <td>
+                        <label style="color: black">{{$item->date}}</label>
+                    </td>
+                    <td>
+                        <label style="color: black">{{$item->time}}</label>
                     </td>
                     <td>
                         @if($item->status=='active')
@@ -63,11 +83,11 @@
                             <span class="badge badge-warning">{{$item->status}}</span>
                         @endif
                     </td>
-                    <td style="text-align: center"><img src="{{asset('image/banner/'.$item->image)}}" style="width: 50px;height: 50px; border-radius: 5px"></td>
+                    <td style="text-align: center"><img src="{{asset('image/conference/'.$item->image)}}" style="width: 50px;height: 50px; border-radius: 5px"></td>
 
-                    <td style="text-align: center"><a href="{{route('banner.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
+                    <td style="text-align: center"><a href="{{route('conference.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
                     <td style="text-align: center">
-                        {!! Form::open(['route' => ['banner.destroy', $item->id ],'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['conference.destroy', $item->id ],'method' => 'delete']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -78,9 +98,9 @@
 
 
         </table>
-        <span style="float:right">{{$banner->links()}}</span>
+        <span style="float:right">{{$conference->links()}}</span>
         <section class="form-group">
-            <td style="text-align: center"><a href="{{route('banner.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
+            <td style="text-align: center"><a href="{{route('conference.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
         </section>
 
     </section>

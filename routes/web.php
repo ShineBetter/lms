@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 Route::resource('banner','BannerController');
+Route::resource('level','LevelController');
+Route::resource('conference','ConferenceController');

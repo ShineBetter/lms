@@ -16,25 +16,25 @@
 
             </section>
             <section>
-                @if (session()->has('banner'))
+                @if (session()->has('conference'))
                     <section class="alert alert-success">
-                        <h3>{{ session('banner') }}</h3>
+                        <h3>{{ session('conference') }}</h3>
                     </section>
                 @endif
 
             </section>
-            {{ Form::model($banner,['route' => ['banner.update',$banner->id], 'method' => 'put','files'=>true])}}
+            {{ Form::open(['route'=>'conference.store', 'method' => 'post','files' => true])}}
             <section class="form-group">
                 {{Form::label('title', 'عنوان : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title',$banner->title, ['class' => 'form-control']) !!}
+                {!! Form::text('title', null, ['class' => 'form-control']) !!}
             </section>
             <section class="form-group">
                 {{Form::label('caption', 'توضیحات : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('caption',$banner->caption, ['class' => 'form-control']) !!}
+                {!! Form::text('caption', null, ['class' => 'form-control']) !!}
             </section>
             <section class="form-group">
                 {{Form::label('alt', 'متن مرورگر تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('alt',$banner->alt, ['class' => 'form-control']) !!}
+                {!! Form::text('alt', null, ['class' => 'form-control']) !!}
             </section>
             {!! Form::label('image', 'تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma']) !!}
             <section class="form-group">
@@ -42,7 +42,7 @@
             </section>
             <section class="form-group">
                 {{Form::label('status', 'وضعیت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],$banner->status,['class' => 'form-control']) !!}
+                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],'فعال',['class' => 'form-control']) !!}
             </section>
             <hr>
             <section class="form-group">
@@ -52,9 +52,9 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('banner.index')}}"><input type="button" class="form-control btn btn-success"
-                                                            style="font-size: 15px;font-family: Tahoma"
-                                                            value="  بازگشت  "></a>
+                <a href="{{route('conference.index')}}"><input type="button" class="form-control btn btn-success"
+                                                           style="font-size: 15px;font-family: Tahoma"
+                                                           value="  بازگشت  "></a>
             </section>
         </section>
     </section>

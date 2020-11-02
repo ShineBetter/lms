@@ -35,6 +35,18 @@
                         </div>
 
                     </li>
+                    <li class="sidenav__item">
+                        <a class="dropdown-btn">
+                            <i class="fa fa-cog"></i>
+                            دوره ها و همایش ها
+                        </a>
+                        <div class="dropdown-container">
+                            <a href="{{route('level.index')}}"><b class="text-success">دوره ها</b></a>
+                            <a href="{{route('conference.index')}}"><i class="fa fa-image"></i>همایش ها</a>
+                        </div>
+
+                    </li>
+
                     <li class="sidenav__item"><a href="dashboard-message.html"><i class="fa fa-comments"></i>پیغام
                             <span class="badge badge-info radius-rounded p-1 ml-1">2</span></a>
                     </li>

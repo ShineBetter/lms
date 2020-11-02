@@ -1,130 +1,63 @@
 @extends('backend.admin.partial._master')
 @section('main.content')
-{{--    @if ($errors -> any())--}}
-{{--        <section class="col-6  offset-3 mt-5 mb-5 bg-warning p-3" dir="rtl">--}}
-{{--            @foreach($errors->all() as $item)--}}
-{{--                <h4 class="text-center text-black-50" style="font-size: small">{{$item}}</h4>--}}
-{{--            @endforeach--}}
-{{--        </section>--}}
-{{--    @endif--}}
-{{--    @if(session()->has('banner'))--}}
-{{--        <section class="col-6 offset-3 alert alert-danger">--}}
-{{--            <h5 class="text-danger text-center" dir="rtl">--}}
-{{--                {{session('banner')}}--}}
-{{--            </h5>--}}
-{{--        </section>--}}
-{{--    @endif--}}
-    <div class="row mt-5">
-        <div class="col-lg-12">
-            <div class="section-block"></div>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-lg-12">
-            <h3 class="widget-title">{{$title}}</h3>
-        </div>
-    </div>
-    <div class="card shadow mb-4">
-        <div class="row">
-            <div class="col-md-12">
-                {{--                @include('backend.layouts.notification')--}}
-            </div>
-        </div>
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary float-left">افزودن بنر</h6>
-            <a href="{{route('banner.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
-               data-placement="bottom" title="افزودن بنر"><i class="fas fa-plus"></i>افزودن بنر</a>
-        </div>
+    <section dir="rtl">
 
-        <div class="card">
-            <h5 class="card-header">Add Banner</h5>
-            <div class="card-body">
-                <form method="post" action="{{route('banner.store')}}" enctype="multipart/form-data">
-                    {{csrf_field()}}
-
-
-                    <div class="form-group">
-                        <label for="inputTitle" class="col-form-label">عنوان <span class="text-danger">*</span></label>
-                        <input id="inputTitle" type="text" name="title" placeholder="Enter title"
-                               value="{{old('title')}}"
-                               class="form-control">
-                        @error('title')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+        <section class="container" style="padding: 50px" dir="rtl">
+            <section>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                @endif
 
-                    <div class="form-group">
-                        <label for="inputDesc" class="col-form-label">توضیحات</label>
-                        <textarea class="form-control" id="caption" name="caption">{{old('caption')}}</textarea>
-                        @error('caption')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div>
+            </section>
+            <section>
+                @if (session()->has('banner'))
+                    <section class="alert alert-success">
+                        <h3>{{ session('banner') }}</h3>
+                    </section>
+                @endif
 
+            </section>
+            {{ Form::open(['route'=>'banner.store', 'method' => 'post','files' => true])}}
+            <section class="form-group">
+                {{Form::label('title', 'عنوان : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            </section>
+            <section class="form-group">
+                {{Form::label('caption', 'توضیحات : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('caption', null, ['class' => 'form-control']) !!}
+            </section>
+            <section class="form-group">
+                {{Form::label('alt', 'متن مرورگر تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('alt', null, ['class' => 'form-control']) !!}
+            </section>
+            {!! Form::label('image', 'تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma']) !!}
+            <section class="form-group">
+                {!! Form::file('image',['class'=>'form-control']) !!}
+            </section>
+            <section class="form-group">
+                {{Form::label('status', 'وضعیت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],'فعال',['class' => 'form-control']) !!}
+            </section>
+            <hr>
+            <section class="form-group">
+                {!! Form::submit('ثبت', ['class' => 'form-control btn btn-info','style'=>'font-size: 15px;font-family: Tahoma']) !!}
+            </section>
 
-                    <div class="form-group">
-                        <label for="inputDesc" class="col-form-label">توضیحات</label>
-                        <textarea class="form-control" id="alt" name="alt">{{old('alt')}}</textarea>
-                        @error('alt')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div>
+            {{ Form::close() }}
 
-
-                    <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">تصویر<span class="text-danger">*</span></label>
-                        <div class="input-group">
-            <span class="input-group-btn">
-                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                <i class="fa fa-picture-o"></i> انتخاب تصویر
-                </a>
-            </span>
-                            <input type="file" name="image" class="form-control btn-primary">
-                            {{--                        <input id="thumbnail" class="form-control" type="text" name="image" value="{{old('image')}}">--}}
-                        </div>
-                        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-                        @error('هimage')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
-                        <select name="status" class="form-control">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                        </select>
-                        @error('status')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div>
-                    <div class="form-group mb-3">
-                        <button type="reset" class="btn btn-warning">پاک کردن فرم</button>
-                        <button class="btn btn-success" type="submit">ارسال</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        @endsection
-
-{{--        @push('styles')--}}
-{{--            <link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">--}}
-{{--        @endpush--}}
-{{--        @push('scripts')--}}
-{{--            <script src="{{asset('backend/summernote/summernote.min.js')}}"></script>--}}
-{{--            <script>--}}
-{{--                $('#lfm').filemanager('image');--}}
-
-{{--                $(document).ready(function () {--}}
-{{--                    $('#description').summernote({--}}
-{{--                        placeholder: "Write short description.....",--}}
-{{--                        tabsize: 2,--}}
-{{--                        height: 150--}}
-{{--                    });--}}
-{{--                });--}}
-{{--            </script>--}}
-{{--    @endpush--}}
-
+            <section class="form-group">
+                <a href="{{route('banner.index')}}"><input type="button" class="form-control btn btn-success"
+                                                           style="font-size: 15px;font-family: Tahoma"
+                                                           value="  بازگشت  "></a>
+            </section>
+        </section>
+    </section>
+@endsection
 
 
