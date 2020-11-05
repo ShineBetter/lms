@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('template_sit/css/tooltipster.bundle.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/jqvmap.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/26.0.2/font-face.css" integrity="sha512-6luF9h11Ndr/7tjMwMAW5PnvyQrZiT73OWa/Psd5zIQfaKK3GMeKukZYWpnHr8yCvzMLj/wTwHY7/yWN/A60ig==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">

@@ -48,6 +48,8 @@ class LevelController extends Controller
         $level = level::where('id', $id)->first();
         $level->title = $request->title;
         $level->save();
+
+
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('level', $comment);
         return redirect()->route('level.index');
