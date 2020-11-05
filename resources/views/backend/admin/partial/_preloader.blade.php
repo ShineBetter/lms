@@ -15,6 +15,9 @@
     <link rel="icon" sizes="16x16" href="images/favicon.png">
 
     <!-- inject:css -->
+{{--    <link href="css/bootstrap.min.css" rel="stylesheet" />--}}
+    <link rel="stylesheet" href="{{asset('calender/css/bootstrap-theme.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('calender/css/jquery.Bootstrap-PersianDateTimePicker.css')}}" />
     <link rel="stylesheet" href="{{asset('template_sit/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/line-awesome.css')}}">

@@ -27,6 +27,7 @@ class LevelController extends Controller
         $level->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('level', $comment);
+
         return redirect()->route('level.index');
 
     }
