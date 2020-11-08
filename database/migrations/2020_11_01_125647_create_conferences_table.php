@@ -14,8 +14,9 @@ class CreateConferencesTable extends Migration
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->string('description')->nullable();;
-            $table->date('date');
-            $table->time('time');
+            $table->string('date');
+            $table->string('time');
+            $table->unsignedTinyInteger('periodOfTime');
             $table->string('speacher');
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->softDeletes();

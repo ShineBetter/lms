@@ -39,7 +39,10 @@
                 <label style="color: white"> تاریخ </label>
             </td>
             <td>
-                <label style="color: white"> زمان</label>
+                <label style="color: white"> ساعت شروع</label>
+            </td>
+            <td>
+                <label style="color: white">مدت زمان</label>
             </td>
             <td>
                 <label style="color: white"> وضعیت </label>
@@ -75,6 +78,9 @@
                     </td>
                     <td>
                         <label style="color: black">{{$item->time}}</label>
+                    </td>
+                    <td>
+                        <label style="color: black">{{$item->periodOfTime}}</label>
                     </td>
                     <td>
                         @if($item->status=='active')

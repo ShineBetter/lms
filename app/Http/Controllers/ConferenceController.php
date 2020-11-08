@@ -28,6 +28,7 @@ class ConferenceController extends Controller
         $conference->description = $request->description;
         $conference->date = $request->date;
         $conference->time = $request->time;
+        $conference->periodOfTime=$request->periodOfTime;
         $conference->speacher = $request->speacher;
         $conference->status = $request->status;
         $fileImage = $request->file('image');
@@ -61,6 +62,7 @@ class ConferenceController extends Controller
         $conference->description = $request->description;
         $conference->date = $request->date;
         $conference->time = $request->time;
+        $conference->periodOfTime=$request->periodOfTime;
         $conference->speacher = $request->speacher;
         $conference->status = $request->status;
         $fileImage = $request->file('image');
