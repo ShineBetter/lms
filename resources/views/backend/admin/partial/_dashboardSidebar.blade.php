@@ -26,6 +26,7 @@
                             <a href="{{route('banner.index')}}"><i class="fa fa-image"></i>بنــــر</a>
                             <a href="#"><i class="fa fa-camera-retrot"></i>دبیران</a>
                             <a href="#"><i class="fa fa-discourse"></i>دوره ها</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-discourse"></i>دروس</a>
                             <a href="#"><i class="fa fa-scroll"></i>آزمون ها</a>
                             <a href="#"><i class="fa fa-comments"></i>کامنت ها</a>
                             <a href="#"><i class="fa fa-scroll"></i>درباره ما</a>
