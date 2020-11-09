@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
     font-family: 'vazir';
-    src: url('https://cdn.fontcdn.ir/Font/Persian/Lotus/Lotus.css') format('normal');
+    src: url('public/fonts/vazir-digit.ttf') format('normal');
 }
 @keyframes rotate {
     100% {
@@ -210,6 +210,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: vazir !important;
 }
 
 ul {
@@ -239,7 +240,7 @@ h1, h2, h3, h4, h5, h6, p {
 body {
     font-size: 16px;
     line-height: 28px;
-    font-family: "Mukta", sans-serif;
+    font-family: vazir !important;
     color: #7f8897;
     position: relative;
     -moz-osx-font-smoothing: grayscale;
