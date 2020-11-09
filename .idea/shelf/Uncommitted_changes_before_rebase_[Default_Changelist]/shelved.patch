@@ -1,0 +1,571 @@
+Index: resources/views/backend/admin/conference/create.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- resources/views/backend/admin/conference/create.blade.php	(date 1604612116011)
++++ resources/views/backend/admin/conference/create.blade.php	(date 1604612116011)
+@@ -0,0 +1,109 @@
++@extends('backend.admin.partial._master')
++@section('main.content')
++    <section dir="rtl">
++
++        <section class="container" style="padding: 50px" dir="rtl">
++
++            <section>
++                @if (count($errors) > 0)
++                    <div class="alert alert-danger">
++                        <ul>
++                            @foreach ($errors->all() as $error)
++                                <li>{{ $error }}</li>
++                            @endforeach
++                        </ul>
++                    </div>
++                @endif
++            </section>
++
++            <section>
++                @if (session()->has('conference'))
++                    <section class="alert alert-success">
++                        <h3>{{ session('conference') }}</h3>
++                    </section>
++                @endif
++            </section>
++
++            {{ Form::open(['route'=>'conference.store', 'method' => 'post','files' => true])}}
++            <section class="form-group">
++                {{Form::label('title', 'عنوان : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::text('title', null, ['class' => 'form-control']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('description', 'توضیحات : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::textarea('description', null, ['class' => 'form-control','rows'=>'3','wrap'=>'soft']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('date', 'تاریخ همایش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::date('date',\Carbon\Carbon::now(), ['class' => 'form-control']) !!}
++
++            </section>
++
++            <section class="form-group">
++                {{Form::label('time', 'ساعت همایش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::time('time',\Carbon\Carbon::now(), ['class' => 'form-control']) !!}
++
++            </section>
++
++            <section class="form-group">
++                {{Form::label('periodOfTime', 'مدت زمان همایش :(دقیقه) ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                <input type="number" class="form-control" min="1" max="999" maxlength="3"
++                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
++                       name="periodOfTime">
++            </section>
++
++            <section class="form-group">
++                {{Form::label('speacher', 'سخنران : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::text('speacher', null, ['class' => 'form-control']) !!}
++            </section>
++
++            {!! Form::label('image', 'تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma']) !!}
++            <section class="form-group">
++                {!! Form::file('image',['class'=>'form-control']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('status', 'وضعیت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],'فعال',['class' => 'form-control']) !!}
++            </section>
++
++            <hr>
++            <section class="form-group">
++                {!! Form::submit('ثبت', ['class' => 'form-control btn btn-info','style'=>'font-size: 15px;font-family: Tahoma']) !!}
++            </section>
++
++            {{ Form::close() }}
++
++            <section class="form-group">
++                <a href="{{route('conference.index')}}"><input type="button" class="form-control btn btn-success"
++                                                               style="font-size: 15px;font-family: Tahoma"
++                                                               value="  بازگشت  "></a>
++            </section>
++        </section>
++    </section>
++@endsection
++{{--@push('scripts')--}}
++{{--    <script type="text/javascript">--}}
++{{--        $('#input1').change(function () {--}}
++{{--            var $this = $(this),--}}
++{{--                value = $this.val();--}}
++{{--            alert(value);--}}
++{{--        });--}}
++{{--        $('#textbox1').change(function () {--}}
++{{--            var $this = $(this),--}}
++{{--                value = $this.val();--}}
++{{--            alert(value);--}}
++{{--        });--}}
++{{--        $('[data-name="disable-button"]').click(function () {--}}
++{{--            $('[data-mddatetimepicker="true"][data-targetselector="#input1"]').MdPersianDateTimePicker('disable', true);--}}
++{{--        });--}}
++{{--        $('[data-name="enable-button"]').click(function () {--}}
++{{--            $('[data-mddatetimepicker="true"][data-targetselector="#input1"]').MdPersianDateTimePicker('disable', false);--}}
++{{--        });--}}
++{{--    </script>--}}
++{{--    <script src="{{asset('calender/js/jalaali.js')}}" type="text/javascript"></script>--}}
++{{--    <script src="{{asset('calender/js/jquery.Bootstrap-PersianDateTimePicker.js" type="text/javascript')}}"></script>--}}
++{{--@endpush--}}
++
+Index: resources/views/backend/admin/conference/edit.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- resources/views/backend/admin/conference/edit.blade.php	(date 1604612120811)
++++ resources/views/backend/admin/conference/edit.blade.php	(date 1604612120811)
+@@ -0,0 +1,109 @@
++@extends('backend.admin.partial._master')
++@section('main.content')
++    <section dir="rtl">
++
++        <section class="container" style="padding: 50px" dir="rtl">
++
++            <section>
++                @if (count($errors) > 0)
++                    <div class="alert alert-danger">
++                        <ul>
++                            @foreach ($errors->all() as $error)
++                                <li>{{ $error }}</li>
++                            @endforeach
++                        </ul>
++                    </div>
++                @endif
++            </section>
++
++            <section>
++                @if (session()->has('conference'))
++                    <section class="alert alert-success">
++                        <h3>{{ session('conference') }}</h3>
++                    </section>
++                @endif
++            </section>
++
++            {{ Form::model($conference,['route' => ['conference.update',$conference->id], 'method' => 'put','files'=>true])}}
++            <section class="form-group">
++                {{Form::label('title', 'عنوان : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::text('title', $conference->title, ['class' => 'form-control']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('description', 'توضیحات : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::textarea('description',$conference->description , ['class' => 'form-control','rows'=>'3','wrap'=>'soft']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('date', 'تاریخ همایش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::date('date',$conference->date , ['class' => 'form-control']) !!}
++
++            </section>
++
++            <section class="form-group">
++                {{Form::label('time', 'ساعت همایش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::time('time',$conference->time , ['class' => 'form-control']) !!}
++
++            </section>
++
++            <section class="form-group">
++                {{Form::label('periodOfTime', 'مدت زمان همایش :(دقیقه) ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                <input type="number" class="form-control" min="1" max="999" maxlength="3"
++                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
++                       name="periodOfTime" value="{{$conference->periodOfTime}}">
++            </section>
++
++            <section class="form-group">
++                {{Form::label('speacher', 'سخنران : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::text('speacher', $conference->speacher, ['class' => 'form-control']) !!}
++            </section>
++
++            {!! Form::label('image', 'تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma']) !!}
++            <section class="form-group">
++                {!! Form::file('image',['class'=>'form-control']) !!}
++            </section>
++
++            <section class="form-group">
++                {{Form::label('status', 'وضعیت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
++                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],$conference->status,['class' => 'form-control']) !!}
++            </section>
++
++            <hr>
++            <section class="form-group">
++                {!! Form::submit('ثبت', ['class' => 'form-control btn btn-info','style'=>'font-size: 15px;font-family: Tahoma']) !!}
++            </section>
++
++            {{ Form::close() }}
++
++            <section class="form-group">
++                <a href="{{route('conference.index')}}"><input type="button" class="form-control btn btn-success"
++                                                               style="font-size: 15px;font-family: Tahoma"
++                                                               value="  بازگشت  "></a>
++            </section>
++        </section>
++    </section>
++@endsection
++{{--@push('scripts')--}}
++{{--    <script type="text/javascript">--}}
++{{--        $('#input1').change(function () {--}}
++{{--            var $this = $(this),--}}
++{{--                value = $this.val();--}}
++{{--            alert(value);--}}
++{{--        });--}}
++{{--        $('#textbox1').change(function () {--}}
++{{--            var $this = $(this),--}}
++{{--                value = $this.val();--}}
++{{--            alert(value);--}}
++{{--        });--}}
++{{--        $('[data-name="disable-button"]').click(function () {--}}
++{{--            $('[data-mddatetimepicker="true"][data-targetselector="#input1"]').MdPersianDateTimePicker('disable', true);--}}
++{{--        });--}}
++{{--        $('[data-name="enable-button"]').click(function () {--}}
++{{--            $('[data-mddatetimepicker="true"][data-targetselector="#input1"]').MdPersianDateTimePicker('disable', false);--}}
++{{--        });--}}
++{{--    </script>--}}
++{{--    <script src="{{asset('calender/js/jalaali.js')}}" type="text/javascript"></script>--}}
++{{--    <script src="{{asset('calender/js/jquery.Bootstrap-PersianDateTimePicker.js" type="text/javascript')}}"></script>--}}
++{{--@endpush--}}
++
+Index: resources/views/backend/admin/conference/index.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- resources/views/backend/admin/conference/index.blade.php	(date 1604612124247)
++++ resources/views/backend/admin/conference/index.blade.php	(date 1604612124247)
+@@ -0,0 +1,114 @@
++@extends('backend.admin.partial._master')
++@section('main.content')
++    <section class="container" style="padding: 50px" dir="rtl">
++        <section>
++            @if (count($errors) > 0)
++                <div class="alert alert-danger">
++                    <ul>
++                        @foreach ($errors->all() as $error)
++                            <li>{{ $error }}</li>
++                        @endforeach
++                    </ul>
++                </div>
++            @endif
++
++        </section>
++        <section>
++            @if (session()->has('conference'))
++                <section class="alert alert-danger">
++                    <h3>{{ session('conference') }}</h3>
++                </section>
++            @endif
++
++        </section>
++        <table class="table table-hover table-bordered">
++            <thead class="bg-success" style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
++            <td>
++                <label style="color: white"> ردیف </label>
++            </td>
++            <td>
++                <label style="color: white"> عنوان </label>
++            </td>
++            <td>
++                <label style="color: white"> سخنران </label>
++            </td>
++            <td>
++                <label style="color: white"> توضیحات </label>
++            </td>
++            <td>
++                <label style="color: white"> تاریخ </label>
++            </td>
++            <td>
++                <label style="color: white"> ساعت شروع</label>
++            </td>
++            <td>
++                <label style="color: white">مدت زمان</label>
++            </td>
++            <td>
++                <label style="color: white"> وضعیت </label>
++            </td>
++            <td>
++                <label style="color: white"> تصویر</label>
++            </td>
++
++            <td colspan="3" style="text-align: center">
++                <label style="color: white">ویرایش</label>
++            </td>
++
++            </thead>
++            <tbody>
++
++            @foreach($conference as $item)
++                <tr style="text-align: justify">
++                    <td>
++                        <label style="color: black">{{++$row}}</label>
++                    </td>
++
++                    <td>
++                        <label style="color: black">{{$item->title}}</label>
++                    </td>
++                    <td>
++                        <label style="color: black">{{$item->speacher}}</label>
++                    </td>
++                    <td>
++                        <label style="color: black">{{$item->description}}</label>
++                    </td>
++                    <td>
++                        <label style="color: black">{{$item->date}}</label>
++                    </td>
++                    <td>
++                        <label style="color: black">{{$item->time}}</label>
++                    </td>
++                    <td>
++                        <label style="color: black">{{$item->periodOfTime}}</label>
++                    </td>
++                    <td>
++                        @if($item->status=='active')
++                            <span class="badge badge-success">{{$item->status}}</span>
++                        @else
++                            <span class="badge badge-warning">{{$item->status}}</span>
++                        @endif
++                    </td>
++                    <td style="text-align: center"><img src="{{asset('image/conference/'.$item->image)}}" style="width: 50px;height: 50px; border-radius: 5px"></td>
++
++                    <td style="text-align: center"><a href="{{route('conference.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
++                    <td style="text-align: center">
++                        {!! Form::open(['route' => ['conference.destroy', $item->id ],'method' => 'delete']) !!}
++                        {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
++                        {!! Form::close() !!}
++                    </td>
++
++                </tr>
++            @endforeach
++            </tbody>
++
++
++        </table>
++        <span style="float:right">{{$conference->links()}}</span>
++        <section class="form-group">
++            <td style="text-align: center"><a href="{{route('conference.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
++        </section>
++
++    </section>
++@endsection
++
+Index: database/migrations/2020_11_01_125647_create_conferences_table.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/migrations/2020_11_01_125647_create_conferences_table.php	(date 1604612109418)
++++ database/migrations/2020_11_01_125647_create_conferences_table.php	(date 1604612109418)
+@@ -0,0 +1,32 @@
++<?php
++
++use Illuminate\Database\Migrations\Migration;
++use Illuminate\Database\Schema\Blueprint;
++use Illuminate\Support\Facades\Schema;
++
++class CreateConferencesTable extends Migration
++{
++
++    public function up()
++    {
++        Schema::create('conferences', function (Blueprint $table) {
++            $table->id();
++            $table->string('title')->nullable();
++            $table->string('image')->nullable();
++            $table->string('description')->nullable();;
++            $table->string('date');
++            $table->string('time');
++            $table->unsignedTinyInteger('periodOfTime');
++            $table->string('speacher');
++            $table->enum('status',['active','inactive'])->default('inactive');
++            $table->softDeletes();
++            $table->timestamps();
++        });
++    }
++
++
++    public function down()
++    {
++        Schema::dropIfExists('conferences');
++    }
++}
+Index: app/Models/conference.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Models/conference.php	(date 1604612112164)
++++ app/Models/conference.php	(date 1604612112164)
+@@ -0,0 +1,11 @@
++<?php
++
++namespace App\Models;
++
++use Illuminate\Database\Eloquent\Model;
++
++class conference extends Model
++{
++    protected $data=['deleted_at'];
++    protected $fillable=['title','image','description','date','time','periodOfTime','speacher','status'];
++}
+Index: app/Http/Requests/createConferenceRequest.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Http/Requests/createConferenceRequest.php	(date 1604612118746)
++++ app/Http/Requests/createConferenceRequest.php	(date 1604612118746)
+@@ -0,0 +1,48 @@
++<?php
++
++namespace App\Http\Requests;
++
++use Illuminate\Foundation\Http\FormRequest;
++
++class createConferenceRequest extends FormRequest
++{
++
++    public function authorize()
++    {
++        return true;
++    }
++//    protected $fillable=['title','image','description','date','time','speacher','status'];
++
++    public function rules()
++    {
++        return [
++            'title'=>'required|string|between:3,100',
++            'description'=>'required|string|between:10,1000',
++            'status' => 'required',
++            'date' => 'required',
++            'time' => 'required',
++            'speacher' => 'required|string',
++            'periodOfTime'=>'required|max:3',
++            'image'=>'required|file|mimes:jpg,png,jpeg|min:100|max:200',
++
++        ];
++    }
++
++    public function messages()
++    {
++        return[
++            'title.required'=>'لطفا عنوان تصویر را وارد نمایید.',
++            'title.between'=>'عنوان باید بین 3 تا 100 کلمه داشته باشد. ',
++            'description.required'=>'لطفا توضیحات کنفرانس را وارد نمایید.',
++            'status.required'=>'مشخص کردن وضعیت تصویر الزامی می باشد.',
++            'date.required'=>'مشخص کردن تاریخ الزامی می باشد.',
++            'time.required'=>'مشخص کردن زمان الزامی می باشد.',
++            'periodOfTime.required'=>'مشخص کردن مدت زمان همایش الزامی می باشد.',
++            'speacher.required'=>'مشخص کردن نام سخنران الزامی می باشد.',
++            'image.required'=>'وارد کردن تصویر الزامی می باشد.',
++            'image.mimes'=>'فایل باید از نوع jpg,jpeg,png باشد. ',
++            'image.min'=>'حجم تصویر نباید کمتر از 100 کیلوبایت باشد.',
++            'image.max'=>'حجم تصویر نباید بیشتر  از 500 کیلوبایت باشد.' ,
++        ];
++    }
++}
+Index: app/Http/Controllers/ConferenceController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Http/Controllers/ConferenceController.php	(date 1604612113711)
++++ app/Http/Controllers/ConferenceController.php	(date 1604612113711)
+@@ -0,0 +1,92 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Http\Requests\createConferenceRequest;
++use App\Models\conference;
++use Illuminate\Http\Request;
++
++class ConferenceController extends Controller
++{
++
++    public function index()
++    {
++        $conference = conference::paginate(4);
++        return view('backend.admin.conference.index', ['conference' => $conference,'row'=>0]);
++    }
++
++
++    public function create()
++    {
++        return view('backend.admin.conference.create');
++
++    }
++    public function store(createConferenceRequest $request)
++    {
++        $conference = new conference();
++        $conference->title = $request->title;
++        $conference->description = $request->description;
++        $conference->date = $request->date;
++        $conference->time = $request->time;
++        $conference->periodOfTime=$request->periodOfTime;
++        $conference->speacher = $request->speacher;
++        $conference->status = $request->status;
++        $fileImage = $request->file('image');
++        if (!empty($fileImage)) {
++            $image = time() . $fileImage->getClientOriginalName();
++            $fileImage->move('image/conference/', $image);
++            $conference->image = $image;
++        }
++        $conference->save();
++        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
++        session()->flash('conference', $comment);
++        return redirect()->route('conference.index');
++    }
++
++    public function show(conference $conference)
++    {
++        $conference = conference::findorfail($conference);
++        return $conference;
++    }
++
++    public function edit($id)
++    {
++        $conference = conference::findorfail($id);
++        return view('backend.admin.conference.edit',compact('conference'));
++    }
++
++    public function update(createConferenceRequest $request, $id)
++    {
++        $conference = conference::where('id', $id)->first();
++        $conference->title = $request->title;
++        $conference->description = $request->description;
++        $conference->date = $request->date;
++        $conference->time = $request->time;
++        $conference->periodOfTime=$request->periodOfTime;
++        $conference->speacher = $request->speacher;
++        $conference->status = $request->status;
++        $fileImage = $request->file('image');
++        if (!empty($fileImage)) {
++            $deleteImage = $conference->image;
++            unlink('image/conference/'.$deleteImage);
++            $image = time() . $fileImage->getClientOriginalName();
++            $fileImage->move('image/conference/', $image);
++            $conference->image = $image;
++        }
++        $conference->save();
++        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
++        session()->flash('conference', $comment);
++        return redirect()->route('conference.index');
++    }
++
++    public function destroy($id)
++    {
++        $conference=conference::where('id',$id)->first();
++        $deleteImage=$conference->image;
++        unlink('image/conference/'.$deleteImage);
++        $conference->delete();
++        $comment='عملیات حذف بدرستی انجام شد.';
++        session()->flash('conference',$comment);
++        return back();
++    }
++}
