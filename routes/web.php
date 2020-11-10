@@ -20,9 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
-Route::get('/rel', 'LessonController@test')->name('test');
 Route::resource('banner','BannerController');
 Route::resource('level','LevelController');
 Route::resource('conference','ConferenceController');
 Route::resource('lesson','LessonController');
-Route::resource('test','LessonController');

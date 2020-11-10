@@ -22,9 +22,13 @@
 
         </section>
         <table class="table table-hover table-bordered">
-            <thead class="bg-success" style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
+            <thead class="bg-success"
+                   style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
             <td>
                 <label style="color: white"> ردیف </label>
+            </td>
+            <td>
+                <label style="color: white"> عنوان درس </label>
             </td>
             <td>
                 <label style="color: white"> عنوان پایه </label>
@@ -37,7 +41,7 @@
 
             </thead>
             <tbody>
-{{--            {{$i=0}}--}}
+            {{--            {{$i=0}}--}}
             @foreach($lesson as $item)
 
                 <tr style="text-align: justify">
@@ -47,8 +51,17 @@
                     <td>
                         <label style="color: black">{{$item->title}}</label>
                     </td>
-
-                    <td style="text-align: center"><a href="{{route('lesson.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
+                    <td>
+                        <label style="color: black">@php
+    $levelFind = \App\Models\level::where('id',$item->level_id)->first();
+   echo $levelFind->title;
+   @endphp</label>
+                    </td>
+                    <td style="text-align: center"><a href="{{route('lesson.edit',$item->id)}}"><input type="button"
+                                                                                                       class="btn btn-info"
+                                                                                                       style="font-size: 15px;font-family: Tahoma"
+                                                                                                       value="ویرایش"></a>
+                    </td>
                     <td style="text-align: center">
                         {!! Form::open(['route' => ['lesson.destroy', $item->id ],'method' => 'delete']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
@@ -63,7 +76,10 @@
         </table>
         <span style="float:right">{{$lesson->links()}}</span>
         <section class="form-group">
-            <td style="text-align: center"><a href="{{route('lesson.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
+            <td style="text-align: center"><a href="{{route('lesson.create')}}"><input type="button"
+                                                                                       class="form-control btn btn-info"
+                                                                                       style="font-size: 15px;font-family: Tahoma"
+                                                                                       value="صفحه درج "></a></td>
         </section>
 
     </section>

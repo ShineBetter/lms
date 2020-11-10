@@ -49,8 +49,6 @@
         </div><!-- end modal-dialog -->
     </div><!-- end modal -->
 </div>
-<script src="{{asset('calender/js/jquery-3.1.0.min.js" type="text/javascript')}}"></script>
-<script src="{{asset('calender/js/bootstrap.min.js" type="text/javascript')}}"></script>
 <script src="{{asset('template_sit/js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('template_sit/js/popper.min.js')}}"></script>
 <script src="{{asset('template_sit/js/bootstrap-select.min.js')}}"></script>
@@ -76,7 +74,6 @@
 <script src="{{asset('template_sit/js/emojionearea.min.js')}}"></script>
 <script src="{{asset('template_sit/js/animated-skills.js')}}"></script>
 <script src="{{asset('template_sit/js/main.js')}}"></script>
-@stack('scripts')
 <script>
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
@@ -93,6 +90,6 @@
         });
     }
 </script>
-
+@stack('custosm-scripts')
 </body>
 </html>

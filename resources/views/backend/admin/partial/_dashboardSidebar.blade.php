@@ -26,7 +26,6 @@
                             <a href="{{route('banner.index')}}"><i class="fa fa-image"></i>بنــــر</a>
                             <a href="#"><i class="fa fa-camera-retrot"></i>دبیران</a>
                             <a href="#"><i class="fa fa-discourse"></i>دوره ها</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-discourse"></i>دروس</a>
                             <a href="#"><i class="fa fa-scroll"></i>آزمون ها</a>
                             <a href="#"><i class="fa fa-comments"></i>کامنت ها</a>
                             <a href="#"><i class="fa fa-scroll"></i>درباره ما</a>
@@ -39,19 +38,26 @@
                     <li class="sidenav__item">
                         <a class="dropdown-btn">
                             <i class="fa fa-cog"></i>
-                            دوره ها و همایش ها
+                            جداول پایه
                         </a>
                         <div class="dropdown-container">
-                            <a href="{{route('level.index')}}"><b class="text-success">دوره ها</b></a>
-                            <a href="{{route('conference.index')}}"><i class="fa fa-image"></i>همایش ها</a>
+                            <a href="{{route('level.index')}}"><i class="fa fa-image"></i>پایه ها</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>دروس</a>
+                            <a href="{{route('conference.index')}}"><i class="fa fa-image"></i>دوره ها</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>همایش ها</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>اساتید</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>دانش آموزان</a>
+                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>اولیا</a>
                         </div>
 
                     </li>
+{{--      --}}
 
                     <li class="sidenav__item"><a href="dashboard-message.html"><i class="fa fa-comments"></i>پیغام
                             <span class="badge badge-info radius-rounded p-1 ml-1">2</span></a>
                     </li>
-                    <li class="sidenav__item"><a href="dashboard-reviews.html"><i class="fa fa-user-graduate"></i>دانش آموز</a>
+                    <li class="sidenav__item"><a href="dashboard-reviews.html"><i class="fa fa-user-graduate"></i>دانش
+                            آموز</a>
                     </li>
                     <li class="sidenav__item"><a href="dashboard-earnings.html"><i class="fas fa-users"></i>والدین</a>
                     </li>
@@ -63,11 +69,13 @@
                     <li class="sidenav__item"><a href="dashboard-quiz.html"><i class="fa fa-edit"></i>لیست آزمونها</a>
                     </li>
 
-                    <li class="sidenav__item"><a href="dashboard-submit-course.html"><i class="fa fa-list-ol"></i>لیست دوره ها و همایشات</a>
+                    <li class="sidenav__item"><a href="dashboard-submit-course.html"><i class="fa fa-list-ol"></i>لیست
+                            دوره ها و همایشات</a>
                     </li>
                     <li class="sidenav__item"><a href="index.html"><i class="fa fa-power-off"></i> خروج</a></li>
                     <li class="sidenav__item">
-                        <a href="javascript:void(0)" data-toggle="modal" data-target=".account-delete-modal"><i class="fa fa-trash"></i>حذف اکانت</a>
+                        <a href="javascript:void(0)" data-toggle="modal" data-target=".account-delete-modal"><i
+                                class="fa fa-trash"></i>حذف اکانت</a>
                     </li>
                 </ul>
             </div>

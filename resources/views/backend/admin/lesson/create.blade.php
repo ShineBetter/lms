@@ -27,8 +27,11 @@
             <section class="form-group">
                 {{Form::label('title', 'عنوان درس : ', ['class' => 'control-label','style'=>'font-size: 15px;'])}}
                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            </section>
+            <section class="form-group">
                 {{Form::label('levels','پایه :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
-                {{Form::select('levels',$levels,'',['class'=>'form-control'])}}
+                {{Form::select('levels',$levels,null,['class'=>'form-control'])}}
+{{--                Form::select('size', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Pick a size...']);--}}
             </section>
 
             <hr>
