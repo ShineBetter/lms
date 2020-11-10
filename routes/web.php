@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('webSit.index');
 });
 
 Auth::routes();
+Route::get('user/login','FrontEndController@login')->name('login.form');
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 Route::resource('banner','BannerController');
