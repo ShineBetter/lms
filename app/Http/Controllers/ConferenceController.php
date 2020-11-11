@@ -23,6 +23,7 @@ class ConferenceController extends Controller
     }
     public function store(createConferenceRequest $request)
     {
+
         $conference = new conference();
         $conference->title = $request->title;
         $conference->description = $request->description;
