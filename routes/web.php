@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('webSit.index');
-});
+Route::get('/', 'FrontEndController@index')->name('index');
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 Route::get('user/login','FrontEndController@login')->name('login.form');
+Route::get('user/logout','FrontEndController@logout')->name('user.logout');
+Route::post('user/login','FrontEndController@submitLogin')->name('login.submit');
 
+Route::get('user/register','FrontEndController@register')->name('register.form');
+Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
 Route::get('/admin', 'HomeController@index')->name('admin');
 Route::resource('banner','BannerController');
 Route::resource('level','LevelController');

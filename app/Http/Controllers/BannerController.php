@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\creatBannerRequest;
 use App\Models\Banner;
+
 //use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -48,7 +50,7 @@ class BannerController extends Controller
     public function edit($id)
     {
         $banner = Banner::findorfail($id);
-        return view('backend.admin.siteSetting.banner.edit',compact('banner'));
+        return view('backend.admin.siteSetting.banner.edit', compact('banner'));
     }
 
 
@@ -63,7 +65,7 @@ class BannerController extends Controller
         $fileImage = $request->file('image');
         if (!empty($fileImage)) {
             $deleteImage = $banner->image;
-            unlink('image/banner/'.$deleteImage);
+            unlink('image/banner/' . $deleteImage);
             $image = time() . $fileImage->getClientOriginalName();
             $fileImage->move('image/banner/', $image);
             $banner->image = $image;
@@ -76,13 +78,14 @@ class BannerController extends Controller
 
     public function destroy($id)
     {
-        $banner=Banner::where('id',$id)->first();
-        $deleteImage=$banner->image;
-        unlink('image/banner/'.$deleteImage);
+        $banner = Banner::where('id', $id)->first();
+        $deleteImage = $banner->image;
+        unlink('image/banner/' . $deleteImage);
         $banner->delete();
-        $comment='عملیات حذف بدرستی انجام شد.';
-        session()->flash('banner',$comment);
+        $comment = 'عملیات حذف بدرستی انجام شد.';
+        session()->flash('banner', $comment);
         return back();
 
     }
+
 }
