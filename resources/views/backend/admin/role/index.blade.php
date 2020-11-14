@@ -14,9 +14,9 @@
 
         </section>
         <section>
-            @if (session()->has('level'))
+            @if (session()->has('role'))
                 <section class="alert alert-danger">
-                    <h3>{{ session('level') }}</h3>
+                    <h3>{{ session('role') }}</h3>
                 </section>
             @endif
 
@@ -27,9 +27,14 @@
                 <label style="color: white"> ردیف </label>
             </td>
             <td>
-                <label style="color: white"> عنوان پایه </label>
+                <label style="color: white"> نام </label>
             </td>
-
+            <td>
+                <label style="color: white"> نام خانوادگی </label>
+            </td>
+            <td>
+                <label style="color: white"> آدرس ایمیل </label>
+            </td>
 
             <td colspan="3" style="text-align: center">
                 <label style="color: white">ویرایش</label>
@@ -37,23 +42,39 @@
 
             </thead>
             <tbody>
-{{--            {{$i=0}}--}}
-            @foreach($level as $item)
+            {{--            {{$i=0}}--}}
+            @foreach($user as $item)
 
                 <tr style="text-align: justify">
                     <td>
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->title}}</label>
+                        <label style="color: black">{{$item->name}}</label>
+                    </td>
+                    <td>
+                        <label style="color: black">{{$item->lastName}}</label>
                     </td>
 
-                    <td style="text-align: center"><a href="{{route('level.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
-                    <td style="text-align: center">
-                        {!! Form::open(['route' => ['level.destroy', $item->id ],'method' => 'delete']) !!}
-                        {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
+                    <td>
+                        <label style="color: black">{{$item->email}}</label>
                     </td>
+                    <td style="text-align: center">
+                        <a href="{{route('role.edit',$item->id)}}">
+                            <label style="color: black">استاد</label><input type="checkbox" id="" name="role" value="teacher">
+                        </a>
+                        <a href="{{route('role.edit',$item->id)}}">
+                            <label style="color: black">دانشجو</label><input type="checkbox" id="" name="role" value="student">
+                        </a><a href="{{route('role.edit',$item->id)}}">
+                            <label style="color: black">اولیا</label><input type="checkbox" id="" name="role" value="parent">
+                        </a>
+                    </td>
+{{--                    <td style="text-align: center"><a href="{{route('role.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>--}}
+{{--                    <td style="text-align: center">--}}
+{{--                        {!! Form::open(['route' => ['role.destroy', $item->id ],'method' => 'delete']) !!}--}}
+{{--                        {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}--}}
+{{--                        {!! Form::close() !!}--}}
+{{--                    </td>--}}
 
                 </tr>
             @endforeach
@@ -61,10 +82,10 @@
 
 
         </table>
-        <span style="float:right">{{$level->links()}}</span>
-        <section class="form-group">
-            <td style="text-align: center"><a href="{{route('level.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
-        </section>
+        <span style="float:right">{{$user->links()}}</span>
+{{--        <section class="form-group">--}}
+{{--            <td style="text-align: center"><a href="{{route('role.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="تعیین نقش "></a></td>--}}
+{{--        </section>--}}
 
     </section>
 @endsection
