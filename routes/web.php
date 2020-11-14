@@ -23,6 +23,7 @@ Route::post('user/login','FrontEndController@submitLogin')->name('login.submit')
 Route::get('user/register','FrontEndController@register')->name('register.form');
 Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
 Route::get('/admin', 'HomeController@index')->name('admin');
+Route::resource('role','RoleController');
 Route::resource('banner','BannerController');
 Route::resource('level','LevelController');
 Route::resource('conference','ConferenceController');
