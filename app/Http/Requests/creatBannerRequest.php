@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
 
 class creatBannerRequest extends FormRequest
@@ -17,8 +16,8 @@ class creatBannerRequest extends FormRequest
     {
         return [
             'title'=>'required|string|between:3,30',
-            'caption'=>'required|string|between:10,100',
-//            'alt' => 'string|nullable|max:50',
+            'caption'=>'required|string',
+            'alt' => 'string',
             'status' => 'required',
             'image'=>'required|file|mimes:jpg,png,jpeg|min:100|max:500',
         ];
@@ -30,8 +29,9 @@ class creatBannerRequest extends FormRequest
             'title.required'=>'لطفا عنوان تصویر را وارد نمایید.',
             'title.between'=>'عنوان باید بین 3 تا 30 کلمه داشته باشد. ',
             'caption.required'=>'لطفا متن تصویر را وارد نمایید.',
-            'caption.between'=>' لطفا متن تصویر 10 تا 100 کلمه باشد.',
+//            'caption.between'=>' لطفا متن تصویر 10 تا 500 کلمه باشد.',
             'status.required'=>'مشخص کردن وضعیت تصویر الزامی می باشد.',
+            'alt.required'=>'وارد کردن متن مرورگر تصویر الزامی می باشد.',
             'image.required'=>'وارد کردن تصویر الزامی می باشد.',
             'image.mimes'=>'فایل باید از نوع jpg,jpeg,png باشد. ',
             'image.min'=>'حجم تصویر نباید کمتر از 100 کیلوبایت باشد.',

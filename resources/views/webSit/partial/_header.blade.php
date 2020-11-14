@@ -70,9 +70,23 @@
                         </div><!-- end header-right-info -->
                         <div class="header-right-info">
                             <ul class="header-action-list">
-                                <li><a href="{{url('user/login')}}">ورود</a></li>
-                                <li>or</li>
-                                <li><a href="sign-up.html">Register</a></li>
+                                @auth
+                                    @if(Auth::user()->role=='admin')
+                                        <li><i class="ti-user"></i> <a href="{{url('/admin')}}"  target="_blank">داشبورد مدیر</a></li>
+                                    @else
+                                        <li><i class="ti-user"></i> <a href="{{route('home')}}"  target="_blank">داشبورد کاربر</a></li>
+                                    @endif
+                                    <li><i class="ti-power-off"></i> <a href="{{route('user.logout')}}">خروج</a></li>
+
+                                @else
+{{--                                    <li><i class="ti-power-off"></i><a href="{{url('user/login')}}">ورود /</a> <a href="{{url('user/register')}}">ثبت نام</a></li>--}}
+                                    <li><a href="{{url('user/login')}}">ورود</a></li>
+                                    <li>or</li>
+                                    <li><a href="{{url('user/register')}}">ثبت نام</a></li>
+                                @endauth
+{{--                                <li><a href="{{url('user/login')}}">ورود</a></li>--}}
+{{--                                <li>or</li>--}}
+{{--                                <li><a href="{{url('user/register')}}">ثبت نام</a></li>--}}
                             </ul>
                         </div><!-- end header-right-info -->
                     </div><!-- end header-widget -->
