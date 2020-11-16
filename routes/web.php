@@ -31,5 +31,5 @@ Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 Route::resource('parent','ParentsController')->middleware('auth');
 Route::resource('teacher','teacherController')->middleware('auth');
-Route::resource('student','teacherController')->middleware('auth');
-Route::resource('admin','teacherController')->middleware('auth');
+Route::resource('student','studentController')->middleware('auth');
+Route::resource('admin','adminController')->middleware('auth');

@@ -47,8 +47,8 @@
                             <a href="{{route('conference.index')}}"><i class="fa fa-image"></i>دوره ها</a>
                             <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>همایش ها</a>
                             <a href="{{route('role.index')}}"><i class="fa fa-image"></i>افزودن نقش کاربر</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>اساتید</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>دانش آموزان</a>
+                            <a href="{{route('teacher.index')}}"><i class="fa fa-image"></i>اساتید</a>
+                            <a href="{{route('student.index')}}"><i class="fa fa-image"></i>دانش آموزان</a>
                             <a href="{{route('parent.index')}}"><i class="fa fa-image"></i>اولیا</a>
                         </div>
 
