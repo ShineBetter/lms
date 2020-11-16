@@ -23,10 +23,13 @@ Route::post('user/login','FrontEndController@submitLogin')->name('login.submit')
 
 Route::get('user/register','FrontEndController@register')->name('register.form');
 Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
-Route::get('/admin', 'HomeController@index')->name('admin')->middleware('auth');
+Route::get('/panel', 'HomeController@index')->name('panel')->middleware('auth');
 Route::resource('role','RoleController')->middleware('auth');
 Route::resource('banner','BannerController')->middleware('auth');
 Route::resource('level','LevelController')->middleware('auth');
 Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 Route::resource('parent','ParentsController')->middleware('auth');
+Route::resource('teacher','teacherController')->middleware('auth');
+Route::resource('student','teacherController')->middleware('auth');
+Route::resource('admin','teacherController')->middleware('auth');
