@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Models\profile;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
@@ -18,13 +19,16 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(profile::class, function (Faker $faker) {
     return [
-        'user_role' => 'admin',
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => Hash::make(123456), // password
-        'remember_token' => Str::random(10),
-        'status' => 'active',
+        'name' => Str::random(5),
+        'lastName' => Str::random(5),
+        'parent_name' => Str::random(5),
+        'nationalNumber' => $faker->randomDigit,
+        'phone' => $faker->randomDigit,
+        'mobile' => $faker->randomDigit,
+        'date_of_birth' => $faker->randomDigit,
+        'address' => $faker->text(),
+        'photo' => $faker->text(),
     ];
 });

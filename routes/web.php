@@ -29,3 +29,4 @@ Route::resource('banner','BannerController')->middleware('auth');
 Route::resource('level','LevelController')->middleware('auth');
 Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
+Route::resource('parent','ParentsController')->middleware('auth');

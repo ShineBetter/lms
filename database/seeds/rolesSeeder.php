@@ -53,15 +53,15 @@ class rolesSeeder extends Seeder
 //                'show-parents' => true,
 //            ]),
 //        ]);
-        for ($i = 1; $i <= 4; $i++ ) {
-            $user = \App\User::create([
-                'name' => Str::random(10),
-                'lastName' => Str::random(10),
-                'email' => Str::random(12),
-                'password' => Hash::make(123456),
-                'user_role' => 'teacher',
-            ]);
-        }
+//        for ($i = 1; $i <= 4; $i++ ) {
+//            $user = \App\User::create([
+//                'name' => Str::random(10),
+//                'lastName' => Str::random(10),
+//                'email' => Str::random(12),
+//                'password' => Hash::make(123456),
+//                'user_role' => 'teacher',
+//            ]);
+//        }
 
 //        $user_role = DB::table('role_user')->insert([
 //            ['user_id' => 1, 'role_id' => 1],
