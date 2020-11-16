@@ -46,12 +46,12 @@ class FrontEndController extends Controller
         $user->role()->attach(2,['user_id' =>  $user->id]);
         Session::put('user',$request->email);
         request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');
-        return redirect()->route('admin');
+        return redirect()->route('panel');
     }
     public function logout(){
         auth()->logout();
         request()->session()->flash('success','خروج از حساب با موفقیت انجام شد.');
-        return redirect(route('admin'));
+        return redirect(route('panel'));
     }
 
     public function index()
