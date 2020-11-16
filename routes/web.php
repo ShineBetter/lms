@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontEndController@index')->name('index');
-Route::get('/', 'FrontEndController@index')->name('home');
 
 Auth::routes(['register'=>false]);
 Route::get('user/login','FrontEndController@login')->name('login.form');

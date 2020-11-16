@@ -71,10 +71,10 @@
                         <div class="header-right-info">
                             <ul class="header-action-list">
                                 @auth
-                                    @if(Auth::user()->role=='admin')
-                                        <li><i class="ti-user"></i> <a href="{{url('/admin')}}"  target="_blank">داشبورد مدیر</a></li>
+                                    @if(Auth::user()->user_role=='admin')
+                                        <li><i class="ti-user"></i> <a href="{{url('/admin')}}">داشبورد مدیر</a></li>
                                     @else
-                                        <li><i class="ti-user"></i> <a href="{{route('home')}}"  target="_blank">داشبورد کاربر</a></li>
+                                        <li><i class="ti-user"></i> <a href="{{route('index')}}"  target="_blank">داشبورد کاربر</a></li>
                                     @endif
                                     <li><i class="ti-power-off"></i> <a href="{{route('user.logout')}}">خروج</a></li>
 
