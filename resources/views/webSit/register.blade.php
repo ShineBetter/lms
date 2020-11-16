@@ -162,6 +162,10 @@
 
                                             </div>
                                         </div><!-- end col-md-12 -->
+
+
+
+
                                         <div class="col-lg-12 ">
                                             <div class="btn-box">
                                                 <button class="theme-btn" type="submit">ثبت نام</button>
@@ -179,5 +183,6 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
+
 
 @endsection

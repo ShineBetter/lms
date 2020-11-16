@@ -9,6 +9,7 @@
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
+                                <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -16,17 +17,19 @@
 
             </section>
             <section>
-                @if (session()->has('level'))
+                @if (session()->has('role'))
                     <section class="alert alert-success">
-                        <h3>{{ session('level') }}</h3>
+                        <h3>{{ session('role') }}</h3>
                     </section>
                 @endif
 
             </section>
-            {{ Form::model($level,['route' => ['level.update',$level->id], 'method' => 'put','files'=>true])}}
+            {{ Form::model($role,['route' => ['role.update',$role->id], 'method' => 'put','files'=>true])}}
             <section class="form-group">
-                {{Form::label('title', 'عنوان پایه : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title', $level->title, ['class' => 'form-control']) !!}
+                {{Form::label('title', 'نقش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('user_name', $role->name,['class' => 'form-control mb-3','disabled']) !!}
+                {{Form::select('user_role',$roles,'',['class'=>'form-control'])}}
+
             </section>
 
             <hr>
@@ -37,7 +40,7 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('level.index')}}"><input type="button" class="form-control btn btn-success"
+                <a href="{{route('role.index')}}"><input type="button" class="form-control btn btn-success"
                                                           style="font-size: 15px;font-family: Tahoma"
                                                           value="  بازگشت  "></a>
             </section>

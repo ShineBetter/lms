@@ -6,15 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRolesTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->enum('role', ['admin', 'user', 'teacher', 'student', 'parent'])->default('user');
+            $table->string('title');
+            $table->string('name');
+//            $table->text('permissions')->default('{}')->nullable();
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('roles');

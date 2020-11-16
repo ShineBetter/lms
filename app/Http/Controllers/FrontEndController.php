@@ -43,27 +43,15 @@ class FrontEndController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+        $user->role()->attach(2,['user_id' =>  $user->id]);
         Session::put('user',$request->email);
         request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');
-        return redirect()->route('home');
-//
-//        $data=$request->all();
-////        // dd($data);
-//        $check=$this->create($data);
-//        Session::put('user',$data['email']);
-//        if($check){
-//            request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');
-//            return redirect()->route('home');
-//        }
-//        else{
-//            request()->session()->flash('errors','مجدد تلاش کنید!');
-//            return back();
-//        }
+        return redirect()->route('admin');
     }
     public function logout(){
-        Session::forget('user');
+        auth()->logout();
         request()->session()->flash('success','خروج از حساب با موفقیت انجام شد.');
-        return back();
+        return redirect(route('admin'));
     }
 
     public function index()

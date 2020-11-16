@@ -74,7 +74,7 @@
                     <li class="sidenav__item"><a href="dashboard-submit-course.html"><i class="fa fa-list-ol"></i>لیست
                             دوره ها و همایشات</a>
                     </li>
-                    <li class="sidenav__item"><a href="index.html"><i class="fa fa-power-off"></i> خروج</a></li>
+                    <li class="sidenav__item"><a href="{{route('user.logout')}}"><i class="fa fa-power-off"></i> خروج</a></li>
                     <li class="sidenav__item">
                         <a href="javascript:void(0)" data-toggle="modal" data-target=".account-delete-modal"><i
                                 class="fa fa-trash"></i>حذف اکانت</a>

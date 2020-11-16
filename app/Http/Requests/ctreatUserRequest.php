@@ -19,7 +19,7 @@ class ctreatUserRequest extends FormRequest
             'email' => 'string|required|unique:users,email|regex:/(.+)@(.+)\.(.+)/i',
             'password' => 'required|min:6|required_with:password_confirmation|same:password_confirmation',
             'password_confirmation' => 'min:6',
-            'image' => 'required|file|mimes:jpg,png,jpeg|min:10|max:50',
+//            'image' => 'required|file|mimes:jpg,png,jpeg|min:10|max:50',
         ];
     }
 
@@ -36,9 +36,9 @@ class ctreatUserRequest extends FormRequest
             'password.required_with' => ' تکرار رمز عبور الزامی است',
             'password.same' => ' تکرار رمز عبور اشتباه است',
             'password_confirmation.min' => ' تکرار رمز عبور اشتباه است',
-            'image.mimes' => 'فایل باید از نوع jpg,jpeg,png باشد. ',
-            'image.min' => 'حجم تصویر نباید کمتر از 10 کیلوبایت باشد.',
-            'image.max' => 'حجم تصویر نباید بیشتر  از 50 کیلوبایت باشد.',
+//            'image.mimes' => 'فایل باید از نوع jpg,jpeg,png باشد. ',
+//            'image.min' => 'حجم تصویر نباید کمتر از 10 کیلوبایت باشد.',
+//            'image.max' => 'حجم تصویر نباید بیشتر  از 50 کیلوبایت باشد.',
         ];
     }
 }
