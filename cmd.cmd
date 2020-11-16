@@ -18,3 +18,7 @@ doskey gc=git checkout $*
 doskey gs=git status $*
 doskey ga=git add $*
 doskey gcm=git commit $*
+doskey gp=git push $*
+doskey gpl=git pull $*
+doskey gf=git fetch $*
+doskey gl=git log $*
