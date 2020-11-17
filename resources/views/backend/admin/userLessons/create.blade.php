@@ -23,16 +23,12 @@
                 @endif
 
             </section>
-            {{ Form::open(['route'=>'userLessons.store', 'method' => 'post','files' => true])}}
+            {{ Form::open(['route' => ['userLessons.store',$teacher_id], 'method' => 'post','files' => true])}}
             <section class="form-group">
                 {{Form::label('lessons','درس :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
                 {{Form::select('lessons',$lessons,null,['class'=>'form-control'])}}
             </section>
-            <script>
-                $('#date_of_birth').datetimepicker({
-                    format: 'yyyy-mm-dd'
-                });
-            </script>
+
             <hr>
             <section class="form-group">
                 {!! Form::submit('ثبت', ['class' => 'form-control btn btn-info','style'=>'font-size: 15px;font-family: Tahoma']) !!}
@@ -41,7 +37,7 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('userLessons.index')}}"><input type="button" class="form-control btn btn-success"
+                <a href="{{route('userLessons.index',$teacher_id)}}"><input type="button" class="form-control btn btn-success"
                                                            style="font-size: 15px;font-family: Tahoma"
                                                            value="  بازگشت  "></a>
             </section>

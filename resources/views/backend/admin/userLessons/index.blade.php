@@ -70,7 +70,7 @@
         </table>
 {{--        <span style="float:right">{{$userLessons->links()}}</span>--}}
         <section class="form-group">
-            <td style="text-align: center"><a href="{{route('userLessons.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
+            <td style="text-align: center"><a href="{{route('userLessons.create',$teacher_id)}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
         </section>
 
     </section>

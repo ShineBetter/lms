@@ -29,9 +29,13 @@ class userLessonsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($teacher_id)
     {
-        return view('backend.admin.userLessons.create');
+        //        get all lessons for select input
+        $lessons = ['' => lesson::get()->pluck('title', 'id')];
+
+//        return create view
+        return view('backend.admin.userLessons.create' , ['lessons' => $lessons, 'teacher_id' => $teacher_id]);
     }
 
     /**
@@ -40,17 +44,18 @@ class userLessonsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $teacher_id)
     {
-        $user = User::findorfail($id);
-        $userLessons = new lesson();
-        $userLessons->title = $request->title;
-        $userLessons->lessonable_id = $user->id;
-        $userLessons->lessonable_type = get_class($user);
-        $userLessons->save();
+        $user = User::findorfail($teacher_id);
+        DB::table('lessonable')->insert([
+            'lesson_id' => $request->lessons,
+            'lessonable_id' => $teacher_id,
+            'lessonable_type' => 'App\User',
+            'created_at' => now()
+        ]);
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('userLessons', $comment);
-        return redirect()->route('userLessons.index');
+        return redirect()->route('userLessons.index',$teacher_id);
     }
 
     /**
@@ -71,19 +76,19 @@ class userLessonsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, $teacher_id)
+    public function edit($lesson_id, $teacher_id)
     {
 //        get all lessons for select input
         $lessons = ['' => lesson::get()->pluck('title', 'id')];
 
 //        get data from lessonable morph table
-        $lessonable = DB::table('lessonable')->where(['lesson_id' => $id, 'lessonable_id' => $teacher_id, 'lessonable_type' => 'App\User'])->get();
+        $lessonable = DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $teacher_id, 'lessonable_type' => 'App\User'])->get();
 
 //        get lesson that id = lessonable table lesson_id
         $userLessons = lesson::where('id', $lessonable->pluck('lesson_id'))->first();
 
         //        return teacher lessons view page
-        return view('backend.admin.userLessons.edit', ['lessonable' => $lessonable, 'userLessons' => $userLessons, 'lessons' => $lessons, 'teacher_id' => $teacher_id, 'lesson_id' => $id]);
+        return view('backend.admin.userLessons.edit', ['lessonable' => $lessonable, 'userLessons' => $userLessons, 'lessons' => $lessons, 'teacher_id' => $teacher_id, 'lesson_id' => $lesson_id]);
     }
 
     /**
