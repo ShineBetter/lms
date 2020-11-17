@@ -26,7 +26,7 @@
             {{ Form::model($level,['route' => ['level.update',$level->id], 'method' => 'put','files'=>true])}}
             <section class="form-group">
                 {{Form::label('title', 'عنوان پایه : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title', $level->title, ['class' => 'form-control']) !!}
+                {!! Form::text('title', $level->level_title, ['class' => 'form-control']) !!}
             </section>
 
             <hr>

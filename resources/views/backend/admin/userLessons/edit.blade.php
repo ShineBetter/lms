@@ -24,7 +24,7 @@
 
             </section>
             <h3>{{$title}}</h3>
-            {{ Form::model($userLessons,['route' => ['userLessons.update',['lesson_id' => $lesson_id,'teacher_id' => $teacher_id]], 'method' => 'put','files'=>true])}}
+            {{ Form::model($userLessons,['route' => ['userLessons.update',['lesson_id' => $lesson_id,'user_id' => $user_id]], 'method' => 'put','files'=>true])}}
             <section class="form-group">
                 @csrf
                 {{Form::label('lessons','درس :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
@@ -39,7 +39,7 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('userLessons.index',$teacher_id)}}"><input type="button" class="form-control btn btn-success"
+                <a href="{{route('userLessons.index',$user_id)}}"><input type="button" class="form-control btn btn-success"
                                                           style="font-size: 15px;font-family: Tahoma"
                                                           value="  بازگشت  "></a>
             </section>

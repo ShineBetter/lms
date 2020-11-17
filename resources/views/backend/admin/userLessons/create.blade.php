@@ -24,7 +24,7 @@
 
             </section>
             <h3>{{$title}}</h3>
-            {{ Form::open(['route' => ['userLessons.store',$teacher_id], 'method' => 'post','files' => true])}}
+            {{ Form::open(['route' => ['userLessons.store',$user_id], 'method' => 'post','files' => true])}}
             <section class="form-group">
                 {{Form::label('lessons','درس :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
                 {{Form::select('lessons',$lessons,null,['class'=>'form-control'])}}
@@ -38,7 +38,7 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('userLessons.index',$teacher_id)}}"><input type="button" class="form-control btn btn-success"
+                <a href="{{route('userLessons.index',$user_id)}}"><input type="button" class="form-control btn btn-success"
                                                            style="font-size: 15px;font-family: Tahoma"
                                                            value="  بازگشت  "></a>
             </section>

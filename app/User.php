@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Models\lesson;
+use App\Models\level;
 use App\Models\role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -31,5 +32,10 @@ class User extends Authenticatable
     public function lesson()
     {
         return $this->morphToMany(lesson::class,'lessonable','lessonable');
+    }
+
+    public function level()
+    {
+        return $this->morphToMany(level::class,'levelable','levelable');
     }
 }

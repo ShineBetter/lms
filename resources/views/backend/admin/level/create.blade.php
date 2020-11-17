@@ -25,8 +25,8 @@
             </section>
             {{ Form::open(['route'=>'level.store', 'method' => 'post','files' => true])}}
             <section class="form-group">
-                {{Form::label('title', 'عنوان پایه : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                {{Form::label('level_title', 'عنوان پایه : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('level_title', null, ['class' => 'form-control']) !!}
             </section>
 
             <hr>

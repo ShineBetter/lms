@@ -14,9 +14,9 @@
 
         </section>
         <section>
-            @if (session()->has('userLessons'))
+            @if (session()->has('userLevels'))
                 <section class="alert alert-danger">
-                    <h3>{{ session('userLessons') }}</h3>
+                    <h3>{{ session('userLevels') }}</h3>
                 </section>
             @endif
 
@@ -41,23 +41,23 @@
             </thead>
             <tbody>
 
-            @foreach($userLessons as $item)
+            @foreach($userLevels as $item)
                 <tr style="text-align: justify">
                     <td>
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{ $item->lesson_title }} </label>
+                        <label style="color: black">{{ $item->level_title }} </label>
                     </td>
                     @if(\Illuminate\Support\Facades\Gate::check('Admin') || \Illuminate\Support\Facades\Gate::check('Teacher'))
                         <td style="text-align: center">
 
-                            <a href="{{route('userLessons.edit',['lesson_id' => $item->id, 'user_id' => $user_id])}}"><input
+                            <a href="{{route('userLevels.edit',['level_id' => $item->id, 'user_id' => $user_id])}}"><input
                                     type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma"
                                     value="ویرایش"></a>
                         </td>
                         <td style="text-align: center">
-                            {!! Form::open(['route' => ['userLessons.destroy', ['lesson_id' => $item->id, 'user_id' => $user_id] ],'method' => 'delete']) !!}
+                            {!! Form::open(['route' => ['userLevels.destroy', ['level_id' => $item->id, 'user_id' => $user_id] ],'method' => 'delete']) !!}
                             {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
@@ -69,10 +69,10 @@
 
 
         </table>
-                <span style="float:right">{{$userLessons->links()}}</span>
+                <span style="float:right">{{$userLevels->links()}}</span>
         @if(\Illuminate\Support\Facades\Gate::check('Admin') || \Illuminate\Support\Facades\Gate::check('Teacher'))
             <section class="form-group">
-                <td style="text-align: center"><a href="{{route('userLessons.create',$user_id)}}"><input
+                <td style="text-align: center"><a href="{{route('userLevels.create',$user_id)}}"><input
                             type="button" class="form-control btn btn-info" style="font-size: 15px;font-family: Tahoma"
                             value="صفحه درج "></a></td>
             </section>

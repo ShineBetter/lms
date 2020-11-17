@@ -45,7 +45,7 @@
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->title}}</label>
+                        <label style="color: black">{{$item->level_title}}</label>
                     </td>
 
                     <td style="text-align: center"><a href="{{route('level.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>

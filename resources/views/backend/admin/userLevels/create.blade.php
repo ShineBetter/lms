@@ -16,22 +16,18 @@
 
             </section>
             <section>
-                @if (session()->has('lesson'))
+                @if (session()->has('userLevels'))
                     <section class="alert alert-success">
-                        <h3>{{ session('lesson') }}</h3>
+                        <h3>{{ session('userLevels') }}</h3>
                     </section>
                 @endif
 
             </section>
-            {{ Form::open(['route'=>'lesson.store', 'method' => 'post','files' => true])}}
+            <h3>{{$title}}</h3>
+            {{ Form::open(['route' => ['userLevels.store',$user_id], 'method' => 'post','files' => true])}}
             <section class="form-group">
-                {{Form::label('lesson_title', 'عنوان درس : ', ['class' => 'control-label','style'=>'font-size: 15px;'])}}
-                {!! Form::text('lesson_title', null, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('levels','پایه :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
+                {{Form::label('levels','درس :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
                 {{Form::select('levels',$levels,null,['class'=>'form-control'])}}
-{{--                Form::select('size', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Pick a size...']);--}}
             </section>
 
             <hr>
@@ -42,7 +38,7 @@
             {{ Form::close() }}
 
             <section class="form-group">
-                <a href="{{route('lesson.index')}}"><input type="button" class="form-control btn btn-success"
+                <a href="{{route('userLevels.index',$user_id)}}"><input type="button" class="form-control btn btn-success"
                                                            style="font-size: 15px;font-family: Tahoma"
                                                            value="  بازگشت  "></a>
             </section>

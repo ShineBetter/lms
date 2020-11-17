@@ -23,7 +23,7 @@ class LevelController extends Controller
     public function store(createLevelRequest $request)
     {
         $level=new level();
-        $level->title = $request->title;
+        $level->level_title = $request->level_title;
         $level->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('level', $comment);
@@ -46,7 +46,7 @@ class LevelController extends Controller
     public function update(createLevelRequest $request, $id)
     {
         $level = level::where('id', $id)->first();
-        $level->title = $request->title;
+        $level->level_title = $request->level_title;
         $level->save();
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('level', $comment);
