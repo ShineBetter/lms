@@ -10,11 +10,9 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-//            $table->unsignedBigInteger('level_id');
-//            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
+            $table->unsignedBigInteger('level_id');
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
             $table->string('title')->nullable();
-            $table->unsignedBigInteger('lessonable_id');
-            $table->string('lessonable_type');
             $table->softDeletes();
             $table->timestamps();
 

@@ -14,9 +14,9 @@
 
         </section>
         <section>
-            @if (session()->has('teacher'))
+            @if (session()->has('userLessons'))
                 <section class="alert alert-danger">
-                    <h3>{{ session('teacher') }}</h3>
+                    <h3>{{ session('userLessons') }}</h3>
                 </section>
             @endif
 
@@ -38,22 +38,21 @@
             </thead>
             <tbody>
 {{--            {{$i=0}}--}}
-            @foreach($teacher as $item)
+            @foreach($userLessons as $item)
 
                 <tr style="text-align: justify">
                     <td>
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->email}}</label>
+                        <label style="color: black">{{$item->title}}</label>
                     </td>
 
                     <td style="text-align: center">
-                        <a href="{{route('teacher.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
-                        <a href="{{route('userLessons',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="دروس"></a>
+                        <a href="{{route('userLessons.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
                     </td>
                     <td style="text-align: center">
-                        {!! Form::open(['route' => ['teacher.destroy', $item->id ],'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['userLessons.destroy', $item->id ],'method' => 'delete']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -64,9 +63,9 @@
 
 
         </table>
-        <span style="float:right">{{$teacher->links()}}</span>
+{{--        <span style="float:right">{{$userLessons->links()}}</span>--}}
         <section class="form-group">
-            <td style="text-align: center"><a href="{{route('teacher.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
+            <td style="text-align: center"><a href="{{route('userLessons.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
         </section>
 
     </section>

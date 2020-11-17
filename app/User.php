@@ -30,7 +30,6 @@ class User extends Authenticatable
 
     public function lesson()
     {
-
-        return $this->morphMany(lesson::class,'lessonable');
+        return $this->morphToMany(lesson::class,'lessonable','lessonable');
     }
 }

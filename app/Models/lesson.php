@@ -11,8 +11,8 @@ class lesson extends Model
     protected $fillable = ['title','lessonable_id','lessonable_type'];
 
 
-//    public function users()
-//    {
-//        return $this->morphedByMany(User::class,'lessonsables');
-//    }
+    public function users()
+    {
+        return $this->morphedByMany(User::class,'lessonable','lessonable');
+    }
 }
