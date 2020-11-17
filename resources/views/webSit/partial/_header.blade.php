@@ -71,11 +71,15 @@
                         <div class="header-right-info">
                             <ul class="header-action-list">
                                 @auth
-                                    @if(Auth::user()->user_role=='admin')
-                                        <li><i class="ti-user"></i> <a href="{{url('/admin')}}">داشبورد مدیر</a></li>
-                                    @else
-                                        <li><i class="ti-user"></i> <a href="{{route('index')}}"  target="_blank">داشبورد کاربر</a></li>
-                                    @endif
+                                    @can('Admin')
+                                        <li><i class="ti-user"></i> <a href="{{route('panel')}}">داشبورد مدیر</a></li>
+                                    @elsecan('Teacher')
+                                        <li><i class="ti-user"></i> <a href="{{route('panel')}}"  target="_blank">داشبورد معلم</a></li>
+                                    @elsecan('Student')
+                                        <li><i class="ti-user"></i> <a href="{{route('panel')}}"  target="_blank">داشبورد دانش آموز</a></li>
+                                    @elsecan('Parent')
+                                        <li><i class="ti-user"></i> <a href="{{route('panel')}}"  target="_blank">داشبورد اولیا</a></li>
+                                    @endcan
                                     <li><i class="ti-power-off"></i> <a href="{{route('user.logout')}}">خروج</a></li>
 
                                 @else

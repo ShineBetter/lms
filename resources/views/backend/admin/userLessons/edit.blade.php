@@ -23,6 +23,7 @@
                 @endif
 
             </section>
+            <h3>{{$title}}</h3>
             {{ Form::model($userLessons,['route' => ['userLessons.update',['lesson_id' => $lesson_id,'teacher_id' => $teacher_id]], 'method' => 'put','files'=>true])}}
             <section class="form-group">
                 @csrf

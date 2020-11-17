@@ -23,6 +23,7 @@
                 @endif
 
             </section>
+            <h3>{{$title}}</h3>
             {{ Form::open(['route' => ['userLessons.store',$teacher_id], 'method' => 'post','files' => true])}}
             <section class="form-group">
                 {{Form::label('lessons','درس :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
