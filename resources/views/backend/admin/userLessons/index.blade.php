@@ -37,22 +37,27 @@
 
             </thead>
             <tbody>
-{{--            {{$i=0}}--}}
+
             @foreach($userLessons as $item)
+
+
+
 
                 <tr style="text-align: justify">
                     <td>
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->title}}</label>
+                        <label style="color: black">{{ $item->title }} </label>
                     </td>
 
                     <td style="text-align: center">
-                        <a href="{{route('userLessons.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
+
+                        <a href="{{route('userLessons.edit',['lesson_id' => $item->id, 'teacher_id' => $teacher_id])}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
                     </td>
+
                     <td style="text-align: center">
-                        {!! Form::open(['route' => ['userLessons.destroy', $item->id ],'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['userLessons.destroy', ['lesson_id' => $item->id, 'teacher_id' => $teacher_id] ],'method' => 'delete']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>

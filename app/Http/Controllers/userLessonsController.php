@@ -6,6 +6,8 @@ use App\Models\lesson;
 use App\Models\profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class userLessonsController extends Controller
 {
@@ -18,7 +20,8 @@ class userLessonsController extends Controller
     {
         $userLessons = User::findorfail($id);
         $lessons = $userLessons->lesson()->get();
-        return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'row' => 0]);
+        $lessonable = DB::table('lessonable')->select('id')->get();
+        return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'teacher_id' => $id]);
     }
 
     /**
@@ -68,11 +71,19 @@ class userLessonsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $teacher_id)
     {
-        $lessons = ['' => lesson::get()->pluck('title','id')];
-        $userLessons = lesson::find($id);
-        return view('backend.admin.userLessons.edit', ['userLessons' => $userLessons, 'lessons' => $lessons]);
+//        get all lessons for select input
+        $lessons = ['' => lesson::get()->pluck('title', 'id')];
+
+//        get data from lessonable morph table
+        $lessonable = DB::table('lessonable')->where(['lesson_id' => $id, 'lessonable_id' => $teacher_id, 'lessonable_type' => 'App\User'])->get();
+
+//        get lesson that id = lessonable table lesson_id
+        $userLessons = lesson::where('id', $lessonable->pluck('lesson_id'))->first();
+
+        //        return teacher lessons view page
+        return view('backend.admin.userLessons.edit', ['lessonable' => $lessonable, 'userLessons' => $userLessons, 'lessons' => $lessons, 'teacher_id' => $teacher_id, 'lesson_id' => $id]);
     }
 
     /**
@@ -82,15 +93,19 @@ class userLessonsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$lesson_id, $teacher_id)
     {
-        $user = User::findorfail($id);
-        $userLessons = $user->lesson()->get();
-        $userLessons->user_role = 'userLessons';
-        $userLessons->profile()->save($profile);
+//        update lesson_id in lessonable table
+        DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $teacher_id, 'lessonable_type' => 'App\User'])->update(['lesson_id' => $request->lessons]);
+
+//        set comment
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
+
+//        set session for comment
         session()->flash('userLessons', $comment);
-        return redirect()->route('userLessons.index');
+
+//        return index view
+        return redirect()->route('userLessons.index',$teacher_id);
     }
 
     /**
@@ -99,12 +114,18 @@ class userLessonsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($lesson_id, $teacher_id)
     {
-        $userLessons = User::where('id', $id)->first();
-        $userLessons->delete();
+//        delete lesson from lessonable table
+        DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $teacher_id])->delete();
+
+//        set comment
         $comment = 'عملیات حذف بدرستی انجام شد.';
+
+//        set session
         session()->flash('userLessons', $comment);
+
+//        return back
         return back();
     }
 }
