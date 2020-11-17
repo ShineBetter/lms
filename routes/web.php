@@ -30,5 +30,7 @@ Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 Route::resource('parent','ParentsController')->middleware('auth');
 Route::resource('teacher','teacherController')->middleware('auth');
+Route::get('teacher/{teacher}/lessons','teacherController@lessons')->middleware('auth')->name('teacher.lessons');
 Route::resource('student','studentController')->middleware('auth');
 Route::resource('admin','adminController')->middleware('auth');
+Route::get('/cr/{id}','teacherController@cr');

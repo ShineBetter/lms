@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\lesson;
 use App\Models\teacher;
 use App\Models\profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class teacherController extends Controller
 {
@@ -16,7 +18,7 @@ class teacherController extends Controller
      */
     public function index()
     {
-        $teacher = User::where('user_role','teacher')->paginate(4);
+        $teacher = User::where('user_role', 'teacher')->paginate(4);
         return view('backend.admin.teacher.index', ['teacher' => $teacher, 'row' => 0]);
     }
 
@@ -78,8 +80,8 @@ class teacherController extends Controller
     public function edit($id)
     {
         $teacher = User::findorfail($id);
-        $profile = profile::where('user_id','=',$id)->firstorfail();
-        return view('backend.admin.teacher.edit', ['teacher'=>$teacher,'profile'=>$profile]);
+        $profile = profile::where('user_id', '=', $id)->firstorfail();
+        return view('backend.admin.teacher.edit', ['teacher' => $teacher, 'profile' => $profile]);
     }
 
     /**
@@ -91,8 +93,8 @@ class teacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $teacher = User::where('id',$id)->first();
-        $profile = profile::where('user_id',$id)->first();
+        $teacher = User::where('id', $id)->first();
+        $profile = profile::where('user_id', $id)->first();
         $teacher->user_role = 'teacher';
         $teacher->email = $request->email;
         $teacher->save();
@@ -118,10 +120,18 @@ class teacherController extends Controller
      */
     public function destroy($id)
     {
-        $teacher = User::where('id',$id)->first();
+        $teacher = User::where('id', $id)->first();
         $teacher->delete();
         $comment = 'عملیات حذف بدرستی انجام شد.';
         session()->flash('teacher', $comment);
         return back();
     }
+
+    public function lessons($id)
+    {
+        $user = User::find($id);
+        $lessons = $user->lesson()->get()->paginate(4);
+        return view('backend.admin.teacher.index', ['lessons' => $lessons, 'row', 0]);
+    }
+
 }

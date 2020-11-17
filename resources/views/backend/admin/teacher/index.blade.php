@@ -50,7 +50,7 @@
 
                     <td style="text-align: center">
                         <a href="{{route('teacher.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
-                        <a href="{{route('teacher.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="دروس"></a>
+                        <a href="{{route('teacher.lessons',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="دروس"></a>
                     </td>
                     <td style="text-align: center">
                         {!! Form::open(['route' => ['teacher.destroy', $item->id ],'method' => 'delete']) !!}

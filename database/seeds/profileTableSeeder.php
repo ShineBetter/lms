@@ -16,5 +16,19 @@ class profileTableSeeder extends Seeder
         factory(User::class, 4)->create()->each(function($u) {
             $u->profile()->save(factory(profile::class)->make());
         });
+
+//        for ($i = 1; $i <= 4; $i++ ) {
+//            $lesson = \App\Models\lesson::create([
+////                'level_id' => $i,
+//                'title' => 'درس '.$i,
+//                'created_at' => now(),
+//            ]);
+//        }
+        for ($i = 1; $i <= 4; $i++ ) {
+            $level = \App\Models\level::create([
+                'title' => 'کلاس '.$i,
+                'created_at' => now(),
+            ]);
+        }
     }
 }

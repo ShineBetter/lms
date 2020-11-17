@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Models\lesson;
 use App\Models\role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,13 +28,9 @@ class User extends Authenticatable
         return $this->hasOne(\App\Models\profile::class);
     }
 
-//    public function hasAccess(array $permissions)
-//    {
-//        foreach ($this->role() as $roles){
-//            if ($roles->hasAccess($permissions)){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public function lesson()
+    {
+
+        return $this->morphMany(lesson::class,'lessonable');
+    }
 }

@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'user_role' => 'admin',
+        'user_role' => 'teacher',
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => Hash::make(123456), // password
