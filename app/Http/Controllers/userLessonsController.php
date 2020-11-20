@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use function Composer\Autoload\includeFile;
 
 class userLessonsController extends Controller
 {
@@ -20,15 +21,14 @@ class userLessonsController extends Controller
      */
     public function index($id)
     {
+        $userLessons = User::findorfail($id);
         if (Gate::allows('Teacher') || Gate::allows('Admin')) {
-            $userLessons = User::findorfail($id);
             $lessons = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس استاد";
             $userTitle = "دروس آقا / خانم " . $userLessons->profile()->first()->name . ' ' . $userLessons->profile()->first()->lastName;
             return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
         } elseif (Gate::allows('Student') || Gate::allows('Parent') || Gate::allows('Admin')) {
-            $userLessons = User::findorfail($id);
             $lessons = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس دانش آموز";

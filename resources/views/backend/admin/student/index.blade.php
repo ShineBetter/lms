@@ -1,6 +1,6 @@
 @extends('backend.admin.partial._master')
 @section('main.content')
-    <section class="container" style="padding: 50px" dir="rtl">
+    <section class="container data-table" style="padding: 50px" dir="rtl">
         <section>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -22,7 +22,8 @@
 
         </section>
         <table class="table table-hover table-bordered">
-            <thead class="bg-success" style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
+            <thead class="bg-success"
+                   style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
             <td>
                 <label style="color: white"> ردیف </label>
             </td>
@@ -37,18 +38,28 @@
 
             </thead>
             <tbody>
-{{--            {{$i=0}}--}}
-            @foreach($student as $item)
 
+
+            @foreach($student as $key => $item)
                 <tr style="text-align: justify">
                     <td>
-                        <label style="color: black">{{ ++$row }}</label>
+                        <label style="color: black">{{ $key + $student->firstItem() }}</label>
                     </td>
                     <td>
                         <label style="color: black">{{$item->email}}</label>
                     </td>
 
-                    <td style="text-align: center"><a href="{{route('student.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
+                    <td style="text-align: center">
+                        <a href="{{route('student.edit',$item->id)}}"><input type="button" class="btn btn-info"
+                                                                             style="font-size: 15px;font-family: Tahoma"
+                                                                             value="ویرایش"></a>
+                        <a href="{{route('userLessons.index',$item->id)}}"><input type="button" class="btn btn-info"
+                                                                                  style="font-size: 15px;font-family: Tahoma"
+                                                                                  value="دروس"></a>
+                        <a href="{{route('userLevels.index',$item->id)}}"><input type="button" class="btn btn-info"
+                                                                                 style="font-size: 15px;font-family: Tahoma"
+                                                                                 value="پایه ها"></a>
+                    </td>
                     <td style="text-align: center">
                         {!! Form::open(['route' => ['student.destroy', $item->id ],'method' => 'delete']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
@@ -63,7 +74,10 @@
         </table>
         <span style="float:right">{{$student->links()}}</span>
         <section class="form-group">
-            <td style="text-align: center"><a href="{{route('student.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
+            <td style="text-align: center"><a href="{{route('student.create')}}"><input type="button"
+                                                                                        class="form-control btn btn-info"
+                                                                                        style="font-size: 15px;font-family: Tahoma"
+                                                                                        value="صفحه درج "></a></td>
         </section>
 
     </section>

@@ -53,7 +53,7 @@ class teacherController extends Controller
         $profile->date_of_birth = $request->date_of_birth;
         $profile->address = $request->address;
         $profile->photo = $request->photo;
-        $teacher->profile()->save($profile);
+        $teacher->profile()->attach($profile);
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('teacher', $comment);
         return redirect()->route('teacher.index');

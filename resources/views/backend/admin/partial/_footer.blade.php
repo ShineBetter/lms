@@ -75,6 +75,22 @@
 <script src="{{asset('template_sit/js/animated-skills.js')}}"></script>
 <script src="{{asset('template_sit/js/main.js')}}"></script>
 <script>
+        $(document).on('click', '.pagination a', function(event){
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            fetch_data(page);
+        });
+
+    function fetch_data(page) {
+        $.ajax({
+            url: "student?page=" + page,
+            success: function (data) {
+                console.log()
+                $('.data-table').html($(data).find('.data-table').html());
+            }
+        });
+    }
+
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
 

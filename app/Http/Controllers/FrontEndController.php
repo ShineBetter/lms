@@ -43,7 +43,17 @@ class FrontEndController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
-        $user->role()->attach(2,['user_id' =>  $user->id]);
+        $user->profile()->insert([
+            'user_id' => $user->id,
+            'name' => $request->name,
+            'lastName' => $request->lastName,
+            'nationalNumber' => $request->nationalNumber,
+            'phone' => $request->phone,
+            'mobile' => $request->mobile,
+            'date_of_birth' => $request->date_of_birth,
+            'address' => $request->address,
+            'photo' => $request->photo
+        ]);
         Session::put('user',$request->email);
         request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');
         return redirect()->route('panel');

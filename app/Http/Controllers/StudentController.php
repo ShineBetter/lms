@@ -14,10 +14,21 @@ class studentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $student = User::where('user_role','student')->paginate(4);
-        return view('backend.admin.student.index', ['student' => $student, 'row' => 0]);
+        $student = User::where('user_role', 'student')->paginate(4);
+        $row = 0;
+            return view('backend.admin.student.index', compact(['student', 'row']))->render();
+
+    }
+
+    public function fetch(Request $request)
+    {
+        if ($request->ajax()) {
+            $student = User::where('user_role', 'student')->paginate(4);
+            $row = 0;
+            return view('backend.admin.student.students', compact(['student', 'row']))->render();
+        }
     }
 
     /**
@@ -43,15 +54,17 @@ class studentController extends Controller
         $student->user_role = 'student';
         $student->email = $request->email;
         $student->save();
-        $profile->name = $request->name;
-        $profile->lastName = $request->lastName;
-        $profile->nationalNumber = $request->nationalNumber;
-        $profile->phone = $request->phone;
-        $profile->mobile = $request->mobile;
-        $profile->date_of_birth = $request->date_of_birth;
-        $profile->address = $request->address;
-        $profile->photo = $request->photo;
-        $student->profile()->save($profile);
+        $student->profile()->insert([
+            'user_id' => $student->id,
+            'name' => $request->name,
+            'lastName' => $request->lastName,
+            'nationalNumber' => $request->nationalNumber,
+            'phone' => $request->phone,
+            'mobile' => $request->mobile,
+            'date_of_birth' => $request->date_of_birth,
+            'address' => $request->address,
+            'photo' => $request->photo
+        ]);
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('student', $comment);
         return redirect()->route('student.index');
@@ -78,8 +91,8 @@ class studentController extends Controller
     public function edit($id)
     {
         $student = User::findorfail($id);
-        $profile = profile::where('user_id','=',$id)->firstorfail();
-        return view('backend.admin.student.edit', ['student'=>$student,'profile'=>$profile]);
+        $profile = profile::where('user_id', '=', $id)->firstorfail();
+        return view('backend.admin.student.edit', ['student' => $student, 'profile' => $profile]);
     }
 
     /**
@@ -91,8 +104,8 @@ class studentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $student = User::where('id',$id)->first();
-        $profile = profile::where('user_id',$id)->first();
+        $student = User::where('id', $id)->first();
+        $profile = profile::where('user_id', $id)->first();
         $student->user_role = 'student';
         $student->email = $request->email;
         $student->save();
@@ -107,7 +120,7 @@ class studentController extends Controller
         $student->profile()->save($profile);
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
         session()->flash('student', $comment);
-        return redirect()->route('student.index');
+//        return redirect()->route('student.index');
     }
 
     /**
@@ -118,7 +131,7 @@ class studentController extends Controller
      */
     public function destroy($id)
     {
-        $student = User::where('id',$id)->first();
+        $student = User::where('id', $id)->first();
         $student->delete();
         $comment = 'عملیات حذف بدرستی انجام شد.';
         session()->flash('student', $comment);
