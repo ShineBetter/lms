@@ -105,6 +105,7 @@
       <path value="$PROJECT_DIR$/vendor/alibayat/laravel-categorizable" />
       <path value="$PROJECT_DIR$/vendor/kalnoy/nestedset" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-sluggable" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -25,8 +25,9 @@ class profileTableSeeder extends Seeder
 //            ]);
 //        }
         for ($i = 1; $i <= 4; $i++ ) {
-            $level = \App\Models\level::create([
-                'title' => 'کلاس '.$i,
+            $level = \App\Models\lesson::create([
+                'title' => 'درس '.$i,
+                'level_id' => 1,
                 'created_at' => now(),
             ]);
         }

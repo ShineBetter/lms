@@ -38,21 +38,20 @@ class FrontEndController extends Controller
     public function registerSubmit(ctreatUserRequest $request)
     {
         $user = new User();
-        $user->name = $request->name;
-        $user->lastName = $request->lastName;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->user_role = 'student';
         $user->save();
         $user->profile()->insert([
             'user_id' => $user->id,
             'name' => $request->name,
             'lastName' => $request->lastName,
-            'nationalNumber' => $request->nationalNumber,
-            'phone' => $request->phone,
-            'mobile' => $request->mobile,
-            'date_of_birth' => $request->date_of_birth,
-            'address' => $request->address,
-            'photo' => $request->photo
+            'nationalNumber' => 2,
+            'phone' => '0919',
+            'mobile' => '0919',
+            'date_of_birth' => '0919',
+            'address' => '0919',
+            'photo' => '0919'
         ]);
         Session::put('user',$request->email);
         request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');

@@ -1,51 +1,57 @@
-@include('backend.admin.partial._preloader')
-<div class="preloader">
-    <div class="loader">
-        <svg class="spinner" viewBox="0 0 50 50">
-            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-        </svg>
-    </div>
-</div>
-<!-- end cssload-loader -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="TechyDevs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!--======================================
-        START HEADER AREA
-    ======================================-->
-@include('backend.admin.partial._header')<!-- end header-menu-area -->
-<!--======================================
-        END HEADER AREA
-======================================-->
+    <title>پنل کاربری || @section('title')آموزشگاه@show</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- ================================
-    START DASHBOARD AREA
-================================= -->
-<section class="dashboard-area">
-@include('backend.admin.partial._dashboardSidebar') <!-- end dashboard-sidebar -->
-    <div class="dashboard-content-wrap">
-        <div class="container-fluid">
-        @include('backend.admin.partial._userProfile')
-        <!-- end row -->
+    <!-- Favicon -->
+    <link rel="icon" sizes="16x16" href="images/favicon.png">
 
-        @yield('main.content')
-        <!-- end modal-form -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright-content mt-0 pt-0 pb-4 border-top-0 text-center">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="copy__desc">&copy; طراحی  و توسعه توسط تیم شاین بتر . 2020
-                                                                    </p>
-                                <p class="copy__desc"><a href="https://shinebetter.ir">shinebetter.ir</a></p>
-                            </div><!-- end col-lg-12 -->
-                        </div><!-- end row -->
-                    </div><!-- end copyright-content -->
-                </div><!-- end col-lg-12 -->
-            </div>
-        </div><!-- end container-fluid -->
-    </div><!-- end dashboard-content-wrap -->
-</section><!-- end dashboard-area -->
-<!-- ================================
-    END DASHBOARD AREA
-================================= -->
-<!-- template js files -->
-@include('backend.admin.partial._footer')
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/line-awesome.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/animate.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/owl.carousel.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/owl.theme.default.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-select.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/magnific-popup.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/fancybox.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/jquery.filer.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/tooltipster.bundle.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/jqvmap.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+    <!-- end inject -->
+    <style>
+
+        .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item a{
+            border-radius: 10px !important;
+        }
+        .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.page-active, .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.active{
+            border-radius: 10px;
+            width: 95%;
+            margin: auto;
+        }
+        .dashboard-content-wrap{
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+@includeWhen(empty($loader),'backend.admin.partial.loader')
+@includeWhen(empty($header),'backend.admin.partial._header')
+@section('cntd')
+    <section class="dashboard-area">
+    @includeWhen(empty($sidebar),'backend.admin.partial._dashboardSidebar')
+    </section>
+@show
+@includeWhen(empty($footer),'backend.admin.partial._footer')
+

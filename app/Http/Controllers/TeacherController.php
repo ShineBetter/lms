@@ -135,10 +135,10 @@ class teacherController extends Controller
     public function cr($id)
     {
         $user = User::find($id);
-        $mk = DB::table('levelable')->insert([
-            'level_id' => 2,
-            'levelable_id' => $user->id,
-            'levelable_type' => get_class($user),
+        $mk = DB::table('lessonable')->insert([
+            'lesson_id' => 2,
+            'lessonable_id' => $user->id,
+            'lessonable_type' => get_class($user),
         ]);
 
 //        $mks = lesson::create([
