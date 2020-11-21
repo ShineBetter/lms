@@ -2452,27 +2452,25 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "2.6.0",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "49c491cc28a6ed5cd23936c8d59ffc24f8319762"
+                "reference": "b711700bacdf5382d8f4ed896b38e22102d27821"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/49c491cc28a6ed5cd23936c8d59ffc24f8319762",
-                "reference": "49c491cc28a6ed5cd23936c8d59ffc24f8319762",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/b711700bacdf5382d8f4ed896b38e22102d27821",
+                "reference": "b711700bacdf5382d8f4ed896b38e22102d27821",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "^7.0|^8.0",
-                "illuminate/support": "^7.0.5|^8.0",
-                "php": "^7.4|^8.0"
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
+                "php": "^7.2"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "orchestra/testbench": "^5.0|^6.0",
-                "spatie/laravel-translatable": "^4.3"
+                "orchestra/testbench": "~3.6.0|~3.7.0|~3.8.0|^4.0|^5.0"
             },
             "type": "library",
             "autoload": {
@@ -2500,15 +2498,15 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-sluggable/issues",
-                "source": "https://github.com/spatie/laravel-sluggable/tree/2.6.0"
+                "source": "https://github.com/spatie/laravel-sluggable/tree/2.2.2"
             },
             "funding": [
                 {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
                 }
             ],
-            "time": "2020-10-28T12:03:25+00:00"
+            "time": "2020-04-06T14:31:18+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
