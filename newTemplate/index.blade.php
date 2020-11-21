@@ -1,4 +1,4 @@
-@extends('webSit.layout.head')
+@extends('layout.head')
 @section('title','صفحه ی اصلی')
 @section('cnt')
     @php

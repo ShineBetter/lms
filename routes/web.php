@@ -80,3 +80,24 @@ Route::get('/userLevels/{level_id}/{user_id}/edit','userLevelsController@edit')-
 
 //make test in database
 Route::get('/cr/{id}','teacherController@cr');
+
+
+
+//new routes for site fornt
+Route::get('/about', function () {
+    return view('about');
+});
+Route::view('/teachers','teachers');
+Route::view('/teacher-detail','teacher-detail');
+Route::view('/student-quiz-result-details-2','student-quiz-result-details-2');
+Route::view('/student-quiz-result-details','student-quiz-result-details');
+Route::view('/student-quiz-result-details','student-quiz-result-details');
+Route::view('/student-quiz','student-quiz');
+Route::view('/student-path-assessment','student-path-assessment');
+Route::view('/shopping-cart','shopping-cart');
+Route::view('/pricing-table','pricing-table');
+Route::view('/my-courses','my-courses');
+Route::view('/faq','faq');
+Route::view('/course-grid','course-grid');
+Route::view('/contact','contact');
+Route::view('/course-details','course-details');
