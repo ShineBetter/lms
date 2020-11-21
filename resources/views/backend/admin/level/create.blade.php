@@ -52,7 +52,7 @@
 
 
 
-@extends('layout.dashboard.dashlayout.head')
+@extends('backend.admin.partial._master')
 @section('title','ارسال دوره')
 @section('cntd')
     @parent
@@ -85,7 +85,6 @@
                                                     {{Form::label('level_title', 'عنوان پایه', ['class' => 'label-text'])}} <span class="primary-color-2 ml-1">*</span>
                                                     <div class="form-group">
                                                         {!! Form::text('level_title', null, ['class' => 'form-control','placeholder' => 'نام پایه']) !!}
-                                                        <input class="form-control" type="text" name="text" placeholder="Course title">
                                                         <span class="la la-file-text-o input-icon"></span>
                                                     </div>
                                                 </div>
@@ -93,7 +92,9 @@
                                         </div><!-- end row -->
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <button class="theme-btn" type="submit">submit now</button>
+                                            {!! Form::submit('ثبت', ['class' => 'theme-btn float-left']) !!}
+
+{{--                                            <x-btn type="submit" title="ثبت" class="theme-btn float-left"/>--}}
                                         </div>
                                     </div><!-- end row -->
                                     {{ Form::close() }}

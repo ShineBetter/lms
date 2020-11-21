@@ -19,7 +19,9 @@
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
                             <h3 class="widget-title">پایه های آقا / خانم امیرحسین فلک دین</h3>
-                            <button class="btn btn-5 btn-5a"><span>افزودن</span></button>
+
+                           <x-btn route="level.create"/>
+
                         </div>
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
