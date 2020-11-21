@@ -16,26 +16,26 @@
 {{--</div>--}}
 
 
-<script src="{{ asset("js/jquery-3.4.1.min.js")}}""</script>
+<script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}""</script>
 <
 script
-src = "{{ asset("js/popper.min.js")}}" ></script>
-<script src="{{ asset("js/bootstrap.min.js")}}"></script>
-<script src="{{ asset("js/bootstrap-select.min.js")}}"></script>
-<script src="{{ asset("js/owl.carousel.min.js")}}"></script>
-<script src="{{ asset("js/magnific-popup.min.js")}}"></script>
-<script src="{{ asset("js/isotope.js")}}"></script>
-<script src="{{ asset("js/waypoint.min.js")}}"></script>
-<script src="{{ asset("js/jquery.counterup.min.js")}}"></script>
-<script src="{{ asset("js/fancybox.js")}}"></script>
-<script src="{{ asset("js/smooth-scrolling.js")}}"></script>
-<script src="{{ asset("js/tooltipster.bundle.min.js")}}"></script>
-<script src="{{ asset("js/jquery.filer.min.js")}}"></script>
-<script src="{{ asset("js/progress-bar.js")}}"></script>
-<script src="{{ asset("js/date-time-picker.js")}}"></script>
-<script src="{{ asset("js/emojionearea.min.js")}}"></script>
-<script src="{{ asset("js/animated-skills.js")}}"></script>
-<script src="{{ asset("js/main.js")}}"></script>
+src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
+<script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/bootstrap-select.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/owl.carousel.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/magnific-popup.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/isotope.js")}}"></script>
+<script src="{{ asset("template_sit/js/waypoint.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/jquery.counterup.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/fancybox.js")}}"></script>
+<script src="{{ asset("template_sit/js/smooth-scrolling.js")}}"></script>
+<script src="{{ asset("template_sit/js/tooltipster.bundle.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/jquery.filer.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/progress-bar.js")}}"></script>
+<script src="{{ asset("template_sit/js/date-time-picker.js")}}"></script>
+<script src="{{ asset("template_sit/js/emojionearea.min.js")}}"></script>
+<script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
+<script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script>
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();

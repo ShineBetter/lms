@@ -14,19 +14,19 @@
     <link rel="icon" sizes="16x16" href="images/favicon.png">
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/line-awesome.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/animate.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/owl.carousel.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/owl.theme.default.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/bootstrap-select.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/magnific-popup.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/fancybox.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/jquery.filer.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/tooltipster.bundle.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/jqvmap.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/line-awesome.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/animate.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/owl.carousel.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/owl.theme.default.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/bootstrap-select.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/magnific-popup.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/fancybox.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/jquery.filer.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/tooltipster.bundle.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
+    <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
     <!-- end inject -->
     <style>
