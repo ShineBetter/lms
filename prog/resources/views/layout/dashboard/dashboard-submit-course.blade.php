@@ -10,53 +10,16 @@
 <!-- end dashboard-sidebar -->
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-content dashboard-bread-content d-flex align-items-center justify-content-between">
-                        <div class="user-bread-content d-flex align-items-center">
-                            <div class="bread-img-wrap">
-                                <img src="images/team10.jpg" alt="">
-                            </div>
-                            <div class="section-heading">
-                                <h2 class="section__title font-size-30">Howdy, Alex Smith</h2>
-                                <div class="rating-wrap d-flex mt-2">
-                                    <ul class="review-stars">
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star-o"></span></li>
-                                    </ul>
-                                    <span class="star-rating-wrap">
-                                        <span class="star__rating">4.2</span>
-                                        <span class="star__count">(70)</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="upload-btn-box">
-                            <form action="dashboard-submit-course.html#" method="post" enctype="multipart/form-data">
-                                <input type="file" name="files[]" class="filer_input" multiple="multiple">
-                            </form>
-                        </div>
-                    </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <div class="section-block"></div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <h3 class="widget-title">Submit Course</h3>
+                    <h3 class="widget-title">افزودن پایه به آقا / خانم امیرحسین فلک دین</h3>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <h3 class="widget-title">Basic info</h3>
+                            <h3 class="widget-title">اطلاعات پایه</h3>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="user-form">
@@ -449,22 +412,4 @@
     </div><!-- end modal -->
 </div><!-- end modal-form -->
 
-<!-- template js files -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/magnific-popup.min.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/fancybox.js"></script>
-<script src="js/smooth-scrolling.js"></script>
-<script src="js/tooltipster.bundle.min.js"></script>
-<script src="js/jquery.filer.min.js"></script>
-<script src="js/progress-bar.js"></script>
-<script src="js/date-time-picker.js"></script>
-<script src="js/emojionearea.min.js"></script>
-<script src="js/animated-skills.js"></script>
-<script src="js/main.js"></script>
 @endsection

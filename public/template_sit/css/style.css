@@ -1,11 +1,4 @@
 @charset "UTF-8";
-@font-face {
-    font-family: 'vazir';
-    src: url('fonts/vazir-digit.ttf') format('normal');
-}
-p,span,h1,h2,h3,h4,h5,h6,div,header,footer,main,a,td,th,tbody,table,lable{
-    font-family: vazir!important;
-}
 @keyframes rotate {
     100% {
         transform: rotate(360deg);
@@ -242,21 +235,19 @@ h1, h2, h3, h4, h5, h6, p {
 body {
     font-size: 16px;
     line-height: 28px;
-    font-family: vazir;
+    font-family: "Mukta", sans-serif;
     color: #7f8897;
     position: relative;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-weight: 500;
-    direction: rtl;
-    overflow-x: hidden;
-}
-i {
-    font-family: "FontAwesome" !important;
+    font-family: Vazir !important;
+    font-weight: 300;
 }
 
 .container {
     max-width: 1200px;
+
 }
 
 @media (min-width: 576px) {
@@ -2686,7 +2677,6 @@ i {
     transition: all 0.3s;
     border: 1px solid #51be78;
     font-weight: 500;
-    /*float: right;*/
 }
 
 .theme-btn:hover {
@@ -5134,7 +5124,6 @@ i {
 .register-area {
     position: relative;
     z-index: 1;
-    text-align: right;
 }
 
 .register-area:before, .register-area:after {
@@ -5318,7 +5307,6 @@ i {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    text-align: right;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -6463,7 +6451,6 @@ i {
 .benefit-area {
     position: relative;
     z-index: 1;
-    direction: ltr;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -10341,7 +10328,6 @@ i {
     justify-content: flex-end;
     padding-top: 20px;
     padding-bottom: 20px;
-    float: right;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -11311,7 +11297,7 @@ i {
 .dashboard-menu-content .logo-box {
     width: 305px;
     height: 100%;
-    /*border-right: 1px solid rgba(127, 136, 151, 0.2);*/
+    border-right: 1px solid rgba(127, 136, 151, 0.2);
 }
 
 @media (max-width: 1440px) {
@@ -11432,7 +11418,6 @@ i {
 }
 
 .dashboard-menu-content .logo-right-button .dropdown-menu {
-    left: auto !important;
     -webkit-transform: translate3d(0, 0, 0) !important;
     -moz-transform: translate3d(0, 0, 0) !important;
     -ms-transform: translate3d(0, 0, 0) !important;
@@ -11922,7 +11907,6 @@ i {
     background-color: #fff;
     width: 344px;
     padding-top: 140px;
-    right: 0;
 }
 
 @media (max-width: 1440px) {
@@ -11995,7 +11979,6 @@ i {
 .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item a i {
     margin-right: 10px;
     font-size: 18px;
-    padding: 0 6px;
 }
 
 .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item:hover > a {
@@ -12005,7 +11988,6 @@ i {
 
 .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.page-active, .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.active {
     background-color: #51be78;
-    color: white;
 }
 
 .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.page-active > a, .dashboard-sidebar .dashboard-nav-container .side-menu-ul .sidenav__item.active > a {
@@ -12027,13 +12009,13 @@ i {
 .dashboard-content-wrap {
     height: 100vh;
     padding-top: 45px;
-    padding-right: 368px;
-    padding-left: 30px;
+    padding-left: 368px;
+    padding-right: 30px;
 }
 
 @media (max-width: 1440px) {
     .dashboard-content-wrap {
-        padding-right: 330px;
+        padding-left: 330px;
     }
 }
 
@@ -13041,7 +13023,6 @@ i {
 
 .slider-area {
     position: relative;
-    direction: ltr;
 }
 
 .slider-area .owl-dots {
@@ -16673,37 +16654,57 @@ i {
         margin-top: 30px;
     }
 }
-.dropdown-container {
-    display: none;
-    background-color: #eaeaea5e;
-    padding-left: 8px;
-}
-.sidenav a, .dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}
-.login {
+
+/* Button 5 */
+.btn-5 {
     background: #51be78;
-    padding: 0px 15px;
-    margin-right: 10px;
-    border-radius: 10px 10px 0 0;
-    color: white !important;
+    color: #fff;
+    height: 70px;
+    min-width: 260px;
+    line-height: 24px;
+    font-size: 16px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
-.course-area , .testimonial-area , .blog-area {
-    direction: ltr;
+
+.btn-5:active {
+    background: #9053a9;
+    top: 2px;
 }
-.header-widget {
-    float: right;
+
+/* Button 5a */
+.btn-5a:hover span {
+    -webkit-transform: translateY(300%);
+    -moz-transform: translateY(300%);
+    -ms-transform: translateY(300%);
+    transform: translateY(300%);
 }
-.footer-area .section-bg-2 {
-    text-align: right;
+
+.btn-5a:before {
+    left: 0;
+    top: -100%;
 }
+
+.btn-5a:hover:before {
+    top: 0;
+}
+
+/* Button 5b */
+.btn-5b:hover span {
+    -webkit-transform: translateX(200%);
+    -moz-transform: translateX(200%);
+    -ms-transform: translateX(200%);
+    transform: translateX(200%);
+}
+
+.btn-5b:before {
+    left: -100%;
+    top: 0;
+}
+
+.btn-5b:hover:before {
+    left: 0;
+}
+
