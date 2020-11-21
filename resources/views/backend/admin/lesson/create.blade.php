@@ -25,8 +25,8 @@
             </section>
             {{ Form::open(['route'=>'lesson.store', 'method' => 'post','files' => true])}}
             <section class="form-group">
-                {{Form::label('title', 'عنوان درس : ', ['class' => 'control-label','style'=>'font-size: 15px;'])}}
-                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                {{Form::label('lesson_title', 'عنوان درس : ', ['class' => 'control-label','style'=>'font-size: 15px;'])}}
+                {!! Form::text('lesson_title', null, ['class' => 'form-control']) !!}
             </section>
             <section class="form-group">
                 {{Form::label('levels','پایه :',['class' => 'control-label','style'=>'font-size: 15px;'])}}

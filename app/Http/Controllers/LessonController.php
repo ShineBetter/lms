@@ -21,14 +21,14 @@ class LessonController extends Controller
 
     public function create()
     {
-        $levels = ['' => level::get()->pluck('title','id')];
+        $levels = ['' => level::get()->pluck('level_title','id')];
         return view('backend.admin.lesson.create', compact('levels'));
     }
 
     public function store(Request $request)
     {
         $lesson = new lesson();
-        $lesson->title = $request->title;
+        $lesson->lesson_title = $request->lesson_title;
         $lesson->level_id = $request->levels;
         $lesson->save();
         $comment = 'اطلاعات ، به درستی ذخیره شد. ';
@@ -44,7 +44,7 @@ class LessonController extends Controller
 
     public function edit($id)
     {
-        $levels = ['' => level::get()->pluck('title','id')];
+        $levels = ['' => level::get()->pluck('level_title','id')];
         $lesson = lesson::findorfail($id);
         $levelFind = level::findorfail($lesson->level_id);
         return view('backend.admin.lesson.edit',['levels'=>$levels,'lesson'=>$lesson,'levelFind'=>$levelFind]);
@@ -53,7 +53,7 @@ class LessonController extends Controller
     public function update(createLevelRequest $request, $id)
     {
         $lesson = lesson::where('id',$id)->first();
-        $lesson->title = $request->title;
+        $lesson->lesson_title = $request->lesson_title;
         $lesson->level_id = $request->levels;
         $lesson->save();
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';

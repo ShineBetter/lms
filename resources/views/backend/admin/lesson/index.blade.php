@@ -49,13 +49,10 @@
                         <label style="color: black">{{ ++$row }}</label>
                     </td>
                     <td>
-                        <label style="color: black">{{$item->title}}</label>
+                        <label style="color: black">{{$item->lesson_title}}</label>
                     </td>
                     <td>
-                        <label style="color: black">@php
-    $levelFind = \App\Models\level::where('id',$item->level_id)->first();
-   echo $levelFind->title;
-   @endphp</label>
+                        <label style="color: black">{{ \App\Models\level::where('id',$item->level_id)->first()->level_title}}</label>
                     </td>
                     <td style="text-align: center"><a href="{{route('lesson.edit',$item->id)}}"><input type="button"
                                                                                                        class="btn btn-info"

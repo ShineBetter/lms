@@ -26,8 +26,8 @@
 
             {{ Form::model($lesson,['route' => ['lesson.update',$lesson->id], 'method' => 'put','files'=>true])}}
             <section class="form-group">
-                {{Form::label('title', 'عنوان پایه : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title', $lesson->title, ['class' => 'form-control']) !!}
+                {{Form::label('lesson_title', 'عنوان درس : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
+                {!! Form::text('lesson_title', $lesson->lesson_title, ['class' => 'form-control']) !!}
                 {{Form::label('levels','پایه :',['class' => 'control-label','style'=>'font-size: 15px;'])}}
                 {{Form::select('levels',$levels,$levelFind->id,['class'=>'form-control'])}}
             </section>

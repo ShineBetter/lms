@@ -1,86 +1,54 @@
-<section class="dashboard-area">
-    <div class="dashboard-sidebar">
-        <div class="dashboard-nav-trigger">
-            <div class="dashboard-nav-trigger-btn">
-                <i class="la la-bars"></i> Dashboard Nav
-            </div>
+<div class="dashboard-sidebar">
+    <div class="dashboard-nav-trigger">
+        <div class="dashboard-nav-trigger-btn">
+            <i class="la la-bars"></i> Dashboard Nav
         </div>
-        <div class="dashboard-nav-container">
-            <div class="humburger-menu">
-                <div class="humburger-menu-lines side-menu-close"></div><!-- end humburger-menu-lines -->
-            </div><!-- end humburger-menu -->
-            <div class="side-menu-wrap">
-                <ul class="side-menu-ul">
-                    <li class="sidenav__item page-active">
-                        <a href="dashboard.html">
-                            <b><i class="fa fa-columns"></i>داشبورد</b>
-                        </a>
-                    </li>
-                    <li class="sidenav__item">
-                        <a class="dropdown-btn">
-                            <i class="fa fa-cog"></i>
-                            تنظیمات سایت
-                        </a>
-                        <div class="dropdown-container">
-                            <a href=""><b class="text-success">صفحه اصلی</b></a>
-                            <a href="{{route('banner.index')}}"><i class="fa fa-image"></i>بنــــر</a>
-                            <a href="#"><i class="fa fa-camera-retrot"></i>دبیران</a>
-                            <a href="#"><i class="fa fa-discourse"></i>دوره ها</a>
-                            <a href="#"><i class="fa fa-scroll"></i>آزمون ها</a>
-                            <a href="#"><i class="fa fa-comments"></i>کامنت ها</a>
-                            <a href="#"><i class="fa fa-scroll"></i>درباره ما</a>
-                            <a href="#"><i class="fa fa-images"></i>تصاویر آموزشگاه</a>
-
-
-                        </div>
-
-                    </li>
-                    <li class="sidenav__item">
-                        <a class="dropdown-btn">
-                            <i class="fa fa-cog"></i>
-                            جداول پایه
-                        </a>
-                        <div class="dropdown-container">
-                            <a href="{{route('level.index')}}"><i class="fa fa-image"></i>پایه ها</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>دروس</a>
-                            <a href="{{route('conference.index')}}"><i class="fa fa-image"></i>دوره ها</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>همایش ها</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>اساتید</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>دانش آموزان</a>
-                            <a href="{{route('lesson.index')}}"><i class="fa fa-image"></i>اولیا</a>
-                        </div>
-
-                    </li>
-{{--      --}}
-
-                    <li class="sidenav__item"><a href="dashboard-message.html"><i class="fa fa-comments"></i>پیغام
-                            <span class="badge badge-info radius-rounded p-1 ml-1">2</span></a>
-                    </li>
-                    <li class="sidenav__item"><a href="dashboard-reviews.html"><i class="fa fa-user-graduate"></i>دانش
-                            آموز</a>
-                    </li>
-                    <li class="sidenav__item"><a href="dashboard-earnings.html"><i class="fas fa-users"></i>والدین</a>
-                    </li>
-                    <li class="sidenav__item"><a href="dashboard-earnings.html"><i class="fa fa-chalkboard-teacher"></i>دبیران</a>
-                    </li>
-                    <li class="sidenav__item"><a href="dashboard-courses.html"><i class="fa fa-shopping-basket"></i>فروشگاه</a>
-                    </li>
-
-                    <li class="sidenav__item"><a href="dashboard-quiz.html"><i class="fa fa-edit"></i>لیست آزمونها</a>
-                    </li>
-
-                    <li class="sidenav__item"><a href="dashboard-submit-course.html"><i class="fa fa-list-ol"></i>لیست
-                            دوره ها و همایشات</a>
-                    </li>
-                    <li class="sidenav__item"><a href="index.html"><i class="fa fa-power-off"></i> خروج</a></li>
-                    <li class="sidenav__item">
-                        <a href="javascript:void(0)" data-toggle="modal" data-target=".account-delete-modal"><i
-                                class="fa fa-trash"></i>حذف اکانت</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- end side-menu-wrap -->
-        </div>
-    </div><!-- end dashboard-sidebar -->
-
-</section>
+    </div>
+    <div class="dashboard-nav-container">
+        <div class="humburger-menu">
+            <div class="humburger-menu-lines side-menu-close"></div><!-- end humburger-menu-lines -->
+        </div><!-- end humburger-menu -->
+        <div class="side-menu-wrap">
+            <ul class="side-menu-ul">
+                <li class="sidenav__item page-active"><a class="text-center" href="{{route('panel')}}"><i
+                            class="la la-dashboard"></i>
+                        <p class="w-100">داشبورد</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{route('level.index')}}"><i
+                            class="la la-file-video-o"></i>
+                        <p class="w-100">پایه ها</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{route('lesson.index')}}"><i
+                            class="la la-file-video-o"></i>
+                        <p class="w-100">دروس</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-courses"><i
+                            class="la la-file-video-o"></i>
+                        <p class="w-100">دوره ها</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-quiz"><i class="la la-bolt"></i>
+                        <p class="w-100">امتحانات</p></a></li>
+                {{--                <li class="sidenav__item"><a class="text-center" href="/dashboard-bookmark"><i class="la la-bookmark"></i><p class="w-100">Bookmarks</p></a></li>--}}
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
+                            class="la la-graduation-cap"></i>
+                        <p class="w-100">دوره های ثبت نام شده</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-message"><i class="la la-bell"></i>
+                        <p class="w-100">پیام ها</p> <span class="badge badge-info radius-rounded p-1 ml-1">2</span></a>
+                </li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-reviews"><i class="la la-star"></i>
+                        <p class="w-100">دوره های تایید شده</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-earnings"><i class="la la-dollar"></i>
+                        <p class="w-100">تراکنش ها</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-withdraw"><i class="la la-money"></i>
+                        <p class="w-100">درآمد</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-purchase-history"><i
+                            class="la la-shopping-cart"></i>
+                        <p class="w-100">دوره های تایید نشده</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-submit-course"><i
+                            class="la la-plus-circle"></i>
+                        <p class="w-100">ارسال دوره</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-settings"><i class="la la-cog"></i>
+                        <p class="w-100">تنظیمات سایت</p></a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{route('user.logout')}}"><i class="la la-power-off"></i>
+                        <p class="w-100">خروج</p></a></li>
+                {{--                <li class="sidenav__item"><a class="text-center" href="javascript:void(0)" data-toggle="modal" data-target=".account-delete-modal" ><i class="la la-trash"></i> <p class="w-100">Delete Account</p></a></li>--}}
+            </ul>
+        </div><!-- end side-menu-wrap -->
+    </div>
+</div>
