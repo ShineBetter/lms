@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/line-awesome.css')}}">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.js')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.js')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.js')}}"/>
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/fancybox.css')}}">
