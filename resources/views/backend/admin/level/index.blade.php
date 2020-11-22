@@ -57,6 +57,7 @@
                                                     <ul class="list-items">
                                                         <li>
                                                             <a href="{{route('level.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
+                                                            <x-delbtn route="level.destroy" id="{{$item->id}}"/>
                                                             <a href="{{route('level.destroy',$item->id)}}"><input type="button" class="btn btn-danger" style="font-size: 15px;font-family: Tahoma" value="حذف"></a>
                                                         </li>
                                                     </ul>
