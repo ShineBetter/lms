@@ -65,8 +65,8 @@ class FrontEndController extends Controller
 
     public function index()
     {
-        $banner=Banner::orderby('id','desc')->take(3)->skip(0)->get();;
-        return view('webSit.index',['banner'=>$banner]);
+//        $banner=Banner::orderby('id','desc')->take(3)->skip(0)->get();
+//        return view('webSit.index',['banner'=>$banner]);
     }
 
 
