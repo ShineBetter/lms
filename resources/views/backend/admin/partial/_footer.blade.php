@@ -16,10 +16,7 @@
 {{--</div>--}}
 
 
-<script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}""</script>
-<
-script
-src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
+<script src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/bootstrap-select.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/owl.carousel.min.js")}}"></script>
@@ -37,6 +34,26 @@ src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).on('click', '.trash', function (e) {
+        e.preventDefault(); // does not go through with the link.
+        var $this = $(this);
+        $.post({
+            type: 'post',
+            url: $this.attr('href') + '/' + $this.attr('id'),
+            data: {
+                'id': $this.attr('id'),
+                '_method': 'delete'
+            }
+        }).done(function (data) {
+            $('.table').html($(data).find('.table').html())
+        });
+    });
+
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
@@ -47,7 +64,6 @@ src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
         $.ajax({
             url: "student?page=" + page,
             success: function (data) {
-                console.log()
                 $('.data-table').html($(data).find('.data-table').html());
             }
         });

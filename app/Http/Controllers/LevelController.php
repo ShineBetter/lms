@@ -12,7 +12,17 @@ class LevelController extends Controller
     public function index()
     {
         $level = level::paginate(4);
-        return view('backend.admin.level.index', ['level' => $level,'row'=>0]);
+        $table = [
+            'th' => [
+                'ردیف',
+                'پایه',
+                'عملیات',
+            ],
+            'tbody' => $level
+        ];
+
+
+        return view('backend.admin.level.index', ['level' => $table,'row'=>0]);
     }
 
     public function create()
@@ -20,7 +30,7 @@ class LevelController extends Controller
         return view('backend.admin.level.create');
     }
 
-    public function store(createLevelRequest $request)
+    public function store(Request $request)
     {
         $level=new level();
         $level->level_title = $request->level_title;

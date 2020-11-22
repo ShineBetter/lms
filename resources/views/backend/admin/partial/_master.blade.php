@@ -5,7 +5,7 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>پنل کاربری || @section('title')آموزشگاه@show</title>
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+    <script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}"></script>
     <!-- end inject -->
     <style>
 

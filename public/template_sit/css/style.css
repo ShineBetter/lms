@@ -2664,7 +2664,7 @@ body {
     background-color: #51be78;
     color: #fff;
     padding: 0 30px 0 30px;
-    line-height: 48px;
+    line-height: 36px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -16764,7 +16764,7 @@ section {
 
 .trash i {
     position: relative;
-    width: 0.14em;
+    width: 0.1337em;
     height: 0.8em;
     background: #fff;
     display: block;
@@ -16775,7 +16775,7 @@ section {
 
 .trash i:after {
     content: '';
-    width: 0.14em;
+    width: 0.1337em;
     height: 0.7em;
     background: #fff;
     position: absolute;
@@ -16790,7 +16790,7 @@ section {
     height: 0.7em;
     background: #fff;
     position: absolute;
-    right: -4.5px;
+    right: -5.3px;
     top: 2px;
     border-radius: 5px;
 }
