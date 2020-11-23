@@ -58,19 +58,36 @@ class LevelController extends Controller
                 'files' => true,
             ],
                 'input' => [
-                    'text' => [
-                        'name' => 'level_title',
-                        'class' => 'form-control',
-                        'placeholder' => 'نام پایه',
-                        'values' => true,
-                        'value' => 'level_title'
+                    'label_level_title' => [
+                        'for' => 'level_title',
+                        'class' => 'label-text',
+                        'text' => 'نام پایه',
                     ],
-                    'password' => [
-                        'name' => 'passtitle',
+                    'level_title' => [
+                        'name' => 'level_title',
+                        'type' => 'text',
                         'class' => 'form-control',
                         'placeholder' => 'نام پایه',
                         'values' => true,
-                        'value' => 'id',
+                        'value' => 'level_title',
+                        'required' => true,
+                    ],
+                    'label_passtitle' => [
+                        'for' => 'passtitle',
+                        'class' => 'label-text',
+                        'text' => 'پسورد',
+                    ],
+                    'passtitle' => [
+                        'name' => 'passtitle',
+                        'type' => 'password',
+                        'class' => 'form-control',
+                        'placeholder' => 'پسورد',
+                        'values' => false,
+                    ],
+                    'label_gender' => [
+                        'for' => 'gender',
+                        'class' => 'label-text',
+                        'text' => 'انتخاب',
                     ],
                 ],
             'org' => $level,
