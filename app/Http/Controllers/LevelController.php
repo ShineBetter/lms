@@ -22,7 +22,7 @@ class LevelController extends Controller
         ];
 
 
-        return view('backend.admin.level.index', ['level' => $table,'row'=>0]);
+        return view('backend.admin.level.index', ['level' => $table, 'row' => 0]);
     }
 
     public function create()
@@ -32,7 +32,7 @@ class LevelController extends Controller
 
     public function store(Request $request)
     {
-        $level=new level();
+        $level = new level();
         $level->level_title = $request->level_title;
         $level->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
@@ -50,10 +50,35 @@ class LevelController extends Controller
     public function edit($id)
     {
         $level = level::findorfail($id);
-        return view('backend.admin.level.edit', compact('level'));
+        $form = [
+            'type' => 'edit',
+            'form' => [
+                'method' => 'put',
+                'action' => 'level.update',
+                'files' => true,
+            ],
+                'input' => [
+                    'text' => [
+                        'name' => 'level_title',
+                        'class' => 'form-control',
+                        'placeholder' => 'نام پایه',
+                        'values' => true,
+                        'value' => 'level_title'
+                    ],
+                    'password' => [
+                        'name' => 'passtitle',
+                        'class' => 'form-control',
+                        'placeholder' => 'نام پایه',
+                        'values' => true,
+                        'value' => 'id',
+                    ],
+                ],
+            'org' => $level,
+        ];
+        return view('backend.admin.level.edit', compact('form'));
     }
 
-    public function update(createLevelRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $level = level::where('id', $id)->first();
         $level->level_title = $request->level_title;

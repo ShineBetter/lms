@@ -79,8 +79,5 @@
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-content-wrap -->
-    </section><!-- end dashboard-area -->
-    <!-- ================================
-        END DASHBOARD AREA
-    ================================= -->
+
 @endsection

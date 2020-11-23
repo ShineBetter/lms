@@ -73,3 +73,6 @@
 <div id="scroll-top">
     <i class="far fa-hand-point-up"></i>
 </div>
+@includeIf('layout.js')
+</body>
+</html>

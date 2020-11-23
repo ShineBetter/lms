@@ -3564,27 +3564,5 @@
 {{--</div><!-- end tooltip_templates -->--}}
 
 
-<!-- template js files -->
-{{--<script src="/js/jquery-3.4.1.min.js"></script>--}}
-<script src="/js/popper.min.js"></script>
-{{--<script src="/js/bootstrap.min.js"></script>--}}
-<script src="/js/bootstrap-select.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="/js/isotope.js"></script>
-<script src="/js/waypoint.min.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<script src="/js/particles.min.js"></script>
-<script src="/js/particlesRun.js"></script>
-<script src="/js/fancybox.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/date-time-picker.js"></script>
-<script src="/js/jquery.filer.min.js"></script>
-<script src="/js/emojionearea.min.js"></script>
-<script src="/js/smooth-scrolling.js"></script>
-<script src="/js/tooltipster.bundle.min.js"></script>
-<script src="/js/main-rtl.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>
+
 @endsection

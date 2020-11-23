@@ -1,188 +1,290 @@
-@extends('webSit.partial._master')
-@section('main.content')
-    <!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-    <section class="breadcrumb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-content">
-                        <div class="section-heading">
-                            <h2 class="section__title">Sign Up</h2>
-                        </div>
-                        <ul class="breadcrumb__list">
-                            <li class="active__list-item"><a href="index.html">home</a></li>
-                            <li class="active__list-item">pages</li>
-                            <li>Sign Up</li>
-                        </ul>
-                    </div><!-- end breadcrumb-content -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end breadcrumb-area -->
-    <!-- ================================
-        END BREADCRUMB AREA
-    ================================= -->
-    <section class="sign-up section--padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mx-auto">
-                    <div class="card-box-shared">
-{{--                        <section>--}}
+@extends('webSit.layout.head')
+@section('title','ورود')
+@section('cnt')
+    @php
+        $header = "";
+            $loader = "dont";
+    $footer = "";
+    @endphp
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-{{--                            @if (session()->has('errors'))--}}
+        .register-elearning {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+            0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            height: 100%;
+            top: 2em;
+            margin-bottom: 0em;
+            direction: rtl;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-{{--                                <div class="alert alert-danger">--}}
-{{--                                    <ul>--}}
+        .welcome-h1 {
+            font-weight: bold;
+            margin: 0;
+            direction: rtl;
+        }
 
-{{--                                        <li>{{ session('errors') }}</li>--}}
+        h2 {
+            text-align: center;
+        }
 
-{{--                                    </ul>--}}
-{{--                                </div>--}}
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
 
-{{--                            @endif--}}
-{{--                        </section>--}}
-                        <div class="card-box-shared-title text-center">
-                            <h3 class="widget-title font-size-25">ایجاد حساب کاربری <br> شروع یادگیری!</h3>
-                        </div>
-                        <div class="card-box-shared-body">
-                            <div class="contact-form-action">
-                                {{ Form::open(['route'=>'register.submit', 'method' => 'post','files' => true])}}
+        .bottom-welcome span {
+            font-size: 12px;
+        }
+        .button-register-stpr {
+            border-radius: 20px;
+            border: 1px solid #95f5c6;
+            background: linear-gradient(to right, #ffffff, #a6ffd9);
+            color: #00a470;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 0.5s ease-in;
+            margin-top: 1em;
+        }
+        .button-register-stpr:hover {
+            background: linear-gradient(to right, #a6ffd9, #ffffff);
+            transition: all 0.5s ease-in-out;
+        }
+        .button-register {
+            border-radius: 2px;
+            border: 1px solid #00d765;
+            background-color: #00fc92;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 0.2s ease-in;
+            margin-top: 1em;
+        }
+        .button-register:hover {
+            background-color: #00c861;
+            transition: all 0.2s ease-in;
+        }
+        .button-register:active {
+            transform: scale(0.95);
+        }
 
-                                <div class="row">
-                                        <div class="col-lg-4 column-td-half">
-                                            <div class="form-group">
-                                                <button class="theme-btn w-100" type="submit">
-                                                    <i class="fa fa-google mr-2"></i>گوگل
-                                                </button>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 column-td-half">
-                                            <div class="form-group">
-                                                <button class="theme-btn w-100" type="submit">
-                                                    <i class="fa fa-facebook mr-2"></i>فیسبوک
-                                                </button>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 column-td-half">
-                                            <div class="form-group">
-                                                <button class="theme-btn w-100" type="submit">
-                                                    <i class="fa fa-twitter mr-2"></i>توییتر
-                                                </button>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-12">
-                                            <div class="account-assist mt-3 margin-bottom-35px text-center">
-                                                <p class="account__desc">or</p>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12 ">
-                                            <div class="input-box">
-                                                <label class="label-text">نام<span class="primary-color-2 ml-1">*</span></label>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="text" name="name" placeholder="نام">
-                                                    <span class="la la-user input-icon"></span>
-                                                    @error('name')
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12 ">
-                                            <div class="input-box">
-                                                <label class="label-text">نام خانوادگی<span class="primary-color-2 ml-1">*</span></label>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="text" name="lastName" placeholder="نام خانوادگی">
-                                                    <span class="la la-user input-icon"></span>
-                                                    @error('lastName')
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-{{--                                        <div class="col-lg-12 ">--}}
-{{--                                            <div class="input-box">--}}
-{{--                                                <label class="label-text">نام کاربری<span class="primary-color-2 ml-1">*</span></label>--}}
-{{--                                                <div class="form-group">--}}
-{{--                                                    <input class="form-control" type="text" name="text" placeholder="نام کاربری">--}}
-{{--                                                    <span class="la la-user input-icon"></span>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div><!-- end col-md-12 -->--}}
-                                        <div class="col-lg-12">
-                                            <div class="input-box">
-                                                <label class="label-text">آدرس ایمیل<span class="primary-color-2 ml-1">*</span></label>
-                                                <div class="form-group">
-{{--                                                    {{Form::email('email',"آدرس ایمیل",null,['class'=>'form-control'])}}--}}
-                                                    <input class="form-control" type="text" name="email" placeholder="آدرس ایمیل">
-                                                    <span class="la la-envelope input-icon"></span>
-                                                    @error('email')
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12">
-                                            <div class="input-box">
-                                                <label class="label-text">رمز عبور<span class="primary-color-2 ml-1">*</span></label>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="password" name="password" placeholder="رمز عبور">
-                                                    <span class="la la-lock input-icon"></span>
-                                                    @error('password')
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12">
-                                            <div class="input-box">
-                                                <label class="label-text">تکرار رمز عبور<span class="primary-color-2 ml-1">*</span></label>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="password" name="password_confirmation" placeholder="تکرار رمز عبور">
-                                                    <span class="la la-lock input-icon"></span>
-                                                    @error('password_confirmation')
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="custom-checkbox">
-                                                    <input type="checkbox" id="chb1">
-                                                    <label for="chb1"><span class="line-height-24 d-block">Yes! I want to get the most out of Aduca by receiving emails with exclusive deals, personal recommendations and learning tips!</span></label>
-                                                </div>
-                                                <div class="custom-checkbox">
-                                                    <input type="checkbox" id="chb2">
-                                                    <label for="chb2">By signing up, you agree to our <a href="sign-up.html#">Terms of Use</a> and
-                                                        <a href="sign-up.html#">Privacy Policy</a>.
-                                                    </label>
-                                                </div>
+        .button-register:focus {
+            outline: none;
+        }
 
-                                            </div>
-                                        </div><!-- end col-md-12 -->
+        .button-register-ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+
+        .welcome-form {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .input-welcome {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
 
 
 
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
 
-                                        <div class="col-lg-12 ">
-                                            <div class="btn-box">
-                                                <button class="theme-btn" type="submit">ثبت نام</button>
-                                            </div>
-                                        </div><!-- end col-md-12 -->
-                                        <div class="col-lg-12">
-                                            <p class="mt-4">Already have an account? <a href="{{route('login.form')}}" class="primary-color-2">ورود</a></p>
-                                        </div><!-- end col-md-12 -->
-                                    </div><!-- end row -->
-                                {{ Form::close() }}
-                            </div><!-- end contact-form -->
-                        </div>
-                    </div>
-                </div><!-- end col-md-7 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section>
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        @keyframes show {
+            0%, 49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            50%, 100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+            direction: ltr;
+        }
+
+        .container.right-panel-active .overlay-container{
+            transform: translateX(-100%);
+        }
+
+        .overlay {
+            background: #00ff95;
+            background: -webkit-linear-gradient(to right, #00a92c, #00ff95);
+            background: linear-gradient(to right, #00a92c, #00ff95);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #FFFFFF;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+    </style>
+    <div class="container register-elearning" id="container">
+        <div class="form-container sign-in-container">
+            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'welcome-form','files' => true])}}
+                <h1 class="welcome-h1">ثبت نام دانش آموز</h1>
+                <span class="text-dark bottom-welcome">لطفا فرم زیر را پر کنید.</span>
+                <input class="input-welcome" type="text" name="name" placeholder="نام"/>
+                <input class="input-welcome" type="text" name="lastName" placeholder="نام خانوادگی"/>
+                <input class="input-welcome" type="email" name="email" placeholder="ایمیل"/>
+                <input class="input-welcome" type="number" name="nationalNumber" placeholder="کد ملی"/>
+                <input class="input-welcome" type="text" name="level" placeholder="پایه تحصیلی"/>
+                <input class="input-welcome" type="date" name="birthday" value="1990/01/01" placeholder="تاریخ تولد"/>
+                <input class="input-welcome" type="text" name="parentName" placeholder="نام اولیاء"/>
+                <input class="input-welcome" type="number" name="Phone" placeholder="شماره تلفن"/>
+                <input class="input-welcome" type="text" name="address" placeholder="آدرس"/>
+                <input type="submit" class="button-register" value="ثبت نام"/>
+            {{ Form::close() }}
+
+        </div>
+        <div class="form-container sign-up-container">
+            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'welcome-form','files' => true])}}
+            <h1 class="welcome-h1">ثبت نام والدین</h1>
+                <span class="text-dark bottom-welcome">لطفا فرم زیر را پر کنید.</span>
+                <input class="input-welcome" name="name" type="text" placeholder="نام"/>
+                <input class="input-welcome" type="text" name="lastName" placeholder="نام خانوادگی"/>
+                <input class="input-welcome" type="email" name="email" placeholder="ایمیل"/>
+                <input class="input-welcome" type="number" name="nationalNumber" placeholder="کدملی"/>
+                <input class="input-welcome" type="number" name="mobile" placeholder="شماره تماس"/>
+                <input class="input-welcome" type="text" name="address" placeholder="آدرس"/>
+                <input type="submit" class="button-register" value="ثبت نام"/>
+            {{ Form::close() }}
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="welcome-h1">خوش آمدید به آموزشگاه ...</h1>
+                    <button class="button-register-ghost button-register-stpr" id="signIn">ورود دانش آموز</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="welcome-h1">خوش آمدید به آموزشگاه...</h1>
+                    <button class="button-register-ghost button-register-stpr" id="signUp">ورود اولیاء</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
 @endsection
