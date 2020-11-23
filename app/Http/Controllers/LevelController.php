@@ -84,11 +84,6 @@ class LevelController extends Controller
                         'placeholder' => 'پسورد',
                         'values' => false,
                     ],
-                    'label_gender' => [
-                        'for' => 'gender',
-                        'class' => 'label-text',
-                        'text' => 'انتخاب',
-                    ],
                 ],
             'org' => $level,
         ];
