@@ -15,7 +15,16 @@ class LessonController extends Controller
     public function index()
     {
         $lesson = lesson::paginate(4);
-        return view('backend.admin.lesson.index', ['lesson' => $lesson, 'row' => 0]);
+        $table = [
+            'th' => [
+                'ردیف',
+                'نام درس',
+                'پایه',
+                'عملیات',
+            ],
+            'tbody' => $lesson
+        ];
+        return view('backend.admin.lesson.index', ['lesson' => $table, 'row' => 0]);
     }
 
 

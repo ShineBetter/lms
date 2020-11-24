@@ -23,54 +23,64 @@
                             <x-btn route="level.create"/>
 
                         </div>
-                        <div class="card-box-shared-body">
-                            <div class="statement-table purchase-table table-responsive mb-5">
+                        <div class="card-box-shared-body ">
+                            <div class="statement-table purchase-table table-responsive mb-5 data-table">
                                 <table class="table">
                                     <thead>
                                     <tr>
 
-                                        @foreach($level['th'] as $item)
+                                        @foreach($table['th'] as $item)
                                             <th scope="col">{{$item}}</th>
                                         @endforeach
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($level['tbody'] as $key => $item)
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li class="mb-1">
-                                                            <p>{{ $key + $level['tbody']->firstItem() }}</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$item->level_title}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>
-                                                            <a href="{{route('level.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
-                                                            <x-delbtn route="level" id="{{$item->id}}"/>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
+                                    @foreach($table['data'] as $keys => $items)
+                                        <tr class="table-tr">
+                                            @foreach($table['tbody']['td'] as $key => $item)
+                                                @if($key == 'row')
+                                                    <td scope="row">
+                                                        <div class="statement-info">
+                                                            <ul class="list-items">
+                                                                <li class="mb-1 row-count">
+                                                                    {{--                                                                    {{ $key == 'row' ? ++$item : '' }}--}}
+                                                                    {{  $keys + $table['data']->firstItem() }}
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                @else
+                                                    <td scope="row">
+                                                        <div class="statement-info">
+                                                            <ul class="list-items">
+                                                                <li class="mb-1">
+                                                                    {{ $items->$item }}
+                                                                    {{--                                                            <p>{{ $key + $level['tbody']->firstItem() }}</p>--}}
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statement-info">
+                                                            <ul class="list-items">
+                                                                <li>
+                                                                    <a href="{{route('level.edit',$items->id)}}"><input
+                                                                            type="button" class="btn btn-info"
+                                                                            style="font-size: 15px;font-family: Tahoma"
+                                                                            value="ویرایش"></a>
+                                                                    <x-delbtn route="level" id="{{$items->id}}"/>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                @endif
+
+                                            @endforeach
                                         </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
-{{--                                {{ $level->links() }}--}}
+                                                                {{ $table['data']->links() }}
                             </div>
                         </div>
 

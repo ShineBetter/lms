@@ -4,30 +4,88 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createLevelRequest;
 use App\Models\level;
+use App\User;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
 {
-
+//@php
+//echo $table['tbody']['td'][$key]
+//@endphp
     public function index()
     {
-        $level = level::paginate(4);
+        $level = level::paginate(2);
         $table = [
             'th' => [
                 'ردیف',
                 'پایه',
                 'عملیات',
             ],
-            'tbody' => $level
+
+            'tbody' => [
+                'td' => [
+                    'row' => level::count(),
+                    'title' => 'level_title',
+                ],
+            ],
+            'data' => $level
+//            'other'
         ];
+        return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
+    }
 
+    public function fetch(Request $request)
+    {
+        if ($request->ajax()) {
+            $level = level::paginate(2);
+            $table = [
+                'th' => [
+                    'ردیف',
+                    'پایه',
+                    'عملیات',
+                ],
 
-        return view('backend.admin.level.index', ['level' => $table, 'row' => 0]);
+                'tbody' => [
+                    'td' => [
+                        'row' => 0,
+                        'title' => 'level_title',
+                    ],
+                ],
+                'data' => $level
+//            'other'
+            ];
+            return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
+        }
     }
 
     public function create()
     {
-        return view('backend.admin.level.create');
+        $form = [
+            'type' => 'add',
+            'form' => [
+                'method' => 'post',
+                'action' => 'level.store',
+                'files' => true,
+            ],
+            'input' => [
+                'label_level_title' => [
+                    'for' => 'level_title',
+                    'class' => 'label-text',
+                    'text' => 'نام پایه',
+                ],
+                'level_title' => [
+                    'name' => 'level_title',
+                    'type' => 'text',
+                    'class' => 'form-control',
+                    'placeholder' => 'نام پایه',
+                    'values' => true,
+                    'value' => 'level_title',
+                    'required' => true,
+                ],
+            ],
+            'org' => '',
+        ];
+        return view('backend.admin.level.index',['form' => $form,'type' => 'add']);
     }
 
     public function store(Request $request)
@@ -72,22 +130,10 @@ class LevelController extends Controller
                         'value' => 'level_title',
                         'required' => true,
                     ],
-                    'label_passtitle' => [
-                        'for' => 'passtitle',
-                        'class' => 'label-text',
-                        'text' => 'پسورد',
-                    ],
-                    'passtitle' => [
-                        'name' => 'passtitle',
-                        'type' => 'password',
-                        'class' => 'form-control',
-                        'placeholder' => 'پسورد',
-                        'values' => false,
-                    ],
                 ],
             'org' => $level,
         ];
-        return view('backend.admin.level.edit', compact('form'));
+        return view('backend.admin.level.index', ['form' => $form,'type' => 'edit']);
     }
 
     public function update(Request $request, $id)

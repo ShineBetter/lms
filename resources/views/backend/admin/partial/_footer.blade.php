@@ -53,7 +53,6 @@
             $('.table').html($(data).find('.table').html())
         });
     });
-
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
@@ -61,8 +60,9 @@
     });
 
     function fetch_data(page) {
+        var url = location.pathname.slice(1);
         $.ajax({
-            url: "student?page=" + page,
+            url: url+"?page=" + page,
             success: function (data) {
                 $('.data-table').html($(data).find('.data-table').html());
             }
