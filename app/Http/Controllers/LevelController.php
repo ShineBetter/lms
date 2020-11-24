@@ -9,35 +9,10 @@ use Illuminate\Http\Request;
 
 class LevelController extends Controller
 {
-//@php
-//echo $table['tbody']['td'][$key]
-//@endphp
-    public function index()
-    {
-        $level = level::paginate(2);
-        $table = [
-            'th' => [
-                'ردیف',
-                'پایه',
-                'عملیات',
-            ],
-
-            'tbody' => [
-                'td' => [
-                    'row' => level::count(),
-                    'title' => 'level_title',
-                ],
-            ],
-            'data' => $level
-//            'other'
-        ];
-        return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
-    }
-
     public function fetch(Request $request)
     {
         if ($request->ajax()) {
-            $level = level::paginate(2);
+            $data = level::paginate(4);
             $table = [
                 'th' => [
                     'ردیف',
@@ -51,11 +26,31 @@ class LevelController extends Controller
                         'title' => 'level_title',
                     ],
                 ],
-                'data' => $level
-//            'other'
+                'data' => $data
             ];
             return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
         }
+    }
+
+    public function index()
+    {
+        $data = level::paginate(4);
+        $table = [
+            'th' => [
+                'ردیف',
+                'پایه',
+                'عملیات',
+            ],
+
+            'tbody' => [
+                'td' => [
+                    'row' => 0,
+                    'title' => 'level_title',
+                ],
+            ],
+            'data' => $data
+        ];
+        return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
     }
 
     public function create()
@@ -107,7 +102,7 @@ class LevelController extends Controller
 
     public function edit($id)
     {
-        $level = level::findorfail($id);
+        $data = level::findorfail($id);
         $form = [
             'type' => 'edit',
             'form' => [
@@ -131,7 +126,7 @@ class LevelController extends Controller
                         'required' => true,
                     ],
                 ],
-            'org' => $level,
+            'org' => $data,
         ];
         return view('backend.admin.level.index', ['form' => $form,'type' => 'edit']);
     }

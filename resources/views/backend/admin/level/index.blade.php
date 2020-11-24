@@ -1,7 +1,6 @@
 @extends('backend.admin.partial._master')
 @section('title','پایه ها')
 @section('cntd')
-    {{--    @parent--}}
     @php
         $header="";
         $loader="dont";
