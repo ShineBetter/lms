@@ -106,7 +106,11 @@
 </style>
 
 @empty($type)
-    <button route="{{route("$route")}}" class="button-add">
+    @if($routeParam != '')
+    <button route="{{route("$route",$routeParam)}}" class="button-add">
+        @else
+            <button route="{{route("$route")}}" class="button-add">
+            @endif
         <div class="add-lms">
             <span class="text-add">{{ $title ?? 'افزودن' }}</span>
         </div>

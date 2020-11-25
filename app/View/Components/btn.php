@@ -9,6 +9,7 @@ class btn extends Component
     public $title = '';
     public $class = '';
     public $route = '';
+    public $routeParam = '';
     public $aclass = '';
     public $type = '';
     /**
@@ -16,11 +17,12 @@ class btn extends Component
      *
      * @return void
      */
-    public function __construct($title =null,$class =null,$route =null,$aclass =null,$type =null)
+    public function __construct($title =null,$class =null,$route =null,$routeParam =null,$aclass =null,$type =null)
     {
         $this->title = $title;
         $this->class = $class;
         $this->route = $route;
+        $this->routeParam = $routeParam;
         $this->aclass = $aclass;
         $this->type = $type;
     }

@@ -17,6 +17,47 @@ class ParentsController extends Controller
     public function index()
     {
         $parents = User::where('user_role','parent')->paginate(4);
+        $table = [
+            //table th
+            'th' => [
+                'ردیف',
+                'نام',
+                'نام خانوادگی',
+                'کد ملی',
+                '',
+                'نام',
+                'عملیات',
+            ],
+
+            //table tbody
+            'tbody' => [
+                'td' => [
+
+                    //table td items
+                    'row' => [
+                        'row' => 0,
+                    ],
+                    'level_title' => [
+                        'level_title' => 'level_title',
+                    ],
+                ],
+            ],
+            'data' => $data,
+
+            //what table can do?
+            'do' => [
+                //enable or disable do
+                'status' => true,
+                //enable or disable add button
+                'add' => true,
+                //enable or disable edit button
+                'edit' => true,
+                //enable or disable delete button
+                'delete' => true,
+            ],
+            //add button action
+            'action' => 'level'
+        ];
         return view('backend.admin.parents.index', ['parents' => $parents, 'row' => 0]);
     }
 

@@ -12,7 +12,7 @@ class LevelController extends Controller
     public function fetch(Request $request)
     {
         if ($request->ajax()) {
-            $data = level::paginate(4);
+            $data = level::paginate(10);
             $table = [
                 //table th
                 'th' => [
@@ -56,7 +56,7 @@ class LevelController extends Controller
 
     public function index()
     {
-        $data = level::paginate(4);
+        $data = level::paginate(10);
         $table = [
             //table th
             'th' => [
@@ -100,29 +100,65 @@ class LevelController extends Controller
     public function create()
     {
         $form = [
+            //form type (add | edit)
             'type' => 'add',
+
+            //back action
+            'action' => 'lesson.index',
+
+            //show name of user
+            'hasName' => true,
+
+            //back action param
+            'actionParam' => '',
+
+            //form property
             'form' => [
+                //form method (post | get | put | ...)
                 'method' => 'post',
+                //form action (route name)
                 'action' => 'level.store',
+                //accept file status
                 'files' => true,
             ],
+            //inputs
             'input' => [
+                //rules :
+                //*** lable for input must start with label_ ***
+                //*** array name must be the same as the input id ***
+                //*** input type select = <select></select> ***
+
+                //array name = input id
                 'label_level_title' => [
+                    //for which id ?
                     'for' => 'level_title',
+                    //label class
                     'class' => 'label-text',
+                    //label text
                     'text' => 'نام پایه',
                 ],
+                //array name = input id
                 'level_title' => [
+                    //input name
                     'name' => 'level_title',
+                    //input type
                     'type' => 'text',
+                    //input class
                     'class' => 'form-control',
+                    //input placeholder
                     'placeholder' => 'نام پایه',
-                    'values' => true,
+                    //show values in the input status
+                    'values' => false,
+                    //enable input status
+                    'enable' => true,
+                    //input value
                     'value' => 'level_title',
+                    //input required status
                     'required' => true,
                 ],
             ],
-            'org' => '',
+            //data of this model
+                'data' => '',
         ];
         return view('backend.admin.level.index',['form' => $form,'type' => 'add']);
     }
@@ -148,29 +184,65 @@ class LevelController extends Controller
     {
         $data = level::findorfail($id);
         $form = [
+            //form type (add | edit)
             'type' => 'edit',
+
+            //back action
+            'action' => 'lesson.index',
+
+            //show name of user
+            'hasName' => true,
+
+            //back action param
+            'actionParam' => '',
+
+            //form property
             'form' => [
+                //form method (post | get | put | ...)
                 'method' => 'put',
+                //form action (route name)
                 'action' => 'level.update',
+                //accept file status
                 'files' => true,
             ],
-                'input' => [
-                    'label_level_title' => [
-                        'for' => 'level_title',
-                        'class' => 'label-text',
-                        'text' => 'نام پایه',
-                    ],
-                    'level_title' => [
-                        'name' => 'level_title',
-                        'type' => 'text',
-                        'class' => 'form-control',
-                        'placeholder' => 'نام پایه',
-                        'values' => true,
-                        'value' => 'level_title',
-                        'required' => true,
-                    ],
+            //inputs
+            'input' => [
+                //rules :
+                //*** lable for input must start with label_ ***
+                //*** array name must be the same as the input id ***
+                //*** input type select = <select></select> ***
+
+                //array name = input id
+                'label_level_title' => [
+                    //for which id ?
+                    'for' => 'level_title',
+                    //label class
+                    'class' => 'label-text',
+                    //label text
+                    'text' => 'نام پایه',
                 ],
-            'org' => $data,
+                //array name = input id
+                'level_title' => [
+                    //input name
+                    'name' => 'level_title',
+                    //input type
+                    'type' => 'text',
+                    //input class
+                    'class' => 'form-control',
+                    //input placeholder
+                    'placeholder' => 'نام پایه',
+                    //show values in the input status
+                    'values' => true,
+                    //enable input status
+                    'enable' => true,
+                    //input value
+                    'value' => 'level_title',
+                    //input required status
+                    'required' => true,
+                ],
+            ],
+            //data of this model
+            'data' => $data,
         ];
         return view('backend.admin.level.index', ['form' => $form,'type' => 'edit']);
     }

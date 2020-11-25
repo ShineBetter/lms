@@ -5,6 +5,15 @@
         $header="";
         $loader="dont";
         $sidebar="";
+        $backAction = \Illuminate\Support\Arr::has($form,'action');
+        $routeParam = \Illuminate\Support\Arr::has($form,'actionParam');
+        if ($backAction){
+        $backAction = $form['action'];
+        }
+        if ($routeParam){
+        $routeParam = $form['actionParam'];
+        }
+
         $forms = $form['form'];
         $inputs = $form['input'];
         $class = $form['data'];
@@ -14,8 +23,8 @@
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    الان برات پول میریزم این لینکی که برات میفرستمو بخر
-                    <h3 class="widget-title">افزودن پایه به آقا / خانم {{\App\User::findorfail(Auth::id())->profile()->first()->name}}</h3>
+                    <h3 class="widget-title">افزودن پایه به آقا /
+                        خانم {{\App\User::findorfail(Auth::id())->profile()->first()->name}}</h3>
                 </div>
             </div>
             <div class="row mt-5">
@@ -94,7 +103,9 @@
                                                                     <input type="{{$type}}" name="{{$name}}"
                                                                            class="{{$inputClass}}"
                                                                            id="{{$key}}"
-                                                                           placeholder="{{$placeholder}}" {{$valueFlag ? "value=$val" : ''}} {{ $required ? 'required' : '' }}>
+                                                                           placeholder="{{$placeholder}}"
+                                                                           test='{{$val}}'
+                                                                           value='{{$valueFlag ? $val : ''}}' {{ $required ? 'required' : '' }}>
                                                                     <span class="la la-file-text-o input-icon"></span>
                                                                 @endif
                                                                 @if($type == 'select')
@@ -108,7 +119,7 @@
                                                                     <span class="la la-file-text-o input-icon"></span>
                                                                 @endif
                                                                 @if($type == 'select')
-                                                                    {{ Form::select($key, $select_model, $select_items[$selected_value], ['class' => "$inputClass"]) }}
+                                                                    {{ Form::select($key, $select_model, null, ['class' => "$inputClass"]) }}
                                                                 @endif
                                                             @endif
                                                         @endif
@@ -120,7 +131,14 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <x-btn type="submit" title="ثبت" class="theme-btn float-left"/>
-                                            <x-btn route="level.index" title="بازگشت" class="theme-btn float-left"/>
+                                            @if($routeParam != '')
+                                                <x-btn route="{{$backAction}}" routeParam="{{$routeParam}}"
+                                                       title="بازگشت" class="theme-btn float-left"/>
+                                            @else
+                                                <x-btn route="{{$backAction}}"
+                                                       title="بازگشت" class="theme-btn float-left"/>
+
+                                            @endif
                                         </div>
                                     </div><!-- end row -->
                                     {{ Form::close() }}

@@ -15,7 +15,7 @@ class LessonController extends Controller
     public function fetch(Request $request)
     {
         if ($request->ajax()) {
-            $data = level::paginate(4);
+            $data = level::paginate(10);
             $table = [
                 //table th
                 'th' => [
@@ -76,7 +76,7 @@ class LessonController extends Controller
 
     public function index()
     {
-        $data = lesson::paginate(4);
+        $data = lesson::paginate(10);
         $table = [
             //table th
             'th' => [
@@ -137,10 +137,22 @@ class LessonController extends Controller
 
     public function create()
     {
-        $data = ['' => level::get()->pluck('level_title', 'id')];
+        $data = level::get()->pluck('level_title', 'id');
         $form = [
             //form type (add | edit)
             'type' => 'add',
+
+            //back action
+            'action' => 'lesson.index',
+
+            //show name of user
+            'hasName' => true,
+
+            //back action
+            'action' => 'lesson.index',
+
+            //back action param
+            'actionParam' => '',
 
             //form property
             'form' => [
@@ -198,11 +210,13 @@ class LessonController extends Controller
                     'placeholder' => 'انتخاب پایه',
                     'values' => true,
                     'value' => 'level_title',
+                    'select_model' => $data,
+                    'selected_value' => 'id',
                     'required' => true,
                 ],
             ],
             //data of this model
-            'org' => $data,
+            'data' => $data,
         ];
         return view('backend.admin.lesson.index', ['form' => $form, 'type' => 'add']);
     }
@@ -232,8 +246,16 @@ class LessonController extends Controller
         $form = [
             //form type (add | edit)
             'type' => 'edit',
+
+            //back action
+            'action' => 'lesson.index',
+
             //show name of user
             'hasName' => true,
+
+            //back action param
+            'actionParam' => '',
+
             //form property
             'form' => [
                 //form method (post | get | put | ...)
