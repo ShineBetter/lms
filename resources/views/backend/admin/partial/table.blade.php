@@ -24,7 +24,7 @@
                         <div class="card-box-shared-title">
                             <h3 class="widget-title">پایه های آقا / خانم امیرحسین فلک دین</h3>
                             @if($do && $add)
-                                <x-btn route="level.create"/>
+                                <x-btn route="{{$table['action']}}.create"/>
                             @endif
                         </div>
                         <div class="card-box-shared-body ">
@@ -43,15 +43,14 @@
                                         <tr class="table-tr">
                                             @foreach($table['tbody']['td'] as $key => $item)
                                                 @php
+                                                    if (\Illuminate\Support\Arr::has($table['tbody']['td'][$key],'model')){
+                                                                 $models = $table['tbody']['td'][$key]['model'];
+                                                                 $org_key = $table['tbody']['td'][$key]['org_key'];
+                                                                 $for_key = $table['tbody']['td'][$key]['for_key'];
+                                                                 $forg_item = $table['tbody']['td'][$key]['forg_item'];
+                                                        }
 
-                                                    foreach ($table['tbody']['td']['forg'] as $fogKey => $fog){
-                                                    $fogKey = Arr::divide($table['tbody']['td']['forg'][$fogKey]);
-                                                    $model = [$keys, $values] = $fogKey[1][0];
-                                                    $org_key = [$keys, $values] = $fogKey[1][1];
-                                                    $for_key = [$keys, $values] = $fogKey[1][2];
-                                                    $forg_item = [$keys, $values] = $fogKey[1][3];
-                                                    var_dump();
-                                                    }
+
                                                 @endphp
                                                 @if($key == 'row')
                                                     <td scope="row">
@@ -68,17 +67,15 @@
                                                         <div class="statement-info">
                                                             <ul class="list-items">
                                                                 <li class="mb-1">
-                                                                    @if($key != 'forg')
-                                                                        {{ $items->$item }}
+                                                                    @if(\Illuminate\Support\Arr::has($table['tbody']['td'][$key],'model'))
+                                                                        {{ $models::where("$org_key",$items->$for_key)->first()->$forg_item}}
                                                                     @else
-                                                                        {{ $model::where("$org_key",$items->$for_key)->first()->$forg_item}}
+                                                                        {{ $items[$item[$key]] }}
                                                                     @endif
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </td>
-                                                    @if($do)
-                                                    @endif
                                                 @endif
                                             @endforeach
                                             <td>
@@ -86,13 +83,13 @@
                                                     <ul class="list-items">
                                                         <li>
                                                             @if($do && $edit)
-                                                                <a href="{{route('level.edit',$items->id)}}"><input
+                                                                <a href="{{route(class_basename($items).".edit",$items->id)}}"><input
                                                                         type="button" class="btn btn-info"
                                                                         style="font-size: 15px;font-family: Tahoma"
                                                                         value="ویرایش"></a>
                                                             @endif
                                                             @if($do && $delete)
-                                                                <x-delbtn route="level" id="{{$items->id}}"/>
+                                                                <x-delbtn route="{{class_basename($items)}}" id="{{$items->id}}"/>
                                                             @endif
                                                         </li>
                                                     </ul>

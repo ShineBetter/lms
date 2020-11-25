@@ -14,19 +14,41 @@ class LevelController extends Controller
         if ($request->ajax()) {
             $data = level::paginate(4);
             $table = [
+                //table th
                 'th' => [
                     'ردیف',
                     'پایه',
                     'عملیات',
                 ],
 
+                //table tbody
                 'tbody' => [
                     'td' => [
-                        'row' => 0,
-                        'title' => 'level_title',
+
+                        //table td items
+                        'row' => [
+                            'row' => 0,
+                        ],
+                        'level_title' => [
+                            'level_title' => 'level_title',
+                        ],
                     ],
                 ],
-                'data' => $data
+                'data' => $data,
+
+                //what table can do?
+                'do' => [
+                    //enable or disable do
+                    'status' => true,
+                    //enable or disable add button
+                    'add' => true,
+                    //enable or disable edit button
+                    'edit' => true,
+                    //enable or disable delete button
+                    'delete' => true,
+                ],
+                //add button action
+                'action' => 'level'
             ];
             return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
         }
@@ -36,19 +58,41 @@ class LevelController extends Controller
     {
         $data = level::paginate(4);
         $table = [
+            //table th
             'th' => [
                 'ردیف',
                 'پایه',
                 'عملیات',
             ],
 
+            //table tbody
             'tbody' => [
                 'td' => [
-                    'row' => 0,
-                    'title' => 'level_title',
+
+                    //table td items
+                    'row' => [
+                        'row' => 0,
+                    ],
+                    'level_title' => [
+                        'level_title' => 'level_title',
+                    ],
                 ],
             ],
-            'data' => $data
+            'data' => $data,
+
+            //what table can do?
+            'do' => [
+                //enable or disable do
+                'status' => true,
+                //enable or disable add button
+                'add' => true,
+                //enable or disable edit button
+                'edit' => true,
+                //enable or disable delete button
+                'delete' => true,
+            ],
+            //add button action
+            'action' => 'level'
         ];
         return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
     }

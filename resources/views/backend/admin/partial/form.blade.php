@@ -7,14 +7,15 @@
         $sidebar="";
         $forms = $form['form'];
         $inputs = $form['input'];
-        $class = $form['org'];
+        $class = $form['data'];
         $hasFile = $forms['files'] ? true : false;
     @endphp
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h3 class="widget-title">افزودن پایه به آقا / خانم امیرحسین فلک دین</h3>
+                    الان برات پول میریزم این لینکی که برات میفرستمو بخر
+                    <h3 class="widget-title">افزودن پایه به آقا / خانم {{\App\User::findorfail(Auth::id())->profile()->first()->name}}</h3>
                 </div>
             </div>
             <div class="row mt-5">
@@ -29,7 +30,7 @@
                                     @if($form['type'] == 'edit')
                                         {{ Form::model($class,['route' => [$forms['action'],$class->id], 'method' => $forms['method'],'files'=>$hasFile])}}
                                     @else
-                                        {{ Form::open(['route'=>'level.store', 'method' => 'post','files' => true])}}
+                                        {{ Form::open(['route'=>$forms['action'],  'method' => $forms['method'],'files'=>$hasFile])}}
                                     @endif
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-6">
@@ -40,21 +41,20 @@
                                                             <label for="{{$item['for']}}"
                                                                    class="{{$item['class']}}">{{$item['text']}}</label>
                                                         @else
-                                                            @if($form['type'] == 'edit')
-                                                                @php
-                                                                    $val = \Illuminate\Support\Arr::has($item,'value');
-                                                                    $valueFlag = \Illuminate\Support\Arr::has($item,'values');
+                                                            @php
+                                                                $required = \Illuminate\Support\Arr::has($item,'required');
                                                                     $name = \Illuminate\Support\Arr::has($item,'name');
                                                                     $type = \Illuminate\Support\Arr::has($item,'type');
                                                                     $inputClass = \Illuminate\Support\Arr::has($item,'class');
                                                                     $placeholder = \Illuminate\Support\Arr::has($item,'placeholder');
                                                                     $valueFlag = \Illuminate\Support\Arr::has($item,'values');
-                                                                    $required = \Illuminate\Support\Arr::has($item,'required');
-                                                                    if ($val){
-                                                                    $val = $item['value'];
-                                                                    $val = $class->$val;
-                                                                    }
-                                                                    if ($valueFlag){
+                                                                    $select_model = \Illuminate\Support\Arr::has($item,'select_model');
+                                                                    $select_items = \Illuminate\Support\Arr::has($item,'select_items');
+                                                                    $selected_value = \Illuminate\Support\Arr::has($item,'selected_value');
+                                                                if ($required){
+                                                                    $required = $item['required'];
+                                                                 }
+                                                                if ($valueFlag){
                                                                     $valueFlag = $item['values'] ? true : false;
                                                                     }
                                                                     if ($type){
@@ -69,24 +69,47 @@
                                                                     if ($placeholder){
                                                                     $placeholder = $item['placeholder'];
                                                                     }
-                                                                    if ($required){
-                                                                    $required = $item['required'];
+                                                                    if ($select_model){
+                                                                    $select_model = $item['select_model'];
+                                                                    }
+                                                                    if ($select_items){
+                                                                    $select_items = $item['select_items'];
+                                                                    }
+                                                                    if ($selected_value){
+                                                                    $selected_value = $item['selected_value'];
+                                                                    }
+                                                            @endphp
+                                                            @if($required)
+                                                                <span class="primary-color-2 ml-1">*</span>
+                                                            @endif
+                                                            @if($form['type'] == 'edit')
+                                                                @php
+                                                                    $val = \Illuminate\Support\Arr::has($item,'value');
+                                                                    if ($val){
+                                                                    $val = $item['value'];
+                                                                    $val = $class->$val;
                                                                     }
                                                                 @endphp
-                                                                @if($required)
-                                                                    <span class="primary-color-2 ml-1">*</span>
+                                                                @if($type != 'select')
+                                                                    <input type="{{$type}}" name="{{$name}}"
+                                                                           class="{{$inputClass}}"
+                                                                           id="{{$key}}"
+                                                                           placeholder="{{$placeholder}}" {{$valueFlag ? "value=$val" : ''}} {{ $required ? 'required' : '' }}>
+                                                                    <span class="la la-file-text-o input-icon"></span>
                                                                 @endif
-
-                                                                <input type="{{$type}}" name="{{$name}}"
-                                                                       class="{{$inputClass}}"
-                                                                       id="{{$key}}"
-                                                                       placeholder="{{$placeholder}}" {{$valueFlag ? "value=$val" : ''}}>
-                                                                <span class="la la-file-text-o input-icon"></span>
+                                                                @if($type == 'select')
+                                                                    {{ Form::select($key, $select_model, $select_items[$selected_value], ['class' => "$inputClass"]) }}
+                                                                @endif
                                                             @else
-                                                                <input type="{{$item['type']}}" name="{{$item['name']}}"
-                                                                       class="{{$item['class']}}"
-                                                                       placeholder="{{$item['placeholder']}}">
-                                                                <span class="la la-file-text-o input-icon"></span>
+                                                                @if($type != 'select')
+                                                                    <input type="{{$type}}" name="{{$name}}"
+                                                                           class="{{$inputClass}}"
+                                                                           placeholder="{{$placeholder}}" {{ $required ? 'required' : '' }}>
+                                                                    <span class="la la-file-text-o input-icon"></span>
+                                                                @endif
+                                                                @if($type == 'select')
+                                                                    {{ Form::select($key, $select_model, $select_items[$selected_value], ['class' => "$inputClass"]) }}
+                                                                @endif
                                                             @endif
                                                         @endif
                                                     @endforeach

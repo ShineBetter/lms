@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeComments" version="1">
+    <comments>
+      <comment>
+        <place from="5938" to="5938">
+          <path mode="project">app/Http/Controllers/LessonController.php</path>
+        </place>
+        <text />
+        <data>input class</data>
+      </comment>
+    </comments>
+  </component>
+</project>
