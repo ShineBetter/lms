@@ -48,6 +48,9 @@
                                                                  $org_key = $table['tbody']['td'][$key]['org_key'];
                                                                  $for_key = $table['tbody']['td'][$key]['for_key'];
                                                                  $forg_item = $table['tbody']['td'][$key]['forg_item'];
+                                                                 if (\Illuminate\Support\Arr::has($table['tbody']['td'][$key],'relation')){
+                                                                 $relation = $table['tbody']['td'][$key]['relation'];
+                                                                 }
                                                         }
 
 
@@ -68,7 +71,15 @@
                                                             <ul class="list-items">
                                                                 <li class="mb-1">
                                                                     @if(\Illuminate\Support\Arr::has($table['tbody']['td'][$key],'model'))
-                                                                        {{ $models::where("$org_key",$items->$for_key)->first()->$forg_item}}
+                                                                        @if(\Illuminate\Support\Arr::has($table['tbody']['td'][$key],'relation'))
+                                                                            @if($pid_exist = $models::where("$org_key",$items->$for_key)->pluck("$org_key")->first() != 0)
+                                                                                {{ $models::where("$org_key",$items->$for_key)->first()->$relation->$forg_item }}
+                                                                            @else
+                                                                                <p>ثبت نشده</p>
+                                                                            @endif
+                                                                        @else
+                                                                            {{ $models::where("$org_key",$items->$for_key)->first()->$forg_item}}
+                                                                        @endif
                                                                     @else
                                                                         {{ $items[$item[$key]] }}
                                                                     @endif
@@ -83,13 +94,14 @@
                                                     <ul class="list-items">
                                                         <li>
                                                             @if($do && $edit)
-                                                                <a href="{{route(class_basename($items).".edit",$items->id)}}"><input
+                                                                <a href="{{route($table['action'].".edit",$items->id)}}"><input
                                                                         type="button" class="btn btn-info"
                                                                         style="font-size: 15px;font-family: Tahoma"
                                                                         value="ویرایش"></a>
                                                             @endif
                                                             @if($do && $delete)
-                                                                <x-delbtn route="{{class_basename($items)}}" id="{{$items->id}}"/>
+                                                                <x-delbtn route="{{$table['action']}}"
+                                                                          id="{{$items->id}}"/>
                                                             @endif
                                                         </li>
                                                     </ul>

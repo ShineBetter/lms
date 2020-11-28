@@ -148,9 +148,6 @@ class LessonController extends Controller
             //show name of user
             'hasName' => true,
 
-            //back action
-            'action' => 'lesson.index',
-
             //back action param
             'actionParam' => '',
 

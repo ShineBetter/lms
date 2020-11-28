@@ -52,41 +52,53 @@
                                                         @else
                                                             @php
                                                                 $required = \Illuminate\Support\Arr::has($item,'required');
-                                                                    $name = \Illuminate\Support\Arr::has($item,'name');
-                                                                    $type = \Illuminate\Support\Arr::has($item,'type');
-                                                                    $inputClass = \Illuminate\Support\Arr::has($item,'class');
-                                                                    $placeholder = \Illuminate\Support\Arr::has($item,'placeholder');
-                                                                    $valueFlag = \Illuminate\Support\Arr::has($item,'values');
-                                                                    $select_model = \Illuminate\Support\Arr::has($item,'select_model');
-                                                                    $select_items = \Illuminate\Support\Arr::has($item,'select_items');
-                                                                    $selected_value = \Illuminate\Support\Arr::has($item,'selected_value');
-                                                                if ($required){
-                                                                    $required = $item['required'];
-                                                                 }
-                                                                if ($valueFlag){
-                                                                    $valueFlag = $item['values'] ? true : false;
-                                                                    }
-                                                                    if ($type){
-                                                                    $type = $item['type'];
-                                                                    }
-                                                                    if ($name){
-                                                                    $name = $item['name'];
-                                                                    }
-                                                                    if ($inputClass){
-                                                                    $inputClass = $item['class'];
-                                                                    }
-                                                                    if ($placeholder){
-                                                                    $placeholder = $item['placeholder'];
-                                                                    }
-                                                                    if ($select_model){
-                                                                    $select_model = $item['select_model'];
-                                                                    }
-                                                                    if ($select_items){
-                                                                    $select_items = $item['select_items'];
-                                                                    }
-                                                                    if ($selected_value){
-                                                                    $selected_value = $item['selected_value'];
-                                                                    }
+                                                                $name = \Illuminate\Support\Arr::has($item,'name');
+                                                                $type = \Illuminate\Support\Arr::has($item,'type');
+                                                                $inputClass = \Illuminate\Support\Arr::has($item,'class');
+                                                                $placeholder = \Illuminate\Support\Arr::has($item,'placeholder');
+                                                                $valueFlag = \Illuminate\Support\Arr::has($item,'values');
+                                                                $select_model = \Illuminate\Support\Arr::has($item,'select_model');
+                                                                $select_items = \Illuminate\Support\Arr::has($item,'select_items');
+                                                                $selected_value = \Illuminate\Support\Arr::has($item,'selected_value');
+                                                                $models = \Illuminate\Support\Arr::has($item,'model');
+                                                                $org_key = \Illuminate\Support\Arr::has($item,'org_key');
+                                                                $forg_key = \Illuminate\Support\Arr::has($item,'forg_key');
+                                                            if ($required){
+                                                                $required = $item['required'];
+                                                             }
+                                                            if ($valueFlag){
+                                                                $valueFlag = $item['values'] ? true : false;
+                                                                }
+                                                                if ($type){
+                                                                $type = $item['type'];
+                                                                }
+                                                                if ($name){
+                                                                $name = $item['name'];
+                                                                }
+                                                                if ($inputClass){
+                                                                $inputClass = $item['class'];
+                                                                }
+                                                                if ($placeholder){
+                                                                $placeholder = $item['placeholder'];
+                                                                }
+                                                                if ($select_model){
+                                                                $select_model = $item['select_model'];
+                                                                }
+                                                                if ($select_items){
+                                                                $select_items = $item['select_items'];
+                                                                }
+                                                                if ($selected_value){
+                                                                $selected_value = $item['selected_value'];
+                                                                }
+                                                                if ($models){
+                                                                $models = $item['model'];
+                                                                }
+                                                                if ($org_key){
+                                                                $org_key = $item['org_key'];
+                                                                }
+                                                                if ($forg_key){
+                                                                $forg_key = $item['forg_key'];
+                                                                }
                                                             @endphp
                                                             @if($required)
                                                                 <span class="primary-color-2 ml-1">*</span>
@@ -95,17 +107,25 @@
                                                                 @php
                                                                     $val = \Illuminate\Support\Arr::has($item,'value');
                                                                     if ($val){
-                                                                    $val = $item['value'];
-                                                                    $val = $class->$val;
+                                                                            $val = $item['value'];
+                                                                            $val = $class->$val;
                                                                     }
+
                                                                 @endphp
                                                                 @if($type != 'select')
-                                                                    <input type="{{$type}}" name="{{$name}}"
-                                                                           class="{{$inputClass}}"
-                                                                           id="{{$key}}"
-                                                                           placeholder="{{$placeholder}}"
-                                                                           test='{{$val}}'
-                                                                           value='{{$valueFlag ? $val : ''}}' {{ $required ? 'required' : '' }}>
+                                                                    @if ($models == false)
+                                                                        <input type="{{$type}}" name="{{$name}}"
+                                                                               class="{{$inputClass}}"
+                                                                               id="{{$key}}"
+                                                                               placeholder="{{$placeholder}}"
+                                                                               value='{{$valueFlag ? $val : ''}}' {{ $required ? 'required' : '' }}>
+                                                                    @else
+                                                                        <input type="{{$type}}" name="{{$name}}"
+                                                                               class="{{$inputClass}}"
+                                                                               id="{{$key}}"
+                                                                               placeholder="{{$placeholder}}"
+                                                                               value='{{$valueFlag ? $models::where("$org_key", $class->id)->pluck('email') : ''}}' {{ $required ? 'required' : '' }}>
+                                                                    @endif
                                                                     <span class="la la-file-text-o input-icon"></span>
                                                                 @endif
                                                                 @if($type == 'select')
@@ -116,7 +136,8 @@
                                                                     <input type="{{$type}}" name="{{$name}}"
                                                                            class="{{$inputClass}}"
                                                                            placeholder="{{$placeholder}}" {{ $required ? 'required' : '' }}>
-                                                                    <span class="la la-file-text-o input-icon"></span>
+                                                                    <span
+                                                                        class="la la-file-text-o input-icon"></span>
                                                                 @endif
                                                                 @if($type == 'select')
                                                                     {{ Form::select($key, $select_model, null, ['class' => "$inputClass"]) }}
