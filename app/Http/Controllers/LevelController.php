@@ -56,6 +56,7 @@ class LevelController extends Controller
 
     public function index()
     {
+<<<<<<< HEAD
         $data = level::paginate(10);
         $table = [
             //table th
@@ -95,6 +96,10 @@ class LevelController extends Controller
             'action' => 'level'
         ];
         return view('backend.admin.level.index', ['table' => $table,'type' => 'index'])->render();
+=======
+        $level = level::paginate(4);
+        return view('backend.admin.level.index', ['level' => $level,'row'=>0]);
+>>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
     }
 
     public function create()
@@ -163,7 +168,7 @@ class LevelController extends Controller
         return view('backend.admin.level.index',['form' => $form,'type' => 'add']);
     }
 
-    public function store(Request $request)
+    public function store(createLevelRequest $request)
     {
         $level = new level();
         $level->level_title = $request->level_title;

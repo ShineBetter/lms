@@ -16,7 +16,10 @@
 {{--</div>--}}
 
 
-<script src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
+<script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}""</script>
+<
+script
+src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/bootstrap-select.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/owl.carousel.min.js")}}"></script>
@@ -34,6 +37,7 @@
 <script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script>
+<<<<<<< HEAD
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -53,6 +57,8 @@
             $('.table').html($(data).find('.table').html())
         });
     });
+=======
+>>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
@@ -64,6 +70,7 @@
         $.ajax({
             url: url+"?page=" + page,
             success: function (data) {
+                console.log()
                 $('.data-table').html($(data).find('.data-table').html());
             }
         });

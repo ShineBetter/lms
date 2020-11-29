@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
     .button-add {
         color: #11c773;
@@ -121,16 +122,18 @@
             </a>
         </span>
         </div>
+=======
+<div>
+    @empty($type)
+    <button class="btn {{ $class ?? 'btn-success' }}">
+        @empty($route)
+            <span>{{ $title ?? 'افزودن' }}</span>
+        @else
+            <a class="{{$aclass ?? 'bg-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
+        @endempty
+>>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
     </button>
-@else
-    <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}">
-@endempty
-
-@if(!empty($route))
-    <script>
-        $('.button-add').on('click',function () {
-            let route = $(this).attr('route');
-            window.location.href = route;
-        });
-    </script>
-@endif
+    @else
+        <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}">
+    @endempty
+</div>
