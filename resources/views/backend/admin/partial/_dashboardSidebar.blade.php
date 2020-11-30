@@ -43,7 +43,7 @@
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-submit-course"><i
                             class="la la-plus-circle"></i>
                         <p class="w-100">ارسال دوره</p></a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-settings"><i class="la la-cog"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{route('profile')}}"><i class="la la-cog"></i>
                         <p class="w-100">تنظیمات سایت</p></a></li>
                 <li class="sidenav__item"><a class="text-center" href="{{route('user.logout')}}"><i class="la la-power-off"></i>
                         <p class="w-100">خروج</p></a></li>

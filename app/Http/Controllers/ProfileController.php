@@ -3,83 +3,35 @@
 namespace App\Http\Controllers;
 
 use App\Models\profile;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function getInformation()
     {
-        //
-    }
+        $data = profile::where('user_id',Auth::id())->first();
+        $user = User::find(Auth::id())->first();
+        return view('backend.admin.profile.profile-setting',['data'=>$data,'user' => $user]);
+   }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function saveInformation(Request $request)
     {
-        //
-    }
+        $data = profile::where('user_id',Auth::id())->first();
+        $user = User::find(Auth::id())->first();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function show(profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\profile  $profile
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(profile $profile)
-    {
-        //
+        $file = $request->file('photo');
+        $file_name = 'profile-photo-'.time().'.'.$file->getClientOriginalExtension();
+//        dd($file_name);
+        $data->name = $request->name;
+        $data->lastName = $request->lastName;
+        $user->email = $request->email;
+        $data->phone = $request->phone;
+        $data->mobile = $request->mobile;
+        $data->address = $request->address;
+        $data->save();
+        $user->save();
+        return back();
     }
 }

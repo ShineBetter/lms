@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style>
     .button-add {
         color: #11c773;
@@ -105,34 +104,20 @@
     }
 
 </style>
-
-@empty($type)
-    @if($routeParam != '')
-    <button route="{{route("$route",$routeParam)}}" class="button-add">
-        @else
-            <button route="{{route("$route")}}" class="button-add">
-            @endif
-        <div class="add-lms">
-            <span class="text-add">{{ $title ?? 'افزودن' }}</span>
-        </div>
-        <div class="add-icon-lms">
-        <span>
-            <a href="#">
-                <i class="fas fa-folder-plus"></i>
-            </a>
-        </span>
-        </div>
-=======
 <div>
     @empty($type)
-    <button class="btn {{ $class ?? 'btn-success' }}">
-        @empty($route)
-            <span>{{ $title ?? 'افزودن' }}</span>
+        @if($routeParam != '')
+            <button route="{{route("$route",$routeParam)}}" class="button-add"></button>
         @else
-            <a class="{{$aclass ?? 'bg-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
-        @endempty
->>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
-    </button>
+            <button route="{{route("$route")}}" class="button-add">
+        @endif
+        <button class="btn {{ $class ?? 'btn-success' }}">
+            @empty($route)
+                <span>{{ $title ?? 'افزودن' }}</span>
+            @else
+                <a class="{{$aclass ?? 'text-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
+            @endempty
+        </button>
     @else
         <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}">
     @endempty

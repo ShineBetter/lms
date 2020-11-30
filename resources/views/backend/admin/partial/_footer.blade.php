@@ -16,10 +16,8 @@
 {{--</div>--}}
 
 
-<script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}""</script>
-<
-script
-src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
+<script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}"></script>
+<script src ="{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/bootstrap-select.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/owl.carousel.min.js")}}"></script>
@@ -37,7 +35,16 @@ src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script>
-<<<<<<< HEAD
+    $('#profile-security').on('click',function () {
+        window.location = "#password";
+    })
+    $('#profile-information').on('click',function () {
+        window.location = "#profile";
+    })
+    $('#profile-email').on('click',function () {
+        window.location = "#change-email";
+    })
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -57,8 +64,7 @@ src = "{{ asset("template_sit/js/popper.min.js")}}" ></script>
             $('.table').html($(data).find('.table').html())
         });
     });
-=======
->>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
+
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];

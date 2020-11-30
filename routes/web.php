@@ -87,6 +87,11 @@ Route::get('/cr/{id}','teacherController@cr');
 Route::get('/about', function () {
     return view('about');
 });
+
+//profile setting route
+Route::get('/user/profile','profileController@getInformation')->name('profile');
+Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info');
+
 Route::view('/teachers','teachers');
 Route::view('/teacher-detail','teacher-detail');
 Route::view('/student-quiz-result-details-2','student-quiz-result-details-2');
