@@ -26,7 +26,7 @@ class CreateProfilesTable extends Migration
             $table->bigInteger('mobile');
             $table->bigInteger('date_of_birth');
             $table->text('address');
-            $table->text('photo');
+            $table->text('photo')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

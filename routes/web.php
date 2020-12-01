@@ -89,8 +89,10 @@ Route::get('/about', function () {
 });
 
 //profile setting route
-Route::get('/user/profile','profileController@getInformation')->name('profile');
-Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info');
+Route::get('/user/profile','profileController@getInformation')->name('profile')->middleware('auth');;
+Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info')->middleware('auth');;
+Route::get('/user/profile/delete/profile/image','profileController@deleteProfileImage')->name('profile.delete.image')->middleware('auth');;
+Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
 
 Route::view('/teachers','teachers');
 Route::view('/teacher-detail','teacher-detail');
