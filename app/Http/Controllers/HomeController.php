@@ -22,5 +22,9 @@ class HomeController extends Controller
         return view('backend.admin.index');
     }
 
+    public function quiz()
+    {
+        return view('backend.admin.quiz.quiz');
+}
 
 }

@@ -32,6 +32,9 @@ Route::post('user/register','FrontEndController@registerSubmit')->name('register
 //panel route
 Route::get('/panel', 'HomeController@index')->middleware('auth')->name('panel');
 
+//quiz route
+Route::get('/quiz', 'HomeController@quiz')->middleware('auth')->name('quiz');
+
 //role route
 Route::resource('role','RoleController')->middleware('auth');
 
