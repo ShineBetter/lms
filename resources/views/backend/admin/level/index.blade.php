@@ -1,24 +1,16 @@
 @extends('backend.admin.partial._master')
 @section('title','پایه ها')
 @section('cntd')
-<<<<<<< HEAD
-=======
     @parent
->>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
     @php
         $header="";
         $loader="dont";
         $sidebar="";
+        $sidebar="";
     @endphp
-<<<<<<< HEAD
-    @if($type == 'index')
-        @include('backend.admin.partial.table')
-    @elseif($type == 'edit')
-        @include('backend.admin.partial.form')
-    @elseif($type == 'add')
-        @include('backend.admin.partial.form')
+    @if(\Illuminate\Support\Facades\Session::has('edit_status'))
+        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
-=======
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
@@ -31,9 +23,7 @@
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
                             <h3 class="widget-title">پایه های آقا / خانم امیرحسین فلک دین</h3>
-
-                           <x-btn route="level.create"/>
-
+                            <x-btn route="level.create"/>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -46,13 +36,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($level as $key => $item)
+                                    @foreach($data as $key => $item)
                                         <tr>
                                             <td scope="row">
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li class="mb-1">
-                                                            <p>{{ $key + $level->firstItem() }}</p>
+                                                            <p>{{ $key + $data->firstItem() }}</p>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -68,9 +58,11 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('level.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a>
+                                                            <a href="{{route('level.edit',$item->id)}}"><input
+                                                                    type="button" class="btn btn-info"
+                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                    value="ویرایش"></a>
                                                             <x-delbtn route="level.destroy" id="{{$item->id}}"/>
-                                                            <a href="{{route('level.destroy',$item->id)}}"><input type="button" class="btn btn-danger" style="font-size: 15px;font-family: Tahoma" value="حذف"></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -79,36 +71,12 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                {{ $level->links() }}
+                                {{ $data->links() }}
                             </div>
                         </div>
-                        {{--                            <div class="page-navigation-wrap mt-4 mb-4">--}}
-                        {{--                                <div class="page-navigation-inner d-inline-block">--}}
-                        {{--                                    <div class="page-navigation">--}}
-                        {{--                                        <a href="dashboard-reviews.html#" class="page-go page-prev">--}}
-                        {{--                                            <i class="la la-arrow-left"></i>--}}
-                        {{--                                        </a>--}}
-                        {{--                                        <ul class="page-navigation-nav">--}}
-                        {{--                                            <li><a href="dashboard-reviews.html#" class="page-go-link">1</a></li>--}}
-                        {{--                                            <li class="active"><a href="dashboard-reviews.html#" class="page-go-link">2</a></li>--}}
-                        {{--                                            <li><a href="dashboard-reviews.html#" class="page-go-link">3</a></li>--}}
-                        {{--                                            <li><a href="dashboard-reviews.html#" class="page-go-link">4</a></li>--}}
-                        {{--                                        </ul>--}}
-                        {{--                                        <a href="dashboard-reviews.html#" class="page-go page-next">--}}
-                        {{--                                            <i class="la la-arrow-right"></i>--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div><!-- end page-navigation-wrap -->--}}
-
                     </div>
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-content-wrap -->
-    </section><!-- end dashboard-area -->
-    <!-- ================================
-        END DASHBOARD AREA
-    ================================= -->
->>>>>>> parent of 5df307d (custimize btn component & create delete component & partial table from indexes)
 @endsection

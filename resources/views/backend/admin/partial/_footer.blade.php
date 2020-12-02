@@ -1,21 +1,6 @@
-<!-- start scroll top -->
 <div id="scroll-top">
     <i class="fa fa-angle-up" title="Go top"></i>
 </div>
-<!-- end scroll top -->
-{{--<div class="row">--}}
-{{--    <div class="col-lg-12">--}}
-{{--        <div class="copyright-content mt-0 pt-0 pb-4 border-top-0 text-center">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <p class="copy__desc">&copy; 2020 Aduca. All Rights Reserved. by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs.</a></p>--}}
-{{--                </div><!-- end col-lg-12 -->--}}
-{{--            </div><!-- end row -->--}}
-{{--        </div><!-- end copyright-content -->--}}
-{{--    </div><!-- end col-lg-12 -->--}}
-{{--</div>--}}
-
-
 <script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}"></script>
 <script src ="{{ asset("template_sit/js/popper.min.js")}}" ></script>
 <script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
@@ -55,7 +40,7 @@
         var $this = $(this);
         $.post({
             type: 'post',
-            url: $this.attr('href') + '/' + $this.attr('id'),
+            url: $this.attr('href'),
             data: {
                 'id': $this.attr('id'),
                 '_method': 'delete'

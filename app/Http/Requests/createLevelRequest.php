@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class createLevelRequest extends FormRequest
 {
@@ -15,15 +16,15 @@ class createLevelRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|string|between:3,50'
+            'level_title'=>'required|string|between:3,50'
         ];
     }
 
     public function messages()
     {
         return[
-            'title.required'=>'لطفا عنوان پایه تحصیلی را وارد نمایید.',
-            'title.between'=>'عنوان باید بین 3 تا 50 کلمه داشته باشد. ',
+            'level_title.required'=> 'لطفا عنوان پایه تحصیلی را وارد نمایید',
+            'level_title.between'=> 'عنوان باید بین 3 تا 50 کاراکتر داشته باشد',
         ];
     }
 }

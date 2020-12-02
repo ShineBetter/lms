@@ -106,8 +106,6 @@
 </style>
 <div>
     @empty($type)
-
-{{--        <button route="{{route("$route")}}" class="button-add">--}}
             <button class="btn {{ $class ?? 'btn-success' }}">
                 @empty($route)
                     <span>{{ $title ?? 'افزودن' }}</span>
@@ -117,7 +115,6 @@
                     @else
                         <a class="{{$aclass ?? 'text-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
                     @endif
-
                 @endempty
             </button>
             @else
