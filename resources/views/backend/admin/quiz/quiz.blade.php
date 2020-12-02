@@ -29,6 +29,10 @@
     .que-counter{
     padding: 9px 0px;
     }
+    .size{
+    height:23px;
+    width:23px;
+    }
 @endsection
 @section('cntd')
     @php
@@ -60,196 +64,196 @@
                     <div class="col-lg-12 question">
                         <div class="row p-2">
                             <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle text-center">
+                                <div class="circle text-center" id="q-circle-n-1">
                                     <span>
                                         1
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-2">
                                     <span>
                                         2
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-3">
                                     <span>
                                         3
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle text-center">
+                                <div class="circle text-center" id="q-circle-n-4">
                                     <span>
                                         4
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-5">
                                     <span>
                                         5
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center " id="q-circle-n-6">
                                     <span>
                                         6
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-7">
                                     <span>
                                         7
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-8">
                                     <span>
                                         8
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-9">
                                     <span>
                                         9
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-10">
                                     <span>
                                         10
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-11">
                                     <span>
                                         11
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-12">
                                     <span>
                                         12
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-13">
                                     <span>
                                         13
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-14">
                                     <span>
                                         14
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-15">
                                     <span>
                                         15
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-16">
                                     <span>
                                         16
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-17">
                                     <span>
                                         17
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-18">
                                     <span>
                                         18
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-19">
                                     <span>
                                         19
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-20">
                                     <span>
                                         20
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-21">
                                     <span>
                                         21
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-22">
                                     <span>
                                         22
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-23">
                                     <span>
                                         23
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-24">
                                     <span>
                                         24
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-25">
                                     <span>
                                         25
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-26">
                                     <span>
                                         26
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-27">
                                     <span>
                                         27
                                     </span>
                                 </div>
                             </div>
                             <div class=" col-2 col-lg-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 col-2 d-block">
-                                <div class="circle  text-center">
+                                <div class="circle  text-center" id="q-circle-n-28">
                                     <span>
                                         28
                                     </span>
@@ -280,12 +284,9 @@
                                 </span>
                             </div>
                             <div class="col-lg-6 col-md-d col-12 text-left">
-                                <p class="d-inline text-white ml-1">
-                                    تعداد کل سوالات:
-                                </p>
-                                <span class="text-white ml-2">
-                                    280
-                                </span>
+                                <a href="#" class="ml-1"><img class="size" src="/images/next.png" alt=""></a>
+                                <a href="#" class="ml-2"><img class="size" src="/images/previous.png" alt=""></a>
+
                             </div>
                         </div>
                     </div>
