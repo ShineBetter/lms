@@ -13,7 +13,7 @@ class LevelController extends Controller
     {
         if ($request->ajax()) {
             $data = level::paginate(10);
-            return view('backend.admin.level.index', ['data' => $data])->render();
+            return view('backend.admin.level.table', ['data' => $data])->render();
         }
     }
 

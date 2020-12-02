@@ -46,7 +46,8 @@
                 '_method': 'delete'
             }
         }).done(function (data) {
-            $('.table').html($(data).find('.table').html())
+            console.log(data)
+            $('.table tbody').html($(data).html())
         });
     });
 
@@ -62,7 +63,7 @@
             url: url+"?page=" + page,
             success: function (data) {
                 console.log()
-                $('.data-table').html($(data).find('.data-table').html());
+                $('.statement-table').html($(data).find('.statement-table').html());
             }
         });
     }

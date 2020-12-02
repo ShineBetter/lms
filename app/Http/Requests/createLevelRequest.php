@@ -16,7 +16,7 @@ class createLevelRequest extends FormRequest
     public function rules()
     {
         return [
-            'level_title'=>'required|string|between:3,50'
+            'level_title'=>'required|between:3,50|string|alpha'
         ];
     }
 
@@ -25,6 +25,8 @@ class createLevelRequest extends FormRequest
         return[
             'level_title.required'=> 'لطفا عنوان پایه تحصیلی را وارد نمایید',
             'level_title.between'=> 'عنوان باید بین 3 تا 50 کاراکتر داشته باشد',
+            'level_title.string'=> 'عنوان شما باید از نوع رشته باشد',
+            'level_title.alpha'=> 'عنوان شما باید فقط حروف باشد',
         ];
     }
 }
