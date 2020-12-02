@@ -8,7 +8,7 @@
         $sidebar="";
         $sidebar="";
     @endphp
-    @if(\Illuminate\Support\Facades\Session::has('edit_status'))
+    @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
     <div class="dashboard-content-wrap">
@@ -22,7 +22,6 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <h3 class="widget-title">پایه های آقا / خانم امیرحسین فلک دین</h3>
                             <x-btn route="level.create"/>
                         </div>
                         <div class="card-box-shared-body">

@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         \AliBayat\LaravelCategorizable\CategorizableServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
+        Anetwork\Validation\PersianValidationServiceProvider::class,
         /*
          * Package Service Providers...
          */

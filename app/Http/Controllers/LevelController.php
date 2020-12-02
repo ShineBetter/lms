@@ -33,8 +33,8 @@ class LevelController extends Controller
         $level = new level();
         $level->level_title = $request->level_title;
         $level->save();
-        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('level', $comment);
+        $comment = 'اطلاعات ، بدرستی ذخیره شد';
+        session()->flash('status', $comment);
         return redirect()->route('level.index');
 
     }
@@ -57,7 +57,7 @@ class LevelController extends Controller
         $level->level_title = $request->level_title;
         $level->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
-        session()->flash('edit_status', $comment);
+        session()->flash('status', $comment);
         return redirect()->route('level.index');
     }
 
@@ -65,8 +65,8 @@ class LevelController extends Controller
     {
         $level = level::where('id', $id)->first();
         $level->delete();
-        $comment = 'عملیات حذف بدرستی انجام شد.';
-        session()->flash('level', $comment);
+        $comment = 'عملیات حذف بدرستی انجام شد';
+        session()->flash('status', $comment);
         return back();
     }
 }

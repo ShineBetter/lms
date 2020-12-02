@@ -47,7 +47,7 @@
             }
         }).done(function (data) {
             console.log(data)
-            $('.table tbody').html($(data).html())
+            $('.statement-table').html($(data).find('.statement-table').html())
         });
     });
 
@@ -62,7 +62,6 @@
         $.ajax({
             url: url+"?page=" + page,
             success: function (data) {
-                console.log()
                 $('.statement-table').html($(data).find('.statement-table').html());
             }
         });

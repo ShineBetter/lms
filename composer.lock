@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6744eb924623a6643014c7019b1dc44c",
+    "content-hash": "8ec6b2cebafaed9b9406cbafd8e43325",
     "packages": [
         {
             "name": "alibayat/laravel-categorizable",
@@ -66,6 +66,56 @@
                 "source": "https://github.com/AliBayat/Laravel-Categorizable/tree/master"
             },
             "time": "2020-09-20T16:44:26+00:00"
+        },
+        {
+            "name": "anetwork/validation",
+            "version": "v2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opencafe/validation.git",
+                "reference": "288e7d77a02f1dc07c5c76321433bdaff9f88fe8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opencafe/validation/zipball/288e7d77a02f1dc07c5c76321433bdaff9f88fe8",
+                "reference": "288e7d77a02f1dc07c5c76321433bdaff9f88fe8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anetwork\\Validation\\PersianValidationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anetwork\\Validation\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shahrokh Niakan",
+                    "email": "shahrokhniakan@gmail.com"
+                }
+            ],
+            "description": "Laravel persian validation",
+            "support": {
+                "issues": "https://github.com/opencafe/validation/issues",
+                "source": "https://github.com/opencafe/validation/tree/v2.2.2"
+            },
+            "time": "2019-10-17T18:48:40+00:00"
         },
         {
             "name": "asm89/stack-cors",
