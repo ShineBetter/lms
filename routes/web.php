@@ -30,7 +30,7 @@ Route::get('user/register','FrontEndController@register')->name('register.form')
 Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
 
 //panel route
-Route::get('/panel', 'HomeController@index')->middleware('auth')->name('panel');
+Route::get('/panel', 'HomeController@index')->name('panel');
 
 //role route
 Route::resource('role','RoleController')->middleware('auth');
