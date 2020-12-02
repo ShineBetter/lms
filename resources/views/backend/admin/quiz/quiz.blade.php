@@ -41,6 +41,10 @@
         $sidebar="";
         $quiztime=3;
     @endphp
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
 
     <div class="container mt-lg-3">
         <div class="row">
@@ -290,17 +294,19 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card-body text-right">
-                        <h4 class="text-muted text-justify que">
+                        <h4 class="text-muted text-justify que" >
                             سوال اول این سوال آزمایشی هست برای تست تست تست سوال اول این سوال آزمایشی هست برای تست تست
                             تست سوال اول این سوال آزمایشی هست برای تست تست تستوال اول این سوال آزمایشی هست برای تست تست
                             تست سوال اول این سوال آزمایشی هست برای تست تست تست
                         </h4>
+
                         {{--                        ////////////////////////////////////////////--}}
                         <main class="py-5 px-6 space-y-3 bg-white rounded-lg shadow-xl  w-100 text-right" id="ques">
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       checked>
+                                >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه اول</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">این
                                     متتن جواب برای تست است
@@ -309,7 +315,7 @@
                             </label>
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       checked>
+                                >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه دوم</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">
                                     22/12
@@ -318,7 +324,7 @@
                             </label>
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       checked>
+                                       >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه سوم</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">تست
                                     تست تست
@@ -327,7 +333,7 @@
                             </label>
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       checked>
+                                       >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه چهارم</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">858
                                 </div>
@@ -335,6 +341,17 @@
                             </label>
                         </main>
                     </div>
+                    <script>
+                        var test=$("#q-circle-n-1").attr('id');
+                        $(".que").attr("id",test);
+                        $(".form-radio").attr("name",test);
+                        // $("input[name=test]").change( function () {
+                        //     alert("yes")
+                        // });
+                        $(".form-radio").click(function () {
+                        $(div).attr('id',test).css("background","red");
+                        })
+                    </script>
                 </div>
             </div>
         </div>
@@ -364,4 +381,8 @@
             startTimer(fiveMinutes, display);
         };
     </script>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
 @endsection
