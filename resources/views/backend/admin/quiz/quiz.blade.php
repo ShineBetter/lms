@@ -63,6 +63,7 @@
         background: #8fd5a8!important;
         padding: 1rem;
     }
+    
     .que{
         direction: rtl;text-align: right;
     }
