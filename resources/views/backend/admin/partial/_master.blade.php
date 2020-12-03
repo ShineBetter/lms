@@ -40,49 +40,7 @@
             width: 95%;
             margin: auto;
         }
-        .dashboard-content-wrap{
-            direction: rtl;
-            text-align: right;
-        }
-        .question{
-            height: 22.5rem;
-            border: 1px solid #0002;
-            overflow: auto;
-            background-color: #ddfde9!important;
-            border-radius: 0px 0px 8px 8px;
-        }
-        .circle{
-            color: #0c0c0c;
-            border-radius: 50%;
-            height: 28px;
-            width: 28px;
-            display: inherit;
-            padding: 0px;
-            margin-top: 8px;
-            box-shadow: 0px 1px 6px 4px #1111;
-            background-color: #f9f3f3;
-            padding-top: 1px;
-            margin-bottom: 6px;
-        }
-        .time-space{
-            border-radius: 8px 8px 1px 1px;
-            background: #8fd5a8!important;
-            padding: 1rem;
-        }
-        .que{
-            direction: rtl;text-align: right;
-        }
-        .que-header{
-            border-radius: 4px 4px 0 0;
-            background: #8fd5a8!important;
-        }
-        @media only screen and (max-width: 600px) {
 
-            .question{
-                height: 12rem;
-            }
-
-        }
 
     </style>
     @yield('css')
