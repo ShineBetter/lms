@@ -60,7 +60,7 @@
             padding: 0px;
             margin-top: 8px;
             box-shadow: 0px 1px 6px 4px #1111;
-            background-color: #f9f3f3!important;
+            background-color: #f9f3f3;
             padding-top: 1px;
             margin-bottom: 6px;
         }
@@ -83,8 +83,9 @@
             }
 
         }
-        @yield('css')
+
     </style>
+    @yield('css')
 </head>
 <body>
 @includeWhen(empty($loader),'backend.admin.partial.loader')

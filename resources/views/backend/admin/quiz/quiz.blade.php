@@ -1,5 +1,6 @@
 @extends('backend.admin.partial._master')
 @section('css')
+    <style>
     #ques {
     width: 24rem;
     direction:rtl;
@@ -33,6 +34,7 @@
     height:23px;
     width:23px;
     }
+    </style>
 @endsection
 @section('cntd')
     @php
@@ -52,13 +54,16 @@
                 <div class="row">
                     <div class="col-12 p-0 mb-2 ">
                         <h3 class="d-block bg-danger text-center rounded">
-                            <a href="#" class="btn text-white" onclick="confirm('آیا برای خروج مطمعن هستید؟')">خروج از آزمون</a>
+                            <a href="#" class="btn text-white" onclick="confirm('آیا برای خروج مطمعن هستید؟')">خروج از
+                                آزمون</a>
                         </h3>
                     </div>
                     <div class="time-space col-lg-12 text-center">
 
                         <h5 class="text-center mb-1">زمان کلی آزمون <span id="alltime"></span> دقیقه میباشد</h5>
-                        <div class="text-white"> زمان باقی مانده <span class="mr-1 ml-1 text-danger" id="time"></span> دقیقه</div>
+                        <div class="text-white"> زمان باقی مانده <span class="mr-1 ml-1 text-danger" id="time"></span>
+                            دقیقه
+                        </div>
                         <script>
                             var timequiz =<?php echo $quiztime ?>;
                             document.getElementById("time").innerHTML = timequiz;
@@ -274,9 +279,9 @@
                     <div class="que-header w-100">
                         <div class="row dir que-counter">
                             <div class="col-lg-6 col-md-d col-12">
-                               <p class="d-inline text-white mr-2 ml-1">
-                                   شماره سوال:
-                               </p>
+                                <p class="d-inline text-white mr-2 ml-1">
+                                    شماره سوال:
+                                </p>
                                 <span class="text-white">
                                     2
                                 </span>
@@ -296,7 +301,7 @@
                     </div>
 
                     <div class="card-body text-right">
-                        <h4 class="text-muted text-justify que" >
+                        <h4 class="text-muted text-justify que">
                             سوال اول این سوال آزمایشی هست برای تست تست تست سوال اول این سوال آزمایشی هست برای تست تست
                             تست سوال اول این سوال آزمایشی هست برای تست تست تستوال اول این سوال آزمایشی هست برای تست تست
                             تست سوال اول این سوال آزمایشی هست برای تست تست تست
@@ -324,7 +329,7 @@
                             </label>
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       >
+                                >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه سوم</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">تست
                                     تست تست
@@ -333,7 +338,7 @@
                             </label>
                             <label class="col-lg-12 items-center">
                                 <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600"
-                                       >
+                                >
                                 <span class="ml-2 text-gray-700 font-medium text-lg ">گزینه چهارم</span>
                                 <div class="ml-2 px-2 bg-green-100 text-green-600 font-medium text-lg rounded h6">858
                                 </div>
@@ -342,14 +347,16 @@
                         </main>
                     </div>
                     <script>
-                        var test=$("#q-circle-n-1").attr('id');
-                        $(".que").attr("id",test);
-                        $(".form-radio").attr("name",test);
+                        var id = "q-circle-n-2";
+                        var test = $("#q-circle-n-2").attr('id');
+                        // $(".que").attr("id",test);
+                        $(".form-radio").attr("name", test);
+                        var inputName = $(".form-radio").attr("name");
                         // $("input[name=test]").change( function () {
                         //     alert("yes")
                         // });
                         $(".form-radio").click(function () {
-                        $(div).attr('id',test).css("background","red");
+                            $(".question").find('#' + inputName).css("background", "#53f112a1");
                         })
                     </script>
                 </div>
