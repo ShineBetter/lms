@@ -35,13 +35,13 @@
                 {!! Form::text('email', null, ['class' => 'form-control']) !!}
 
                 {{Form::label('phone', 'شماره ثابت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::number('phone', null, ['class' => 'form-control']) !!}
+                {!! Form::text('phone', null, ['class' => 'form-control']) !!}
 
                 {{Form::label('nationalNumber', 'کد ملی : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::number('nationalNumber', null, ['class' => 'form-control']) !!}
+                {!! Form::text('nationalNumber', null, ['class' => 'form-control']) !!}
 
                 {{Form::label('mobile', 'موبایل : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::number('mobile') !!}
+                {!! Form::text('mobile') !!}
 
                 {{Form::label('date_of_birth', 'تاریخ تولد : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
                 {!! Form::text('date_of_birth', null, ['class' => 'form-control']) !!}

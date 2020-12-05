@@ -62,17 +62,17 @@
                                                 {{Form::label('phone', 'تلفن ثابت', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::number('phone', null, ['class' => 'form-control','placeholder' => 'تلفن ثابت']) !!}
+                                                    {!! Form::text('phone', null, ['class' => 'form-control','placeholder' => 'تلفن ثابت']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('nationalNubmer', 'کد ملی', ['class' => 'label-text'])}}
+                                                {{Form::label('nationalNumber', 'کد ملی', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::number('nationalNubmer', null, ['class' => 'form-control','placeholder' => 'کد ملی']) !!}
+                                                    {!! Form::text('nationalNumber', null, ['class' => 'form-control','placeholder' => 'کد ملی']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@
                                                 {{Form::label('password', 'پسورد', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::number('password', null, ['class' => 'form-control','placeholder' => 'پسورد']) !!}
+                                                    {!! Form::text('password', null, ['class' => 'form-control','placeholder' => 'پسورد']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>

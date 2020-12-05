@@ -48,7 +48,7 @@ Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 
 //parent list route
-Route::resource('parent','ParentsController')->middleware('auth');
+Route::resource('parent','ParentsController')->middleware(['auth']);
 
 //teacher list route
 Route::resource('teacher','teacherController')->middleware('auth');

@@ -40,7 +40,9 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $item)
-                                        @php($profile = \App\Models\profile::where('user_id',$item->id)->first())
+                                    @php
+                                        $profile = $item->profile;
+                                    @endphp
                                         <tr>
                                             <td scope="row">
                                                 <div class="statement-info">

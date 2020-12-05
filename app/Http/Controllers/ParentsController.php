@@ -29,7 +29,7 @@ class ParentsController extends Controller
     public function index()
     {
         $data = User::where('user_role', 'parent')->paginate(10);
-        return view('backend.admin.parents.index', ['data' => $data, 'row' => 0]);
+        return view('backend.admin.parents.index',['data' => $data]);
     }
 
     /**
@@ -65,8 +65,9 @@ class ParentsController extends Controller
         $profile->date_of_birth = $request->date_of_birth;
         $file = $request->file('photo');
         if(!empty($file)){
-            $file_name = 'images/profile-image/profile-photo-'. time() . '.' . $file[0]->getClientOriginalName();
-            Image::make($file[0]->getRealPath())->resize(100,100)->save($file_name);
+            $file_name = 'images/profile-image/profile-photo-'. time() . '.' . $file->getClientOriginalName();
+
+            Image::make($file->getRealPath())->resize(100,100)->save($file_name);
             $profile->photo = $file_name;
         }
         $profile->address = $request->address;
@@ -96,11 +97,9 @@ class ParentsController extends Controller
      */
     public function edit($id)
     {
-        $parents = User::findorfail($id);
-        $child = User::where('user_role', 'student')->pluck('email', 'id');
-        $childFind = User::findorfail($parents->id);
-        $data = profile::where('user_id', '=', $id)->firstorfail();
-        return view('backend.admin.parents.index', ['form' => $form,'type' => 'edit']);
+        $data = User::findorfail($id);
+//        $profile = profile::where('user_id', '=', $id)->firstorfail();
+        return view('backend.admin.parents.edit', ['data' => $data]);
     }
 
     /**
