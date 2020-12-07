@@ -21,9 +21,9 @@ class CreateProfilesTable extends Migration
             $table->unsignedBigInteger('user_id');
 //            $table->unsignedBigInteger('level_id')->nullable();
 //            $table->unsignedBigInteger('lesson_id')->nullable();
-            $table->bigInteger('nationalNumber');
-            $table->bigInteger('phone');
-            $table->bigInteger('mobile');
+            $table->string('nationalNumber',10);
+            $table->string('phone',20);
+            $table->string('mobile',11);
             $table->bigInteger('date_of_birth');
             $table->text('address');
             $table->text('photo')->nullable();

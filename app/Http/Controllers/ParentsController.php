@@ -3,28 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createUserRequest;
-use App\Models\level;
+use App\Http\Requests\editUserRequest;
 use App\Models\parents;
 use App\Models\profile;
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 
 class ParentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function fetch(Request $request)
-    {
-        if ($request->ajax()) {
-            $data = User::where('user_role', 'parent')->paginate(10);
-            return view('backend.admin.level.index', ['data' => $data])->render();
-        }
-    }
 
     public function index()
     {
@@ -98,19 +90,28 @@ class ParentsController extends Controller
     public function edit($id)
     {
         $data = User::findorfail($id);
-//        $profile = profile::where('user_id', '=', $id)->firstorfail();
         return view('backend.admin.parents.edit', ['data' => $data]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(editUserRequest $request, $id)
     {
+        $rules = [
+            'email' => [
+                'nullable',
+                'string',
+                'email',
+                Rule::unique('users','email')->ignore($id),
+            ],
+        ];
+        $message = [
+            'email.unique' => 'آدرس ایمیل شما تکراری است',
+        ];
+        $this->validate($request,$rules,$message);
         $parents = User::where('id', $id)->first();
         $profile = profile::where('user_id', $id)->first();
         $parents->user_role = 'parent';
@@ -139,6 +140,7 @@ class ParentsController extends Controller
     public function destroy($id)
     {
         $parents = User::where('id', $id)->first();
+        DB::table('users')->where('pid','=',$parents->id)->update(['pid' => 0]);
         $parents->delete();
         $comment = 'عملیات حذف بدرستی انجام شد.';
         session()->flash('parents', $comment);

@@ -1,5 +1,5 @@
 @extends('backend.admin.partial._master')
-@section('title','پایه ها')
+@section('title','اولیا')
 @section('cntd')
     @parent
     @php
@@ -82,7 +82,7 @@
                                                 {{Form::label('password', 'پسورد', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::text('password', null, ['class' => 'form-control','placeholder' => 'پسورد']) !!}
+                                                    {!! Form::password('password', ['class' => 'form-control','placeholder' => 'پسورد']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -112,7 +112,7 @@
                                                 {{Form::label('photo', 'عکس', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::file('photo') !!}
+                                                    {!! Form::file('photo',['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
