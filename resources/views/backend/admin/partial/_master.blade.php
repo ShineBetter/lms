@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+
     <!-- end inject -->
     <style>
 
@@ -40,11 +41,10 @@
             width: 95%;
             margin: auto;
         }
-        .dashboard-content-wrap{
-            direction: rtl;
-            text-align: right;
-        }
+
+
     </style>
+    @yield('css')
 </head>
 <body>
 @includeWhen(empty($loader),'backend.admin.partial.loader')
