@@ -11906,7 +11906,7 @@ body {
     transform: translateX(0);
     background-color: #fff;
     width: 344px;
-    padding-top: 140px;
+    padding-top: 91px;
 }
 
 @media (max-width: 1440px) {
@@ -12088,7 +12088,7 @@ body {
 }
 
 .user-pro-img img {
-    width: 100%;
+    width: 83%;
 }
 
 .payment-option .radio-trigger {

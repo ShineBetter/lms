@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ctreatUserRequest;
+use App\Http\Requests\createUserRequest;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Auth;
@@ -35,7 +35,7 @@ class FrontEndController extends Controller
         return view('webSit.register');
     }
 
-    public function registerSubmit(ctreatUserRequest $request)
+    public function registerSubmit(createUserRequest $request)
     {
         $user = new User();
         $user->email = $request->email;

@@ -10,10 +10,12 @@
     "require": {
         "php": "^7.2.5",
         "alibayat/laravel-categorizable": "1.0.x-dev",
+        "anetwork/validation": "^2.2",
         "doctrine/dbal": "^2.10.3",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",

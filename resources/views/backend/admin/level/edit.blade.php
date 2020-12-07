@@ -7,7 +7,6 @@
         $loader="dont";
         $sidebar="";
     @endphp
-    <!-- end dashboard-sidebar -->
     @isset($errors)
         @foreach($errors->all() as $message)
             <x-alert type="warning" text="{{$message}}"/>
@@ -17,21 +16,26 @@
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
+                    <h3 class="widget-title">افزودن پایه به آقا / خانم امیرحسین فلک دین</h3>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <h3 class="widget-title">اطلاعات</h3>
+                            <h3 class="widget-title">اطلاعات پایه</h3>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="user-form">
                                 <div class="contact-form-action">
-                                    {{ Form::open(['route'=>'level.store', 'method' => 'post','files' => true])}}
+                                    {{ Form::model($data,['route'=>['level.update',$data->id], 'method' => 'put','files' => true])}}
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
                                                 {{Form::label('level_title', 'عنوان پایه', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::text('level_title', null, ['class' => 'form-control','placeholder' => 'نام پایه']) !!}
+                                                    {!! Form::text('level_title', $data->level_title, ['class' => 'form-control','placeholder' => 'نام پایه']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>

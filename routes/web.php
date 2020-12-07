@@ -30,7 +30,7 @@ Route::get('user/register','FrontEndController@register')->name('register.form')
 Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
 
 //panel route
-Route::get('/panel', 'HomeController@index')->middleware('auth')->name('panel');
+Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
 Route::get('/quiz', 'HomeController@quiz')->middleware('auth')->name('quiz');
@@ -51,7 +51,7 @@ Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 
 //parent list route
-Route::resource('parent','ParentsController')->middleware('auth');
+Route::resource('parent','ParentsController')->middleware(['auth']);
 
 //teacher list route
 Route::resource('teacher','teacherController')->middleware('auth');
@@ -92,8 +92,10 @@ Route::get('/about', function () {
 });
 
 //profile setting route
-Route::get('/user/profile','profileController@getInformation')->name('profile');
-Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info');
+Route::get('/user/profile','profileController@getInformation')->name('profile')->middleware('auth');;
+Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info')->middleware('auth');;
+Route::get('/user/profile/delete/profile/image','profileController@deleteProfileImage')->name('profile.delete.image')->middleware('auth');;
+Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
 
 Route::view('/teachers','teachers');
 Route::view('/teacher-detail','teacher-detail');

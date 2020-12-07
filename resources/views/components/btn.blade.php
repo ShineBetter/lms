@@ -106,19 +106,18 @@
 </style>
 <div>
     @empty($type)
-        @if($routeParam != '')
-            <button route="{{route("$route",$routeParam)}}" class="button-add"></button>
-        @else
-            <button route="{{route("$route")}}" class="button-add">
-        @endif
-        <button class="btn {{ $class ?? 'btn-success' }}">
-            @empty($route)
-                <span>{{ $title ?? 'افزودن' }}</span>
+            <button class="btn {{ $class ?? 'btn-success' }}">
+                @empty($route)
+                    <span>{{ $title ?? 'افزودن' }}</span>
+                @else
+                    @if($routeParam != '')
+                        <button route="{{route("$route",$routeParam)}}" class="button-add"></button>
+                    @else
+                        <a class="{{$aclass ?? 'text-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
+                    @endif
+                @endempty
+            </button>
             @else
-                <a class="{{$aclass ?? 'text-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
-            @endempty
-        </button>
-    @else
-        <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}">
+                <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}">
     @endempty
 </div>
