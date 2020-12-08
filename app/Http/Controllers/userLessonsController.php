@@ -81,7 +81,7 @@ class userLessonsController extends Controller
                 'created_at' => now()
             ]);
             $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-            session()->flash('userLessons', $comment);
+            session()->flash('status', $comment);
             return redirect()->route('userLessons.index', $user_id);
         } else {
             return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => false, 'parent' => false]);
@@ -117,7 +117,7 @@ class userLessonsController extends Controller
             $user = User::find($user_id);
 
 //        get all lessons for select input
-            $lessons = ['' => lesson::get()->pluck('lesson_title', 'id')];
+            $lessons = lesson::get()->pluck('lesson_title', 'id');
 
 //        get data from lessonable morph table
             $lessonable = DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $user_id, 'lessonable_type' => 'App\User'])->get();
@@ -146,13 +146,13 @@ class userLessonsController extends Controller
     {
         if (Gate::allows('Teacher') || Gate::allows('Admin')) {
 //        update lesson_id in lessonable table
-            DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $user_id, 'lessonable_type' => 'App\User'])->update(['lesson_id' => $request->lessons]);
+            DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $user_id, 'lessonable_type' => 'App\User'])->update(['lesson_id' => $request->lesson_id]);
 
 //        set comment
             $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
 
 //        set session for comment
-            session()->flash('userLessons', $comment);
+            session()->flash('status', $comment);
 
 //        return index view
             return redirect()->route('userLessons.index', $user_id);

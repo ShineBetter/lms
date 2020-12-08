@@ -31,7 +31,9 @@
                                             <div class="input-box">
                                                 {{Form::label('lesson_title', 'نام درس', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
-                                                <div class="form-group">
+                                                <div cla
+
+                                                     ss="form-group">
                                                     {!! Form::text('lesson_title', null, ['class' => 'form-control','placeholder' => 'نام درس']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
