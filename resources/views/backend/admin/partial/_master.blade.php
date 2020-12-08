@@ -41,7 +41,10 @@
             width: 95%;
             margin: auto;
         }
-
+        .dashboard-content-wrap{
+            direction: rtl;
+            text-align: right;
+        }
 
     </style>
     @yield('css')
