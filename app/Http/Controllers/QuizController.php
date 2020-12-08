@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ceratQuizRequest;
 use App\Models\quiz;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,16 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ceratQuizRequest $request)
     {
-        //
+        $level = new quiz();
+        $level->quiz_name = $request->quiz_name;
+        $level->quiz_start = $request->quiz_start;
+        $level->quiz_exp = $request->quiz_exp;
+        $level->save();
+        $comment = 'اطلاعات ، بدرستی ذخیره شد';
+        session()->flash('status', $comment);
+        return redirect()->route('quiz.index');
     }
 
     /**
