@@ -105,30 +105,45 @@
     }
 
 </style>
-    @empty($type)
-        @empty($route)
-            <button class="btn {{ $class ?? 'btn-success' }}">
-                <span>{{ $title ?? 'افزودن' }}</span>
-            </button>
-        @else
-            @if($routeParam != '')
-                <a class="btn text-white {{$class ?? 'btn-info'}}"
-                   href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
-            @else
-                <button class="button-add bg-success">
-                    <a href="{{route("$route")}}">
-                        <div class="add-lms">
-                            <span class="text-add">{{$title ?? 'افزودن'}}</span>
-                        </div>
-                        <div class="add-icon-lms">
+@empty($type)
+    @empty($route)
+        <button class="btn {{ $class ?? 'btn-success' }}">
+            <span>{{ $title ?? 'افزودن' }}</span>
+        </button>
+    @else
+        @if($routeParam != '')
+            <a class="btn text-white {{$class ?? 'btn-info'}}"
+               href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
+        @endif
+    @endempty
+@elseif($type == 'submit')
+    <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}"/>
+@elseif($type == 'add')
+    @if($routeParam != '')
+        <button class="button-add bg-success">
+            <a href="{{route("$route",$routeParam)}}">
+                <div class="add-lms">
+                    <span class="text-add">{{$title ?? 'افزودن'}}</span>
+                </div>
+                <div class="add-icon-lms">
                         <span>
                                 <i class="fas fa-folder-plus"></i>
                         </span>
-                        </div>
-                    </a>
-                </button>
-            @endif
-        @endempty
+                </div>
+            </a>
+        </button>
     @else
-        <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}"/>
-    @endempty
+        <button class="button-add bg-success">
+            <a href="{{route("$route")}}">
+                <div class="add-lms">
+                    <span class="text-add">{{$title ?? 'افزودن'}}</span>
+                </div>
+                <div class="add-icon-lms">
+                        <span>
+                                <i class="fas fa-folder-plus"></i>
+                        </span>
+                </div>
+            </a>
+        </button>
+    @endif
+@endempty

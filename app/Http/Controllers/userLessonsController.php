@@ -52,7 +52,7 @@ class userLessonsController extends Controller
             $user = User::find($user_id);
 
             //        get all lessons for select input
-            $lessons = ['' => lesson::get()->pluck('lesson_title', 'id')];
+            $lessons = lesson::get()->pluck('lesson_title', 'id');
 
             $title = "ویرایش درس";
             $userTitle = "افزودن درس به آقا / خانم " . $user->profile()->first()->name . ' ' . $user->profile()->first()->lastName;
@@ -75,7 +75,7 @@ class userLessonsController extends Controller
         if (Gate::allows('Teacher') || Gate::allows('Admin')) {
             $user = User::findorfail($user_id);
             DB::table('lessonable')->insert([
-                'lesson_id' => $request->lessons,
+                'lesson_id' => $request->lesson_id,
                 'lessonable_id' => $user_id,
                 'lessonable_type' => 'App\User',
                 'created_at' => now()

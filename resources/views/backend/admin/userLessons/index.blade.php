@@ -24,7 +24,7 @@
                     <div class="card-box-shared">
                         @if(Gate::check('Admin') || Gate::check('Teacher'))
                             <div class="card-box-shared-title">
-                                <x-btn route="userLessons.create" class="btn-success" routeParam="{{$user_id}}"/>
+                                <x-btn type="add" route="userLessons.create" class="btn-success" routeParam="{{$user_id}}"/>
                             </div>
                         @endif
                         <div class="card-box-shared-body">
@@ -67,7 +67,7 @@
                                                                         type="button" class="btn btn-info"
                                                                         style="font-size: 15px;font-family: Tahoma"
                                                                         value="ویرایش">
-                                                                <x-delbtn route="userLessons.destroy" multiParameter="true" id="{{json_encode(['lesson_id' => $item->id, 'user_id' => $user_id])}}"/>
+                                                                    <x-delbtn route="userLessons.destroy" multiParameter="true" :id="json_encode(['lesson_id' => $item->id, 'user_id' => $user_id])"></x-delbtn>
                                                             </li>
                                                         </ul>
                                                     </div>
