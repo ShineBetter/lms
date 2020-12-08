@@ -1290,16 +1290,16 @@
         },
         {
             "name": "kalnoy/nestedset",
-            "version": "v5.0.2",
+            "version": "v5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lazychaser/laravel-nestedset.git",
-                "reference": "1edd06d0744251940240f28021de7651d7fa71d3"
+                "reference": "789a70bce94a7c3bd206fb05fa4b747cf27acbe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/1edd06d0744251940240f28021de7651d7fa71d3",
-                "reference": "1edd06d0744251940240f28021de7651d7fa71d3",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/789a70bce94a7c3bd206fb05fa4b747cf27acbe2",
+                "reference": "789a70bce94a7c3bd206fb05fa4b747cf27acbe2",
                 "shasum": ""
             },
             "require": {
@@ -1347,9 +1347,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lazychaser/laravel-nestedset/issues",
-                "source": "https://github.com/lazychaser/laravel-nestedset/tree/v5.0.2"
+                "source": "https://github.com/lazychaser/laravel-nestedset/tree/v5.0.3"
             },
-            "time": "2020-09-11T06:18:17+00:00"
+            "time": "2020-12-07T05:59:45+00:00"
         },
         {
             "name": "laravel/framework",
