@@ -8,15 +8,17 @@ class delbtn extends Component
 {
     public $route = '';
     public $id = '';
+    public $multiParameter = '';
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($route = null,$id = null)
+    public function __construct($route = null,$id = null,$multiParameter = null)
     {
         $this->route = $route;
         $this->id = $id;
+        $this->multiParameter = $multiParameter;
     }
 
     /**

@@ -23,17 +23,17 @@ class userLessonsController extends Controller
     {
         $userLessons = User::findorfail($id);
         if (Gate::allows('Teacher') || Gate::allows('Admin')) {
-            $lessons = $userLessons->lesson()->paginate(4);
+            $data = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس استاد";
             $userTitle = "دروس آقا / خانم " . $userLessons->profile()->first()->name . ' ' . $userLessons->profile()->first()->lastName;
-            return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
+            return view('backend.admin.userLessons.index', ['data' => $data, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
         } elseif (Gate::allows('Student') || Gate::allows('Parent') || Gate::allows('Admin')) {
-            $lessons = $userLessons->lesson()->paginate(4);
+            $data = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس دانش آموز";
             $userTitle = "دروس آقا / خانم " . $userLessons->profile()->first()->name . ' ' . $userLessons->profile()->first()->lastName;
-            return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
+            return view('backend.admin.userLessons.index', ['data' => $data, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
         } else {
             return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => true, 'parent' => true]);
         }
@@ -129,8 +129,8 @@ class userLessonsController extends Controller
             $userTitle = "افزودن درس به آقا / خانم " . $user->profile()->first()->name . ' ' . $user->profile()->first()->lastName;
 
             //        return teacher lessons view page
-            return view('backend.admin.userLessons.edit', ['lessonable' => $lessonable, 'userLessons' => $userLessons, 'lessons' => $lessons, 'user_id' => $user_id, 'lesson_id' => $lesson_id,'user_id' => $user_id, 'title' => $title, 'userTitle' => $userTitle]);
-        } else{
+            return view('backend.admin.userLessons.edit', ['lessonable' => $lessonable, 'userLessons' => $userLessons, 'lessons' => $lessons, 'user_id' => $user_id, 'lesson_id' => $lesson_id, 'user_id' => $user_id, 'title' => $title, 'userTitle' => $userTitle]);
+        } else {
             return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => false, 'parent' => false]);
         }
     }
@@ -156,7 +156,7 @@ class userLessonsController extends Controller
 
 //        return index view
             return redirect()->route('userLessons.index', $user_id);
-        } else{
+        } else {
             return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => false, 'parent' => false]);
 
         }
@@ -169,20 +169,21 @@ class userLessonsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($lesson_id, $user_id)
-    {if (Gate::allows('Teacher') || Gate::allows('Admin')) {
+    {
+        if (Gate::allows('Teacher') || Gate::allows('Admin')) {
 //        delete lesson from lessonable table
-        DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $user_id])->delete();
+            DB::table('lessonable')->where(['lesson_id' => $lesson_id, 'lessonable_id' => $user_id])->delete();
 
 //        set comment
-        $comment = 'عملیات حذف بدرستی انجام شد.';
+            $comment = 'عملیات حذف بدرستی انجام شد.';
 
 //        set session
-        session()->flash('userLessons', $comment);
+            session()->flash('userLessons', $comment);
 
 //        return back
-        return back();
-    } else{
-        return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => false, 'parent' => false]);
-    }
+            return back();
+        } else {
+            return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => false, 'parent' => false]);
+        }
     }
 }
