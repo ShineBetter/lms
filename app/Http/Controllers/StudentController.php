@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createUserRequest;
+use App\Http\Requests\editUserRequest;
 use App\Models\student;
 use App\Models\profile;
 use App\User;
@@ -108,7 +109,7 @@ class studentController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(createUserRequest $request, $id)
+    public function update(editUserRequest $request, $id)
     {
         $parents = User::where('id', $id)->first();
         $profile = profile::where('user_id', $id)->first();

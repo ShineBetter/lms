@@ -101,6 +101,7 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
+                                                            <x-btn route="userLessons.index" routeParam="{{$item->id}}" aclass="btn-info" title="دروس"/>
                                                             <x-delbtn route="student.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>
