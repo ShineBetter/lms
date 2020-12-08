@@ -13,6 +13,7 @@
         color: white;
         background: none;
         border: none;
+        border-radius: 5px;
         outline: none;
         overflow: hidden;
         cursor: pointer;
@@ -27,7 +28,7 @@
         z-index: -1;
         width: 100%;
         height: 100%;
-        background: #11c773;
+        /*background: #11c773;*/
         border-radius: 5px;
         transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
@@ -115,8 +116,20 @@
                 <a class="btn text-white {{$aclass ?? 'btn-info'}}"
                    href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
             @else
-                <button route="{{route("$route")}}"
-                   class="btn {{ $class ?? 'button-add' }}">{{$title ?? 'افزودن'}}</button>
+                <button class="button-add bg-success">
+                    <a href="{{route("$route")}}">
+                        <div class="add-lms">
+                            <span class="text-add">{{$title ?? 'افزودن'}}</span>
+                        </div>
+                        <div class="add-icon-lms">
+                        <span>
+                                <i class="fas fa-folder-plus"></i>
+                        </span>
+                        </div>
+                    </a>
+                </button>
+                {{--                <button route="{{route("$route")}}"--}}
+                {{--                        class="btn {{ $class ?? 'button-add' }}">{{$title ?? 'افزودن'}}</button>--}}
             @endif
         @endempty
     @else
