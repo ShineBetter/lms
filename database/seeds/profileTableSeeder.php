@@ -21,13 +21,13 @@ class profileTableSeeder extends Seeder
 
         for ($i = 1; $i <= 4; $i++ ) {
             $level = level::create([
-                'title' => 'پایه '.$i,
+                'level_title' => 'پایه '.$i,
                 'created_at' => now(),
             ]);
         }
         for ($i = 1; $i <= 4; $i++ ) {
             $level = lesson::create([
-                'title' => 'درس '.$i,
+                'lesson_title' => 'درس '.$i,
                 'level_id' => 1,
                 'created_at' => now(),
             ]);

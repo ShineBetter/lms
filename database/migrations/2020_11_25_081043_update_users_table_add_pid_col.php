@@ -14,7 +14,7 @@ class UpdateUsersTableAddPidCol extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('pid');
+            $table->unsignedBigInteger('pid')->default(0);
         });
     }
 

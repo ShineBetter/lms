@@ -8,19 +8,21 @@
         $sidebar="";
         $sidebar="";
     @endphp
-
+    @if(\Illuminate\Support\Facades\Session::has('status'))
+        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
+    @endif
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h3 class="widget-title">آزمون</h3>
+                    <h3 class="widget-title">آزمون ها</h3>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <x-btn route="level.create"/>
+                            <x-btn route="quiz.create"/>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -29,6 +31,8 @@
                                     <tr>
                                         <th scope="col">ردیف</th>
                                         <th scope="col">آزمون</th>
+                                        <th scope="col">تاریخ شروع</th>
+                                        <th scope="col">تاریخ انقضا</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -47,7 +51,21 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz-name}}</li>
+                                                        <li>{{$item->quiz_name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_start}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_exp}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -55,7 +73,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                            <a href="{{route('lesson.edit',$item->id)}}"><input
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
