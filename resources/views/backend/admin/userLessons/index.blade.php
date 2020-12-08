@@ -1,82 +1,122 @@
 @extends('backend.admin.partial._master')
-@section('main.content')
-    <section class="container" style="padding: 50px" dir="rtl">
-        <section>
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+@section('title','دروس دانش آموز')
+@section('cntd')
+    @parent
+    @php
+        $header="";
+        $loader="dont";
+        $sidebar="";
+        $sidebar="";
+    @endphp
+    @if(\Illuminate\Support\Facades\Session::has('status'))
+        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
+    @endif
+    <div class="dashboard-content-wrap">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h3 class="widget-title">{{$userTitle}}</h3>
                 </div>
-            @endif
-
-        </section>
-        <section>
-            @if (session()->has('userLessons'))
-                <section class="alert alert-danger">
-                    <h3>{{ session('userLessons') }}</h3>
-                </section>
-            @endif
-
-        </section>
-        <h4>{{ $title }}</h4>
-        <h5>{{ $userTitle }}</h5>
-        <table class="table table-hover table-bordered">
-            <thead class="bg-success"
-                   style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
-            <td>
-                <label style="color: white"> ردیف </label>
-            </td>
-            <td>
-                <label style="color: white">دروس</label>
-            </td>
-
-            @if(\Illuminate\Support\Facades\Gate::check('Admin') || \Illuminate\Support\Facades\Gate::check('Teacher'))
-                <td colspan="3" style="text-align: center">
-                    <label style="color: white">ویرایش</label>
-                </td>
-            @endif
-            </thead>
-            <tbody>
-
-            @foreach($userLessons as $item)
-                <tr style="text-align: justify">
-                    <td>
-                        <label style="color: black">{{ ++$row }}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{ $item->lesson_title }} </label>
-                    </td>
-                    @if(\Illuminate\Support\Facades\Gate::check('Admin') || \Illuminate\Support\Facades\Gate::check('Teacher'))
-                        <td style="text-align: center">
-
-                            <a href="{{route('userLessons.edit',['lesson_id' => $item->id, 'user_id' => $user_id])}}"><input
-                                    type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma"
-                                    value="ویرایش"></a>
-                        </td>
-                        <td style="text-align: center">
-                            {!! Form::open(['route' => ['userLessons.destroy', ['lesson_id' => $item->id, 'user_id' => $user_id] ],'method' => 'delete']) !!}
-                            {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </td>
-                    @endif
-
-                </tr>
-            @endforeach
-            </tbody>
-
-
-        </table>
-                <span style="float:right">{{$userLessons->links()}}</span>
-        @if(\Illuminate\Support\Facades\Gate::check('Admin') || \Illuminate\Support\Facades\Gate::check('Teacher'))
-            <section class="form-group">
-                <td style="text-align: center"><a href="{{route('userLessons.create',$user_id)}}"><input
-                            type="button" class="form-control btn btn-info" style="font-size: 15px;font-family: Tahoma"
-                            value="صفحه درج "></a></td>
-            </section>
-        @endif
-    </section>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card-box-shared">
+                        <div class="card-box-shared-title">
+                            <x-btn route="student.create"/>
+                        </div>
+                        <div class="card-box-shared-body">
+                            <div class="statement-table purchase-table table-responsive mb-5">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">ردیف</th>
+                                        <th scope="col">نام</th>
+                                        <th scope="col">نام خانوادگی</th>
+                                        <th scope="col">نام والدین</th>
+                                        <th scope="col">کد ملی</th>
+                                        <th scope="col">شماره تماس</th>
+                                        <th scope="col">عملیات</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($data as $key => $item)
+                                        @php
+                                            $profile = $item->profile;
+                                            $parent = \App\Models\profile::where('user_id',$item->pid)->first();
+                                        @endphp
+                                        <tr>
+                                            <td scope="row">
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li class="mb-1">
+                                                            <p>{{ $key + $data->firstItem() }}</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$profile->name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$profile->lastName}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->pid != 0 || $item->pid != '')
+                                                            <li>{{$parent->name . ' ' . $parent->lastName}}</li>
+                                                        @else
+                                                            <li>تعریف نشده است</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$profile->nationalNumber}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$profile->mobile}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>
+                                                            <a href="{{route('student.edit',$item->id)}}"><input
+                                                                    type="button" class="btn btn-info"
+                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                    value="ویرایش"></a>
+                                                            <x-btn route="userLessons.index" routeParam="{{$item->id}}" aclass="btn-info" title="دروس"/>
+                                                            <x-delbtn route="student.destroy" id="{{$item->id}}"/>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                {{ $data->links() }}
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container-fluid -->
+    </div><!-- end dashboard-content-wrap -->
 @endsection
-

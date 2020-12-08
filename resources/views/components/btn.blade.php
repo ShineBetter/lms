@@ -112,12 +112,11 @@
             </button>
         @else
             @if($routeParam != '')
-{{--                <button route="{{route("$route",$routeParam)}}"--}}
-{{--                        class="btn {{ $class ?? 'button-add' }}">{{$title}}</button>--}}
-                <a class="btn text-white {{$aclass ?? 'btn-info'}}" href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
-
+                <a class="btn text-white {{$aclass ?? 'btn-info'}}"
+                   href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
             @else
-                <a class="{{$aclass ?? 'text-white'}}" href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
+                <button route="{{route("$route")}}"
+                   class="btn {{ $class ?? 'button-add' }}">{{$title ?? 'افزودن'}}</button>
             @endif
         @endempty
     @else
