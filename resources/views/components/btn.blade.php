@@ -105,7 +105,6 @@
     }
 
 </style>
-<div>
     @empty($type)
         @empty($route)
             <button class="btn {{ $class ?? 'btn-success' }}">
@@ -113,7 +112,7 @@
             </button>
         @else
             @if($routeParam != '')
-                <a class="btn text-white {{$aclass ?? 'btn-info'}}"
+                <a class="btn text-white {{$class ?? 'btn-info'}}"
                    href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
             @else
                 <button class="button-add bg-success">
@@ -128,11 +127,8 @@
                         </div>
                     </a>
                 </button>
-                {{--                <button route="{{route("$route")}}"--}}
-                {{--                        class="btn {{ $class ?? 'button-add' }}">{{$title ?? 'افزودن'}}</button>--}}
             @endif
         @endempty
     @else
         <input type="submit" value="{{ $title ?? 'افزودن' }}" class="btn {{ $class ?? 'btn-success' }}"/>
     @endempty
-</div>

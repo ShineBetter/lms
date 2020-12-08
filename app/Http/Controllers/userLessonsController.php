@@ -23,17 +23,17 @@ class userLessonsController extends Controller
     {
         $userLessons = User::findorfail($id);
         if (Gate::allows('Teacher') || Gate::allows('Admin')) {
-            $lessons = $userLessons->lesson()->paginate(4);
+            $data = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس استاد";
             $userTitle = "دروس آقا / خانم " . $userLessons->profile()->first()->name . ' ' . $userLessons->profile()->first()->lastName;
-            return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
+            return view('backend.admin.userLessons.index', ['data' => $data, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
         } elseif (Gate::allows('Student') || Gate::allows('Parent') || Gate::allows('Admin')) {
-            $lessons = $userLessons->lesson()->paginate(4);
+            $data = $userLessons->lesson()->paginate(4);
             $lessonable = DB::table('lessonable')->select('id')->get();
             $title = "لیست دروس دانش آموز";
             $userTitle = "دروس آقا / خانم " . $userLessons->profile()->first()->name . ' ' . $userLessons->profile()->first()->lastName;
-            return view('backend.admin.userLessons.index', ['userLessons' => $lessons, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
+            return view('backend.admin.userLessons.index', ['data' => $data, 'lessonable' => $lessonable, 'row' => 0, 'user_id' => $id, 'title' => $title, 'userTitle' => $userTitle]);
         } else {
             return view('webSit.404', ['admin' => true, 'teacher' => true, 'student' => true, 'parent' => true]);
         }
