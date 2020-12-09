@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class createConferenceRequest extends FormRequest
+class editConferenceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class createConferenceRequest extends FormRequest
     public function rules()
     {
         return [
-            'picture'=>'required|image|max:200',
+            'picture'=>'image|max:200',
             'price'=>'required',
             'count'=>'required|integer',
             'description'=>'required|string',
