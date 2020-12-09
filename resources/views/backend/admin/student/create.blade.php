@@ -1,7 +1,7 @@
 @extends('backend.admin.partial._master')
 @section('title','دانش آموزان')
 @section('cntd')
-    @student
+    @parent
     @php
         $header="";
         $loader="dont";

@@ -21,7 +21,7 @@ class teacherController extends Controller
      */
     public function index()
     {
-        $data = User::where('user_role', 'teacher')->paginate(4);
+        $data = User::where('user_role', 'teacher')->paginate(10);
         return view('backend.admin.teacher.index', ['data' => $data]);
     }
 
@@ -109,26 +109,25 @@ class teacherController extends Controller
         $message = [
             'email.unique' => 'آدرس ایمیل شما تکراری است',
         ];
-        $this->validate($request,$rules,$message);
+        $this->validate($request, $rules, $message);
         $teacher = User::where('id', $id)->first();
         $profile = profile::where('user_id', $id)->first();
         $teacher->user_role = 'teacher';
         $teacher->email = $request->email;
         $teacher->pid = 0;
-        if ($teacher->save()) {
-            $profile->name = $request->name;
-            $profile->lastName = $request->lastName;
-            $profile->nationalNumber = $request->nationalNumber;
-            $profile->phone = $request->phone;
-            $profile->mobile = $request->mobile;
-            $profile->date_of_birth = $request->date_of_birth;
-            $profile->address = $request->address;
-            $profile->photo = $request->photo;
-            $teacher->profile()->save($profile);
-            $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
-            session()->flash('status', $comment);
-            return redirect()->route('teacher.index');
-        }
+        $teacher->save();
+        $profile->name = $request->name;
+        $profile->lastName = $request->lastName;
+        $profile->nationalNumber = $request->nationalNumber;
+        $profile->phone = $request->phone;
+        $profile->mobile = $request->mobile;
+        $profile->date_of_birth = $request->date_of_birth;
+        $profile->address = $request->address;
+        $profile->photo = $request->photo;
+        $teacher->profile()->save($profile);
+        $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
+        session()->flash('status', $comment);
+        return redirect()->route('teacher.index');
     }
 
     /**

@@ -19,13 +19,6 @@ class studentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-//    public function fetch(Request $request)
-//    {
-//        if ($request->ajax()) {
-//            $data = User::where('user_role', 'student')->paginate(10);
-//            return view('backend.admin.level.index', ['data' => $data])->render();
-//        }
-//    }
 
     public function index()
     {
