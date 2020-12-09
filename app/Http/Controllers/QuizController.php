@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\createQuizRequest;
+use App\Http\Requests\ceratQuizRequest;
 use App\Models\quiz;
 use Illuminate\Http\Request;
 
@@ -35,7 +35,7 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createQuizRequest $request)
+    public function store(ceratQuizRequest $request)
     {
         $level = new quiz();
         $level->quiz_name = $request->quiz_name;
@@ -64,10 +64,9 @@ class QuizController extends Controller
      * @param  \App\quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(quiz $quiz)
     {
-        $data = quiz::findorfail($id);
-        return view('backend.admin.quiz.edit', ['data' => $data]);
+        //
     }
 
     /**
@@ -77,16 +76,9 @@ class QuizController extends Controller
      * @param  \App\quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function update(createQuizRequest $request, $id)
+    public function update(Request $request, quiz $quiz)
     {
-        $quiz = quiz::where('id', $id)->first();
-        $quiz->quiz_name = $request->quiz_name;
-        $quiz->quiz_start = $request->quiz_start;
-        $quiz->quiz_exp = $request->quiz_exp;
-        $quiz->save();
-        $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
-        session()->flash('status', $comment);
-        return redirect()->route('quiz.index');
+        //
     }
 
     /**
@@ -95,12 +87,8 @@ class QuizController extends Controller
      * @param  \App\quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(quiz $quiz)
     {
-        $quiz = quiz::where('id', $id)->first();
-        $quiz->delete();
-        $comment = 'عملیات حذف بدرستی انجام شد';
-        session()->flash('status', $comment);
-        return back();
+        //
     }
 }
