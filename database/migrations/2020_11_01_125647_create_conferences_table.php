@@ -11,14 +11,13 @@ class CreateConferencesTable extends Migration
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('image')->nullable();
-            $table->string('description')->nullable();;
+            $table->string('name');
+            $table->string('picture');
+            $table->string('description');
             $table->string('date');
-            $table->string('time');
-            $table->string('periodOfTime');
-            $table->string('speacher');
-            $table->enum('status',['active','inactive'])->default('inactive');
+            $table->integer('offer')->nullable();
+            $table->integer('price');
+            $table->integer('count');
             $table->softDeletes();
             $table->timestamps();
         });
