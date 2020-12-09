@@ -24,7 +24,7 @@
                         <div class="card-box-shared-body">
                             <div class="user-form">
                                 <div class="contact-form-action">
-                                    {{ Form::open(['route'=>'student.store', 'method' => 'post','files' => true])}}
+                                    {{ Form::model($profile,['route'=>['student.update',$data->id], 'method' => 'put','files' => true])}}
                                     <div class="row">
 
                                         <div class="col-lg-6 col-sm-6">

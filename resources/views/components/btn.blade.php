@@ -133,8 +133,9 @@
             </a>
         </button>
     @else
-        <button class="button-add bg-success">
-            <a href="{{route("$route")}}">
+        <a href="{{route("$route")}}">
+
+            <button class="button-add bg-success">
                 <div class="add-lms">
                     <span class="text-add">{{$title ?? 'افزودن'}}</span>
                 </div>
@@ -143,7 +144,8 @@
                                 <i class="fas fa-folder-plus"></i>
                         </span>
                 </div>
-            </a>
-        </button>
+            </button>
+        </a>
+
     @endif
 @endempty

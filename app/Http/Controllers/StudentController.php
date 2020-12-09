@@ -9,6 +9,7 @@ use App\Models\profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 
 class studentController extends Controller
@@ -29,7 +30,7 @@ class studentController extends Controller
     public function index()
     {
         $data = User::where('user_role', 'student')->paginate(10);
-        return view('backend.admin.student.index',['data' => $data]);
+        return view('backend.admin.student.index', ['data' => $data]);
     }
 
     /**
@@ -40,7 +41,7 @@ class studentController extends Controller
     public function create()
     {
         $data = User::where('user_role', 'parent')->pluck('id');
-        return view('backend.admin.student.create',['data' => $data]);
+        return view('backend.admin.student.create', ['data' => $data]);
     }
 
     /**
@@ -57,25 +58,27 @@ class studentController extends Controller
         $student->email = $request->email;
         $student->password = Hash::make($request->password);
         $student->pid = $request->pid;
-        $student->save();
-        $profile->name = $request->name;
-        $profile->lastName = $request->lastName;
-        $profile->mobile = $request->mobile;
-        $profile->phone = $request->phone;
-        $profile->nationalNumber = $request->nationalNumber;
-        $profile->date_of_birth = $request->date_of_birth;
-        $file = $request->file('photo');
-        if(!empty($file)){
-            $file_name = 'images/profile-image/profile-photo-'. time() . '.' . $file->getClientOriginalName();
+        if ($student->save()) {
+            $profile->name = $request->name;
+            $profile->lastName = $request->lastName;
+            $profile->mobile = $request->mobile;
+            $profile->phone = $request->phone;
+            $profile->nationalNumber = $request->nationalNumber;
+            $profile->date_of_birth = $request->date_of_birth;
+            $file = $request->file('photo');
+            if (!empty($file)) {
+                $file_name = 'images/profile-image/profile-photo-' . time() . '.' . $file->getClientOriginalName();
 
-            Image::make($file->getRealPath())->resize(100,100)->save($file_name);
-            $profile->photo = $file_name;
+                Image::make($file->getRealPath())->resize(100, 100)->save($file_name);
+                $profile->photo = $file_name;
+            }
+            $profile->address = $request->address;
+            $student->profile()->save($profile);
+            $comment = 'اطلاعات، بدرستی ذخیره شد';
+            session()->flash('status', $comment);
+            return redirect()->route('student.index');
         }
-        $profile->address = $request->address;
-        $student->profile()->save($profile);
-        $comment = 'اطلاعات، بدرستی ذخیره شد';
-        session()->flash('status', $comment);
-        return redirect()->route('student.index');
+
     }
 
     /**
@@ -111,6 +114,18 @@ class studentController extends Controller
      */
     public function update(editUserRequest $request, $id)
     {
+        $rules = [
+            'email' => [
+                'nullable',
+                'string',
+                'email',
+                Rule::unique('users','email')->ignore($id),
+            ],
+        ];
+        $message = [
+            'email.unique' => 'آدرس ایمیل شما تکراری است',
+        ];
+        $this->validate($request,$rules,$message);
         $parents = User::where('id', $id)->first();
         $profile = profile::where('user_id', $id)->first();
         $parents->user_role = 'parent';

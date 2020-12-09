@@ -17,7 +17,7 @@ class btn extends Component
      *
      * @return void
      */
-    public function __construct($title =null,$class =null,$route =null,$routeParam =null,$aclass =null,$type =null)
+    public function __construct($title =null,$class =null,$route =null,$routeParam =null,$aclass =null,$type ='add')
     {
         $this->title = $title;
         $this->class = $class;
