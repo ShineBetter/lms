@@ -55,7 +55,14 @@ class QuizController extends Controller
      */
     public function show(quiz $quiz)
     {
-        //
+        $quiz = quiz::where('id', $id)->first();
+        $quiz->quiz_name = $request->quiz_name;
+        $quiz->quiz_start = $request->quiz_start;
+        $quiz->quiz_exp = $request->quiz_exp;
+        $quiz->save();
+        $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
+        session()->flash('status', $comment);
+        return redirect()->route('quiz.index');
     }
 
     /**
