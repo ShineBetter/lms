@@ -17,7 +17,7 @@
                                 <img src="images/team10.jpg" alt="">
                             </div>
                             <div class="section-heading">
-                                <h2 class="section__title font-size-30">Howdy, Alex Smith</h2>
+                                <h2 class="section__title font-size-30">{{\App\User::where('id',auth()->id())->first()->profile->name}}</h2>
                                 <div class="rating-wrap d-flex mt-2">
                                     <ul class="review-stars">
                                         <li><span class="la la-star"></span></li>
@@ -32,11 +32,6 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="upload-btn-box">
-                            <form action="dashboard.html#" method="post" enctype="multipart/form-data">
-                                <input type="file" name="files[]" class="filer_input" multiple="multiple">
-                            </form>
                         </div>
                     </div>
                 </div><!-- end col-lg-12 -->
