@@ -44,7 +44,7 @@
                     <div class="section-block"></div>
                 </div>
             </div>
-            @can('admin')
+            @can('Admin')
                 <div class="row mt-5">
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
@@ -117,7 +117,7 @@
                         </div>
                     </div><!-- end col-lg-4 -->
                 </div><!-- end row -->
-            @elseif('teacher')
+            @elseif('Teacher')
                 <div class="row mt-5">
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
@@ -178,7 +178,7 @@
                         </div>
                     </div><!-- end col-lg-4 -->
                 </div><!-- end row -->
-            @elseif('student')
+            @elseif('Student')
                 <div class="row mt-5">
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
