@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUsersTableAddPidCol extends Migration
+class CreateQuizzesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class UpdateUsersTableAddPidCol extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('pid')->default(0);
+        Schema::create('quizzes', function (Blueprint $table) {
+            $table->id();
+            $table->string('quiz_name');
+            $table->timestamp('quiz_start')->nullable();
+            $table->timestamp('quiz_exp')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class UpdateUsersTableAddPidCol extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('quizzes');
     }
 }

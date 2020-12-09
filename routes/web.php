@@ -33,8 +33,8 @@ Route::post('user/register','FrontEndController@registerSubmit')->name('register
 Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
-Route::get('/quiz', 'HomeController@quiz')->middleware('auth')->name('quiz');
-
+Route::get('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::resource('quiz','QuizController')->middleware('auth');
 //role route
 Route::resource('role','RoleController')->middleware('auth');
 
@@ -61,6 +61,7 @@ Route::resource('student','studentController')->middleware('auth');
 
 //admin list route
 Route::resource('admin','adminController')->middleware('auth');
+
 
 //users lesson routes
 Route::get('/userLessons/{id}','userLessonsController@index')->middleware('auth')->name('userLessons.index');
