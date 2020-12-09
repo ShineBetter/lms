@@ -14,10 +14,12 @@
                     <div class="breadcrumb-content dashboard-bread-content d-flex align-items-center justify-content-between">
                         <div class="user-bread-content d-flex align-items-center">
                             <div class="bread-img-wrap">
-                                <img src="images/team10.jpg" alt="">
+                                <img src="/{{$data->photo == null ? 'images/user.svg' : $data->photo}}"
+                                     alt="user-image">
                             </div>
                             <div class="section-heading">
-                                <h2 class="section__title font-size-30">Howdy, Alex Smith</h2>
+                                @php($profile = \App\User::where('id',auth()->id())->first()->profile)
+                                <h2 class="section__title font-size-30">{{$profile->name . ' ' . $profile->lastName}}</h2>
                                 <div class="rating-wrap d-flex mt-2">
                                     <ul class="review-stars">
                                         <li><span class="la la-star"></span></li>
@@ -32,11 +34,6 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="upload-btn-box">
-                            <form action="dashboard.html#" method="post" enctype="multipart/form-data">
-                                <input type="file" name="files[]" class="filer_input" multiple="multiple">
-                            </form>
                         </div>
                     </div>
                 </div><!-- end col-lg-12 -->

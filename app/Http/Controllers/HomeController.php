@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\profile;
 use Illuminate\Http\Request;
 use App\Models\Banner;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,7 +21,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('backend.admin.index');
+        $data = profile::where('user_id', Auth::id())->first();
+        return view('backend.admin.index',['data' => $data]);
     }
 
     public function quiz()
