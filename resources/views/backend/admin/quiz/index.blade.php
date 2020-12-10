@@ -75,7 +75,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('lesson.edit',$item->id)}}"><input
+                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>

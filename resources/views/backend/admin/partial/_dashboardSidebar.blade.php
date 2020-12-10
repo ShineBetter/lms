@@ -48,6 +48,9 @@
                 <li class="sidenav__item"><a class="text-center" href="{{ route('quiz.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">امتحانات</p>
                     </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('conference.index') }}"><i class="la la-bolt"></i>
+                        <p class="w-100">همایشات</p>
+                    </a></li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
                             class="la la-graduation-cap"></i>
                         <p class="w-100">دوره های ثبت نام شده</p>
