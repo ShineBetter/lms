@@ -28,7 +28,7 @@ class QuizController extends Controller
      */
     public function create()
     {
-        $data = User::get();
+        $data = User::where('user_role','student')->get();
         return view('backend.admin.quiz.create', ['data' => $data]);
     }
 
@@ -46,6 +46,7 @@ class QuizController extends Controller
         $quiz->quiz_exp = $request->quiz_exp;
         $quiz->quiz_start_date = $request->quiz_start_date;
         $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->user_id = auth()->id();
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {
@@ -96,7 +97,7 @@ class QuizController extends Controller
     public function edit($id)
     {
         $data = quiz::findorfail($id);
-        $students = User::get();
+        $students = User::where('user_role','student')->get();
         return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students]);
     }
 
@@ -115,6 +116,7 @@ class QuizController extends Controller
         $quiz->quiz_exp = $request->quiz_exp;
         $quiz->quiz_start_date = $request->quiz_start_date;
         $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->last_editor_user_id = auth()->id();
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {

@@ -33,8 +33,12 @@
                                     <tr>
                                         <th scope="col">ردیف</th>
                                         <th scope="col">آزمون</th>
+                                        <th scope="col">تایم شروع</th>
+                                        <th scope="col">تایم انقضا</th>
                                         <th scope="col">تاریخ شروع</th>
                                         <th scope="col">تاریخ انقضا</th>
+                                        <th scope="col">سازنده آزمون</th>
+                                        <th scope="col">آخرین ویرایشگر</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -68,6 +72,38 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>{{$item->quiz_exp}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_start_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_exp_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->last_editor_user_id != null)
+                                                        <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
+                                                        @else
+                                                            <li>ویرایش نشده است</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </td>

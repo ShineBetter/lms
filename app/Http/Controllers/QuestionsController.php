@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createQuestionRequest;
+use App\Http\Requests\editQuestionRequest;
+use App\Http\Requests\editUserRequest;
 use App\Models\questions;
+use App\Models\quiz;
+use App\User;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
@@ -25,7 +30,8 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        $data = quiz::pluck('quiz_name','id');
+        return view('backend.admin.questions.create', ['data' => $data]);
     }
 
     /**
@@ -34,9 +40,21 @@ class QuestionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createQuestionRequest $request)
     {
-        //
+        $question = new questions();
+        $question->question_title = $request->question_title;
+        $question->quiz_id = $request->quiz_id;
+        $question->user_id = auth()->id();
+        $question->answer_one = $request->answer_one;
+        $question->answer_two = $request->answer_two;
+        $question->answer_three = $request->answer_three;
+        $question->answer_four = $request->answer_four;
+        $question->correct_answer = $request->correct_answer;
+        $question->save();
+        $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
+        session()->flash('status', $comment);
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -56,9 +74,11 @@ class QuestionsController extends Controller
      * @param  \App\questions  $questions
      * @return \Illuminate\Http\Response
      */
-    public function edit(questions $questions)
+    public function edit($id)
     {
-        //
+        $data = questions::findorfail($id);
+        $quiz = quiz::pluck('quiz_name','id');
+        return view('backend.admin.questions.edit', ['data' => $data, 'quiz' => $quiz]);
     }
 
     /**
@@ -68,9 +88,21 @@ class QuestionsController extends Controller
      * @param  \App\questions  $questions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, questions $questions)
+    public function update(editQuestionRequest $request,  $id)
     {
-        //
+       $question = questions::findorfail($id);
+        $question->question_title = $request->question_title;
+        $question->quiz_id = $request->quiz_id;
+        $question->last_editor_user_id = auth()->id();
+        $question->answer_one = $request->answer_one;
+        $question->answer_two = $request->answer_two;
+        $question->answer_three = $request->answer_three;
+        $question->answer_four = $request->answer_four;
+        $question->correct_answer = $request->correct_answer;
+        $question->save();
+        $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
+        session()->flash('status', $comment);
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -79,8 +111,12 @@ class QuestionsController extends Controller
      * @param  \App\questions  $questions
      * @return \Illuminate\Http\Response
      */
-    public function destroy(questions $questions)
+    public function destroy($id)
     {
-        //
+        $quiz = questions::where('id', $id)->first();
+        $quiz->delete();
+        $comment = 'عملیات حذف بدرستی انجام شد';
+        session()->flash('status', $comment);
+        return back();
     }
 }

@@ -12,4 +12,12 @@ class quiz extends Model
     {
         return $this->belongsToMany(\App\User::class,'user_quiz');
     }
+    public function quizCreator()
+    {
+        return $this->belongsTo(\App\User::class,'user_id');
+    }
+    public function quizEditor()
+    {
+        return $this->belongsTo(\App\User::class,'last_editor_user_id');
+    }
 }

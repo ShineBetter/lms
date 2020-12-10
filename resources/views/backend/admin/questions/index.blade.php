@@ -23,7 +23,7 @@
                     <div class="card-box-shared">
                         @can('Admin')
                             <div class="card-box-shared-title">
-                                <x-btn route="question.create"/>
+                                <x-btn route="questions.create"/>
                             </div>
                         @endcan
                         <div class="card-box-shared-body">
@@ -34,6 +34,8 @@
                                         <th scope="col">ردیف</th>
                                         <th scope="col">سوال</th>
                                         <th scope="col">نام آزمون</th>
+                                        <th scope="col">سازنده سوال</th>
+                                        <th scope="col">آخرین ویرایشگر</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -59,7 +61,25 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->question_title}}</li>
+                                                        <li>{{$item->quiz->quiz_name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->questionCreator->profile->name}} {{$item->questionCreator->profile->lastName}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->last_editor_user_id != null)
+                                                        <li>{{$item->questionEditor->profile->name}} {{$item->questionEditor->profile->lastName}}</li>
+                                                        @else
+                                                            <li>ویرایش نشده است</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </td>
@@ -67,11 +87,11 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                            <a href="{{route('questions.edit',$item->id)}}"><input
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
-                                                            <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                            <x-delbtn route="questions.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>
                                                 </div>
