@@ -22,9 +22,9 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         @can('Admin')
-                        <div class="card-box-shared-title">
-                            <x-btn route="quiz.create"/>
-                        </div>
+                            <div class="card-box-shared-title">
+                                <x-btn route="question.create"/>
+                            </div>
                         @endcan
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">

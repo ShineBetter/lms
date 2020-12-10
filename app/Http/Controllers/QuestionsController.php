@@ -14,7 +14,8 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-
+        $data = questions::paginate(10);
+        return view('backend.admin.questions.index',['data' => $data]);
     }
 
     /**

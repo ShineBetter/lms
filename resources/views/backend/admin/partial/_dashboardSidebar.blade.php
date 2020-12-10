@@ -49,6 +49,10 @@
                                 class="la la-bolt"></i>
                             <p class="w-100">امتحانات</p>
                         </a></li>
+                    <li class="sidenav__item"><a class="text-center" href="{{ route('questions.index') }}"><i
+                                class="la la-bolt"></i>
+                            <p class="w-100">سوالات</p>
+                        </a></li>
                     <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
                                 class="la la-graduation-cap"></i>
                             <p class="w-100">دوره های ثبت نام شده</p>

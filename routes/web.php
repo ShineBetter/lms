@@ -35,6 +35,10 @@ Route::get('/panel', 'HomeController@index')->name('panel');
 //quiz route
 Route::get('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
 Route::resource('quiz','QuizController')->middleware('auth');
+
+//quiz route
+Route::resource('questions','QuestionsController')->middleware('auth');
+
 //role route
 Route::resource('role','RoleController')->middleware('auth');
 
@@ -114,4 +118,3 @@ Route::view('/faq','faq');
 Route::view('/course-grid','course-grid');
 Route::view('/contact','contact');
 Route::view('/course-details','course-details');
-Route::view('/tests','backend.admin.select');
