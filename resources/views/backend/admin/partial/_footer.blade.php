@@ -20,6 +20,7 @@
 <script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
+<script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -27,7 +28,6 @@
         }
     });
     let sweetTextArea = $('.swal2-textarea').val();
-
     $('.teacher-warn-btn').on('click', function () {
         let user_name = $(this).attr('user-name');
         let success_message = 'به ' + user_name + ' اخطار داده شد';
@@ -59,12 +59,10 @@
             },
         })
     })
-
-
     $('.teacher-kick-btn').on('click', function () {
         let user_name = $(this).attr('user-name');
         let thisElement = $(this);
-        if(thisElement.attr('kicked') == 0) {
+        if (thisElement.attr('kicked') == 0) {
             let success_message = user_name + ' اخراج شد';
             let question = user_name + ' اخراج شود؟';
             Swal.fire({
@@ -82,7 +80,7 @@
                         url: 'teacher/kick/' + user_id + '/kick',
                         success: function (res) {
                             $(thisElement).html('بازگشت کاربر');
-                            $(thisElement).attr('kicked',1);
+                            $(thisElement).attr('kicked', 1);
                             Swal.fire(
                                 'اخراج شد',
                                 success_message,
@@ -92,8 +90,7 @@
                     })
                 },
             })
-        }
-        else if(thisElement.attr('kicked') == 1){
+        } else if (thisElement.attr('kicked') == 1) {
             let success_message = user_name + ' برگشت';
             let question = 'مطمعنید؟';
             Swal.fire({
@@ -111,7 +108,7 @@
                         url: 'teacher/kick/' + user_id + '/back',
                         success: function (res) {
                             $(thisElement).html('اخراج');
-                            $(thisElement).attr('kicked',0);
+                            $(thisElement).attr('kicked', 0);
                             Swal.fire(
                                 'برگشت',
                                 success_message,
@@ -180,6 +177,21 @@
             }
         });
     }
+</script>
+<script>
+    $(".multiSelect").bsMultiSelect({
+        cssPatch: {
+            choices: {columnCount: '5'},
+            choice_hover: 'text-success',
+        },
+    });
+
+    $('#some_students').change('checked', function () {
+        $('.dashboardcode-bsmultiselect').fadeIn();
+    })
+    $('#all_students').change('checked', function () {
+        $('.dashboardcode-bsmultiselect').fadeOut();
+    })
 </script>
 @stack('custosm-scripts')
 </body>

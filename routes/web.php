@@ -114,3 +114,4 @@ Route::view('/faq','faq');
 Route::view('/course-grid','course-grid');
 Route::view('/contact','contact');
 Route::view('/course-details','course-details');
+Route::view('/tests','backend.admin.select');

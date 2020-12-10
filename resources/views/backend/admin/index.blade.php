@@ -19,12 +19,8 @@
                                      alt="user-image">
                             </div>
                             <div class="section-heading">
-<<<<<<<<< Temporary merge branch 1
                                 @php($profile = \App\User::where('id',auth()->id())->first()->profile)
                                 <h2 class="section__title font-size-30">{{$profile->name . ' ' . $profile->lastName}}</h2>
-=========
-                                <h2 class="section__title font-size-30">{{\App\User::where('id',auth()->id())->first()->profile->name}}</h2>
->>>>>>>>> Temporary merge branch 2
                                 <div class="rating-wrap d-flex mt-2">
                                     <ul class="review-stars">
                                         <li><span class="la la-star"></span></li>

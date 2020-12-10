@@ -19,8 +19,6 @@ class CreateProfilesTable extends Migration
             $table->string('lastName');
             $table->string('parent_name')->nullable();
             $table->unsignedBigInteger('user_id');
-//            $table->unsignedBigInteger('level_id')->nullable();
-//            $table->unsignedBigInteger('lesson_id')->nullable();
             $table->string('nationalNumber',10);
             $table->string('phone',20);
             $table->string('mobile',11);
@@ -30,8 +28,6 @@ class CreateProfilesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-//            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
-//            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
 
         });
     }
