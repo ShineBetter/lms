@@ -45,7 +45,7 @@
                             class="la la-file-video-o"></i>
                         <p class="w-100">مدیران</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-quiz"><i class="la la-bolt"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('quiz.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">امتحانات</p>
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
@@ -112,7 +112,7 @@
                             class="la la-file-video-o"></i>
                         <p class="w-100">دانش آموزان</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-quiz"><i class="la la-bolt"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('quiz.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">امتحانات</p>
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
@@ -169,7 +169,7 @@
                             class="la la-file-video-o"></i>
                         <p class="w-100">اساتید</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-quiz"><i class="la la-bolt"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('quiz.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">امتحانات</p>
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
@@ -215,7 +215,7 @@
                             class="la la-file-video-o"></i>
                         <p class="w-100">اساتید</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-quiz"><i class="la la-bolt"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('quiz.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">امتحانات</p>
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
@@ -236,6 +236,6 @@
             </ul>
         </div><!-- end side-menu-wrap -->
         @endcan
-        
+
     </div>
 </div>

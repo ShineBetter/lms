@@ -16,8 +16,10 @@ class CreateQuizzesTable extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->string('quiz_name');
-            $table->timestamp('quiz_start')->nullable();
-            $table->timestamp('quiz_exp')->nullable();
+            $table->string('quiz_start')->nullable();
+            $table->string('quiz_exp')->nullable();
+            $table->string('quiz_start_date')->nullable();
+            $table->string('quiz_exp_date')->nullable();
             $table->timestamps();
         });
     }
