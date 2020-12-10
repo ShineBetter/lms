@@ -25,6 +25,23 @@ class teacherController extends Controller
         return view('backend.admin.teacher.index', ['data' => $data]);
     }
 
+    public function warnSet($id)
+    {
+        $user = User::where('id', $id)->first();
+        $user->warn = 1;
+        $user->save();
+    }
+    public function kick($id)
+    {
+        $user = User::where('id', $id)->first();
+        $user->kick = 1;
+        $user->save();
+        $comment = 'دبیر با موفقیت اخراج شد ';
+        session()->flash('status', $comment);
+        return redirect()->route('teacher.index');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
