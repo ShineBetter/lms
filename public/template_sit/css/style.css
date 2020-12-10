@@ -16799,3 +16799,65 @@ section {
     transform: rotate(-45deg);
     transition: transform 250ms;
 }
+
+.swal2-textarea{
+    text-align: right;
+}
+
+.student_radio_inputs_group {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.student_radio_input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.student_radio_input_lable {
+    position: relative;
+    margin-right: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    line-height: 2;
+    cursor: pointer;
+}
+.student_radio_input_lable:before {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top: 0.3em;
+    right: 0;
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 2px solid #35b161;
+    border-radius: .25em;
+    z-index: -1;
+}
+.student_radio_input + label::before {
+    border-radius: 1em;
+}
+
+/* Checked */
+.student_radio_input:checked + label {
+    padding-left: 1em;
+    color: #fff;
+    z-index: 9999;
+}
+.student_radio_input:checked + label:before {
+    top: 0;
+    width: 100%;
+    height: 2em;
+    background: #51be78;
+}
+
+/* Transition */
+.student_radio_input_lable,
+.student_radio_input_lable::before {
+    -webkit-transition: .25s all ease;
+    transition: .25s all ease;
+}

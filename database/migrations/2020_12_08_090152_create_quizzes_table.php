@@ -20,6 +20,7 @@ class CreateQuizzesTable extends Migration
             $table->string('quiz_exp')->nullable();
             $table->string('quiz_start_date')->nullable();
             $table->string('quiz_exp_date')->nullable();
+            $table->string('quiz_permission')->nullable()->default('all');
             $table->timestamps();
         });
     }

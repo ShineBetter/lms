@@ -57,7 +57,36 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
-
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('quiz_start_date', 'تاریخ شروع', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::date('quiz_start_date', null, ['class' => 'form-control']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('quiz_exp_date', 'تاریخ پایان', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::date('quiz_exp_date', null, ['class' => 'form-control']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-12 col-sm-12">
+                                            <div class="input-box">
+                                                <div class="student_radio_inputs_group">
+                                                    <input type="radio" class="student_radio_input" checked name="students" value="1" id="all_students" />
+                                                    <label for="all_students" class="student_radio_input_lable">همه دانش آموزان</label>
+                                                    <input type="radio" class="student_radio_input" name="students" value="2" id="some_students" />
+                                                    <label for="some_students" class="student_radio_input_lable">فقط دانش آموزان خاص</label>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
 
                                     </div><!-- end row -->
                                     <div class="row">
@@ -77,4 +106,5 @@
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-content-wrap -->
+
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createQuizRequest;
 use App\Models\quiz;
+use App\User;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -37,11 +38,16 @@ class QuizController extends Controller
      */
     public function store(createQuizRequest $request)
     {
-        $level = new quiz();
-        $level->quiz_name = $request->quiz_name;
-        $level->quiz_start = $request->quiz_start;
-        $level->quiz_exp = $request->quiz_exp;
-        $level->save();
+        $quiz = new quiz();
+        $quiz->quiz_name = $request->quiz_name;
+        $quiz->quiz_start = $request->quiz_start;
+        $quiz->quiz_exp = $request->quiz_exp;
+        $quiz->quiz_start_date = $request->quiz_start_date;
+        $quiz->quiz_exp_date = $request->quiz_exp_date;
+        if ($request->students == 1) {
+            $quiz->quiz_permission = 'all';
+        }
+        $quiz->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';
         session()->flash('status', $comment);
         return redirect()->route('quiz.index');
@@ -53,7 +59,7 @@ class QuizController extends Controller
      * @param  \App\quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function show(quiz $quiz)
+    public function show(createQuizRequest $quiz)
     {
         $quiz = quiz::where('id', $id)->first();
         $quiz->quiz_name = $request->quiz_name;
@@ -90,6 +96,9 @@ class QuizController extends Controller
         $quiz->quiz_name = $request->quiz_name;
         $quiz->quiz_start = $request->quiz_start;
         $quiz->quiz_exp = $request->quiz_exp;
+        $quiz->quiz_start_date = $request->quiz_start_date;
+        $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->quiz_permission = $request->quiz_permission;
         $quiz->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status', $comment);

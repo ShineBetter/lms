@@ -101,7 +101,27 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
-                                                            <x-btn route="userLessons.index" routeParam="{{$item->id}}" class="btn-info" title="دروس"/>
+                                                            <button type="button"
+                                                                    user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                                    user-id="{{$item->id}}"
+                                                                    class="btn btn-warning teacher-warn-btn">اخطار
+                                                            </button>
+                                                            @if($item->kick == 0)
+                                                                <button type="button"
+                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                                        user-id="{{$item->id}}"
+                                                                        kicked="0"
+                                                                        class="btn btn-danger teacher-kick-btn">اخراج
+                                                                </button>
+                                                            @elseif($item->kick == 1)
+                                                                <button type="button"
+                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                                        user-id="{{$item->id}}"
+                                                                        kicked="1"
+                                                                        class="btn btn-danger teacher-kick-btn">بازگشت کاربر
+                                                                </button>
+                                                            @endif
+                                                            <x-btn type="" route="userLessons.index" routeParam="{{$item->id}}" class="btn-info" title="دروس"/>
                                                             <x-delbtn route="student.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>
