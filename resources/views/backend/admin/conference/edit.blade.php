@@ -1,88 +1,117 @@
 @extends('backend.admin.partial._master')
-@section('main.content')
-    <section dir="rtl">
+@section('title','همایشات')
+@section('cntd')
+    @parent
+    @php
+        $header="";
+        $loader="dont";
+        $sidebar="";
+    @endphp
+    <!-- end dashboard-sidebar -->
+    @isset($errors)
+        @foreach($errors->all() as $message)
+            <x-alert type="warning" text="{{$message}}"/>
+        @endforeach
+    @endisset
+    <div class="dashboard-content-wrap">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card-box-shared">
+                        <div class="card-box-shared-title">
+                            <h3 class="widget-title">همایش ها</h3>
+                        </div>
+                        <div class="card-box-shared-body">
+                            <div class="user-form">
+                                <div class="contact-form-action">
+                                    {{ Form::model($data,['route'=>['conference.update', $data->id], 'method' => 'put','files' => true])}}
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('name', 'نام همایش', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'نام همایش']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('price', 'قیمت', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::number('price', $data->price, ['class' => 'form-control','placeholder' => 'قیمت']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('date', 'تاریخ', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::time('date', $data->date, ['class' => 'form-control','placeholder' => 'تاریخ']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('offer', 'تخفیف', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::number('offer', $data->offer, ['class' => 'form-control','placeholder' => 'تخفیف']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('count', 'ظرفیت', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::number('count', $data->count, ['class' => 'form-control','placeholder' => 'ظرفیت']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('picture', 'نام آزمون', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::file('picture', ['class' => 'form-control']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('description', 'توضیحات', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::textarea('description', $data->description, ['class' => 'form-control','placeholder' => 'توضیحات']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <!-- end col-lg-6 -->
 
-        <section class="container" style="padding: 50px" dir="rtl">
-            <section>
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
 
-            </section>
-            <section>
-                @if (session()->has('conference'))
-                    <section class="alert alert-success">
-                        <h3>{{ session('conference') }}</h3>
-                    </section>
-                @endif
-
-            </section>
-{{--            {{ Form::open(['route'=>'conference.store', 'method' => 'post','files' => true])}}--}}
-            {{ Form::model($conference,['route' => ['conference.update',$conference->id], 'method' => 'put','files'=>true])}}
-            <section class="form-group">
-                {{Form::label('title', 'عنوان : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('title', $conference->title, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('description', 'توضیحات : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::textarea('description', $conference->description, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('speacher', 'ُ سخنران : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::text('speacher', $conference->speacher, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('date', 'تاریخ همایش : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::date('date', $conference->date, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('time', 'ساعت شروع : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::time('time', $conference->time, ['class' => 'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('periodOfTime', 'مدت زمان همایش  :(دقیقه) ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                <input type="number" id="periodOfTime" name="periodOfTime" min="1" max="999" class="form-control"
-                       onKeyUp="if(this.value>999){this.value='999';}else if(this.value<0){this.value='0';}" value="{{$conference->periodOfTime}}">
-            </section>
-            {!! Form::label('image', 'تصویر : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma']) !!}
-            <section class="form-group">
-                {!! Form::file('image',['class'=>'form-control']) !!}
-            </section>
-            <section class="form-group">
-                {{Form::label('status', 'وضعیت : ', ['class' => 'control-label','style'=>'font-size: 15px;font-family: Tahoma'])}}
-                {!! Form::select('status',['active'=>'فعال','inactive'=>'غیر فعال'],$conference->status,['class' => 'form-control']) !!}
-            </section>
-            <hr>
-            <section class="form-group">
-                {!! Form::submit('ثبت', ['class' => 'form-control btn btn-info','style'=>'font-size: 15px;font-family: Tahoma']) !!}
-            </section>
-
-            {{ Form::close() }}
-
-            <section class="form-group">
-                <a href="{{route('conference.index')}}"><input type="button" class="form-control btn btn-success"
-                                                               style="font-size: 15px;font-family: Tahoma"
-                                                               value="  بازگشت  "></a>
-            </section>
-
-
-        </section>
-    </section>
+                                    </div><!-- end row -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            {!! Form::submit('ثبت', ['class' => 'theme-btn float-left']) !!}
+                                        </div>
+                                    </div><!-- end row -->
+                                    {{ Form::close() }}
+                                </div>
+                            </div>
+                        </div><!-- end card-box-shared-body -->
+                    </div><!-- end card-box-shared -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container-fluid -->
+    </div><!-- end dashboard-content-wrap -->
 @endsection
-@push('custosm-scripts')
-    <script>
-        $(function () {
-            $("input[type='number']").prop('min', 1);
-            $("input[type='number']").prop('max', 999);
-        });
-    </script>
-
-@endpush
-
-
