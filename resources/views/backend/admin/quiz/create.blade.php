@@ -1,5 +1,5 @@
 @extends('backend.admin.partial._master')
-@section('title','آزمون')
+@section('title','اولیا')
 @section('cntd')
     @parent
     @php

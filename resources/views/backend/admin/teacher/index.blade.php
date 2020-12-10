@@ -9,13 +9,13 @@
         $sidebar="";
     @endphp
     @if(\Illuminate\Support\Facades\Session::has('status'))
-        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
+        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('status')}}"/>
     @endif
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h3 class="widget-title">دانش آموزان</h3>
+                    <h3 class="widget-title">اساتید</h3>
                 </div>
             </div>
             <div class="row mt-5">
@@ -89,6 +89,14 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
+                                                            <a href="{{route('teacher-warn',$item->id)}}"><input
+                                                                    type="button" class="btn btn-info"
+                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                    value="اخطار"></a>
+                                                            <a href="{{route('teacher-kick',$item->id)}}"><input
+                                                                    type="button" class="btn btn-info"
+                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                    value="اخراج"></a>
                                                             <x-btn type="" route="userLessons.index" routeParam="{{$item->id}}" class="btn-info" title="دروس"/>
                                                             <x-delbtn route="teacher.destroy" id="{{$item->id}}"/>
                                                         </li>
