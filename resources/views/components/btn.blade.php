@@ -114,6 +114,9 @@
         @if($routeParam != '')
             <a class="btn text-white {{$class ?? 'btn-info'}}"
                href="{{ route("$route",$routeParam) }}">{{ $title ?? 'افزودن' }}</a>
+        @else
+            <a class="btn text-white {{$class ?? 'btn-info'}}"
+               href="{{ route("$route") }}">{{ $title ?? 'افزودن' }}</a>
         @endif
     @endempty
 @elseif($type == 'submit')

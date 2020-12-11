@@ -20,4 +20,8 @@ class quiz extends Model
     {
         return $this->belongsTo(\App\User::class,'last_editor_user_id');
     }
+    public function questions()
+    {
+        return $this->belongsTo(questions::class);
+    }
 }

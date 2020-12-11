@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\profile;
+use App\Models\questions;
+use App\Models\quiz;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use Illuminate\Support\Facades\Auth;
@@ -25,9 +28,13 @@ class HomeController extends Controller
         return view('backend.admin.index',['data' => $data]);
     }
 
-    public function quiz()
+    public function quiz(Request $request)
     {
-        return view('backend.admin.quiz.quiz');
-}
-
+        $quiz_id = $request->quiz_id;
+        $quiz = quiz::findOrFail($quiz_id);
+        $questions = questions::where('quiz_id',$quiz_id)->first();
+        $quiz_start = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_start));
+        dd($quiz_start->minute);
+        return view('backend.admin.quiz.quiz',['questions' => $questions,'quiz' => $quiz,'question_row' => 1]);
+    }
 }

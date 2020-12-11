@@ -22,9 +22,9 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         @can('Admin')
-                        <div class="card-box-shared-title">
-                            <x-btn route="quiz.create"/>
-                        </div>
+                            <div class="card-box-shared-title">
+                                <x-btn route="quiz.create"/>
+                            </div>
                         @endcan
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -93,7 +93,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         @if($item->user_id != null)
-                                                        <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
+                                                            <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
                                                         @else
                                                             <li>مشخص نشده است</li>
                                                         @endif
@@ -104,7 +104,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         @if($item->last_editor_user_id != null)
-                                                        <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
+                                                            <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
                                                         @else
                                                             <li>ویرایش نشده است</li>
                                                         @endif
@@ -119,6 +119,10 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
+                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                            <input type="hidden" name="quiz_id" value="{{$item->id}}">
+                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                            {{ Form::close() }}
                                                             <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>

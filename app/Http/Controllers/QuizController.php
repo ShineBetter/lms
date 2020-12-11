@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\createQuizRequest;
 use App\Models\quiz;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,10 +43,10 @@ class QuizController extends Controller
     {
         $quiz = new quiz();
         $quiz->quiz_name = $request->quiz_name;
-        $quiz->quiz_start = $request->quiz_start;
-        $quiz->quiz_exp = $request->quiz_exp;
-        $quiz->quiz_start_date = $request->quiz_start_date;
-        $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->quiz_start = Carbon::createFromFormat('H:i',$request->quiz_start)->timestamp;
+        $quiz->quiz_exp = Carbon::createFromFormat('H:i',$request->quiz_exp)->timestamp;
+        $quiz->quiz_exp_date =  Carbon::createFromFormat('Y-m-d',$request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d',$request->quiz_start_date)->timestamp;
         $quiz->user_id = auth()->id();
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';

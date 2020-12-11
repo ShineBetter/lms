@@ -33,7 +33,7 @@ Route::post('user/register','FrontEndController@registerSubmit')->name('register
 Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
-Route::get('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //quiz route
