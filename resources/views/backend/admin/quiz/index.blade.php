@@ -92,7 +92,11 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
+                                                        @if($item->user_id != null)
                                                         <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
+                                                        @else
+                                                            <li>مشخص نشده است</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </td>

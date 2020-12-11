@@ -68,7 +68,11 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->questionCreator->profile->name}} {{$item->questionCreator->profile->lastName}}</li>
+                                                        @if($item->user_id != null)
+                                                            <li>{{$item->questionCreator->profile->name}} {{$item->questionCreator->profile->lastName}}</li>
+                                                        @else
+                                                            <li>مشخص نشده است</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </td>
@@ -76,7 +80,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         @if($item->last_editor_user_id != null)
-                                                        <li>{{$item->questionEditor->profile->name}} {{$item->questionEditor->profile->lastName}}</li>
+                                                            <li>{{$item->questionEditor->profile->name}} {{$item->questionEditor->profile->lastName}}</li>
                                                         @else
                                                             <li>ویرایش نشده است</li>
                                                         @endif
