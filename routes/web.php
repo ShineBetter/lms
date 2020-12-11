@@ -55,7 +55,9 @@ Route::resource('parent','ParentsController')->middleware(['auth']);
 
 //teacher list route
 Route::resource('teacher','teacherController')->middleware('auth');
+Route::resource('ticket','TicketController')->middleware('auth');
 Route::get('teacher/warn/{id}','teacherController@setWarn')->middleware('auth')->name('teacher-warn');
+Route::get('ticket/close/{id}','TicketController@close')->middleware('auth')->name('ticket.close');
 Route::get('teacher/kick/{id}','teacherController@kick')->middleware('auth')->name('teacher-kick');
 
 //student list route
