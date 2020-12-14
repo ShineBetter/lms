@@ -32,9 +32,11 @@ class HomeController extends Controller
     {
         $quiz_id = $request->quiz_id;
         $quiz = quiz::findOrFail($quiz_id);
-        $questions = questions::where('quiz_id',$quiz_id)->first();
+        $questions_count = questions::where('quiz_id',$quiz_id)->get()->count();
+        $questions = questions::where('quiz_id',$quiz_id)->paginate(1);
         $quiz_start = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_start));
-        dd($quiz_start->minute);
-        return view('backend.admin.quiz.quiz',['questions' => $questions,'quiz' => $quiz,'question_row' => 1]);
+        $quiz_exp= Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_exp));
+        $quiz_time = $quiz_start->diffInMinutes($quiz_exp);
+        return view('backend.admin.quiz.quiz',['questionss' => $questions,'questions_count' => $questions_count,'quiz' => $quiz,'quiz_time' => $quiz_time,'question_row' => 1]);
     }
 }

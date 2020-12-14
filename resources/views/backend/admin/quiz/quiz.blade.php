@@ -98,7 +98,7 @@
         $header="";
         $loader="dont";
         $sidebar="";
-        $quiztime=3;
+        $quiztime= $quiz_time;
     @endphp
     <script
         src="https://code.jquery.com/jquery-3.5.1.js"
@@ -122,97 +122,108 @@
                             دقیقه
                         </div>
                         <script>
-                            var timequiz =<?php echo $quiztime ?>;
+                            var timequiz = <?php echo $quiztime ?>;
                             document.getElementById("time").innerHTML = timequiz;
                             document.getElementById("alltime").innerHTML = timequiz;
                         </script>
                     </div>
                     <div class="col-lg-12 question">
                         <div class="row p-2">
-                            @for($i=1;$i <= $questions->count();$i++)
-                                <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
-                                    <div class="circle text-center" id="q-circle-n-{{$i}}">
+                            @if($questions_count > 0)
+                                @for($i=1;$i <= $questions->count();$i++)
+                                    <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block">
+                                        <div class="circle text-center" id="q-circle-n-{{$i}}">
                                         <span>
                                         {{$i}}
                                     </span>
+                                        </div>
                                     </div>
+                                @endfor
+                            @else
+                                <div class=" col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center d-block">
+                                    <p>سوالی وجود ندارد</p>
                                 </div>
-                            @endfor
+                            @endif
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10">
-                <div class="card">
-                    <div class="que-header w-100">
-                        <div class="row dir que-counter">
-                            <div class="col-lg-4 col-md-d col-12">
-                                <p class="d-inline text-white mr-2 ml-1">
-                                    شماره سوال:
-                                </p>
-                                <span class="text-white">
+            @if($questions_count > 0)
+                <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10">
+                    <div class="card">
+                        <div class="que-header w-100">
+                            <div class="row dir que-counter">
+                                <div class="col-lg-4 col-md-d col-12">
+                                    <p class="d-inline text-white mr-2 ml-1">
+                                        شماره سوال:
+                                    </p>
+                                    <span class="text-white">
                                     {{$question_row}}
                                 </span>
-                                <span class="text-white">
+                                    <span class="text-white">
                                     از
                                 </span>
-                                <span class="text-white">
+                                    <span class="text-white">
                                     {{$questions->count()}}
                                 </span>
-                            </div>
-                            <div class="col-lg-4 col-md-d col-12 text-white text-center">
-                                <p>{{$quiz->quiz_name}}</p>
-                            </div>
-                            <div class="col-lg-4 col-md-d col-12 text-left">
-                                <a href="#" class="ml-1"><img class="size" src="/images/next.png" alt=""></a>
-                                <a href="#" class="ml-2"><img class="size" src="/images/previous.png" alt=""></a>
+                                </div>
+                                <div class="col-lg-4 col-md-d col-12 text-white text-center">
+                                    <p>{{$quiz->quiz_name}}</p>
+                                </div>
+                                <div class="col-lg-4 col-md-d col-12 text-left">
+                                    <a href="#" class="ml-1"><img class="size" src="/images/next.png" alt=""></a>
+                                    <a href="#" class="ml-2"><img class="size" src="/images/previous.png" alt=""></a>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="card-body text-right">
+                            <h4 class="text-muted text-justify que">
+                                {{$questions->question_title}}
+                            </h4>
+
+                            {{--                        ////////////////////////////////////////////--}}
+                            <main class="py-5 px-6 space-y-3 bg-white rounded-lg shadow-xl  w-100 text-right" id="ques">
+                                <label class="col-lg-12 items-center">
+                                    <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
+                                    <span
+                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_one}}</span>
+
+                                </label>
+                                <label class="col-lg-12 items-center">
+                                    <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
+                                    <span
+                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_two}}</span>
+                                </label>
+                                <label class="col-lg-12 items-center">
+                                    <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
+                                    <span
+                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_three}}</span>
+                                </label>
+                                <label class="col-lg-12 items-center">
+                                    <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
+                                    <span
+                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_four}}</span>
+                                </label>
+                            </main>
+                        </div>
+                        <script>
+                            var id = "q-circle-n-2";
+                            var test = $("#q-circle-n-2").attr('id');
+                            // $(".que").attr("id",test);
+                            $(".form-radio").attr("name", test);
+                            var inputName = $(".form-radio").attr("name");
+                            // $("input[name=test]").change( function () {
+                            //     alert("yes")
+                            // });
+                            $(".form-radio").click(function () {
+                                $(".question").find('#' + inputName).css("background", "#53f112a1");
+                            })
+                        </script>
                     </div>
-
-                    <div class="card-body text-right">
-                        <h4 class="text-muted text-justify que">
-                            {{$questions->question_title}}
-                        </h4>
-
-                        {{--                        ////////////////////////////////////////////--}}
-                        <main class="py-5 px-6 space-y-3 bg-white rounded-lg shadow-xl  w-100 text-right" id="ques">
-                            <label class="col-lg-12 items-center">
-                                <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
-                                <span class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_one}}</span>
-
-                            </label>
-                            <label class="col-lg-12 items-center">
-                                <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
-                                <span class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_two}}</span>
-                            </label>
-                            <label class="col-lg-12 items-center">
-                                <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
-                                <span
-                                    class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_three}}</span>
-                            </label>
-                            <label class="col-lg-12 items-center">
-                                <input type="radio" name="radio-package" class="form-radio h-5 w-5 text-indigo-600">
-                                <span class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_four}}</span>
-                            </label>
-                        </main>
-                    </div>
-                    <script>
-                        var id = "q-circle-n-2";
-                        var test = $("#q-circle-n-2").attr('id');
-                        // $(".que").attr("id",test);
-                        $(".form-radio").attr("name", test);
-                        var inputName = $(".form-radio").attr("name");
-                        // $("input[name=test]").change( function () {
-                        //     alert("yes")
-                        // });
-                        $(".form-radio").click(function () {
-                            $(".question").find('#' + inputName).css("background", "#53f112a1");
-                        })
-                    </script>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
     <script>
