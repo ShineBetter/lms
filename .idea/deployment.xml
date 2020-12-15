@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="lms">
+  <component name="PublishConfigData">
     <serverData>
       <paths name="lms">
         <serverdata>
           <mappings>
-<<<<<<< HEAD
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
-=======
             <mapping local="$PROJECT_DIR$" web="/" />
->>>>>>> reza
           </mappings>
         </serverdata>
       </paths>
@@ -23,7 +19,7 @@
       <paths name="srteam">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
