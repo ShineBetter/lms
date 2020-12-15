@@ -26,7 +26,40 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+    let exam_question_id = $('.sidebar_question_div').attr('question_id');
+    $('.exam_form input:radio').change(function () {
+        let answer = $('.exam_form input:radio:checked').val();
+        $.ajax({
+            url: '{{route('sendAnswer')}}',
+            type: 'post',
+            data: {
+                quiz_id: {{$quiz->id}},
+                question_id: exam_question_id,
+                answer: answer
+            },
+            success: function (res) {
+            }
+        })
+    })
+    $('.exam_form input:radio').each(function () {
+        let radio = $(this);
+        $.ajax({
+            url: '{{route("getFirstAnswer")}}',
+            type: 'post',
+            data: {
+                question_id: exam_question_id,
+            },
+            success: function (res) {
+                if (res.checkedRadio != null) {
+                    if (res.checkedRadio.answer == radio.val()) {
+                        radio.prop('checked', true);
+                    }
+                } else {
+                    radio.prop('checked', false)
+                }
+            }
+        })
+    })
     $('.next_question').on('click', function () {
         let next = $(this);
         let prev = $(this).siblings('.prev_question');
@@ -37,14 +70,27 @@
                 question_id: next.attr('question_id')
             },
             success: function (res) {
+                console.log(res)
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
                 let number = $("#q-circle-n-" + res.questions.id).children('span').html();
                 $('.exam_question_title').html(res.questions.question_title)
-                $('.form-radio').attr('name', test)
+                $('.exam_input_group input').attr('name', test)
                 $('.answer_radio_one').find('label').html(res.questions.answer_one)
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
+
+                $('.exam_form input:radio').each(function () {
+                    if (res.checkedRadio != null) {
+                        if (res.checkedRadio.answer == $(this).val()) {
+                            $(this).prop('checked', true);
+                        }
+                    } else {
+                        $(this).prop('checked', false)
+                    }
+                })
+
+
                 $('.exam_question_number').html(number)
                 let end_display = $('.exam_question_max_number').html();
                 if (res.next_question != null) {
@@ -76,11 +122,20 @@
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
                 let number = $("#q-circle-n-" + res.questions.id).children('span').html();
                 $('.exam_question_title').html(res.questions.question_title)
-                $('.form-radio').attr('name', test)
-                $('.answer_radio_one').find('span').html(res.questions.answer_one)
-                $('.answer_radio_two').find('span').html(res.questions.answer_two)
-                $('.answer_radio_three').find('span').html(res.questions.answer_three)
-                $('.answer_radio_four').find('span').html(res.questions.answer_four)
+                $('.exam_input_group input').attr('name', test)
+                $('.answer_radio_one').find('label').html(res.questions.answer_one)
+                $('.answer_radio_two').find('label').html(res.questions.answer_two)
+                $('.answer_radio_three').find('label').html(res.questions.answer_three)
+                $('.answer_radio_four').find('label').html(res.questions.answer_four)
+                $('.exam_form input:radio').each(function () {
+                    if (res.checkedRadio != null) {
+                        if (res.checkedRadio.answer == $(this).val()) {
+                            $(this).prop('checked', true);
+                        }
+                    } else {
+                        $(this).prop('checked', false)
+                    }
+                })
                 $('.exam_question_number').html(number)
                 let end_display = $('.exam_question_max_number').html();
 
@@ -98,7 +153,7 @@
         })
     })
 
-    $(".form-radio").click(function () {
+    $(".exam_input_group input").click(function () {
         $(".question").find('#' + $(this).attr('name')).css("background", "rgb(79 166 255 / 72%)");
     })
 
@@ -116,17 +171,29 @@
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
                 let number = $("#q-circle-n-" + res.questions.id).children('span').html();
                 $('.exam_question_title').html(res.questions.question_title)
-                $('.form-radio').attr('name', test)
-                $('.answer_radio_one').find('span').html(res.questions.answer_one)
-                $('.answer_radio_two').find('span').html(res.questions.answer_two)
-                $('.answer_radio_three').find('span').html(res.questions.answer_three)
-                $('.answer_radio_four').find('span').html(res.questions.answer_four)
+                $('.exam_input_group input').attr('label', test)
+                $('.answer_radio_one').find('label').html(res.questions.answer_one)
+                $('.answer_radio_two').find('label').html(res.questions.answer_two)
+                $('.answer_radio_three').find('label').html(res.questions.answer_three)
+                $('.answer_radio_four').find('label').html(res.questions.answer_four)
+
                 $('.exam_question_number').html(number)
                 let end_display = $('.exam_question_max_number').html();
+
+                $('.exam_form input:radio').each(function () {
+                    if (res.checkedRadio != null) {
+                        if (res.checkedRadio.answer == $(this).val()) {
+                            $(this).prop('checked', true);
+                        }
+                    } else {
+                        $(this).prop('checked', false)
+                    }
+                })
 
                 if (res.next_question != null) {
                     next.attr('question_id', res.next_question.id)
                 }
+
                 if (res.pre_question != null) {
                     pre.attr('question_id', res.pre_question.id)
                 }
@@ -139,19 +206,19 @@
     })
 
     $('.exit_exam').on('click', function () {
-            Swal.fire({
-                title: "میخواهید از آزمون خارج شوید؟",
-                icon: 'warning',
-                showCancelButton: true,
-                cancelButtonColor: '#ee5253',
-                confirmButtonColor: '#ffa502',
-                confirmButtonText: 'بله',
-                cancelButtonText: 'نه',
-                preConfirm: () => {
-                    let user_id = $(this).attr('user-id');
-                    window.location = '{{route("quiz.index")}}';
-                },
-            })
+        Swal.fire({
+            title: "میخواهید از آزمون خارج شوید؟",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: '#ee5253',
+            confirmButtonColor: '#ffa502',
+            confirmButtonText: 'بله',
+            cancelButtonText: 'نه',
+            preConfirm: () => {
+                let user_id = $(this).attr('user-id');
+                window.location = '{{route("quiz.index")}}';
+            },
+        })
     })
 
     let sweetTextArea = $('.swal2-textarea').val();
