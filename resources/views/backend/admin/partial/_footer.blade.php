@@ -20,13 +20,140 @@
 <script src="{{ asset("template_sit/js/animated-skills.js")}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
-<script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    $('.next_question').on('click', function () {
+        let next = $(this);
+        let prev = $(this).siblings('.prev_question');
+        $.ajax({
+            url: '{{route('getQuestion')}}',
+            type: 'post',
+            data: {
+                question_id: next.attr('question_id')
+            },
+            success: function (res) {
+                test = $("#q-circle-n-" + res.questions.id).attr('id');
+                let number = $("#q-circle-n-" + res.questions.id).children('span').html();
+                $('.exam_question_title').html(res.questions.question_title)
+                $('.form-radio').attr('name', test)
+                $('.answer_radio_one').find('label').html(res.questions.answer_one)
+                $('.answer_radio_two').find('label').html(res.questions.answer_two)
+                $('.answer_radio_three').find('label').html(res.questions.answer_three)
+                $('.answer_radio_four').find('label').html(res.questions.answer_four)
+                $('.exam_question_number').html(number)
+                let end_display = $('.exam_question_max_number').html();
+                if (res.next_question != null) {
+                    next.attr('question_id', res.next_question.id)
+                }
+
+                if (res.pre_question != null) {
+                    prev.attr('question_id', res.pre_question.id)
+                }
+
+                if (number == end_display) {
+                    $('.end_quiz').removeClass('d-none');
+                    $('.next_question').addClass('d-none');
+                }
+            }
+        })
+    })
+
+    $('.prev_question').on('click', function () {
+        let pre = $(this);
+        let next = $(this).siblings('.next_question');
+        $.ajax({
+            url: '{{route('getQuestion')}}',
+            type: 'post',
+            data: {
+                question_id: pre.attr('question_id')
+            },
+            success: function (res) {
+                test = $("#q-circle-n-" + res.questions.id).attr('id');
+                let number = $("#q-circle-n-" + res.questions.id).children('span').html();
+                $('.exam_question_title').html(res.questions.question_title)
+                $('.form-radio').attr('name', test)
+                $('.answer_radio_one').find('span').html(res.questions.answer_one)
+                $('.answer_radio_two').find('span').html(res.questions.answer_two)
+                $('.answer_radio_three').find('span').html(res.questions.answer_three)
+                $('.answer_radio_four').find('span').html(res.questions.answer_four)
+                $('.exam_question_number').html(number)
+                let end_display = $('.exam_question_max_number').html();
+
+                if (res.next_question != null) {
+                    next.attr('question_id', res.next_question.id)
+                }
+                if (res.pre_question != null) {
+                    pre.attr('question_id', res.pre_question.id)
+                }
+                if (number != end_display) {
+                    $('.end_quiz').addClass('d-none');
+                    $('.next_question').removeClass('d-none');
+                }
+            }
+        })
+    })
+
+    $(".form-radio").click(function () {
+        $(".question").find('#' + $(this).attr('name')).css("background", "rgb(79 166 255 / 72%)");
+    })
+
+    $('.sidebar_question_div').on('click', function () {
+        let question_id = $(this).attr('question_id');
+        let pre = $('.prev_question');
+        let next = $('.next_question');
+        $.ajax({
+            url: '{{route('getQuestion')}}',
+            type: 'post',
+            data: {
+                question_id: question_id
+            },
+            success: function (res) {
+                test = $("#q-circle-n-" + res.questions.id).attr('id');
+                let number = $("#q-circle-n-" + res.questions.id).children('span').html();
+                $('.exam_question_title').html(res.questions.question_title)
+                $('.form-radio').attr('name', test)
+                $('.answer_radio_one').find('span').html(res.questions.answer_one)
+                $('.answer_radio_two').find('span').html(res.questions.answer_two)
+                $('.answer_radio_three').find('span').html(res.questions.answer_three)
+                $('.answer_radio_four').find('span').html(res.questions.answer_four)
+                $('.exam_question_number').html(number)
+                let end_display = $('.exam_question_max_number').html();
+
+                if (res.next_question != null) {
+                    next.attr('question_id', res.next_question.id)
+                }
+                if (res.pre_question != null) {
+                    pre.attr('question_id', res.pre_question.id)
+                }
+                if (question_number != end_display) {
+                    $('.end_quiz').addClass('d-none');
+                    $('.next_question').removeClass('d-none');
+                }
+            }
+        })
+    })
+
+    $('.exit_exam').on('click', function () {
+            Swal.fire({
+                title: "میخواهید از آزمون خارج شوید؟",
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: '#ee5253',
+                confirmButtonColor: '#ffa502',
+                confirmButtonText: 'بله',
+                cancelButtonText: 'نه',
+                preConfirm: () => {
+                    let user_id = $(this).attr('user-id');
+                    window.location = '{{route("quiz.index")}}';
+                },
+            })
+    })
+
     let sweetTextArea = $('.swal2-textarea').val();
     $('.teacher-warn-btn').on('click', function () {
         let user_name = $(this).attr('user-name');
@@ -178,6 +305,7 @@
         });
     }
 </script>
+<script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>
     $(".multiSelect").bsMultiSelect({
         cssPatch: {

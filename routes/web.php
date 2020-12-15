@@ -34,6 +34,7 @@ Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
 Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //quiz route
