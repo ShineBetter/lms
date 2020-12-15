@@ -1,4 +1,4 @@
-@extends('layout.head')
+@extends('webSit.layout.head')
 @section('cnt')
     @php
         $loader="dont";
@@ -89,7 +89,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -100,7 +100,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -142,7 +142,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img9.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -150,7 +150,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -192,7 +192,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img10.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img10.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">highest rated</span>
                                                 </div>
@@ -203,7 +203,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -245,7 +245,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img11.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -253,7 +253,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -295,7 +295,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -306,7 +306,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -348,7 +348,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img13.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -356,7 +356,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -398,7 +398,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -409,7 +409,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -451,7 +451,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img13.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -459,7 +459,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -501,7 +501,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -512,7 +512,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -554,7 +554,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img13.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -562,7 +562,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -608,7 +608,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_1">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img13.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -616,7 +616,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -658,7 +658,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_2">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -669,7 +669,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -711,7 +711,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_3">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img11.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">highest rated</span>
                                                 </div>
@@ -722,7 +722,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -764,7 +764,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_4">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img10.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img10.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -772,7 +772,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -814,7 +814,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_5">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img9.jpg" alt=""></a>
                                                 <div class="card-badge">
                                                     <span class="badge-label">bestseller</span>
                                                 </div>
@@ -825,7 +825,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -867,7 +867,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -875,7 +875,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -917,7 +917,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -925,7 +925,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -967,7 +967,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -975,7 +975,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -1017,7 +1017,7 @@
                                     <div class="col-lg-12">
                                         <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
                                             <div class="card-image">
-                                                <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
                                             </div><!-- end card-image -->
                                             <div class="card-content">
                                                 <p class="card__label">
@@ -1025,7 +1025,7 @@
                                                     <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
                                                 </p>
                                                 <h3 class="card__title">
-                                                    <a href="course-details.blade.php">شیمی پایه هستم</a>
+                                                    <a href="course-details">شیمی پایه هستم</a>
                                                 </h3>
                                                 <p class="card__author">
                                                     <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
@@ -1562,7 +1562,7 @@
 {{--                    By <a href="teacher-detail.html">alex smith</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">WordPress for Beginners – Master WordPress</a>--}}
+{{--                    <a href="course-details">WordPress for Beginners – Master WordPress</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1598,7 +1598,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price">$58.00</span>--}}
@@ -1616,7 +1616,7 @@
 {{--                    By <a href="teacher-detail.html">brad travesy</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">Learn Ethical Hacking from Scratch Your Stepping</a>--}}
+{{--                    <a href="course-details">Learn Ethical Hacking from Scratch Your Stepping</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1652,7 +1652,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price">Free</span>--}}
@@ -1670,7 +1670,7 @@
 {{--                    By <a href="teacher-detail.html">mark hardson</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">Microsoft SQL Server 2019 for Everyone</a>--}}
+{{--                    <a href="course-details">Microsoft SQL Server 2019 for Everyone</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1706,7 +1706,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price">$68.00</span>--}}
@@ -1724,7 +1724,7 @@
 {{--                    By <a href="teacher-detail.html">Kamran Paul</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">User Experience Design - Adobe XD UI UX Design</a>--}}
+{{--                    <a href="course-details">User Experience Design - Adobe XD UI UX Design</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1760,7 +1760,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price">Free</span>--}}
@@ -1778,7 +1778,7 @@
 {{--                    By <a href="teacher-detail.html">Jose Purtila</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">The Complete Digital finance Marketing Course</a>--}}
+{{--                    <a href="course-details">The Complete Digital finance Marketing Course</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1814,7 +1814,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price"><span class="before-price">$189.00</span> $119.00</span>--}}
@@ -1832,7 +1832,7 @@
 {{--                    By <a href="teacher-detail.html">Noelle Travesy</a>--}}
 {{--                </p>--}}
 {{--                <h3 class="card__title">--}}
-{{--                    <a href="course-details.blade.php">Complete Python Bootcamp: Go from zero to hero</a>--}}
+{{--                    <a href="course-details">Complete Python Bootcamp: Go from zero to hero</a>--}}
 {{--                </h3>--}}
 {{--                <p class="card__label">--}}
 {{--                    <span class="card__label-text mr-1">BESTSELLER</span>--}}
@@ -1868,7 +1868,7 @@
 {{--                    </ul>--}}
 {{--                </div><!-- end card-action -->--}}
 {{--                <div class="btn-box w-100 text-center mb-3">--}}
-{{--                    <a href="course-details.blade.php" class="theme-btn d-block">Preview this course</a>--}}
+{{--                    <a href="course-details" class="theme-btn d-block">Preview this course</a>--}}
 {{--                </div>--}}
 {{--                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
 {{--                    <span class="card__price">$68.00</span>--}}

@@ -21,7 +21,9 @@ class FrontEndController extends Controller
         $data= $request->all();
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'],'status'=>'active'])){
             Session::put('user',$data['email']);
-            request()->session()->flash('success','ورود شما موفقیت آمیز بود.');
+            request()->session()->flash('success','ورود شما موفقیت آمیز
+
+             بود.');
             return redirect()->route('index');
         }
         else{
