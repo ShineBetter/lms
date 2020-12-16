@@ -1,4 +1,4 @@
-@extends('layout.head')
+@extends('webSit.layout.head')
 @section('cnt')
     @php
         $loader="dont";
