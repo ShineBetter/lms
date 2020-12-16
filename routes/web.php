@@ -156,3 +156,8 @@ Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")-
 Route::get("/aboutTeacher","AboutTeacherController@index")->middleware("auth")->name("aboutTeacher.index");
 Route::get("/aboutTeacher/edit/{id}","AboutTeacherController@edit")->middleware("auth")->name("aboutTeacher.edit");
 Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middleware("auth")->name("aboutTeacher.update");
+
+///////////aboutpiuc
+Route::get("/aboutpic","AboutpicController@index")->middleware("auth")->name("aboutpic.index");
+Route::get("/aboutpic/edit/{id}","AboutpicController@edit")->middleware("auth")->name("aboutpic.edit");
+Route::put("/aboutpic/update{id}","AboutpicController@update")->middleware("auth")->name("aboutpic.update");

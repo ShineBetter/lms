@@ -27,9 +27,9 @@
                         <h2 class="section__title">نگاهی کوتاه <br>مجموعه ما</h2>
                     </div>
                     <div class="btn-box">
-                        <a href="about.blade.php#" class="btn-text video-play-btn ml-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=VqIp_sO8OVQ" data-speed="700">
-                            <span class="watch-video-btn"><i class="fas fa-play"></i></span> دیدن ویدیو
-                        </a>
+{{--                        <a href="about.blade.php#" class="btn-text video-play-btn ml-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=VqIp_sO8OVQ" data-speed="700">--}}
+{{--                            <span class="watch-video-btn"><i class="fas fa-play"></i></span> دیدن ویدیو--}}
+{{--                        </a>--}}
                     </div><!-- end btn-box -->
                 </div><!-- end breadcrumb-content -->
             </div><!-- end col-lg-12 -->
@@ -232,11 +232,11 @@
                  <div class="col-lg-4 column-td-half">
                     <div class="story-img-item">
                         <img src="/images/img38.jpg" alt="">
-                        <div class="story-video">
-                            <a href="about.blade.php#" class="btn-text video-play-btn" data-fancybox="video" data-src="https://www.youtube.com/watch?v=VqIp_sO8OVQ" data-speed="700">
-                                <i class="fas fa-play icon-btn"></i>
-                            </a>
-                        </div>
+{{--                        <div class="story-video">--}}
+{{--                            <a href="about.blade.php#" class="btn-text video-play-btn" data-fancybox="video" data-src="https://www.youtube.com/watch?v=VqIp_sO8OVQ" data-speed="700">--}}
+{{--                                <i class="fas fa-play icon-btn"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
                     </div>
                 </div><!-- end col-lg-4 -->
                  <div class="col-lg-4 column-td-half">
