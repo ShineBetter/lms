@@ -2,14 +2,28 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="shine">
+      <paths name="lms">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="wikigym">
+      <paths name="shine better">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="srteam">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="wikishimi">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
