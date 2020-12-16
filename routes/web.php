@@ -37,7 +37,7 @@ Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
 Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
 Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
 Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
-Route::get('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
+Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //questions route

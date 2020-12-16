@@ -119,10 +119,13 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
-                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
-                                                            <input type="hidden" name="quiz_id" value="{{$item->id}}">
-                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
-                                                            {{ Form::close() }}
+                                                            @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                <input type="hidden" name="quiz_id"
+                                                                       value="{{$item->id}}">
+                                                                {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                {{ Form::close() }}
+                                                            @endif
                                                             <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>

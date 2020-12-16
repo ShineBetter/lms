@@ -21,36 +21,45 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script>
+
+    // set csrf token in meta tag
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
 
-    let exam_question_id = $('.exam_question_title').attr('question_id');
+    let number = $('.exam_question_number').html();
+    let end_display = $('.exam_question_max_number').html();
+    if (number == end_display) {
+        $('.end_quiz').removeClass('d-none');
+        $('.next_question').addClass('d-none');
+    }
 
+    // send answers to database when checked radio boxs
     $('.exam_form input:radio').change(function () {
         let answer = $('.exam_form input:radio:checked').val();
-
         $.ajax({
             url: '{{route('sendAnswer')}}',
             type: 'post',
             data: {
                 quiz_id: $('.exam_quizz_id').attr('qi'),
-                question_id: exam_question_id,
+                question_id: $('.exam_question_title').attr('question_id'),
                 answer: answer
             },
             success: function (res) {
             }
         })
     })
+
+    // get answer for first question
     $('.exam_form input:radio').each(function () {
         let radio = $(this);
         $.ajax({
             url: '{{route("getFirstAnswer")}}',
             type: 'post',
             data: {
-                question_id: exam_question_id,
+                question_id: $('.exam_question_title').attr('question_id'),
             },
             success: function (res) {
                 if (res.checkedRadio != null) {
@@ -63,6 +72,8 @@
             }
         })
     })
+
+    // get next question and answers & ...
     $('.next_question').on('click', function () {
         let next = $(this);
         let prev = $(this).siblings('.prev_question');
@@ -74,9 +85,6 @@
                 question_id: next.attr('question_id')
             },
             success: function (res) {
-                let exam_question_id = $('.exam_question_title').attr('question_id');
-                console.log(exam_question_id)
-                console.log(res)
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
                 let number = $("#q-circle-n-" + res.questions.id).children('span').html();
                 $('.exam_question_title').html(res.questions.question_title)
@@ -85,6 +93,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
+                $('.exam_question_title').attr('question_id',res.questions.id)
 
                 $('.exam_form input:radio').each(function () {
                     if (res.checkedRadio != null) {
@@ -115,16 +124,21 @@
         })
     })
 
+    // ending quiz and check answers
     $('.end_quiz').on('click',function () {
         $.ajax({
             url: "{{route('checkAnswers')}}",
-            type:'get',
+            type:'post',
+            data:{
+                quiz_id: $('.exam_quizz_id').attr('qi'),
+            },
             success: function (res) {
                 console.log(res)
             }
         })
     })
 
+    // get previous question and answers & ...
     $('.prev_question').on('click', function () {
         let pre = $(this);
         let next = $(this).siblings('.next_question');
@@ -143,6 +157,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
+                $('.exam_question_title').attr('question_id',res.questions.id)
                 $('.exam_form input:radio').each(function () {
                     if (res.checkedRadio != null) {
                         if (res.checkedRadio.answer == $(this).val()) {
@@ -169,10 +184,12 @@
         })
     })
 
+    // change sidebar question numbers background color when answer to questions
     $(".exam_input_group input").click(function () {
         $(".question").find('#' + $(this).attr('name')).css("background", "rgb(79 166 255 / 72%)");
     })
 
+    // get questions and answers & ... when click on sidebar questions number
     $('.sidebar_question_div').on('click', function () {
         let question_id = $(this).attr('question_id');
         let pre = $('.prev_question');
@@ -181,7 +198,8 @@
             url: '{{route('getQuestion')}}',
             type: 'post',
             data: {
-                question_id: question_id
+                question_id: question_id,
+                quiz_id: $('.exam_quizz_id').attr('qi')
             },
             success: function (res) {
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
@@ -192,7 +210,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
-
+                $('.exam_question_title').attr('question_id',res.questions.id)
                 $('.exam_question_number').html(number)
                 let end_display = $('.exam_question_max_number').html();
 
@@ -221,6 +239,7 @@
         })
     })
 
+    // exit from quiz
     $('.exit_exam').on('click', function () {
         Swal.fire({
             title: "میخواهید از آزمون خارج شوید؟",
@@ -237,6 +256,7 @@
         })
     })
 
+    // warn to user (teacher or student)
     let sweetTextArea = $('.swal2-textarea').val();
     $('.teacher-warn-btn').on('click', function () {
         let user_name = $(this).attr('user-name');
@@ -269,6 +289,8 @@
             },
         })
     })
+
+    // kicking user (teacher or student)
     $('.teacher-kick-btn').on('click', function () {
         let user_name = $(this).attr('user-name');
         let thisElement = $(this);
@@ -331,17 +353,22 @@
         }
     })
 
-
+    // show profile security tab
     $('#profile-security').on('click', function () {
         window.location = "#password";
     })
+
+    // show profile information tab
     $('#profile-information').on('click', function () {
         window.location = "#profile";
     })
+
+    // show profile email change tab
     $('#profile-email').on('click', function () {
         window.location = "#change-email";
     })
 
+    // delete row from database
     $(document).on('click', '.trash', function (e) {
         e.preventDefault(); // does not go through with the link.
         var $this = $(this);
@@ -357,6 +384,7 @@
         });
     });
 
+    // ajax pagination
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
@@ -373,9 +401,9 @@
         });
     }
 
+    // dropdown
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
-
     for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
             this.classList.toggle("active");

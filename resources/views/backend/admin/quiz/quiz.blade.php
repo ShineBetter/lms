@@ -92,10 +92,11 @@
             }
         }
 
-        .sidebar_question{
+        .sidebar_question {
             transition: all .3s ease-in-out;
         }
-        .sidebar_question:hover{
+
+        .sidebar_question:hover {
             background: #ddffd4;
             cursor: pointer;
         }
@@ -136,7 +137,8 @@
                         <div class="row p-2">
                             @if($questions_count > 0)
                                 @foreach($all_questions as $item)
-                                    <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block sidebar_question_div" question_id="{{$item->id}}">
+                                    <div class=" col-2 col-lg-2 col-md-2 col-sm-2 col-xs-3 d-block sidebar_question_div"
+                                         question_id="{{$item->id}}">
                                         <div class="circle text-center sidebar_question" id="q-circle-n-{{$item->id}}">
                                             <span>{{$loop->iteration}}</span>
                                         </div>
@@ -165,7 +167,7 @@
                                     <span class="text-white">
                                     از
                                 </span>
-                                    <span class="text-white exam_question_max_number">{{$questions->count()}}</span>
+                                    <span class="text-white exam_question_max_number">{{$questions_count}}</span>
                                 </div>
                                 <div class="col-lg-4 col-md-d col-12 text-white text-center">
                                     <p>{{$quiz->quiz_name}}</p>
@@ -175,7 +177,8 @@
                         </div>
 
                         <div class="card-body text-right">
-                            <h4 class="text-muted text-justify que exam_question_title" question_id="{{$questions->id}}">
+                            <h4 class="text-muted text-justify que exam_question_title"
+                                question_id="{{$questions->id}}">
                                 {{$questions->question_title}}
                             </h4>
 
@@ -183,26 +186,26 @@
 
                             <form class="exam_form">
                                 <div class="exam_input_group answer_radio_one">
-                                    <input id="radio1"  name="test" type="radio" value="1"/>
+                                    <input id="radio1" name="test" type="radio" value="1"/>
                                     <label for="radio1">{{$questions->answer_one}}</label>
                                 </div>
                                 <div class="exam_input_group answer_radio_two">
-                                    <input id="radio2"  name="test" type="radio" value="2"/>
+                                    <input id="radio2" name="test" type="radio" value="2"/>
                                     <label for="radio2">{{$questions->answer_two}}</label>
                                 </div>
                                 <div class="exam_input_group answer_radio_three">
-                                    <input id="radio3"  name="test" type="radio" value="3"/>
+                                    <input id="radio3" name="test" type="radio" value="3"/>
                                     <label for="radio3">{{$questions->answer_three}}</label>
                                 </div>
                                 <div class="exam_input_group answer_radio_four">
-                                    <input id="radio4"  name="test" type="radio" value="4"/>
+                                    <input id="radio4" name="test" type="radio" value="4"/>
                                     <label for="radio4">{{$questions->answer_four}}</label>
                                 </div>
                             </form>
                         </div>
 
                         <script>
-                            var test = $("#q-circle-n-"+{{$questions->id}}).attr('id');
+                            var test = $("#q-circle-n-" +{{$questions->id}}).attr('id');
                             $(".exam_input_group input").attr("name", test);
                         </script>
                     </div>
@@ -218,7 +221,7 @@
                             </button>
                         @else
                             <button class="next_question" question_id="0">
-                                        <span class="circle" aria-hidden="true">
+                                        <span class="circle" style="background: #a5a5a5 !important;" aria-hidden="true">
                                           <span class="icon arrow"></span>
                                         </span>
                                 <span class="button-text">سوال بعدی</span>
@@ -238,12 +241,12 @@
                                 <span class="button-text">سوال قبلی</span>
                             </button>
                         @else
-                                <button class="prev_question" question_id="0">
-                                        <span class="circle" aria-hidden="true">
+                            <button class="prev_question" question_id="0">
+                                        <span class="circle" style="background: #a5a5a5 !important;" aria-hidden="true">
                                           <span class="icon arrow"></span>
                                         </span>
-                                    <span class="button-text">سوال قبلی</span>
-                                </button>
+                                <span class="button-text">سوال قبلی</span>
+                            </button>
                         @endif
                     </div>
                 </div>

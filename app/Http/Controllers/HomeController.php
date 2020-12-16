@@ -6,6 +6,7 @@ use App\Models\profile;
 use App\Models\questions;
 use App\Models\quiz;
 use Carbon\Carbon;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +35,10 @@ class HomeController extends Controller
         $quiz_id = $request->quiz_id;
         $quiz = quiz::findOrFail($quiz_id);
         $questions_count = questions::where('quiz_id', $quiz_id)->get()->count();
-        $questions = questions::where('quiz_id', $quiz_id)->first();
-        $all_questions = questions::where('quiz_id', $quiz_id)->get();
-        $previous_question = questions::where('id', '<', $questions->id)->first();
-        $next_question = questions::where('id', '>', $questions->id)->first();
+        $questions = questions::where('quiz_id', $quiz_id)->inRandomOrder()->first();
+        $all_questions = questions::where('quiz_id', $quiz_id)->inRandomOrder()->get();
+        $previous_question = questions::where('id', '<', $questions->id)->where('quiz_id', $quiz_id)->inRandomOrder()->first();
+        $next_question = questions::where('id', '>', $questions->id)->where('quiz_id', $quiz_id)->inRandomOrder()->first();
         $quiz_start = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_start));
         $quiz_exp = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_exp));
         $quiz_time = $quiz_start->diffInMinutes($quiz_exp);
@@ -46,17 +47,18 @@ class HomeController extends Controller
 
     public function getFirstAnswer(Request $request)
     {
-        $checkedRadio = DB::table('user_question')->where('question_id','=',$request->question_id)->first();
+        $checkedRadio = DB::table('user_question')->where('question_id', '=', $request->question_id)->first();
         return ['checkedRadio' => $checkedRadio];
     }
 
     public function getQuestion(Request $request)
     {
         $question_id = $request->question_id;
-        $questions = questions::where('id', $question_id)->first();
-        $next_question = questions::where('id', '>', $questions->id)->orderBy('id', 'asc')->first();
-        $previous_question = questions::where('id', '<', $questions->id)->orderBy('id', 'desc')->first();
-        $checkedRadio = DB::table('user_question')->where('question_id','=',$question_id)->first();
+        $quiz_id = $request->quiz_id;
+        $questions = questions::where(['id' => $question_id])->inRandomOrder()->first();
+        $next_question = questions::where('id', '>', $questions->id)->orderBy('id', 'asc')->inRandomOrder()->first();
+        $previous_question = questions::where('id', '<', $questions->id)->orderBy('id', 'desc')->inRandomOrder()->first();
+        $checkedRadio = DB::table('user_question')->where('question_id', '=', $question_id)->first();
         return ['questions' => $questions, 'next_question' => $next_question, 'pre_question' => $previous_question, 'count' => $questions->count(), 'checkedRadio' => $checkedRadio];
     }
 
@@ -71,7 +73,7 @@ class HomeController extends Controller
                 'answer' => $request->answer
             ]);
         } else {
-            DB::table('user_question')->where('question_id','=',$request->question_id)->update([
+            DB::table('user_question')->where('question_id', '=', $request->question_id)->update([
                 'answer' => $request->answer
             ]);
         }
@@ -79,6 +81,29 @@ class HomeController extends Controller
 
     public function checkAnswers(Request $request)
     {
-        return view('backend.admin.quizResult.quizResult');
+        $quiz_id = $request->quiz_id;
+        $user = Auth::id();
+        $user_questions = DB::table('user_question')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->get();
+        $i = 0;
+        foreach ($user_questions as $item) {
+            $question = questions::where(['id' => $item->question_id,'correct_answer' => $item->answer])->get();
+            foreach ($question as $item) {
+                $i++;
+            }
+        }
+        if (DB::table('user_quiz')->where(['quiz_id' => $quiz_id,'user_id' => $user])->exists() == true){
+            DB::table('user_quiz')->where(['quiz_id' => $quiz_id,'user_id' => $user])->update([
+                'correct_answers' => $i
+            ]);
+        }else{
+            DB::table('user_quiz')->insert([
+                'user_id' => $user,
+                'quiz_id' => $quiz_id,
+                'correct_answers' => $i,
+            ]);
+        }
+
+
+//        return view('backend.admin.quizResult.index');
     }
 }
