@@ -79,6 +79,6 @@ class HomeController extends Controller
 
     public function checkAnswers(Request $request)
     {
-        dd($request->all());
+        return view('backend.admin.quizResult.quizResult');
     }
 }

@@ -26,14 +26,17 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    let exam_question_id = $('.sidebar_question_div').attr('question_id');
+
+    let exam_question_id = $('.exam_question_title').attr('question_id');
+
     $('.exam_form input:radio').change(function () {
         let answer = $('.exam_form input:radio:checked').val();
+
         $.ajax({
             url: '{{route('sendAnswer')}}',
             type: 'post',
             data: {
-                quiz_id: {{$quiz->id}},
+                quiz_id: $('.exam_quizz_id').attr('qi'),
                 question_id: exam_question_id,
                 answer: answer
             },
@@ -63,6 +66,7 @@
     $('.next_question').on('click', function () {
         let next = $(this);
         let prev = $(this).siblings('.prev_question');
+
         $.ajax({
             url: '{{route('getQuestion')}}',
             type: 'post',
@@ -70,6 +74,8 @@
                 question_id: next.attr('question_id')
             },
             success: function (res) {
+                let exam_question_id = $('.exam_question_title').attr('question_id');
+                console.log(exam_question_id)
                 console.log(res)
                 test = $("#q-circle-n-" + res.questions.id).attr('id');
                 let number = $("#q-circle-n-" + res.questions.id).children('span').html();
@@ -105,6 +111,16 @@
                     $('.end_quiz').removeClass('d-none');
                     $('.next_question').addClass('d-none');
                 }
+            }
+        })
+    })
+
+    $('.end_quiz').on('click',function () {
+        $.ajax({
+            url: "{{route('checkAnswers')}}",
+            type:'get',
+            success: function (res) {
+                console.log(res)
             }
         })
     })

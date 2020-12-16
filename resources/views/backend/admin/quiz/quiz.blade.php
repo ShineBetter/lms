@@ -113,7 +113,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
 
-    <div class="container mt-lg-3">
+    <div class="container mt-lg-3 exam_quizz_id" qi="{{$quiz->id}}">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 mb-3">
                 <div class="row">
@@ -175,7 +175,7 @@
                         </div>
 
                         <div class="card-body text-right">
-                            <h4 class="text-muted text-justify que exam_question_title">
+                            <h4 class="text-muted text-justify que exam_question_title" question_id="{{$questions->id}}">
                                 {{$questions->question_title}}
                             </h4>
 
@@ -199,31 +199,6 @@
                                     <label for="radio4">{{$questions->answer_four}}</label>
                                 </div>
                             </form>
-
-
-
-{{--                            <main class="py-5 px-6 space-y-3 bg-white rounded-lg shadow-xl  w-100 text-right" id="ques">--}}
-{{--                                <label class="col-lg-12 items-center answer_radio_one">--}}
-{{--                                    <input type="radio" name="" class="form-radio h-5 w-5 text-indigo-600" value="1">--}}
-{{--                                    <span class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_one}}</span>--}}
-
-{{--                                </label>--}}
-{{--                                <label class="col-lg-12 items-center answer_radio_two">--}}
-{{--                                    <input type="radio" name="" class="form-radio h-5 w-5 text-indigo-600" value="2">--}}
-{{--                                    <span--}}
-{{--                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_two}}</span>--}}
-{{--                                </label>--}}
-{{--                                <label class="col-lg-12 items-center answer_radio_three">--}}
-{{--                                    <input type="radio" name="" class="form-radio h-5 w-5 text-indigo-600" value="3">--}}
-{{--                                    <span--}}
-{{--                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_three}}</span>--}}
-{{--                                </label>--}}
-{{--                                <label class="col-lg-12 items-center answer_radio_four">--}}
-{{--                                    <input type="radio" name="" class="form-radio h-5 w-5 text-indigo-600" value="4">--}}
-{{--                                    <span--}}
-{{--                                        class="ml-2 text-gray-700 font-medium text-lg ">{{$questions->answer_four}}</span>--}}
-{{--                                </label>--}}
-{{--                            </main>--}}
                         </div>
 
                         <script>

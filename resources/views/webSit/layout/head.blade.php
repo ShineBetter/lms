@@ -31,10 +31,10 @@
     <!-- end inject -->
 </head>
 <body>
-@includeWhen(empty($loader),'layout.loader')
-@includeWhen(empty($header),'layout.header')
+@includeWhen(empty($loader),'backend.admin.partial.loader')
+@includeWhen(empty($header),'webSit.layout.header')
 @yield('cnt')
-@includeWhen(empty($header),'layout.footer')
+@includeWhen(empty($header),'webSit.layout.footer')
 @includeIf('layout.js')
 </body>
 </html>

@@ -1,11 +1,10 @@
 @extends('backend.admin.partial._master')
-@section('title','آزمون')
+@section('title','کارنامه ها')
 @section('cntd')
     @parent
     @php
         $header="";
         $loader="dont";
-        $sidebar="";
         $sidebar="";
     @endphp
     @if(\Illuminate\Support\Facades\Session::has('status'))
@@ -15,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h3 class="widget-title">آزمون ها</h3>
+                    <h3 class="widget-title">کارنامه ها</h3>
                 </div>
             </div>
             <div class="row mt-5">
@@ -33,17 +32,21 @@
                                     <tr>
                                         <th scope="col">ردیف</th>
                                         <th scope="col">آزمون</th>
-                                        <th scope="col">تایم شروع</th>
-                                        <th scope="col">تایم انقضا</th>
-                                        <th scope="col">تاریخ شروع</th>
-                                        <th scope="col">تاریخ انقضا</th>
-                                        <th scope="col">سازنده آزمون</th>
-                                        <th scope="col">آخرین ویرایشگر</th>
+                                        <th scope="col">دانش آموز</th>
+                                        <th scope="col">تعداد سوال</th>
+                                        <th scope="col">سوالات صحیح</th>
+                                        <th scope="col">سوالات غلط</th>
+                                        <th scope="col">نمره</th>
+                                        <th scope="col">وضعیت</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $item)
+                                        @php
+                                        $correct_answers = $item->correct_answers($item->user_id,$item->quiz_id);
+                                        $score = $item->score($item->user_id,$item->quiz_id);
+                                        @endphp
                                         <tr>
                                             <td scope="row">
                                                 <div class="statement-info">
@@ -57,57 +60,49 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz_name}}</li>
+                                                        <li>{{$item->quiz->quiz_name}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz_start}}</li>
+                                                        <li>{{$item->users->profile->name}} {{$item->users->profile->lastName}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz_exp}}</li>
+                                                        <li>{{$item->questions->count()}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz_start_date}}</li>
+                                                        <li>{{$correct_answers}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->quiz_exp_date}}</li>
+                                                        <li>{{$item->questions->count() - $correct_answers}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        @if($item->user_id != null)
-                                                            <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
-                                                        @else
-                                                            <li>مشخص نشده است</li>
-                                                        @endif
+                                                        <li>{{$score}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        @if($item->last_editor_user_id != null)
-                                                            <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
-                                                        @else
-                                                            <li>ویرایش نشده است</li>
-                                                        @endif
+                                                        <li class="{{$score >= 10?'text-success':'text-danger'}}">{{$score >= 10? 'قبول':'مردود'}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -117,13 +112,7 @@
                                                         <li>
                                                             <a href="{{route('quiz.edit',$item->id)}}"><input
                                                                     type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
-                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
-                                                            <input type="hidden" name="quiz_id" value="{{$item->id}}">
-                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
-                                                            {{ Form::close() }}
-                                                            <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                                    value="نمایش کارنامه"></a>
                                                         </li>
                                                     </ul>
                                                 </div>
