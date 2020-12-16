@@ -152,3 +152,7 @@ Route::get("/midel-4","Midel4Controller@index")->middleware("auth")->name("midel
 Route::get("/midel-4/edit/{id}","Midel4Controller@edit")->middleware("auth")->name("midel-4.edit");
 Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")->name("midel-4.update");
 
+///////////teacher
+Route::get("/aboutTeacher","AboutTeacherController@index")->middleware("auth")->name("aboutTeacher.index");
+Route::get("/aboutTeacher/edit/{id}","AboutTeacherController@edit")->middleware("auth")->name("aboutTeacher.edit");
+Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middleware("auth")->name("aboutTeacher.update");
