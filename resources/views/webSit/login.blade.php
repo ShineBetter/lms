@@ -3,8 +3,8 @@
 @section('cnt')
     @php
         $header = "";
-            $loader = "dont";
-    $footer = "";
+        $loader = "dont";
+        $footer = "";
     @endphp
     <style>
 
@@ -235,7 +235,6 @@
 
 
     </style>
-
     <div class="container login-elearning" id="container">
         <div class="form-container sign-in-container">
             {{ Form::open(['route'=>'login.submit', 'method' => 'post','files' => true,'class' => 'welcome-form'])}}
@@ -245,7 +244,6 @@
             <input class="input-welcome" type="password" name="password" placeholder="پسورد"/>
             <button class="button-login">ورود</button>
             {{ Form::close() }}
-
         </div>
         <div class="form-container sign-up-container">
             <form action="#" class="welcome-form">
