@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{asset('template_sit/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/line-awesome.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('template_sit/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template_sit/css/owl.carousel.min.js')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_sit/css/magnific-popup.css')}}">

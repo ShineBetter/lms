@@ -2,8 +2,13 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
+<<<<<<< HEAD
       <webServer id="66759aba-4d1b-43c2-a6bf-a3d83742a560" name="srteam" url="http://srteam.ir">
         <fileTransfer host="srteam.ir" port="21">
+=======
+      <webServer id="e6a9c8af-2468-4a23-98f5-5b3946170219" name="shinebetter" url="https://shinebetter.ir/">
+        <fileTransfer host="https://shinebetter.ir" port="30">
+>>>>>>> 3dd21964e1cd097f12e095328e91416c49548d75
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
