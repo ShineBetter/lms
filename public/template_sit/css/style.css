@@ -17322,12 +17322,377 @@ hsla(203, 11 %, 95 %, 0.8);
     cursor: pointer;
     visibility: hidden;
 }
+/*edit*/
+.btn-edit a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
 
-/*.exam_form {*/
-/*    padding: 0 16px;*/
-/*    max-width: 550px;*/
-/*    margin: 50px auto;*/
-/*    font-size: 18px;*/
-/*    font-weight: 600;*/
-/*    line-height: 36px;*/
-/*}*/
+.text-edit {
+    padding: 0 50px;
+    visibility: hidden;
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-front i {
+    padding: 9px 8px
+}
+.flip-back {
+    padding: 3px;
+}
+.flip-back i {
+    padding: 0px 6px
+}
+.flip-front {
+    color: rgba(246, 205, 3, 0.92);
+    border: 2px solid rgba(217, 188, 46, 0.92);
+    background-color: transparent;
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+
+.flip-back {
+    color: #fff;
+    background-color: rgba(246, 205, 3, 0.92);
+    border: 2px solid rgba(171, 144, 13, 0.92);
+    -webkit-transform: rotateX(90deg) translateZ(25px);
+    -ms-transform: rotateX(90deg) translateZ(25px);
+    -o-transform: rotateX(90deg) translateZ(25px);
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-front {
+    -webkit-transform: rotateX(-90deg) translateZ(25px);
+    -ms-transform: rotateX(-90deg) translateZ(25px);
+    -o-transform: rotateX(-90deg) translateZ(25px);
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-back {
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+.btn-edit a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.text-edit {
+    padding: 0 50px;
+    visibility: hidden;
+}
+/*lesson*/
+.flip-lesson,
+.flip-backlesson {
+    position: absolute;
+    left: 47px;
+    top: 0;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-lesson i {
+    padding: 9px 9px
+}
+.flip-backlesson {
+    padding: 3px;
+}
+.flip-backlesson i {
+    padding: 0px 6px
+}
+.flip-lesson {
+    color: #1c9900;
+    border: 2px solid #01670f;
+    background-color: transparent;
+    -webkit-transform: rotatey(0deg) translateZ(25px);
+    -ms-transform: rotatey(0deg) translateZ(25px);
+    -o-transform: rotatey(0deg) translateZ(25px);
+    transform: rotatey(0deg) translateZ(25px);
+}
+
+.flip-backlesson {
+    color: #fff;
+    background-color: #1c9900;
+    border: 2px solid #01670f;
+    -webkit-transform: rotateY(90deg) translateZ(25px);
+    -ms-transform: rotateY(90deg) translateZ(25px);
+    -o-transform: rotateY(90deg) translateZ(25px);
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-lesson {
+    -webkit-transform: rotateY(-90deg) translateZ(25px);
+    -ms-transform: rotateY(-90deg) translateZ(25px);
+    -o-transform: rotateY(-90deg) translateZ(25px);
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-backlesson {
+    -webkit-transform: rotateY(0deg) translateZ(25px);
+    -ms-transform: rotateY(0deg) translateZ(25px);
+    -o-transform: rotateY(0deg) translateZ(25px);
+    transform: rotateY(0deg) translateZ(25px);
+}
+/*warning*/.btn-edit button {
+               text-decoration: none;
+               display: inline-block;
+               height: 50px;
+               line-height: 50px;
+               text-align: center;
+               position: relative;
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               transform: translate(-50%, -50%);
+               -webkit-transition: all .3s ease-out;
+               -o-transition: all .3s ease-out;
+               transition: all .3s ease-out;
+           }
+
+.text-edit {
+    padding: 0 50px;
+    visibility: hidden;
+}
+
+.flip-notif,
+.flip-backnotif {
+    position: absolute;
+    left: 92px;
+    top: 0;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-notif i {
+    padding: 9px 8px
+}
+.flip-backnotif {
+    padding: 3px;
+}
+.flip-backnotif i {
+    padding: 0px 10px
+}
+.flip-notif {
+    color: #ff6600;
+    border: 2px solid rgb(196, 93, 24);
+    background-color: transparent;
+    -webkit-transform: rotatey(0deg) translateZ(25px);
+    -ms-transform: rotatey(0deg) translateZ(25px);
+    -o-transform: rotatey(0deg) translateZ(25px);
+    transform: rotatey(0deg) translateZ(25px);
+}
+
+.flip-backnotif {
+    color: #fff;
+    background-color: #ff5900;
+    border: 2px solid #ff5100;
+    -webkit-transform: rotateY(90deg) translateZ(25px);
+    -ms-transform: rotateY(90deg) translateZ(25px);
+    -o-transform: rotateY(90deg) translateZ(25px);
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-notif {
+    -webkit-transform: rotateY(-90deg) translateZ(25px);
+    -ms-transform: rotateY(-90deg) translateZ(25px);
+    -o-transform: rotateY(-90deg) translateZ(25px);
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-backnotif {
+    -webkit-transform: rotateY(0deg) translateZ(25px);
+    -ms-transform: rotateY(0deg) translateZ(25px);
+    -o-transform: rotateY(0deg) translateZ(25px);
+    transform: rotateY(0deg) translateZ(25px);
+}
+/*اخطار*/
+.btn-edit button {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.text-edit {
+    padding: 0 50px;
+    visibility: hidden;
+}
+
+.flip-alarm,
+.flip-exit {
+    position: absolute;
+    left: 180px;
+    top: 0;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-alarm i {
+    padding: 9px 8px
+}
+.flip-exit {
+    padding: 3px;
+}
+.flip-exit i {
+    padding: 0px 7px
+}
+.flip-alarm {
+    color: #ff0000;
+    border: 2px solid rgb(196, 24, 50);
+    background-color: transparent;
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+
+.flip-exit {
+    color: #fff;
+    background-color: #ff0000;
+    border: 2px solid #ff0000;
+    -webkit-transform: rotateX(90deg) translateZ(25px);
+    -ms-transform: rotateX(90deg) translateZ(25px);
+    -o-transform: rotateX(90deg) translateZ(25px);
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-alarm {
+    -webkit-transform: rotateX(-90deg) translateZ(25px);
+    -ms-transform: rotateX(-90deg) translateZ(25px);
+    -o-transform: rotateX(-90deg) translateZ(25px);
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-exit {
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+/*حذف*/
+.btn-edit a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.text-edit {
+    padding: 0 50px;
+    visibility: hidden;
+}
+
+.flip-login,
+.flip-plus {
+    position: absolute;
+    left: 136px;
+    top: 0;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-login i {
+    padding: 9px 6px
+}
+.flip-plus {
+    padding: 3px;
+}
+.flip-plus i {
+    padding: 0px 6px
+}
+.flip-login {
+    color: #0088ff;
+    border: 2px solid #00a6ff;
+    background-color: transparent;
+    -webkit-transform: rotatey(0deg) translateZ(25px);
+    -ms-transform: rotatey(0deg) translateZ(25px);
+    -o-transform: rotatey(0deg) translateZ(25px);
+    transform: rotatey(0deg) translateZ(25px);
+}
+
+.flip-plus {
+    color: #fff;
+    background-color: #0090ff;
+    border: 2px solid #00a6ff;
+    -webkit-transform: rotateY(90deg) translateZ(25px);
+    -ms-transform: rotateY(90deg) translateZ(25px);
+    -o-transform: rotateY(90deg) translateZ(25px);
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-login {
+    -webkit-transform: rotateY(-90deg) translateZ(25px);
+    -ms-transform: rotateY(-90deg) translateZ(25px);
+    -o-transform: rotateY(-90deg) translateZ(25px);
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-plus {
+    -webkit-transform: rotateY(0deg) translateZ(25px);
+    -ms-transform: rotateY(0deg) translateZ(25px);
+    -o-transform: rotateY(0deg) translateZ(25px);
+    transform: rotateY(0deg) translateZ(25px);
+}
+/*اخراج*/
