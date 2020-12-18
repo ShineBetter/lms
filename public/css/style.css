@@ -10713,7 +10713,7 @@ body {
     content: "";
     position: absolute;
     background-color: #fff;
-    left: 30px;
+    right: 30px;
     width: 13px;
     height: 13px;
     -webkit-transform: rotate(45deg);
