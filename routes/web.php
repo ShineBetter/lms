@@ -173,6 +173,17 @@ Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("
 
 /////mainpage slider
 
-Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
-Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
-Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");
+Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
+Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
+Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
+
+//////////form-client
+/// main page course free
+Route::get("/form-main-free/a","FormFreecourseController@index")->middleware("auth")->name("formFree.index");
+Route::get("/form-main-free","FormFreecourseController@store")->name("formFree.store");
+Route::delete("/form-main-free/delete/{id}","FormFreecourseController@destroy")->middleware("auth")->name("formFree.destroy");
+
+////////form news
+Route::get("/form-news/a","FormNewsController@index")->middleware("auth")->name("formNews.index");
+Route::get("/form-news","FormNewsController@store")->name("formNews.store");
+Route::delete("/form-news/delete/{id}","FormNewsController@destroy")->middleware("auth")->name("formNews.destroy");
