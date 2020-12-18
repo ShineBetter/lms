@@ -145,3 +145,32 @@ Route::get("/social/create","ContactController@create")->middleware("auth")->nam
 Route::delete("/social/delete{id}","ContactController@destroy")->middleware("auth")->name("social.destroy");
 Route::post("/social/store","ContactController@store")->middleware("auth")->name("social.store");
 Route::post("/contact-form","ContactController@insertForm")->name("contact-form");
+
+//////////////////////about us panel dinamic
+/// comment panel///////
+Route::get("/comments","CommentController@index")->middleware("auth")->name("comment.index");
+Route::get("/comments/edit/{id}","CommentController@edit")->middleware("auth")->name("comment.edit");
+Route::post("/comments/store","CommentController@store")->middleware("auth")->name("comment.store");
+Route::get("/comments/create","CommentController@create")->middleware("auth")->name("comment.create");
+Route::delete("/comments/delete{id}","CommentController@destroy")->middleware("auth")->name("comment.destroy");
+Route::put("/comments/update{id}","CommentController@update")->middleware("auth")->name("comment.update");
+
+/////////text panel///////
+Route::get("/aboutText","AboutTextController@index")->middleware("auth")->name("aboutText.index");
+Route::get("/aboutText/edit/{id}","AboutTextController@edit")->middleware("auth")->name("aboutText.edit");
+Route::put("/aboutText/update{id}","AboutTextController@update")->middleware("auth")->name("aboutText.update");
+
+///////////midel col-4
+Route::get("/midel-4","Midel4Controller@index")->middleware("auth")->name("midel-4.index");
+Route::get("/midel-4/edit/{id}","Midel4Controller@edit")->middleware("auth")->name("midel-4.edit");
+Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")->name("midel-4.update");
+
+///////////teacher
+Route::get("/aboutTeacher","AboutTeacherController@index")->middleware("auth")->name("aboutTeacher.index");
+Route::get("/aboutTeacher/edit/{id}","AboutTeacherController@edit")->middleware("auth")->name("aboutTeacher.edit");
+Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middleware("auth")->name("aboutTeacher.update");
+
+///////////aboutpiuc
+Route::get("/aboutpic","AboutpicController@index")->middleware("auth")->name("aboutpic.index");
+Route::get("/aboutpic/edit/{id}","AboutpicController@edit")->middleware("auth")->name("aboutpic.edit");
+Route::put("/aboutpic/update{id}","AboutpicController@update")->middleware("auth")->name("aboutpic.update");

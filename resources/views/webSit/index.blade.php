@@ -3,8 +3,6 @@
 @section('cnt')
     @php
         $loader="dont";
-
-
     @endphp
 <!--======================================
         START HEADER AREA

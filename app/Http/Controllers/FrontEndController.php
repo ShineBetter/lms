@@ -62,7 +62,7 @@ class FrontEndController extends Controller
     public function logout(){
         auth()->logout();
         request()->session()->flash('success','خروج از حساب با موفقیت انجام شد.');
-        return redirect(route('panel'));
+        return redirect(route('index'));
     }
 
     public function index()
