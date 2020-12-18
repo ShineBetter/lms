@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <title>alarm</title>
+    <style>
+        .btn-edit button {
+            text-decoration: none;
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+
+        .text-edit {
+            padding: 0 50px;
+            visibility: hidden;
+        }
+
+        .flip-notif,
+        .flip-backnotif {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+        .flip-notif i {
+            padding: 8px;
+        }
+        .flip-backnotif {
+            padding: 3px;
+        }
+        .flip-backnotif i {
+            padding: 4px 8px;
+        }
+        .flip-notif {
+            color: #ff6600;
+            border: 2px solid rgb(196, 93, 24);
+            background-color: transparent;
+            -webkit-transform: rotatey(0deg) translateZ(25px);
+            -ms-transform: rotatey(0deg) translateZ(25px);
+            -o-transform: rotatey(0deg) translateZ(25px);
+            transform: rotatey(0deg) translateZ(25px);
+        }
+
+        .flip-backnotif {
+            color: #fff;
+            background-color: #ff5900;
+            border: 2px solid #ff5100;
+            -webkit-transform: rotateY(90deg) translateZ(25px);
+            -ms-transform: rotateY(90deg) translateZ(25px);
+            -o-transform: rotateY(90deg) translateZ(25px);
+            transform: rotateY(90deg) translateZ(25px);
+        }
+
+        .btn-edit:hover .flip-notif {
+            -webkit-transform: rotateY(-90deg) translateZ(25px);
+            -ms-transform: rotateY(-90deg) translateZ(25px);
+            -o-transform: rotateY(-90deg) translateZ(25px);
+            transform: rotateY(-90deg) translateZ(25px);
+        }
+
+        .btn-edit:hover .flip-backnotif {
+            -webkit-transform: rotateY(0deg) translateZ(25px);
+            -ms-transform: rotateY(0deg) translateZ(25px);
+            -o-transform: rotateY(0deg) translateZ(25px);
+            transform: rotateY(0deg) translateZ(25px);
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="اخطار">
+    <span class="text-edit"></span>
+    <span class="flip-notif"><i class="fas fa-exclamation-triangle"></i></span>
+    <span class="flip-backnotif"><i class="fas fa-exclamation"></i></span>
+</a>
+</body>
+</html>

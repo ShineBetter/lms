@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <title>پایه ها</title>
+    <style>
+        .btn-edit a {
+            text-decoration: none;
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+
+        .text-edit {
+            padding: 0 50px;
+            visibility: hidden;
+        }
+
+        .flip-level,
+        .flip-levelback {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+        .flip-levelback i {
+            padding: 8px 10px;
+        }
+        /*.flip-testback {*/
+        /*    padding: 3px;*/
+        /*}*/
+        .flip-level i {
+            padding: 8px 10px;;
+        }
+        .flip-level {
+            color: #727a79;
+            border: 2px solid rgb(66, 74, 72);
+            background-color: transparent;
+            -webkit-transform: rotateX(0deg) translateZ(25px);
+            -ms-transform: rotateX(0deg) translateZ(25px);
+            -o-transform: rotateX(0deg) translateZ(25px);
+            transform: rotateX(0deg) translateZ(25px);
+        }
+
+        .flip-levelback {
+            color: #fff;
+            background-color: #727a79;
+            border: 2px solid rgb(66, 74, 72);
+            -webkit-transform: rotateX(90deg) translateZ(25px);
+            -ms-transform: rotateX(90deg) translateZ(25px);
+            -o-transform: rotateX(90deg) translateZ(25px);
+            transform: rotateX(90deg) translateZ(25px);
+        }
+
+        .btn-edit:hover .flip-level {
+            -webkit-transform: rotateX(-90deg) translateZ(25px);
+            -ms-transform: rotateX(-90deg) translateZ(25px);
+            -o-transform: rotateX(-90deg) translateZ(25px);
+            transform: rotateX(-90deg) translateZ(25px);
+        }
+
+        .btn-edit:hover .flip-levelback {
+            -webkit-transform: rotateX(0deg) translateZ(25px);
+            -ms-transform: rotateX(0deg) translateZ(25px);
+            -o-transform: rotateX(0deg) translateZ(25px);
+            transform: rotateX(0deg) translateZ(25px);
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="پایه ها">
+    <span class="text-edit"></span>
+    <span class="flip-level"><i class="fas fa-layer-group"></i></span>
+    <span class="flip-levelback"><i class="fas fa-database"></i></span>
+</a>
+</body>
+</html>
