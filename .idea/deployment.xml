@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="lms">
     <serverData>
-      <paths name="shinebetter">
+      <paths name="lms">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shine better">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

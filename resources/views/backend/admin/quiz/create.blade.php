@@ -77,6 +77,19 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('teacher_id', 'استاد', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    <select class="form-control" name="teacher_id" id="teacher_id">
+                                                        @foreach($teachers as $teacher)
+                                                            <option value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
                                         <div class="col-lg-12 col-sm-12">
                                             <div class="input-box">
                                                 <div class="student_radio_inputs_group">
@@ -105,7 +118,8 @@
                                                     background: #e2e2e2 !important;
                                                     margin-right: 0.5em;
                                                 }
-                                                .dashboardcode-bsmultiselect{
+
+                                                .dashboardcode-bsmultiselect {
                                                     display: none;
                                                 }
                                             </style>
@@ -114,7 +128,8 @@
                                                         class="form-control multiSelect" multiple="multiple"
                                                         style="display: none;">
                                                     @foreach($data as $item)
-                                                        <option value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
+                                                        <option
+                                                            value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

@@ -42,7 +42,7 @@
                                                 {{Form::label('quiz_start', 'زمان شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::time('quiz_start', $data->quiz_start, ['class' => 'form-control']) !!}
+                                                    {!! Form::time('quiz_start', $start_time, ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 {{Form::label('quiz_exp', 'زمان پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::time('quiz_exp', $data->quiz_start, ['class' => 'form-control']) !!}
+                                                    {!! Form::time('quiz_exp', $end_time, ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -62,7 +62,7 @@
                                                 {{Form::label('quiz_start_date', 'تاریخ شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_start_date', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::date('quiz_start_date', $start_date, ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -72,8 +72,21 @@
                                                 {{Form::label('quiz_exp_date', 'تاریخ پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_exp_date', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::date('quiz_exp_date', $end_date, ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('teacher_id', 'استاد', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    <select class="form-control" name="teacher_id" id="teacher_id">
+                                                        @foreach($teachers as $teacher)
+                                                            <option {{$teacher->id == $data->teacher_id ? 'selected' : ''}} value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->

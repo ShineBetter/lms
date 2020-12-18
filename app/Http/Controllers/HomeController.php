@@ -41,8 +41,16 @@ class HomeController extends Controller
         $next_question = questions::where('id', '>', $questions->id)->where('quiz_id', $quiz_id)->inRandomOrder()->first();
         $quiz_start = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_start));
         $quiz_exp = Carbon::parse(Carbon::createFromTimestamp($quiz->quiz_exp));
-        $quiz_time = $quiz_start->diffInMinutes($quiz_exp);
-        return view('backend.admin.quiz.quiz', ['questions' => $questions, 'all_questions' => $all_questions, 'previous_question' => $previous_question, 'next_question' => $next_question, 'questions_count' => $questions_count, 'quiz' => $quiz, 'quiz_time' => $quiz_time, 'question_row' => 1]);
+        $quiz_status = 'close';
+        $now = Carbon::now();
+//        dd($now->format("Y:m:d"),$now->format("H:i"),Carbon::createFromTimestamp($quiz->quiz_start)->format('H:i'),Carbon::createFromTimestamp($quiz->quiz_exp)->timestamp,$quiz->quiz_exp > $now);
+        $quiz_time = $now->diffInMinutes($quiz_exp);
+        if ($quiz->quiz_start <= $now->timestamp && $quiz->quiz_exp >= $now->timestamp){
+            $quiz_status = 'open';
+        }else{
+            $quiz_status = 'close';
+        }
+        return view('backend.admin.quiz.quiz', ['quiz_status' => $quiz_status,'questions' => $questions, 'all_questions' => $all_questions, 'previous_question' => $previous_question, 'next_question' => $next_question, 'questions_count' => $questions_count, 'quiz' => $quiz, 'quiz_time' => $quiz_time, 'question_row' => 1]);
     }
 
     public function getFirstAnswer(Request $request)
@@ -102,8 +110,14 @@ class HomeController extends Controller
                 'correct_answers' => $i,
             ]);
         }
+    }
 
-
-//        return view('backend.admin.quizResult.index');
+    public function examPay(Request $request)
+    {
+        $quiz_id = $request->quiz_id;
+        $quiz = quiz::where('id',$quiz_id)->first();
+        $quiz->pay_status = 1;
+        $quiz->save();
+        return redirect(route('quiz.index'));
     }
 }

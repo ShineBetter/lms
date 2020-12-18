@@ -34,6 +34,7 @@ Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
 Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam/pay', 'HomeController@examPay')->middleware('auth')->name('examPay');
 Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
 Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
 Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
@@ -118,7 +119,7 @@ Route::post('/user/profile/change/password','profileController@changePassword')-
 Route::view('/teachers','webSit.teachers');
 Route::view('/teacher-detail','webSit.teacher-detail');
 Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
-//Route::view('/quizResult','backend.admin.quizResult.quizResult');
+Route::view('/quizResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
 Route::view('/student-path-assessment','student-path-assessment');
 Route::view('/shopping-cart','shopping-cart');

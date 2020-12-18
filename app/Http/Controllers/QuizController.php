@@ -19,6 +19,7 @@ class QuizController extends Controller
     public function index()
     {
         $data = quiz::paginate(10);
+
         return view('backend.admin.quiz.index', ['data' => $data]);
     }
 
@@ -30,7 +31,8 @@ class QuizController extends Controller
     public function create()
     {
         $data = User::where('user_role','student')->get();
-        return view('backend.admin.quiz.create', ['data' => $data]);
+        $teachers = User::where('user_role','teacher')->get();
+        return view('backend.admin.quiz.create', ['data' => $data,'teachers' => $teachers]);
     }
 
     /**
@@ -48,6 +50,7 @@ class QuizController extends Controller
         $quiz->quiz_exp_date =  Carbon::createFromFormat('Y-m-d',$request->quiz_exp_date)->timestamp;
         $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d',$request->quiz_start_date)->timestamp;
         $quiz->user_id = auth()->id();
+        $quiz->teacher_id = $request->teacher_id;
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {
@@ -98,8 +101,13 @@ class QuizController extends Controller
     public function edit($id)
     {
         $data = quiz::findorfail($id);
+        $start_time = Carbon::createFromTimestamp($data->quiz_start)->format('H:i');
+        $end_time = Carbon::createFromTimestamp($data->quiz_exp)->format('H:i');
+        $start_date = Carbon::createFromTimestamp($data->quiz_start_date)->format('Y-m-d');
+        $end_date = Carbon::createFromTimestamp($data->quiz_exp_date)->format('Y-m-d');
         $students = User::where('user_role','student')->get();
-        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students]);
+        $teachers = User::where('user_role','teacher')->get();
+        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students, 'teachers' => $teachers, 'start_time' => $start_time, 'end_time' => $end_time, 'start_date' => $start_date, 'end_date' => $end_date]);
     }
 
     /**
@@ -113,11 +121,12 @@ class QuizController extends Controller
     {
         $quiz = quiz::where('id', $id)->first();
         $quiz->quiz_name = $request->quiz_name;
-        $quiz->quiz_start = $request->quiz_start;
-        $quiz->quiz_exp = $request->quiz_exp;
-        $quiz->quiz_start_date = $request->quiz_start_date;
-        $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->quiz_start = Carbon::createFromFormat('H:i',$request->quiz_start)->timestamp;
+        $quiz->quiz_exp = Carbon::createFromFormat('H:i',$request->quiz_exp)->timestamp;
+        $quiz->quiz_exp_date =  Carbon::createFromFormat('Y-m-d',$request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d',$request->quiz_start_date)->timestamp;
         $quiz->last_editor_user_id = auth()->id();
+        $quiz->teacher_id = $request->teacher_id;
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {

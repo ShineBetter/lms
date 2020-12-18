@@ -15,7 +15,6 @@
     <link rel="icon" sizes="16x16" href="images/favicon.png">
 
     <!-- inject:css -->
-<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset("template_sit/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/font-awesome.min.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/line-awesome.css") }}">
@@ -29,7 +28,7 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/tooltipster.bundle.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
-=======
+
     <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}">
     <link rel="stylesheet" href="{{ asset("css/line-awesome.css") }}">
@@ -43,7 +42,7 @@
     <link rel="stylesheet" href="{{ asset("css/tooltipster.bundle.css") }}">
     <link rel="stylesheet" href="{{ asset("css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
->>>>>>> 3dd21964e1cd097f12e095328e91416c49548d75
+
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
