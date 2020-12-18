@@ -161,3 +161,18 @@ Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middlewa
 Route::get("/aboutpic","AboutpicController@index")->middleware("auth")->name("aboutpic.index");
 Route::get("/aboutpic/edit/{id}","AboutpicController@edit")->middleware("auth")->name("aboutpic.edit");
 Route::put("/aboutpic/update{id}","AboutpicController@update")->middleware("auth")->name("aboutpic.update");
+
+
+
+////////////////////////////////main page
+///
+/// mainpage3col
+Route::get("/mainpage","Mainpage3colController@index")->middleware("auth")->name("mainpage.index");
+Route::get("/mainpage/edit/{id}","Mainpage3colController@edit")->middleware("auth")->name("mainpage.edit");
+Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("auth")->name("mainpage.update");
+
+/////mainpage slider
+
+Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
+Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
+Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");

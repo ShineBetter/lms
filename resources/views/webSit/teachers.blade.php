@@ -49,12 +49,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -62,7 +62,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -70,12 +70,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team2.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -83,7 +83,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -91,12 +91,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team3.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -104,7 +104,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -112,12 +112,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team4.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -125,7 +125,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -133,12 +133,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team5.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -146,7 +146,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -154,12 +154,12 @@
                 <div class="team-item">
                     <div class="team-img-box">
                         <img src="/images/team6.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>
-                        </ul>
+{{--                        <ul class="social-profile">--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="team-detail">
                         <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
@@ -167,7 +167,7 @@
                         <p class="team__text">
                             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
                         </p>
-                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>
+{{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
                     </div>
                 </div><!-- end team-item -->
             </div><!-- end col-lg-4 -->
@@ -175,7 +175,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box mt-2 text-center">
-                    <button class="theme-btn" type="button">در ادامه</button>
+{{--                    <button class="theme-btn" type="button">در ادامه</button>--}}
                 </div>
             </div>
         </div>

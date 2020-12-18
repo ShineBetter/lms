@@ -1,5 +1,5 @@
 @extends('backend.admin.partial._master')
-@section('title','درباره ما')
+@section('title','صفحه اصلی')
 @section('cntd')
     @parent
     @php
@@ -24,60 +24,38 @@
                         <div class="card-box-shared-body">
                             <div class="user-form">
                                 <div class="contact-form-action">
-                                    {{ Form::model($data,['route'=>['aboutTeacher.update', $data->id], 'method' => 'put','files' => true])}}
+                                    {{ Form::model($data,['route'=>['mainpage.update', $data->id], 'method' => 'put','files' => false])}}
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('header', 'نام', ['class' => 'label-text'])}}
+                                                {{Form::label('header', 'تیتر', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::text('header',null, ['class' => 'form-control','placeholder' => 'نام']) !!}
+                                                    {!! Form::text('header',null, ['class' => 'form-control','placeholder' => 'تیتر']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('filed', 'تخصص', ['class' => 'label-text'])}}
+                                                {{Form::label('icon', 'تیتر', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::text('filed',null, ['class' => 'form-control','placeholder' => 'تخصص']) !!}
+                                                    {!! Form::text('icon',null, ['class' => 'form-control','placeholder' => 'icon']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('picture', 'عکس', ['class' => 'label-text'])}}
+                                                {{Form::label('text', 'icon', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::file('picture', ['class' => 'form-control']) !!}
+                                                    {!! Form::textarea('text', null, ['class' => 'form-control','placeholder' => 'متن']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="input-box">
-                                                {{Form::label('exp', 'سابقه', ['class' => 'label-text'])}}
-                                                <span class="primary-color-2 ml-1">*</span>
-                                                <div class="form-group">
-                                                    {!! Form::number('exp',null, ['class' => 'form-control','placeholder'=>'سابقه']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="input-box">
-                                                {{Form::label('text', 'متن', ['class' => 'label-text'])}}
-                                                <span class="primary-color-2 ml-1">*</span>
-                                                <div class="form-group">
-                                                    {!! Form::textarea('text',null, ['class' => 'form-control','placeholder'=>'متن']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- end col-lg-6 -->
+                                        </div><!-- end col-lg-6 -->
                                         <!-- end col-lg-6 -->
 
 

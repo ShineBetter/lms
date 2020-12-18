@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\aboutTeacher;
+use App\Models\mainSlider;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-class AboutTeacherController extends Controller
+class MainSliderController extends Controller
 {
     public function index()
     {
-        $data=aboutTeacher::paginate(10);
-        return view("backend.admin.aboutTeacher.index",['data' => $data]);
+        $data=mainSlider::paginate(10);
+        return view("backend.admin.mainSlider.index",['data' => $data]);
 
     }
 
     public function update(Request $request,$id)
     {
-        $data=aboutTeacher::where('id', $id)->first();
+        $data=mainSlider::where('id', $id)->first();
         $file = $request->file('picture');
         if (!empty($file)) {
             $file_name = 'images/about-image' . time() . '.' . $file->getClientOriginalName();
@@ -26,19 +26,17 @@ class AboutTeacherController extends Controller
         }
         $data->header=$request->header;
         $data->text=$request->text;
-        $data->filed=$request->filed;
-        $data->exp=$request->exp;
         $data->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status', $comment);
-        return redirect()->route('aboutTeacher.index');
+        return redirect()->route('mainSlider.index');
 
     }
 
     public function edit($id)
     {
-        $data=aboutTeacher::findorfail($id);
-        return view("backend.admin.aboutTeacher.edit",['data' => $data]);
+        $data=mainSlider::findorfail($id);
+        return view("backend.admin.mainSlider.edit",['data' => $data]);
 
     }
 }
