@@ -2794,12 +2794,15 @@
 ======================================-->
 <section class="register-area section-padding">
     <div class="container">
+        @if(\Illuminate\Support\Facades\Session::has('status'))
+            <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('status')}}"/>
+        @endif
         <div class="row">
             <div class="col-lg-5">
                 <div class="register-form">
                     <div class="contact-form-action">
                         <h3 class="widget-title">با خبر شدن از دوره های رایگان</h3>
-                        <form method="post">
+                        <form method="get" action="{{route("formFree.store")}}">
                             <div class="input-box">
                                 <label class="label-text">نام<span class="primary-color-2 ml-1">*</span></label>
                                 <div class="form-group">
@@ -2824,7 +2827,7 @@
                             <div class="input-box">
                                 <label class="label-text">پایه<span class="primary-color-2 ml-1">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="subject" placeholder="پایه">
+                                    <input class="form-control" type="text" name="level" placeholder="پایه">
                                     <span class="la la-book input-icon"></span>
                                 </div>
                             </div><!-- end input-box -->
@@ -3207,8 +3210,9 @@
             <div class="col-lg-6 ml-auto">
                 <div class="subscriber-form">
                     <div class="contact-form-action">
-                        <form method="post">
+                        <form method="get" action="{{route("formNews.store")}}">
                             <div class="input-box">
+
                                 <label class="form-label text-white text-right">ایمیل خود را وارد کنید</label>
                                 <div class="form-group d-flex align-items-center">
                                     <input class="form-control" type="email" name="email" placeholder="ایمیل" required>

@@ -640,7 +640,7 @@
             <div class="col-lg-6 ml-auto">
                 <div class="subscriber-form">
                     <div class="contact-form-action">
-                        <form method="post">
+                        <form method="get" action="{{route("formNews.store")}}">
                             <div class="input-box">
                                 <label class="form-label text-white text-right">ایمیل</label>
                                 <div class="form-group d-flex align-items-center">
