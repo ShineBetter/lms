@@ -5,6 +5,7 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>پنل کاربری || @section('title')آموزشگاه@show</title>
     <!-- Google fonts -->
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+
     <!-- end inject -->
     <style>
 
@@ -43,7 +45,9 @@
             direction: rtl;
             text-align: right;
         }
+
     </style>
+    @yield('css')
 </head>
 <body>
 @includeWhen(empty($loader),'backend.admin.partial.loader')

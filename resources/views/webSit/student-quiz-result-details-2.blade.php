@@ -1,5 +1,5 @@
 @extends('layout.head')
-@section('cnt')
+@section('cntd')
     @php
         $loader="dont";
 

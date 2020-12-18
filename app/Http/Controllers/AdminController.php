@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createUserRequest;
+use App\Http\Requests\editUserRequest;
 use App\Models\admin;
 use App\Models\profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class adminController extends Controller
 {
@@ -16,8 +19,8 @@ class adminController extends Controller
      */
     public function index()
     {
-        $admin = User::where('user_role','admin')->where('id','!=',auth()->id())->paginate(4);
-        return view('backend.admin.admin.index', ['admin' => $admin, 'row' => 0]);
+        $data = User::where('user_role', 'admin')->where('id', '!=', auth()->id())->paginate(10);
+        return view('backend.admin.admin.index', ['data' => $data]);
     }
 
     /**
@@ -36,25 +39,27 @@ class adminController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createUserRequest $request)
     {
         $admin = new User();
         $profile = new profile();
         $admin->user_role = 'admin';
         $admin->email = $request->email;
-        $admin->save();
-        $profile->name = $request->name;
-        $profile->lastName = $request->lastName;
-        $profile->nationalNumber = $request->nationalNumber;
-        $profile->phone = $request->phone;
-        $profile->mobile = $request->mobile;
-        $profile->date_of_birth = $request->date_of_birth;
-        $profile->address = $request->address;
-        $profile->photo = $request->photo;
-        $admin->profile()->save($profile);
-        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('admin', $comment);
-        return redirect()->route('admin.index');
+        $admin->pid = 0;
+        if ($admin->save()) {
+            $profile->name = $request->name;
+            $profile->lastName = $request->lastName;
+            $profile->nationalNumber = $request->nationalNumber;
+            $profile->phone = $request->phone;
+            $profile->mobile = $request->mobile;
+            $profile->date_of_birth = $request->date_of_birth;
+            $profile->address = $request->address;
+            $profile->photo = $request->photo;
+            $admin->profile()->save($profile);
+            $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
+            session()->flash('status', $comment);
+            return redirect()->route('admin.index');
+        }
     }
 
     /**
@@ -77,9 +82,9 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        $admin = User::findorfail($id);
-        $profile = profile::where('user_id','=',$id)->firstorfail();
-        return view('backend.admin.admin.edit', ['admin'=>$admin,'profile'=>$profile]);
+        $data = User::findorfail($id);
+        $profile = profile::where('user_id', '=', $id)->firstorfail();
+        return view('backend.admin.admin.edit', ['data' => $data, 'profile' => $profile]);
     }
 
     /**
@@ -89,10 +94,22 @@ class adminController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(editUserRequest $request, $id)
     {
-        $admin = User::where('id',$id)->first();
-        $profile = profile::where('user_id',$id)->first();
+        $rules = [
+            'email' => [
+                'nullable',
+                'string',
+                'email',
+                Rule::unique('users','email')->ignore($id),
+            ],
+        ];
+        $message = [
+            'email.unique' => 'آدرس ایمیل شما تکراری است',
+        ];
+        $this->validate($request, $rules, $message);
+        $admin = User::where('id', $id)->first();
+        $profile = profile::where('user_id', $id)->first();
         $admin->user_role = 'admin';
         $admin->email = $request->email;
         $admin->save();
@@ -106,7 +123,7 @@ class adminController extends Controller
         $profile->photo = $request->photo;
         $admin->profile()->save($profile);
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('admin', $comment);
+        session()->flash('status', $comment);
         return redirect()->route('admin.index');
     }
 
@@ -118,10 +135,10 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        $admin = User::where('id',$id)->first();
+        $admin = User::where('id', $id)->first();
         $admin->delete();
         $comment = 'عملیات حذف بدرستی انجام شد.';
-        session()->flash('admin', $comment);
+        session()->flash('status', $comment);
         return back();
     }
 }

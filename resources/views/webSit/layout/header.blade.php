@@ -1,12 +1,17 @@
 <header class="header-menu-area">
     <div class="header-top">
         <div class="container-fluid">
+            @php
+                $contact=\Illuminate\Support\Facades\DB::table('contacts')->first()
+            @endphp
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="header-widget text-right">
                         <ul class="header-action-list">
-                            <li><a href="home-rtl.html#"><span class="la la-phone ml-2"></span>123-456-789<i class="fas fa-phone"></i></a> </li>
-                            <li><a href="home-rtl.html#"><span class="la la-envelope-o mr-2"></span>contact@aduca.com<i class="fas fa-envelope"></i></a></li>
+
+                            <li><a href="home-rtl.html#"><span class="la la-phone ml-2"></span>{{$contact->phone}}<i class="fas fa-phone"></i></a> </li>
+                            <li><a href="home-rtl.html#"><span class="la la-envelope-o mr-2"></span>{{$contact->email}}<i class="fas fa-envelope"></i></a></li>
+
                         </ul>
                     </div><!-- end header-widget -->
                 </div><!-- end col-lg-6 -->
@@ -14,10 +19,16 @@
                     <div class="header-widget d-flex align-items-center justify-content-end">
                         <div class="header-right-info">
                             <ul class="header-social-profile">
-                                <li><a href="home-rtl.html#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="home-rtl.html#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="home-rtl.html#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="home-rtl.html#"><i class="fab fa-linkedin"></i></a></li>
+                                @php
+                                $data=\Illuminate\Support\Facades\DB::table('socials')->get()
+                                @endphp
+                                @foreach($data as $item)
+                                    <li><a name="{{$item->social_name}}" href="{{$item->social_link}}"><i class="{{$item->social_icon}}"></i></a></li>
+                                @endforeach
+{{--                                <li><a href="home-rtl.html#"><i class="fab fa-facebook"></i></a></li>--}}
+{{--                                <li><a href="home-rtl.html#"><i class="fab fa-twitter"></i></a></li>--}}
+{{--                                <li><a href="home-rtl.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                                <li><a href="home-rtl.html#"><i class="fab fa-linkedin"></i></a></li>--}}
                             </ul>
                         </div><!-- end header-right-info -->
                         <div class="header-right-info">

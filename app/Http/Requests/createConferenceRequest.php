@@ -6,42 +6,49 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class createConferenceRequest extends FormRequest
 {
-
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
     public function authorize()
     {
         return true;
     }
 
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
     public function rules()
     {
         return [
-            'title'=>'required|string|between:3,100',
-            'description'=>'required|string|between:10,1000',
-            'status' => 'required',
-            'date' => 'required',
-            'time' => 'required',
-            'periodOfTime'=>'required',
-            'speacher' => 'required|string',
-            'image'=>'required|file|mimes:jpg,png,jpeg|min:100|max:200',
-
+            'picture'=>'required|image|max:200',
+            'price'=>'required',
+            'count'=>'required|integer',
+            'description'=>'required|string',
+            'name'=>'required|string',
+            'offer'=>'nullable|integer',
+            'date'=>'required'
         ];
     }
-
     public function messages()
     {
         return[
-            'title.required'=>'لطفا عنوان تصویر را وارد نمایید.',
-            'title.between'=>'عنوان باید بین 3 تا 100 کلمه داشته باشد. ',
-            'description.required'=>'لطفا توضیحات کنفرانس را وارد نمایید.',
-            'status.required'=>'مشخص کردن وضعیت تصویر الزامی می باشد.',
-            'date.required'=>'مشخص کردن تاریخ الزامی می باشد.',
-            'time.required'=>'مشخص کردن زمان الزامی می باشد.',
-            'speacher.required'=>'مشخص کردن نام سخنران الزامی می باشد.',
-            'periodOfTime.required'=>'وارد کردن مدت زمان همایش الزامیست.',
-            'image.required'=>'وارد کردن تصویر الزامی می باشد.',
-            'image.mimes'=>'فایل باید از نوع jpg,jpeg,png باشد. ',
-            'image.min'=>'حجم تصویر نباید کمتر از 100 کیلوبایت باشد.',
-            'image.max'=>'حجم تصویر نباید بیشتر  از 200 کیلوبایت باشد.' ,
+            'picture.required'=> 'لطفا تصویر را بارگذاری نمایید نمایید',
+            'picture.image'=> 'تصویر باید از نوع عکس باشد',
+            'picture.max:200'=> 'حجم تصویر نباید بیشتر از 200 کیلوبایت باشد',
+            'price.required'=> 'لطفا قیمت را بارگزاری کنید',
+            'count.required'=> 'لطفا ظرفیت همایش را وارد کنید',
+            'count.integer'=> 'تعداد ظرفیت باید مقدار عددی باشد',
+            'name.required'=> 'لطفا نام همایش را بارگذاری کنید',
+            'name.string'=> 'نام باید از نوع نوشتار باشد',
+            'date.required'=> 'لطفا تاریخ همایش را وارد نمایید',
+            'description.required'=> 'لطفا توضیحات همایش را وارد نمایید',
+            'description.string'=> 'توضیحات همایش باید از نوع نوشتار باشد',
+            'offer.integer'=> 'تخفیف باید مقدار عددی باشد',
+
         ];
     }
 }

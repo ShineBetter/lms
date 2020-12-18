@@ -30,7 +30,21 @@ Route::get('user/register','FrontEndController@register')->name('register.form')
 Route::post('user/register','FrontEndController@registerSubmit')->name('register.submit');
 
 //panel route
-Route::get('/panel', 'HomeController@index')->middleware('auth')->name('panel');
+Route::get('/panel', 'HomeController@index')->name('panel');
+
+//quiz route
+Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
+Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
+Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
+Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
+Route::resource('quiz','QuizController')->middleware('auth');
+
+//questions route
+Route::resource('questions','QuestionsController')->middleware('auth');
+
+//quizResult route
+Route::resource('quizResult','QuizResultController')->middleware('auth');
 
 //role route
 Route::resource('role','RoleController')->middleware('auth');
@@ -48,16 +62,23 @@ Route::resource('conference','ConferenceController')->middleware('auth');
 Route::resource('lesson','LessonController')->middleware('auth');
 
 //parent list route
-Route::resource('parent','ParentsController')->middleware('auth');
+Route::resource('parent','ParentsController')->middleware(['auth']);
 
 //teacher list route
 Route::resource('teacher','teacherController')->middleware('auth');
+Route::get('teacher/warn/{id}/{text}','teacherController@setWarn')->middleware('auth')->name('teacher-warn');
+Route::get('teacher/kick/{id}/{status}','teacherController@kick')->middleware('auth')->name('teacher-kick');
+Route::resource('ticket','TicketController')->middleware('auth');
+Route::get('teacher/warn/{id}','teacherController@setWarn')->middleware('auth')->name('teacher-warn');
+Route::get('ticket/close/{id}','TicketController@close')->middleware('auth')->name('ticket.close');
+Route::get('teacher/kick/{id}','teacherController@kick')->middleware('auth')->name('teacher-kick');
 
 //student list route
 Route::resource('student','studentController')->middleware('auth');
 
 //admin list route
 Route::resource('admin','adminController')->middleware('auth');
+
 
 //users lesson routes
 Route::get('/userLessons/{id}','userLessonsController@index')->middleware('auth')->name('userLessons.index');
@@ -85,19 +106,42 @@ Route::get('/cr/{id}','teacherController@cr');
 
 //new routes for site fornt
 Route::get('/about', function () {
-    return view('about');
+    return view('webSit.about');
 });
-Route::view('/teachers','teachers');
-Route::view('/teacher-detail','teacher-detail');
-Route::view('/student-quiz-result-details-2','student-quiz-result-details-2');
-Route::view('/student-quiz-result-details','student-quiz-result-details');
-Route::view('/student-quiz-result-details','student-quiz-result-details');
+
+//profile setting route
+Route::get('/user/profile','profileController@getInformation')->name('profile')->middleware('auth');;
+Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info')->middleware('auth');;
+Route::get('/user/profile/delete/profile/image','profileController@deleteProfileImage')->name('profile.delete.image')->middleware('auth');;
+Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
+
+Route::view('/teachers','webSit.teachers');
+Route::view('/teacher-detail','webSit.teacher-detail');
+Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
+//Route::view('/quizResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
 Route::view('/student-path-assessment','student-path-assessment');
 Route::view('/shopping-cart','shopping-cart');
-Route::view('/pricing-table','pricing-table');
-Route::view('/my-courses','my-courses');
-Route::view('/faq','faq');
-Route::view('/course-grid','course-grid');
-Route::view('/contact','contact');
-Route::view('/course-details','course-details');
+Route::view('/pricing-table','webSit.pricing-table');
+Route::view('/my-courses','webSit.my-courses');
+Route::view('/faq','webSit.faq');
+Route::view('/course-grid','webSit.course-grid');
+Route::view('/contact','webSit.contact')->name("contact-main");
+Route::view('/course-details','webSit.course-details');
+
+
+
+////////////////home page dinamicks///////////
+/// routs
+Route::get("/contact-m","ContactController@index")->middleware("auth")->name("contact.index");
+Route::get("/contact-form","ContactController@formindex")->middleware("auth")->name("contact.form-index");
+Route::get("/contact-show/{id}","ContactController@formshow")->middleware("auth")->name("contact.form-show");
+Route::get("/contact/edit/{id}","ContactController@edit")->middleware("auth")->name("contact.edit");
+Route::put("/contact/update{id}","ContactController@update")->middleware("auth")->name("contact.update");
+Route::put("/social/update{id}","ContactController@updateSocial")->middleware("auth")->name("Social.update");
+Route::get("/social","ContactController@indexSocial")->middleware("auth")->name("social.index");
+Route::get("/social/edit/{id}","ContactController@editSocial")->middleware("auth")->name("social.edit");
+Route::get("/social/create","ContactController@create")->middleware("auth")->name("social.create");
+Route::delete("/social/delete{id}","ContactController@destroy")->middleware("auth")->name("social.destroy");
+Route::post("/social/store","ContactController@store")->middleware("auth")->name("social.store");
+Route::post("/contact-form","ContactController@insertForm")->name("contact-form");

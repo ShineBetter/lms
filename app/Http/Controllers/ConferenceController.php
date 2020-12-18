@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createConferenceRequest;
+use App\Http\Requests\editConferenceRequest;
 use App\Models\conference;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ConferenceController extends Controller
 {
 
     public function index()
     {
-        $conference = conference::paginate(4);
-        return view('backend.admin.conference.index', ['conference' => $conference,'row'=>0]);
+        $data=conference::paginate(10);
+        return view('backend.admin.conference.index',['data' => $data]);
     }
 
 
@@ -23,24 +25,22 @@ class ConferenceController extends Controller
     }
     public function store(createConferenceRequest $request)
     {
-
         $conference = new conference();
-        $conference->title = $request->title;
+        $file = $request->file('picture');
+        if (!empty($file)) {
+            $file_name = 'images/conference-image/conference-photo-' . time() . '.' . $file->getClientOriginalName();
+            Image::make($file->getRealPath())->resize(100, 100)->save($file_name);
+            $conference->picture = $file_name;
+        }
+        $conference->name = $request->name;
+        $conference->price = $request->price;
+        $conference->count = $request->count;
         $conference->description = $request->description;
         $conference->date = $request->date;
-        $conference->time = $request->time;
-        $conference->speacher = $request->speacher;
-        $conference->periodOfTime = $request->periodOfTime;
-        $conference->status = $request->status;
-        $fileImage = $request->file('image');
-        if (!empty($fileImage)) {
-            $image = time() . $fileImage->getClientOriginalName();
-            $fileImage->move('image/conference/', $image);
-            $conference->image = $image;
-        }
+        $conference->offer=$request->offer;
         $conference->save();
-        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('conference', $comment);
+        $comment = 'اطلاعات ، بدرستی ذخیره شد';
+        session()->flash('status', $comment);
         return redirect()->route('conference.index');
     }
 
@@ -52,42 +52,38 @@ class ConferenceController extends Controller
 
     public function edit($id)
     {
-        $conference = conference::findorfail($id);
-        return view('backend.admin.conference.edit',compact('conference'));
+        $data = conference::findorfail($id);
+        return view('backend.admin.conference.edit',['data'=>$data]);
     }
 
-    public function update(createConferenceRequest $request, $id)
+    public function update(editConferenceRequest $request, $id)
     {
+
         $conference = conference::where('id', $id)->first();
-        $conference->title = $request->title;
+        $conference->name = $request->name;
+        $conference->price = $request->price;
+        $conference->count = $request->count;
         $conference->description = $request->description;
         $conference->date = $request->date;
-        $conference->time = $request->time;
-        $conference->speacher = $request->speacher;
-        $conference->periodOfTime = $request->periodOfTime;
-        $conference->status = $request->status;
-        $fileImage = $request->file('image');
-        if (!empty($fileImage)) {
-            $deleteImage = $conference->image;
-            unlink('image/conference/'.$deleteImage);
-            $image = time() . $fileImage->getClientOriginalName();
-            $fileImage->move('image/conference/', $image);
-            $conference->image = $image;
+        $conference->offer = $request->offer;
+        $file = $request->file('picture');
+        if (!empty($file)) {
+            $file_name = 'images/conference-image/conference-photo-' . time() . '.' . $file->getClientOriginalName();
+            Image::make($file->getRealPath())->resize(100, 100)->save($file_name);
+            $conference->picture = $file_name;
         }
         $conference->save();
-        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('conference', $comment);
+        $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
+        session()->flash('status', $comment);
         return redirect()->route('conference.index');
     }
 
     public function destroy($id)
     {
-        $conference=conference::where('id',$id)->first();
-        $deleteImage=$conference->image;
-        unlink('image/conference/'.$deleteImage);
-        $conference->delete();
-        $comment='عملیات حذف بدرستی انجام شد.';
-        session()->flash('conference',$comment);
+        $quiz = conference::where('id', $id)->first();
+        $quiz->delete();
+        $comment = 'عملیات حذف بدرستی انجام شد';
+        session()->flash('status', $comment);
         return back();
     }
 }

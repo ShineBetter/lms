@@ -1,114 +1,129 @@
 @extends('backend.admin.partial._master')
-@section('main.content')
-    <section class="container" style="padding: 50px" dir="rtl">
-        <section>
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+@section('title','همایش')
+@section('cntd')
+    @parent
+    @php
+        $header="";
+        $loader="dont";
+        $sidebar="";
+        $sidebar="";
+    @endphp
+    @if(\Illuminate\Support\Facades\Session::has('status'))
+        <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
+    @endif
+    <div class="dashboard-content-wrap">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h3 class="widget-title">همایشات</h3>
                 </div>
-            @endif
-
-        </section>
-        <section>
-            @if (session()->has('conference'))
-                <section class="alert alert-danger">
-                    <h3>{{ session('conference') }}</h3>
-                </section>
-            @endif
-
-        </section>
-        <table class="table table-hover table-bordered">
-            <thead class="bg-success" style="font-size: 15px ; font-family: Tahoma; background-color: #67b168;text-align: center">
-            <td>
-                <label style="color: white"> ردیف </label>
-            </td>
-            <td>
-                <label style="color: white"> عنوان </label>
-            </td>
-            <td>
-                <label style="color: white"> سخنران </label>
-            </td>
-            <td>
-                <label style="color: white"> توضیحات </label>
-            </td>
-            <td>
-                <label style="color: white"> تاریخ </label>
-            </td>
-            <td>
-                <label style="color: white"> زمان</label>
-            </td>
-            <td>
-                <label style="color: white"> مدت زمان همایش</label>
-            </td>
-            <td>
-                <label style="color: white"> وضعیت </label>
-            </td>
-            <td>
-                <label style="color: white"> تصویر</label>
-            </td>
-
-            <td colspan="3" style="text-align: center">
-                <label style="color: white">ویرایش</label>
-            </td>
-
-            </thead>
-            <tbody>
-
-            @foreach($conference as $item)
-                <tr style="text-align: justify">
-                    <td>
-                        <label style="color: black">{{++$row}}</label>
-                    </td>
-
-                    <td>
-                        <label style="color: black">{{$item->title}}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{$item->speacher}}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{$item->description}}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{$item->date}}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{$item->time}}</label>
-                    </td>
-                    <td>
-                        <label style="color: black">{{$item->periodOfTime}}</label>
-                    </td>
-                    <td>
-                        @if($item->status=='active')
-                            <span class="badge badge-success">{{$item->status}}</span>
-                        @else
-                            <span class="badge badge-warning">{{$item->status}}</span>
-                        @endif
-                    </td>
-                    <td style="text-align: center"><img src="{{asset('image/conference/'.$item->image)}}" style="width: 50px;height: 50px; border-radius: 5px"></td>
-
-                    <td style="text-align: center"><a href="{{route('conference.edit',$item->id)}}"><input type="button" class="btn btn-info" style="font-size: 15px;font-family: Tahoma" value="ویرایش"></a></td>
-                    <td style="text-align: center">
-                        {!! Form::open(['route' => ['conference.destroy', $item->id ],'method' => 'delete']) !!}
-                        {!! Form::submit('حذف', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                    </td>
-
-                </tr>
-            @endforeach
-            </tbody>
-
-
-        </table>
-        <span style="float:right">{{$conference->links()}}</span>
-        <section class="form-group">
-            <td style="text-align: center"><a href="{{route('conference.create')}}"><input type="button" class="form-control btn btn-info"  style="font-size: 15px;font-family: Tahoma"value="صفحه درج "></a></td>
-        </section>
-
-    </section>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card-box-shared">
+                        <div class="card-box-shared-title">
+                            <x-btn route="conference.create"/>
+                        </div>
+                        <div class="card-box-shared-body">
+                            <div class="statement-table purchase-table table-responsive mb-5">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">ردیف</th>
+                                        <th scope="col">نام همایش</th>
+                                        <th scope="col">عکس</th>
+                                        <th scope="col">قیمت</th>
+                                        <th scope="col">ظرفیت</th>
+                                        <th scope="col">توضیحات</th>
+                                        <th scope="col">تاریخ</th>
+                                        <th scope="col">تخفیف</th>
+                                        <th scope="col">عملیات</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($data as $key => $item)
+                                        <tr>
+                                            <td scope="row">
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li class="mb-1">
+                                                            <p>{{ $key + $data->firstItem() }}</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li><img src="{{$item->picture}}" style="height: 100px;width: 100px;"></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->price}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->count}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->description}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->offer}}%</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>
+                                                            <a href="{{route('conference.edit',$item->id)}}"><input
+                                                                    type="button" class="btn btn-info"
+                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                    value="ویرایش"></a>
+                                                            <x-delbtn route="conference.destroy" id="{{$item->id}}"/>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                {{ $data->links() }}
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container-fluid -->
+    </div><!-- end dashboard-content-wrap -->
 @endsection
-

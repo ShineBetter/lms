@@ -1,4 +1,4 @@
-@extends('layout.head')
+@extends('webSit.layout.head')
 @section('cnt')
     @php
         $loader="dont";
@@ -51,7 +51,10 @@
             </div>
         </div>
     </div>
-</div>
+</div>@php
+        $data=\Illuminate\Support\Facades\DB::table('socials')->get()
+    @endphp
+    @php($contact=\Illuminate\Support\Facades\DB::table("contacts")->first());
 <!-- ================================
        END GOOGLE MAP
 ================================= -->
@@ -69,7 +72,7 @@
                         <i class="fas fa-thumbtack"></i>
                     </div>
                     <h3 class="info__title">ادرس ما</h3>
-                    <p class="info__text mb-0">کرج-برج اموت</p>
+                    <p class="info__text mb-0">{{$contact->address}}</p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-4 -->
             <div class="col-lg-4 column-td-half">
@@ -80,8 +83,7 @@
                     </div>
                     <h3 class="info__title">ایمیل ما</h3>
                     <p class="info__text mb-0">
-                        <span class="d-block">info123@example.com</span>
-                        <span class="d-block">info123@example.com</span>
+                        <span class="d-block">{{$contact->email}}</span>
                     </p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-4 -->
@@ -93,8 +95,8 @@
                     </div>
                     <h3 class="info__title">شماره تماس</h3>
                     <p class="info__text mb-0">
-                        <span class="d-block">+163 123 7884</span>
-                        <span class="d-block">+163 123 7884</span>
+                        <span class="d-block">{{$contact->phone}}</span>
+
                     </p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-4 -->
@@ -110,17 +112,21 @@
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
                         </p>
                         <ul class="social-profile">
-                            <li><a href="home-rtl.html#"><i class="fas fa-phone"></i></a></li>
-                            <li><a href="home-rtl.html#"><i class="fab fa-telegram-plane"></i></a></li>
-                            <li><a href="home-rtl.html#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="home-rtl.html#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="home-rtl.html#"><i class="fab fa-whatsapp"></i></a></li>
+
+                            @foreach($data as $item)
+                                <li><a name="{{$item->social_name}}" href="{{$item->social_link}}"><i class="{{$item->social_icon}}"></i></a></li>
+                            @endforeach
+{{--                            <li><a href="home-rtl.html#"><i class="fas fa-phone"></i></a></li>--}}
+{{--                            <li><a href="home-rtl.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
+{{--                            <li><a href="home-rtl.html#"><i class="fab fa-instagram"></i></a></li>--}}
+{{--                            <li><a href="home-rtl.html#"><i class="fab fa-linkedin-in"></i></a></li>--}}
+{{--                            <li><a href="home-rtl.html#"><i class="fab fa-whatsapp"></i></a></li>--}}
                         </ul>
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-5 -->
                 <div class="col-lg-7">
                     <div class="contact-form-action">
-                        <form method="POST" name="contactform" action="/php/contact.htm">
+                        <form method="POST" name="contactform" action="/contact-form">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="input-box">
@@ -140,6 +146,7 @@
                                         </div>
                                     </div>
                                 </div><!-- end col-lg-6 -->
+                                @csrf
                                 <div class="col-lg-6">
                                     <div class="input-box">
                                         <label class="label-text">شماره تماس<span class="primary-color-2 ml-1">*</span></label>
@@ -153,7 +160,7 @@
                                     <div class="input-box">
                                         <label class="label-text">پایه تحصیلی<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="subject" placeholder="پایه">
+                                            <input class="form-control" type="text" name="class" placeholder="پایه">
                                             <span class="la la-book input-icon"></span>
                                         </div>
                                     </div>
@@ -162,7 +169,7 @@
                                     <div class="input-box">
                                         <label class="label-text">پیام<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <textarea class="message-control form-control" name="message" placeholder="نوشتن پیام"></textarea>
+                                            <textarea class="message-control form-control" name="text" placeholder="نوشتن پیام"></textarea>
                                             <span class="la la-pencil input-icon"></span>
                                         </div>
                                     </div>

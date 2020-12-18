@@ -7,6 +7,7 @@ use App\Models\role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class User extends Authenticatable
@@ -28,6 +29,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(\App\Models\profile::class);
     }
+    public function quiz()
+    {
+        return $this->belongsToMany(\App\Models\quiz::class,'user_quiz');
+    }
 
     public function lesson()
     {
@@ -37,5 +42,14 @@ class User extends Authenticatable
     public function level()
     {
         return $this->morphToMany(level::class,'levelable','levelable');
+    }
+
+    public function getParentByAuthId()
+    {
+        return User::where('id',User::where('id',Auth::id())->first()->pid)->first();
+    }
+    public function getParent($id)
+    {
+        return User::where('id',User::where('id',$id)->first()->pid)->first();
     }
 }

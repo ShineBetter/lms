@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createUserRequest;
+use App\Http\Requests\editUserRequest;
 use App\Models\lesson;
 use App\Models\teacher;
 use App\Models\profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class teacherController extends Controller
 {
@@ -18,8 +21,33 @@ class teacherController extends Controller
      */
     public function index()
     {
-        $teacher = User::where('user_role','teacher')->paginate(4);
-        return view('backend.admin.teacher.index', ['teacher' => $teacher, 'row' => 0]);
+        $data = User::where('user_role', 'teacher')->paginate(10);
+        return view('backend.admin.teacher.index', ['data' => $data]);
+    }
+
+    public function setWarn(Request $request, $id, $text)
+    {
+        if ($request->ajax()) {
+        $user = User::where('id', $id)->first();
+        $user->warn = 1;
+        $user->warn_text = $text;
+        $user->save();
+        }
+    }
+
+    public function kick(Request $request,$id,$status)
+    {
+        if ($request->ajax()) {
+            $user = User::where('id', $id)->first();
+
+            if ($status == 'kick') {
+                $user->kick = 1;
+            }
+            elseif ($status == 'back'){
+                $user->kick = 0;
+            }
+            $user->save();
+        }
     }
 
     /**
@@ -38,25 +66,27 @@ class teacherController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createUserRequest $request)
     {
         $teacher = new User();
         $profile = new profile();
         $teacher->user_role = 'teacher';
         $teacher->email = $request->email;
-        $teacher->save();
-        $profile->name = $request->name;
-        $profile->lastName = $request->lastName;
-        $profile->nationalNumber = $request->nationalNumber;
-        $profile->phone = $request->phone;
-        $profile->mobile = $request->mobile;
-        $profile->date_of_birth = $request->date_of_birth;
-        $profile->address = $request->address;
-        $profile->photo = $request->photo;
-        $teacher->profile()->attach($profile);
-        $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('teacher', $comment);
-        return redirect()->route('teacher.index');
+        $teacher->pid = 0;
+        if ($teacher->save()) {
+            $profile->name = $request->name;
+            $profile->lastName = $request->lastName;
+            $profile->nationalNumber = $request->nationalNumber;
+            $profile->phone = $request->phone;
+            $profile->mobile = $request->mobile;
+            $profile->date_of_birth = $request->date_of_birth;
+            $profile->address = $request->address;
+            $profile->photo = $request->photo;
+            $teacher->profile()->save($profile);
+            $comment = 'اطلاعات ، بدرستی ذخیره شد. ';
+            session()->flash('status', $comment);
+            return redirect()->route('teacher.index');
+        }
     }
 
     /**
@@ -79,9 +109,9 @@ class teacherController extends Controller
      */
     public function edit($id)
     {
-        $teacher = User::findorfail($id);
-        $profile = profile::where('user_id','=',$id)->firstorfail();
-        return view('backend.admin.teacher.edit', ['teacher'=>$teacher,'profile'=>$profile]);
+        $data = User::findorfail($id);
+        $profile = profile::where('user_id', '=', $id)->firstorfail();
+        return view('backend.admin.teacher.edit', ['data' => $data, 'profile' => $profile]);
     }
 
     /**
@@ -91,12 +121,25 @@ class teacherController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(editUserRequest $request, $id)
     {
-        $teacher = User::where('id',$id)->first();
-        $profile = profile::where('user_id',$id)->first();
+        $rules = [
+            'email' => [
+                'nullable',
+                'string',
+                'email',
+                Rule::unique('users', 'email')->ignore($id),
+            ],
+        ];
+        $message = [
+            'email.unique' => 'آدرس ایمیل شما تکراری است',
+        ];
+        $this->validate($request, $rules, $message);
+        $teacher = User::where('id', $id)->first();
+        $profile = profile::where('user_id', $id)->first();
         $teacher->user_role = 'teacher';
         $teacher->email = $request->email;
+        $teacher->pid = 0;
         $teacher->save();
         $profile->name = $request->name;
         $profile->lastName = $request->lastName;
@@ -108,7 +151,7 @@ class teacherController extends Controller
         $profile->photo = $request->photo;
         $teacher->profile()->save($profile);
         $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('teacher', $comment);
+        session()->flash('status', $comment);
         return redirect()->route('teacher.index');
     }
 
@@ -120,32 +163,10 @@ class teacherController extends Controller
      */
     public function destroy($id)
     {
-        $teacher = User::where('id',$id)->first();
+        $teacher = User::where('id', $id)->first();
         $teacher->delete();
         $comment = 'عملیات حذف بدرستی انجام شد.';
-        session()->flash('teacher', $comment);
+        session()->flash('status', $comment);
         return back();
-    }
-
-    public function lessons($id)
-    {
-        $lesson = User::find($id);
-
-    }
-    public function cr($id)
-    {
-        $user = User::find($id);
-        $mk = DB::table('lessonable')->insert([
-            'lesson_id' => 2,
-            'lessonable_id' => $user->id,
-            'lessonable_type' => get_class($user),
-        ]);
-
-//        $mks = lesson::create([
-//            'title' => 'درس یک',
-//            'level_id' => 1,
-//        ]);
-
-        dd($user->lesson());
     }
 }

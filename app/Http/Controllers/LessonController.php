@@ -2,41 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createLessonRequest;
 use App\Http\Requests\createLevelRequest;
 use App\Models\Banner;
 use App\Models\lesson;
 use App\Models\level;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LessonController extends Controller
 {
+    public function fetch(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = level::paginate(10);
+            return view('backend.admin.level.index', ['data' => $data])->render();
+        }
+    }
 
     public function index()
     {
-        $lesson = lesson::paginate(4);
-        return view('backend.admin.lesson.index', ['lesson' => $lesson, 'row' => 0]);
+        $data = lesson::paginate(10);
+        return view('backend.admin.lesson.index', ['data' => $data, 'row' => 0]);
     }
 
 
     public function create()
     {
-        $levels = ['' => level::get()->pluck('level_title','id')];
-        return view('backend.admin.lesson.create', compact('levels'));
+        $data = level::get()->pluck('level_title','id');
+        return view('backend.admin.lesson.create', ['data' => $data]);
+
     }
 
-    public function store(Request $request)
+    public function store(createLessonRequest $request)
     {
         $lesson = new lesson();
         $lesson->lesson_title = $request->lesson_title;
-        $lesson->level_id = $request->levels;
+        $lesson->level_id = $request->level_id;
         $lesson->save();
-        $comment = 'اطلاعات ، به درستی ذخیره شد. ';
-        session()->flash('lesson',$comment);
+        $comment = 'اطلاعات ، به درستی ذخیره شد';
+        session()->flash('status', $comment);
         return redirect()->route('lesson.index');
     }
 
-    public function show(lesson $lesson)
+    public function show($lesson)
     {
         $lesson = lesson::findorfail($lesson);
         return $lesson;
@@ -44,29 +54,29 @@ class LessonController extends Controller
 
     public function edit($id)
     {
-        $levels = ['' => level::get()->pluck('level_title','id')];
-        $lesson = lesson::findorfail($id);
-        $levelFind = level::findorfail($lesson->level_id);
-        return view('backend.admin.lesson.edit',['levels'=>$levels,'lesson'=>$lesson,'levelFind'=>$levelFind]);
+        $data = lesson::findorfail($id);
+        $levels = level::get()->pluck('level_title', 'id');
+        $levelFind = level::findorfail($data->level_id);
+        return view('backend.admin.lesson.edit', ['data' => $data, 'levels' => $levels, 'levelFind' => $levelFind]);
     }
 
-    public function update(createLevelRequest $request, $id)
+    public function update(createLessonRequest $request, $id)
     {
-        $lesson = lesson::where('id',$id)->first();
+        $lesson = lesson::where('id', $id)->first();
         $lesson->lesson_title = $request->lesson_title;
-        $lesson->level_id = $request->levels;
+        $lesson->level_id = $request->level_id;
         $lesson->save();
-        $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد. ';
-        session()->flash('lesson', $comment);
+        $comment = 'ویرایش اطلاعات ، بدرستی ذخیره شد';
+        session()->flash('status', $comment);
         return redirect()->route('lesson.index');
     }
 
     public function destroy($id)
     {
-        $lesson = lesson::where('id',$id)->first();
+        $lesson = lesson::where('id', $id)->first();
         $lesson->delete();
-        $comment = 'عملیات حذف بدرستی انجام شد.';
-        session()->flash('lesson', $comment);
+        $comment = 'عملیات حذف موفقیت آمیز بود';
+        session()->flash('status', $comment);
         return back();
     }
 }

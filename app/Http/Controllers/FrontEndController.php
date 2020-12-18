@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ctreatUserRequest;
+use App\Http\Requests\createUserRequest;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Auth;
@@ -21,7 +21,9 @@ class FrontEndController extends Controller
         $data= $request->all();
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'],'status'=>'active'])){
             Session::put('user',$data['email']);
-            request()->session()->flash('success','ورود شما موفقیت آمیز بود.');
+            request()->session()->flash('success','ورود شما موفقیت آمیز
+
+             بود.');
             return redirect()->route('index');
         }
         else{
@@ -35,7 +37,7 @@ class FrontEndController extends Controller
         return view('webSit.register');
     }
 
-    public function registerSubmit(ctreatUserRequest $request)
+    public function registerSubmit(createUserRequest $request)
     {
         $user = new User();
         $user->email = $request->email;
@@ -65,7 +67,7 @@ class FrontEndController extends Controller
 
     public function index()
     {
-        $banner=Banner::orderby('id','desc')->take(3)->skip(0)->get();;
+        $banner=Banner::orderby('id','desc')->take(3)->skip(0)->get();
         return view('webSit.index',['banner'=>$banner]);
     }
 
