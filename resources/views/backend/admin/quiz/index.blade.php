@@ -119,11 +119,19 @@
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
-                                                            @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                            @if($item->pay_status == 1)
+                                                                @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                    {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                    <input type="hidden" name="quiz_id"
+                                                                           value="{{$item->id}}">
+                                                                    {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                    {{ Form::close() }}
+                                                                @endif
+                                                            @else
                                                                 {{Form::open(['route' => 'quiz','method' => 'post'])}}
                                                                 <input type="hidden" name="quiz_id"
                                                                        value="{{$item->id}}">
-                                                                {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
                                                                 {{ Form::close() }}
                                                             @endif
                                                             <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
