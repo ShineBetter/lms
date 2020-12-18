@@ -12831,7 +12831,9 @@ body {
 .statement-table .table thead th {
     border: none;
 }
-
+.statement-table .table thead th:last-child {
+    padding-right: 10em;
+}
 .statement-table .table tbody th,
 .statement-table .table tbody td {
     padding-top: 20px;
@@ -16704,4 +16706,154 @@ body {
 }
 .quiz-ans-content {
     text-align: right;
+}
+/*edit*/
+.btn-edit a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.text-edit {
+    /*padding: 0 50px;*/
+    visibility: hidden;
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    left: 0;
+    top: -1em;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-front i {
+    padding: 3px 4px
+}
+.flip-back {
+    padding: 0px;
+}
+.flip-back i {
+    padding: 1px 7px
+}
+.flip-front {
+    color: rgba(246, 205, 3, 0.92);
+    border: 2px solid rgba(217, 188, 46, 0.92);
+    background-color: transparent;
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+
+.flip-back {
+    color: #fff;
+    background-color: rgba(246, 205, 3, 0.92);
+    border: 2px solid rgba(171, 144, 13, 0.92);
+    -webkit-transform: rotateX(90deg) translateZ(25px);
+    -ms-transform: rotateX(90deg) translateZ(25px);
+    -o-transform: rotateX(90deg) translateZ(25px);
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-front {
+    -webkit-transform: rotateX(-90deg) translateZ(25px);
+    -ms-transform: rotateX(-90deg) translateZ(25px);
+    -o-transform: rotateX(-90deg) translateZ(25px);
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-back {
+    -webkit-transform: rotateX(0deg) translateZ(25px);
+    -ms-transform: rotateX(0deg) translateZ(25px);
+    -o-transform: rotateX(0deg) translateZ(25px);
+    transform: rotateX(0deg) translateZ(25px);
+}
+/*delet*/
+.btn-edit a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.text-edit {
+    /*padding: 0 50px;*/
+    visibility: hidden;
+}
+
+.flip-login,
+.flip-plus {
+    position: absolute;
+    left: 112px;
+    top: -1em;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+.flip-login i {
+    padding: 3.234px 5px
+}
+.flip-plus {
+    padding: 0px;
+}
+.flip-plus i {
+    padding: 0px 9px
+}
+.flip-login {
+    color: #0088ff;
+    border: 2px solid #00a6ff;
+    background-color: transparent;
+    -webkit-transform: rotatey(0deg) translateZ(25px);
+    -ms-transform: rotatey(0deg) translateZ(25px);
+    -o-transform: rotatey(0deg) translateZ(25px);
+    transform: rotatey(0deg) translateZ(25px);
+}
+
+.flip-plus {
+    color: #fff;
+    background-color: #0090ff;
+    border: 2px solid #00a6ff;
+    -webkit-transform: rotateY(90deg) translateZ(25px);
+    -ms-transform: rotateY(90deg) translateZ(25px);
+    -o-transform: rotateY(90deg) translateZ(25px);
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-login {
+    -webkit-transform: rotateY(-90deg) translateZ(25px);
+    -ms-transform: rotateY(-90deg) translateZ(25px);
+    -o-transform: rotateY(-90deg) translateZ(25px);
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.btn-edit:hover .flip-plus {
+    -webkit-transform: rotateY(0deg) translateZ(25px);
+    -ms-transform: rotateY(0deg) translateZ(25px);
+    -o-transform: rotateY(0deg) translateZ(25px);
+    transform: rotateY(0deg) translateZ(25px);
 }

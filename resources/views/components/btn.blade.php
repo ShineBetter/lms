@@ -17,7 +17,7 @@
         outline: none;
         overflow: hidden;
         cursor: pointer;
-        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.3s  cubic-bezier(0.91, 0.9, 0.17, 0.19);
     }
 
     .button-add::before {
@@ -30,13 +30,13 @@
         height: 100%;
         /*background: #11c773;*/
         border-radius: 5px;
-        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.3s cubic-bezier(0.91, 0.9, 0.17, 0.19);
     }
 
     .button-add .text-add, .button-add {
         display: inline-flex;
         vertical-align: middle;
-        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.3s cubic-bezier(0.91, 0.9, 0.17, 0.19);
     }
 
     .button-add .text-add {
@@ -70,7 +70,7 @@
         display: inline-flex;
         vertical-align: middle;
         transform: translateY(55px);
-        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.2s cubic-bezier(0.91, 0.9, 0.17, 0.19);
         text-decoration: none;
         color: white;
         font-size: 25px;
@@ -124,19 +124,22 @@
 @elseif($type == 'add')
     @if($routeParam != '')
         <button class="button-add bg-success">
-            <a href="{{route("$route",$routeParam)}}">
+
                 <div class="add-lms">
                     <span class="text-add">{{$title ?? 'افزودن'}}</span>
                 </div>
                 <div class="add-icon-lms">
                         <span>
-                                <i class="fas fa-folder-plus"></i>
+                              <a href="{{route("$route",$routeParam)}}">
+                                  <i class="fas fa-folder-plus"></i>
+                              </a>
+{{--                            <i class="fas fa-folder-plus"></i>--}}
                         </span>
                 </div>
-            </a>
+
         </button>
     @else
-        <a href="{{route("$route")}}">
+
 
             <button class="button-add bg-success">
                 <div class="add-lms">
@@ -144,11 +147,13 @@
                 </div>
                 <div class="add-icon-lms">
                         <span>
-                                <i class="fas fa-folder-plus"></i>
+                               <a href="{{route("$route")}}">
+                                   <i class="fas fa-folder-plus"></i>
+                               </a>
                         </span>
                 </div>
             </button>
-        </a>
+
 
     @endif
 @endempty
