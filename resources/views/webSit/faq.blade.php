@@ -50,78 +50,78 @@
                 <div class="col-lg-12">
                     <div class="section-heading text-center">
                         <h5 class="section__meta">پشتیبانی ما</h5>
-                        <h2 class="section__title">موضوعی را برای راهنما انتخاب کنید</h2>
+                        <h2 class="section__title">با ما رایگان مشاوره کنید</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و<br> با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                            مجم.عه ی میربلند با سابقه 10 ساله در صنعت آموزش<br>همیار شما در مسیر آموزش و سرفرازی در کسب علم و دانش میباشد
                         </p>
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row mt-3">
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-1 flex-shrink-0">
                             <i class="fas fa-school"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-2 flex-shrink-0">
                             <i class="fas fa-user-graduate"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-3 flex-shrink-0">
                             <i class="far fa-user"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-4 flex-shrink-0">
                             <i class="far fa-file-word"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-5 flex-shrink-0">
                             <i class="far fa-edit"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
-                    <a href="faq.html#" class="icon-box d-flex align-items-center">
+                    <a href="/faq" class="icon-box d-flex align-items-center">
                         <div class="icon-element icon-element-bg-6 flex-shrink-0">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div><!-- end icon-element-->
                         <div class="info-content">
                             <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
-                            <span class="info__meta primary-color-3">ثبت نام</span>
+{{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
                         </div><!-- end info-content -->
                     </a>
                 </div><!-- end col-lg-4 -->
@@ -183,6 +183,9 @@
                                     </button>
                                 </h2>
                             </div>
+                            @if(\Illuminate\Support\Facades\Session::has('status'))
+                                <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('status')}}"/>
+                            @endif
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
@@ -286,37 +289,37 @@
                         </div><!-- card-box-shared-title -->
                         <div class="card-box-shared-body">
                             <div class="contact-form-action">
-                                <form method="post text-right">
+                                <form method="get" action="{{route("formFaq.store")}}">
                                     <div class="input-box">
                                         <label class="label-text">نام و نام خانوادگی<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="text" placeholder="نام و نام خانوادگی را وارد کنید">
+                                            <input class="form-control" type="text" name="name" placeholder="نام و نام خانوادگی را وارد کنید">
                                             <span class="la la-user input-icon"></span>
                                         </div>
                                     </div>
                                     <div class="input-box">
-                                        <label class="label-text">ایمیل<span class="primary-color-2 ml-1">*</span></label>
+                                        <label class="label-text">شماره تماس<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="name" placeholder="ایمیل">
+                                            <input class="form-control" type="text" name="phone" placeholder="شماره تماس">
                                             <span class="la la-envelope-o input-icon"></span>
                                         </div>
                                     </div>
                                     <div class="input-box">
                                         <label class="label-text">موضوع<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="name" placeholder="موضوع را عنوان کنید">
+                                            <input class="form-control" type="text" name="subject" placeholder="موضوع را عنوان کنید">
                                             <span class="la la-book input-icon"></span>
                                         </div>
                                     </div>
                                     <div class="input-box">
                                         <label class="label-text">پیام شما<span class="primary-color-2 ml-1">*</span></label>
                                         <div class="form-group">
-                                            <textarea class="message-control form-control" name="message" placeholder="پیام خود را وارد کنید"></textarea>
+                                            <textarea class="message-control form-control" name="text" placeholder="پیام خود را وارد کنید"></textarea>
                                             <span class="la la-pencil input-icon"></span>
                                         </div>
                                     </div>
                                     <div class="btn-box">
-                                        <button type="button" class="theme-btn">ارسال پیام</button>
+                                        <button type="submit" class="theme-btn">ارسال پیام</button>
                                     </div>
                                 </form>
                             </div><!-- end contact-form-action -->
