@@ -10,8 +10,8 @@
                             <a href="index.html" class="logo"><img src="{{asset('template_sit/images/logo.png')}}"
                                                                    alt="logo"></a>
                             <div class="menu-toggler">
-                                <i class="la la-bars"></i>
-                                <i class="la la-times"></i>
+                                <i class="fa fa-bars"></i>
+                                <i class="fa fa-times"></i>
                             </div>
                         </div>
                     </div><!-- end col-lg-2 -->
@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="search"
                                                    placeholder="جستوجو سریع">
-                                            <span class="la la-search search-icon"></span>
+                                            <span class="fa fa-search search-icon"></span>
                                         </div>
                                     </div><!-- end input-box -->
                                 </form>
@@ -67,7 +67,7 @@
                                                 <button class="notification-btn dropdown-toggle" type="button"
                                                         id="notificationDropdownMenu" data-toggle="dropdown"
                                                         aria-haspopup="true" aria-expanded="false">
-                                                    <i class="la la-bell"></i>
+                                                    <i class="fa fa-bell"></i>
                                                     <span class="quantity">5</span>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="notificationDropdownMenu"
@@ -84,7 +84,7 @@
                                                             <a href="dashboard.html" class="d-block">
                                                                 <div class="mess__item">
                                                                     <div class="icon-element bg-color-1 text-white">
-                                                                        <i class="la la-bolt"></i>
+                                                                        <i class="fa fa-bolt"></i>
                                                                     </div>
                                                                     <div class="content">
                                                                         <span class="time">1 hour ago</span>
@@ -95,7 +95,7 @@
                                                             <a href="dashboard.html" class="d-block">
                                                                 <div class="mess__item">
                                                                     <div class="icon-element bg-color-2 text-white">
-                                                                        <i class="la la-lock"></i>
+                                                                        <i class="fa fa-lock"></i>
                                                                     </div>
                                                                     <div class="content">
                                                                         <span class="time">November 12, 2019</span>
@@ -106,7 +106,7 @@
                                                             <a href="dashboard.html" class="d-block">
                                                                 <div class="mess__item">
                                                                     <div class="icon-element bg-color-3 text-white">
-                                                                        <i class="la la-check-circle"></i>
+                                                                        <i class="fa fa-check-circle"></i>
                                                                     </div>
                                                                     <div class="content">
                                                                         <span class="time">October 6, 2019</span>
@@ -119,7 +119,7 @@
                                                             <a href="dashboard.html" class="d-block">
                                                                 <div class="mess__item">
                                                                     <div class="icon-element bg-color-4 text-white">
-                                                                        <i class="la la-user"></i>
+                                                                        <i class="fa fa-user"></i>
                                                                     </div>
                                                                     <div class="content">
                                                                         <span class="time">Jun 12, 2019</span>
@@ -131,7 +131,7 @@
                                                             <a href="dashboard.html" class="d-block">
                                                                 <div class="mess__item">
                                                                     <div class="icon-element bg-color-5 text-white">
-                                                                        <i class="la la-download"></i>
+                                                                        <i class="fa fa-download"></i>
                                                                     </div>
                                                                     <div class="content">
                                                                         <span class="time">May 12, 2019</span>
@@ -152,7 +152,7 @@
                                                 <button class="notification-btn dropdown-toggle" type="button"
                                                         id="messageDropdownMenu" data-toggle="dropdown"
                                                         aria-haspopup="true" aria-expanded="false">
-                                                    <i class="la la-envelope"></i>
+                                                    <i class="fa fa-envelope"></i>
                                                     <span class="quantity">5</span>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="messageDropdownMenu"
@@ -288,17 +288,17 @@
                                                             <ul class="list-items">
                                                                 <li class="mb-0">
                                                                     <a href="my-courses.html" class="d-block">
-                                                                        <i class="la la-file-video-o"></i> My courses
+                                                                        <i class="fa fa-file-video-o"></i> My courses
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="shopping-cart.html" class="d-block">
-                                                                        <i class="la la-shopping-cart"></i> My cart
+                                                                        <i class="fa fa-shopping-cart"></i> My cart
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="my-courses.html" class="d-block">
-                                                                        <i class="la la-bookmark"></i> My wishlist
+                                                                        <i class="fa fa-bookmark"></i> My wishlist
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
@@ -307,26 +307,26 @@
                                                                 <li class="mb-0">
                                                                     <a href="dashboard.html" class="d-block">
                                                                         <span><i
-                                                                                class="la la-bell"></i> Notifications</span>
+                                                                                class="fa fa-bell"></i> Notifications</span>
                                                                         <span class="badge bg-info text-white ml-2 p-1">9+</span>
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="dashboard-message.html" class="d-block">
                                                                         <span><i
-                                                                                class="la la-envelope"></i> Messages</span>
+                                                                                class="fa fa-envelope"></i> Messages</span>
                                                                         <span class="badge bg-info text-white ml-2 p-1">12+</span>
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="dashboard-settings.html" class="d-block">
-                                                                        <i class="la la-gear"></i> Settings
+                                                                        <i class="fa fa-gear"></i> Settings
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="dashboard-purchase-history.html"
                                                                        class="d-block">
-                                                                        <i class="la la-cart-plus"></i> Purchase history
+                                                                        <i class="fa fa-cart-plus"></i> Purchase history
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
@@ -334,12 +334,12 @@
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="student-detail.html" class="d-block">
-                                                                        <i class="la la-user"></i> Public Profile
+                                                                        <i class="fa fa-user"></i> Public Profile
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="dashboard-settings.html" class="d-block">
-                                                                        <i class="la la-edit"></i> Edit Profile
+                                                                        <i class="fa fa-edit"></i> Edit Profile
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
@@ -347,12 +347,12 @@
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="dashboard.html#" class="d-block">
-                                                                        <i class="la la-question"></i> Help
+                                                                        <i class="fa fa-question"></i> Help
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
                                                                     <a href="index.html" class="d-block">
-                                                                        <i class="la la-power-off"></i> Logout
+                                                                        <i class="fa fa-power-off"></i> Logout
                                                                     </a>
                                                                 </li>
                                                                 <li class="mb-0">
@@ -413,7 +413,7 @@
                                                         <a href="dashboard.html" class="d-block">
                                                             <div class="mess__item">
                                                                 <div class="icon-element bg-color-1 text-white">
-                                                                    <i class="la la-bolt"></i>
+                                                                    <i class="fa fa-bolt"></i>
                                                                 </div>
                                                                 <div class="content">
                                                                     <span class="time">1 hour ago</span>
@@ -424,7 +424,7 @@
                                                         <a href="dashboard.html" class="d-block">
                                                             <div class="mess__item">
                                                                 <div class="icon-element bg-color-2 text-white">
-                                                                    <i class="la la-lock"></i>
+                                                                    <i class="fa fa-lock"></i>
                                                                 </div>
                                                                 <div class="content">
                                                                     <span class="time">November 12, 2019</span>
@@ -435,7 +435,7 @@
                                                         <a href="dashboard.html" class="d-block">
                                                             <div class="mess__item">
                                                                 <div class="icon-element bg-color-3 text-white">
-                                                                    <i class="la la-check-circle"></i>
+                                                                    <i class="fa fa-check-circle"></i>
                                                                 </div>
                                                                 <div class="content">
                                                                     <span class="time">October 6, 2019</span>
@@ -448,7 +448,7 @@
                                                         <a href="dashboard.html" class="d-block">
                                                             <div class="mess__item">
                                                                 <div class="icon-element bg-color-4 text-white">
-                                                                    <i class="la la-user"></i>
+                                                                    <i class="fa fa-user"></i>
                                                                 </div>
                                                                 <div class="content">
                                                                     <span class="time">Jun 12, 2019</span>
@@ -460,7 +460,7 @@
                                                         <a href="dashboard.html" class="d-block">
                                                             <div class="mess__item">
                                                                 <div class="icon-element bg-color-5 text-white">
-                                                                    <i class="la la-download"></i>
+                                                                    <i class="fa fa-download"></i>
                                                                 </div>
                                                                 <div class="content">
                                                                     <span class="time">May 12, 2019</span>
@@ -584,17 +584,17 @@
                                                         <ul class="list-items">
                                                             <li class="mb-0">
                                                                 <a href="my-courses.html" class="d-block">
-                                                                    <i class="la la-file-video-o"></i> My courses
+                                                                    <i class="fa fa-file-video-o"></i> My courses
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="shopping-cart.html" class="d-block">
-                                                                    <i class="la la-shopping-cart"></i> My cart
+                                                                    <i class="fa fa-shopping-cart"></i> My cart
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="my-courses.html" class="d-block">
-                                                                    <i class="la la-bookmark"></i> My wishlist
+                                                                    <i class="fa fa-bookmark"></i> My wishlist
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
@@ -603,27 +603,27 @@
                                                             <li class="mb-0">
                                                                 <a href="dashboard.html" class="d-block">
                                                                     <span><i
-                                                                            class="la la-bell"></i> Notifications</span>
+                                                                            class="fa fa-bell"></i> Notifications</span>
                                                                     <span
                                                                         class="badge bg-info text-white ml-2 p-1">9+</span>
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="dashboard-message.html" class="d-block">
-                                                                    <span><i class="la la-envelope"></i> Messages</span>
+                                                                    <span><i class="fa fa-envelope"></i> Messages</span>
                                                                     <span
                                                                         class="badge bg-info text-white ml-2 p-1">12+</span>
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="dashboard-settings.html" class="d-block">
-                                                                    <i class="la la-gear"></i> Settings
+                                                                    <i class="fa fa-gear"></i> Settings
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="dashboard-purchase-history.html"
                                                                    class="d-block">
-                                                                    <i class="la la-cart-plus"></i> Purchase history
+                                                                    <i class="fa fa-cart-plus"></i> Purchase history
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
@@ -631,12 +631,12 @@
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="student-detail.html" class="d-block">
-                                                                    <i class="la la-user"></i> Public Profile
+                                                                    <i class="fa fa-user"></i> Public Profile
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="dashboard-settings.html" class="d-block">
-                                                                    <i class="la la-edit"></i> Edit Profile
+                                                                    <i class="fa fa-edit"></i> Edit Profile
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
@@ -644,12 +644,12 @@
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="dashboard.html#" class="d-block">
-                                                                    <i class="la la-question"></i> Help
+                                                                    <i class="fa fa-question"></i> Help
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">
                                                                 <a href="index.html" class="d-block">
-                                                                    <i class="la la-power-off"></i> Logout
+                                                                    <i class="fa fa-power-off"></i> Logout
                                                                 </a>
                                                             </li>
                                                             <li class="mb-0">

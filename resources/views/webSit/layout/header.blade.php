@@ -35,54 +35,54 @@
                             </ul>
                         </div><!-- end header-right-info -->
                         <div class="header-right-info">
-                            <div class="shop-cart">
-                                <ul>
-                                    <li>
-                                        <p class="shop-cart-btn d-flex align-items-center">
-                                            <i class="fas fa-shopping-cart"></i>
-                                            <span class="product-count ml-1">2</span>
-                                        </p>
-                                        <ul class="cart-dropdown-menu">
-                                            <li>
-                                                <a href="shopping-cart.html" class="cart-link">
-                                                    <img src="/images/small-img.jpg" alt="product">
-                                                </a>
-                                                <p class="cart-info">
-                                                    <a href="shopping-cart.html">
-                                                        کتاب زبان پایه 10
-                                                    </a>
-                                                    <span class="cart__author">دبیر: ملکی</span>
-                                                    <span class="cart__price">
-                                                           70000 <span class="before-price">65000</span>
-                                                        </span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <a href="shopping-cart.html" class="cart-link">
-                                                    <img src="/images/small-img.jpg" alt="product">
-                                                </a>
-                                                <p class="cart-info">
-                                                    <a href="shopping-cart.html">
-                                                        کتاب زبان پایه 10
-                                                    </a>
-                                                    <span class="cart__author">دبیر: ملکی</span>
-                                                    <span class="cart__price">
-                                                           70000 <span class="before-price">65000</span>
-                                                        </span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="cart-total">قیمت کل: 140000<span
-                                                        class="before-price">130000</span></p>
-                                            </li>
-                                            <li>
-                                                <a class="theme-btn w-100 text-center" href="shopping-cart.html">برو به
-                                                    سبد خرید</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div><!-- end shop-cart -->
+{{--                            <div class="shop-cart">--}}
+{{--                                <ul>--}}
+{{--                                    <li>--}}
+{{--                                        <p class="shop-cart-btn d-flex align-items-center">--}}
+{{--                                            <i class="fas fa-shopping-cart"></i>--}}
+{{--                                            <span class="product-count ml-1">2</span>--}}
+{{--                                        </p>--}}
+{{--                                        <ul class="cart-dropdown-menu">--}}
+{{--                                            <li>--}}
+{{--                                                <a href="shopping-cart.html" class="cart-link">--}}
+{{--                                                    <img src="/images/small-img.jpg" alt="product">--}}
+{{--                                                </a>--}}
+{{--                                                <p class="cart-info">--}}
+{{--                                                    <a href="shopping-cart.html">--}}
+{{--                                                        کتاب زبان پایه 10--}}
+{{--                                                    </a>--}}
+{{--                                                    <span class="cart__author">دبیر: ملکی</span>--}}
+{{--                                                    <span class="cart__price">--}}
+{{--                                                           70000 <span class="before-price">65000</span>--}}
+{{--                                                        </span>--}}
+{{--                                                </p>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <a href="shopping-cart.html" class="cart-link">--}}
+{{--                                                    <img src="/images/small-img.jpg" alt="product">--}}
+{{--                                                </a>--}}
+{{--                                                <p class="cart-info">--}}
+{{--                                                    <a href="shopping-cart.html">--}}
+{{--                                                        کتاب زبان پایه 10--}}
+{{--                                                    </a>--}}
+{{--                                                    <span class="cart__author">دبیر: ملکی</span>--}}
+{{--                                                    <span class="cart__price">--}}
+{{--                                                           70000 <span class="before-price">65000</span>--}}
+{{--                                                        </span>--}}
+{{--                                                </p>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <p class="cart-total">قیمت کل: 140000<span--}}
+{{--                                                        class="before-price">130000</span></p>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <a class="theme-btn w-100 text-center" href="shopping-cart.html">برو به--}}
+{{--                                                    سبد خرید</a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end shop-cart -->--}}
                         </div><!-- end header-right-info -->
                         <div class="header-right-info">
                             <ul class="header-action-list">

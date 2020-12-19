@@ -23,11 +23,11 @@
                                 <h2 class="section__title font-size-30">{{$profile->name . ' ' . $profile->lastName}}</h2>
                                 <div class="rating-wrap d-flex mt-2">
                                     <ul class="review-stars">
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star"></span></li>
-                                        <li><span class="la la-star-o"></span></li>
+                                        <li><span class="fa fa-star"></span></li>
+                                        <li><span class="fa fa-star"></span></li>
+                                        <li><span class="fa fa-star"></span></li>
+                                        <li><span class="fa fa-star"></span></li>
+                                        <li><span class="fa fa-star-o"></span></li>
                                     </ul>
                                     <span class="star-rating-wrap">
                                         <span class="star__rating">4.2</span>
@@ -49,7 +49,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-1 flex-shrink-0">
-                                <i class="la la-mouse-pointer"></i>
+                                <i class="fas fa-user-tie"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">مدیران</h4>
@@ -61,7 +61,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-2 flex-shrink-0">
-                                <i class="la la-file-text-o"></i>
+                                <i class="fas fa-chalkboard-teacher"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اساتید</h4>
@@ -73,7 +73,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-3 flex-shrink-0">
-                                <i class="la la-graduation-cap"></i>
+                                <i class="fas fa-user-graduate"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">دانش آموزان</h4>
@@ -85,7 +85,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-4 flex-shrink-0">
-                                <i class="la la-users"></i>
+                                <i class="fas fa-user-secret"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اولیا</h4>
@@ -97,7 +97,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-5 flex-shrink-0">
-                                <i class="la la-file-video-o"></i>
+                                <i class="fa fa-file-video-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">محصولات</h4>
@@ -108,7 +108,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-6 flex-shrink-0">
-                                <i class="la la-dollar"></i>
+                                <i class="fas fa-id-badge"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">همایشات</h4>
@@ -122,7 +122,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-2 flex-shrink-0">
-                                <i class="la la-file-text-o"></i>
+                                <i class="fa fa-file-text-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اساتید</h4>
@@ -134,7 +134,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-3 flex-shrink-0">
-                                <i class="la la-graduation-cap"></i>
+                                <i class="fa fa-graduation-cap"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">دانش آموزان</h4>
@@ -146,7 +146,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-4 flex-shrink-0">
-                                <i class="la la-users"></i>
+                                <i class="fa fa-users"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اولیا</h4>
@@ -158,7 +158,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-5 flex-shrink-0">
-                                <i class="la la-file-video-o"></i>
+                                <i class="fa fa-file-video-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">محصولات</h4>
@@ -169,7 +169,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-6 flex-shrink-0">
-                                <i class="la la-dollar"></i>
+                                <i class="fa fa-dollar"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">همایشات</h4>
@@ -183,7 +183,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-2 flex-shrink-0">
-                                <i class="la la-file-text-o"></i>
+                                <i class="fa fa-file-text-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اساتید</h4>
@@ -195,7 +195,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-3 flex-shrink-0">
-                                <i class="la la-graduation-cap"></i>
+                                <i class="fa fa-graduation-cap"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">دانش آموزان</h4>
@@ -207,7 +207,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-4 flex-shrink-0">
-                                <i class="la la-users"></i>
+                                <i class="fa fa-users"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اولیا</h4>
@@ -219,7 +219,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-5 flex-shrink-0">
-                                <i class="la la-file-video-o"></i>
+                                <i class="fa fa-file-video-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">محصولات</h4>
@@ -230,7 +230,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-6 flex-shrink-0">
-                                <i class="la la-dollar"></i>
+                                <i class="fa fa-dollar"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">همایشات</h4>
@@ -244,7 +244,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-2 flex-shrink-0">
-                                <i class="la la-file-text-o"></i>
+                                <i class="fa fa-file-text-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اساتید</h4>
@@ -256,7 +256,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-3 flex-shrink-0">
-                                <i class="la la-graduation-cap"></i>
+                                <i class="fa fa-graduation-cap"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">دانش آموزان</h4>
@@ -268,7 +268,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-4 flex-shrink-0">
-                                <i class="la la-users"></i>
+                                <i class="fa fa-users"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">اولیا</h4>
@@ -280,7 +280,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-5 flex-shrink-0">
-                                <i class="la la-file-video-o"></i>
+                                <i class="fa fa-file-video-o"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">محصولات</h4>
@@ -291,7 +291,7 @@
                     <div class="col-lg-4 column-lmd-2-half column-md-2-full">
                         <div class="icon-box d-flex align-items-center">
                             <div class="icon-element icon-element-bg-6 flex-shrink-0">
-                                <i class="la la-dollar"></i>
+                                <i class="fa fa-dollar"></i>
                             </div><!-- end icon-element-->
                             <div class="info-content">
                                 <h4 class="info__title mb-2">همایشات</h4>
@@ -407,7 +407,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-1 text-white">
-                                            <i class="la la-bolt"></i>
+                                            <i class="fa fa-bolt"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">1 hour ago</span>
@@ -418,7 +418,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-2 text-white">
-                                            <i class="la la-lock"></i>
+                                            <i class="fa fa-lock"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">November 12, 2019</span>
@@ -429,7 +429,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-3 text-white">
-                                            <i class="la la-check-circle"></i>
+                                            <i class="fa fa-check-circle"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">October 6, 2019</span>
@@ -441,7 +441,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-3 text-white">
-                                            <i class="la la-check-circle"></i>
+                                            <i class="fa fa-check-circle"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">October 6, 2019</span>
@@ -453,7 +453,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-3 text-white">
-                                            <i class="la la-check-circle"></i>
+                                            <i class="fa fa-check-circle"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">October 6, 2019</span>
@@ -465,7 +465,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-4 text-white">
-                                            <i class="la la-user"></i>
+                                            <i class="fa fa-user"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">Jun 12, 2019</span>
@@ -476,7 +476,7 @@
                                 <a href="dashboard.html#" class="d-block">
                                     <div class="mess__item">
                                         <div class="icon-element bg-color-5 text-white">
-                                            <i class="la la-download"></i>
+                                            <i class="fa fa-download"></i>
                                         </div>
                                         <div class="content">
                                             <span class="time">May 12, 2019</span>
@@ -541,7 +541,7 @@
                 <div class="modal-content p-4">
                     <div class="modal-top border-0 mb-4 p-0">
                         <div class="alert-content">
-                            <span class="la la-exclamation-circle warning-icon"></span>
+                            <span class="fa fa-exclamation-circle warning-icon"></span>
                             <h4 class="widget-title font-size-20 mt-2 mb-1">Your account will be deleted
                                 permanently!</h4>
                             <p class="modal-sub">Are you sure to proceed.</p>

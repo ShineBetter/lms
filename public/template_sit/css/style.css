@@ -17340,7 +17340,7 @@ hsla(203, 11 %, 95 %, 0.8);
 }
 
 .text-edit {
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     visibility: hidden;
 }
 
@@ -17348,7 +17348,7 @@ hsla(203, 11 %, 95 %, 0.8);
 .flip-back {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -1em;
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -17414,15 +17414,15 @@ hsla(203, 11 %, 95 %, 0.8);
 }
 
 .text-edit {
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     visibility: hidden;
 }
 /*lesson*/
 .flip-lesson,
 .flip-backlesson {
     position: absolute;
-    left: 47px;
-    top: 0;
+    left: 38px;
+    top: -1em;
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -17430,10 +17430,10 @@ hsla(203, 11 %, 95 %, 0.8);
     transition: transform .3s ease-out;
 }
 .flip-lesson i {
-    padding: 9px 9px
+    padding: 3.234px 5px
 }
 .flip-backlesson {
-    padding: 3px;
+    padding: 0
 }
 .flip-backlesson i {
     padding: 0px 6px
@@ -17471,32 +17471,33 @@ hsla(203, 11 %, 95 %, 0.8);
     -o-transform: rotateY(0deg) translateZ(25px);
     transform: rotateY(0deg) translateZ(25px);
 }
-/*warning*/.btn-edit button {
-               text-decoration: none;
-               display: inline-block;
-               height: 50px;
-               line-height: 50px;
-               text-align: center;
-               position: relative;
-               position: absolute;
-               left: 50%;
-               top: 50%;
-               transform: translate(-50%, -50%);
-               -webkit-transition: all .3s ease-out;
-               -o-transition: all .3s ease-out;
-               transition: all .3s ease-out;
-           }
+/*warning*/
+.btn-edit button {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
 
 .text-edit {
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     visibility: hidden;
 }
 
 .flip-notif,
 .flip-backnotif {
     position: absolute;
-    left: 92px;
-    top: 0;
+    left: 74px;
+    top: -1em;
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -17504,10 +17505,10 @@ hsla(203, 11 %, 95 %, 0.8);
     transition: transform .3s ease-out;
 }
 .flip-notif i {
-    padding: 9px 8px
+    padding: 3px 5px
 }
 .flip-backnotif {
-    padding: 3px;
+    padding: 0 1px
 }
 .flip-backnotif i {
     padding: 0px 10px
@@ -17563,15 +17564,15 @@ hsla(203, 11 %, 95 %, 0.8);
 }
 
 .text-edit {
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     visibility: hidden;
 }
 
 .flip-alarm,
 .flip-exit {
     position: absolute;
-    left: 180px;
-    top: 0;
+    left: 151px;
+    top: -1em;
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -17579,13 +17580,13 @@ hsla(203, 11 %, 95 %, 0.8);
     transition: transform .3s ease-out;
 }
 .flip-alarm i {
-    padding: 9px 8px
+    padding: 2px 6px
 }
 .flip-exit {
-    padding: 3px;
+    padding: 0px 3px
 }
 .flip-exit i {
-    padding: 0px 7px
+    padding: 0px 5px
 }
 .flip-alarm {
     color: #ff0000;
@@ -17638,7 +17639,7 @@ hsla(203, 11 %, 95 %, 0.8);
 }
 
 .text-edit {
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     visibility: hidden;
 }
 
@@ -17646,7 +17647,7 @@ hsla(203, 11 %, 95 %, 0.8);
 .flip-plus {
     position: absolute;
     left: 136px;
-    top: 0;
+    top: -1em;
     -webkit-transform-style: flat;
     transform-style: flat;
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -17654,7 +17655,7 @@ hsla(203, 11 %, 95 %, 0.8);
     transition: transform .3s ease-out;
 }
 .flip-login i {
-    padding: 9px 6px
+    padding: 4px 6px
 }
 .flip-plus {
     padding: 3px;

@@ -136,13 +136,19 @@
                                                                     <span class="flip-exit"><i class="fas fa-times"></i></span>
                                                                 </button>
                                                             @elseif($item->kick == 1)
-                                                                <button type="button"
-                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"
+{{--                                                                <button type="button"--}}
+{{--                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"--}}
+{{--                                                                        user-id="{{$item->id}}"--}}
+{{--                                                                        kicked="1"--}}
+{{--                                                                        class="btn btn-danger teacher-kick-btn">بازگشت کاربر--}}
+{{--                                                                </button>--}}
+                                                                <button href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="بازگشتن" user-name="{{$profile->name}} {{$profile->lastName}}"
                                                                         user-id="{{$item->id}}"
-                                                                        kicked="1"
-                                                                        class="btn btn-danger teacher-kick-btn">بازگشت کاربر
+                                                                        kicked="1">
+                                                                    <span class="text-edit"></span>
+                                                                    <span class="flip-alarm"><i class="fas fa-undo-alt"></i></span>
+                                                                    <span class="flip-exit"><i class="fas fa-trash-restore-alt"></i></span>
                                                                 </button>
-
                                                             @endif
                                                             <a href="{{route('userLessons.index',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="دروس">
                                                                 <span class="text-edit"></span>

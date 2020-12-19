@@ -25,7 +25,9 @@ class AboutTeacherController extends Controller
             $data->picture = $file_name;
         }
         $data->header=$request->header;
+        $data->text=$request->text;
         $data->filed=$request->filed;
+        $data->exp=$request->exp;
         $data->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status', $comment);

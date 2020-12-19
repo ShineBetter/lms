@@ -39,6 +39,7 @@ Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->nam
 Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
 Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
 Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
+Route::view('/quiz-result','backend.admin.quizResult.quizResult')->middleware('auth')->name('02');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //questions route
@@ -119,7 +120,7 @@ Route::post('/user/profile/change/password','profileController@changePassword')-
 Route::view('/teachers','webSit.teachers');
 Route::view('/teacher-detail','webSit.teacher-detail');
 Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
-Route::view('/quizResult','backend.admin.quizResult.quizResult');
+Route::view('/examResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
 Route::view('/student-path-assessment','student-path-assessment');
 Route::view('/shopping-cart','shopping-cart');
@@ -175,3 +176,29 @@ Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middlewa
 Route::get("/aboutpic","AboutpicController@index")->middleware("auth")->name("aboutpic.index");
 Route::get("/aboutpic/edit/{id}","AboutpicController@edit")->middleware("auth")->name("aboutpic.edit");
 Route::put("/aboutpic/update{id}","AboutpicController@update")->middleware("auth")->name("aboutpic.update");
+
+
+
+////////////////////////////////main page
+///
+/// mainpage3col
+Route::get("/mainpage","Mainpage3colController@index")->middleware("auth")->name("mainpage.index");
+Route::get("/mainpage/edit/{id}","Mainpage3colController@edit")->middleware("auth")->name("mainpage.edit");
+Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("auth")->name("mainpage.update");
+
+/////mainpage slider
+
+Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
+Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
+Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
+
+//////////form-client
+/// main page course free
+Route::get("/form-main-free/a","FormFreecourseController@index")->middleware("auth")->name("formFree.index");
+Route::get("/form-main-free","FormFreecourseController@store")->name("formFree.store");
+Route::delete("/form-main-free/delete/{id}","FormFreecourseController@destroy")->middleware("auth")->name("formFree.destroy");
+
+////////form news
+Route::get("/form-news/a","FormNewsController@index")->middleware("auth")->name("formNews.index");
+Route::get("/form-news","FormNewsController@store")->name("formNews.store");
+Route::delete("/form-news/delete/{id}","FormNewsController@destroy")->middleware("auth")->name("formNews.destroy");

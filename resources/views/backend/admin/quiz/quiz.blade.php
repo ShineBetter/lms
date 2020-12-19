@@ -287,13 +287,25 @@
                 display = document.querySelector('#time');
             startTimer(fiveMinutes, display);
         };
-        $('body').on('DOMSubtreeModified', '#time', function(){
-            console.log('rsta')
-            @if($quiz->quiz_exp >=  \Carbon\Carbon::now()->timestamp)
-                {{--window.location = {{route('checkAnswers')}}--}}
-            console.log('yfghfdhjyf')
-            @endif
-        });
+        setInterval(function(){
+            let now = new Date().getTime();
+            now = Math.floor(now / 1000)
+            console.log(now)
+            console.log('exp : ' + {{$quiz->quiz_exp}})
+            if ({{$quiz->quiz_exp}} == now){
+                $.ajax({
+                    url: "{{route('checkAnswers')}}",
+                    type:'post',
+                    data:{
+                        quiz_id: {{$quiz->id}},
+                    },
+                    success: function (res) {
+                        console.log(res)
+                        window.location = "{{route('result')}}"
+                    }
+                })
+            }
+        }, 1000);
     </script>
     <script
         src="https://code.jquery.com/jquery-3.5.1.js"

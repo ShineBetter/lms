@@ -45,12 +45,12 @@ class HomeController extends Controller
         $now = Carbon::now();
 //        dd($now->format("Y:m:d"),$now->format("H:i"),Carbon::createFromTimestamp($quiz->quiz_start)->format('H:i'),Carbon::createFromTimestamp($quiz->quiz_exp)->timestamp,$quiz->quiz_exp > $now);
         $quiz_time = $now->diffInMinutes($quiz_exp);
-        if ($quiz->quiz_start <= $now->timestamp && $quiz->quiz_exp >= $now->timestamp){
+        if ($quiz->quiz_start <= $now->timestamp && $quiz->quiz_exp >= $now->timestamp) {
             $quiz_status = 'open';
-        }else{
+        } else {
             $quiz_status = 'close';
         }
-        return view('backend.admin.quiz.quiz', ['quiz_status' => $quiz_status,'questions' => $questions, 'all_questions' => $all_questions, 'previous_question' => $previous_question, 'next_question' => $next_question, 'questions_count' => $questions_count, 'quiz' => $quiz, 'quiz_time' => $quiz_time, 'question_row' => 1]);
+        return view('backend.admin.quiz.quiz', ['quiz_status' => $quiz_status, 'questions' => $questions, 'all_questions' => $all_questions, 'previous_question' => $previous_question, 'next_question' => $next_question, 'questions_count' => $questions_count, 'quiz' => $quiz, 'quiz_time' => $quiz_time, 'question_row' => 1]);
     }
 
     public function getFirstAnswer(Request $request)
@@ -94,28 +94,30 @@ class HomeController extends Controller
         $user_questions = DB::table('user_question')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->get();
         $i = 0;
         foreach ($user_questions as $item) {
-            $question = questions::where(['id' => $item->question_id,'correct_answer' => $item->answer])->get();
-            foreach ($question as $item) {
+            $question = questions::where(['id' => $item->question_id, 'correct_answer' => $item->answer])->get();
+            foreach ($question as $items) {
                 $i++;
             }
+            if (DB::table('user_quiz')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->exists() == true) {
+                DB::table('user_quiz')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->update([
+                    'correct_answers' => $i
+                ]);
+            } else {
+                DB::table('user_quiz')->insert([
+                    'user_id' => $user,
+                    'quiz_id' => $quiz_id,
+                    'correct_answers' => $i,
+                ]);
+            }
         }
-        if (DB::table('user_quiz')->where(['quiz_id' => $quiz_id,'user_id' => $user])->exists() == true){
-            DB::table('user_quiz')->where(['quiz_id' => $quiz_id,'user_id' => $user])->update([
-                'correct_answers' => $i
-            ]);
-        }else{
-            DB::table('user_quiz')->insert([
-                'user_id' => $user,
-                'quiz_id' => $quiz_id,
-                'correct_answers' => $i,
-            ]);
-        }
+        $teacher = User::where('id',quiz::where('id',$quiz_id)->first()->teacher_id)->first();
+        return $teacher;
     }
 
     public function examPay(Request $request)
     {
         $quiz_id = $request->quiz_id;
-        $quiz = quiz::where('id',$quiz_id)->first();
+        $quiz = quiz::where('id', $quiz_id)->first();
         $quiz->pay_status = 1;
         $quiz->save();
         return redirect(route('quiz.index'));

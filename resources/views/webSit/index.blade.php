@@ -1874,275 +1874,275 @@
 <!--======================================
         START COURSE AREA
 ======================================-->
-<section class="course-area padding-top-120px">
-    <div class="course-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h5 class="section__meta">پر فروش ترین </h5>
-                        <h2 class="section__title">پر فروش ترین محصولات</h2>
-                        <span class="section-divider"></span>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row margin-top-28px ltr">
-                <div class="col-lg-12">
-                    <div class="tab-content">
-                        <div class="course-carousel owl-dot-and-nav">
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>
-                                    <div class="card-badge">
-                                        <span class="badge-label">bestseller</span>
-                                    </div>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                    <div class="card-badge">
-                                        <span class="badge-label">highest rated</span>
-                                    </div>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                        </div><!-- end course-carousel -->
-                    </div><!-- end tab-content -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end course-wrapper -->
-</section><!-- end courses-area -->
+{{--<section class="course-area padding-top-120px">--}}
+{{--    <div class="course-wrapper">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="section-heading text-center">--}}
+{{--                        <h5 class="section__meta">پر فروش ترین </h5>--}}
+{{--                        <h2 class="section__title">پر فروش ترین محصولات</h2>--}}
+{{--                        <span class="section-divider"></span>--}}
+{{--                    </div><!-- end section-heading -->--}}
+{{--                </div><!-- end col-lg-12 -->--}}
+{{--            </div><!-- end row -->--}}
+{{--            <div class="row margin-top-28px ltr">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="tab-content">--}}
+{{--                        <div class="course-carousel owl-dot-and-nav">--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>--}}
+{{--                                    <div class="card-badge">--}}
+{{--                                        <span class="badge-label">bestseller</span>--}}
+{{--                                    </div>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                    <div class="card-badge">--}}
+{{--                                        <span class="badge-label">highest rated</span>--}}
+{{--                                    </div>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                        </div><!-- end course-carousel -->--}}
+{{--                    </div><!-- end tab-content -->--}}
+{{--                </div><!-- end col-lg-12 -->--}}
+{{--            </div><!-- end row -->--}}
+{{--        </div><!-- end container -->--}}
+{{--    </div><!-- end course-wrapper -->--}}
+{{--</section><!-- end courses-area -->--}}
 <!--======================================
         END COURSE AREA
 ======================================-->
@@ -2794,12 +2794,15 @@
 ======================================-->
 <section class="register-area section-padding">
     <div class="container">
+        @if(\Illuminate\Support\Facades\Session::has('status'))
+            <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('status')}}"/>
+        @endif
         <div class="row">
             <div class="col-lg-5">
                 <div class="register-form">
                     <div class="contact-form-action">
                         <h3 class="widget-title">با خبر شدن از دوره های رایگان</h3>
-                        <form method="post">
+                        <form method="get" action="{{route("formFree.store")}}">
                             <div class="input-box">
                                 <label class="label-text">نام<span class="primary-color-2 ml-1">*</span></label>
                                 <div class="form-group">
@@ -2824,7 +2827,7 @@
                             <div class="input-box">
                                 <label class="label-text">پایه<span class="primary-color-2 ml-1">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="subject" placeholder="پایه">
+                                    <input class="form-control" type="text" name="level" placeholder="پایه">
                                     <span class="la la-book input-icon"></span>
                                 </div>
                             </div><!-- end input-box -->
@@ -2916,227 +2919,234 @@
 <!-- ================================
        START BLOG AREA
 ================================= -->
-<section class="blog-area padding-top-120px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h5 class="section__meta section__metalight">جدید ترین</h5>
-                    <h2 class="section__title text-white">جدیدترین محصولات</h2>
-                    <span class="section-divider section-divider-light"></span>
-                </div><!-- end section-heading -->
-            </div><!-- end col-md-12 -->
-        </div><!-- end row -->
-        <div class="row margin-top-30px ltr">
-            <div class="col-lg-12">
-                <div class="blog-post-carousel owl-dot-and-nav">
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
+
+
+
+{{--    جدیدترین محصولات--}}
+{{--<section class="blog-area padding-top-120px">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="section-heading text-center">--}}
+{{--                    <h5 class="section__meta section__metalight">جدید ترین</h5>--}}
+{{--                    <h2 class="section__title text-white">جدیدترین محصولات</h2>--}}
+{{--                    <span class="section-divider section-divider-light"></span>--}}
+{{--                </div><!-- end section-heading -->--}}
+{{--            </div><!-- end col-md-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--        <div class="row margin-top-30px ltr">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="blog-post-carousel owl-dot-and-nav">--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
 {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
 
 
-                </div><!-- end blog-post-carousel -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end blog-area -->
+{{--                </div><!-- end blog-post-carousel -->--}}
+{{--            </div><!-- end col-lg-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--    </div><!-- end container -->--}}
+{{--</section><!-- end blog-area -->--}}
+{{--    پایان جدید ترین محصولات--}}
+
+
 <!-- ================================
        START BLOG AREA
 ================================= -->
@@ -3207,8 +3217,9 @@
             <div class="col-lg-6 ml-auto">
                 <div class="subscriber-form">
                     <div class="contact-form-action">
-                        <form method="post">
+                        <form method="get" action="{{route("formNews.store")}}">
                             <div class="input-box">
+
                                 <label class="form-label text-white text-right">ایمیل خود را وارد کنید</label>
                                 <div class="form-group d-flex align-items-center">
                                     <input class="form-control" type="email" name="email" placeholder="ایمیل" required>

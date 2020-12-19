@@ -19,6 +19,8 @@ class CreateAboutTeachersTable extends Migration
             $table->string("header");
             $table->string("filed");
             $table->string("picture");
+            $table->text("text");
+            $table->string("exp")->nullable();
 
         });
     }

@@ -38,6 +38,16 @@
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
+                                                {{Form::label('filed', 'تخصص', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::text('filed',null, ['class' => 'form-control','placeholder' => 'تخصص']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
                                                 {{Form::label('picture', 'عکس', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
@@ -48,14 +58,26 @@
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('filed', 'تخصص', ['class' => 'label-text'])}}
+                                                {{Form::label('exp', 'سابقه', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::text('filed',null, ['class' => 'form-control','placeholder' => 'تخصص']) !!}
+                                                    {!! Form::number('exp',null, ['class' => 'form-control','placeholder'=>'سابقه']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
-                                        </div><!-- end col-lg-6 -->
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('text', 'متن', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::textarea('text',null, ['class' => 'form-control','placeholder'=>'متن']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- end col-lg-6 -->
                                         <!-- end col-lg-6 -->
 
 
