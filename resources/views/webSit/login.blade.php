@@ -8,21 +8,21 @@
     @endphp
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
+        /** {*/
+        /*    box-sizing: border-box;*/
+        /*}*/
 
         .login-elearning {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
             0 10px 10px rgba(0, 0, 0, 0.22);
-            position: relative;
+            position: absolute;
             overflow: hidden;
-            width: 768px;
+            width: 100%;
             max-width: 100%;
-            height: 100%;
-            top: 2em;
+            height: 46%;
+            top: 11em;
             margin-bottom: 0em;
             direction: rtl;
             margin-left: auto;
@@ -35,11 +35,11 @@
             direction: rtl;
         }
 
-        h2 {
-            text-align: center;
-        }
+        /*h2 {*/
+        /*    text-align: center;*/
+        /*}*/
 
-        p {
+        .register-login {
             font-size: 14px;
             font-weight: 100;
             line-height: 20px;
@@ -272,8 +272,34 @@
             </div>
         </div>
     </div>
-
-
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <Br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <Br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <Br><br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <Br>
     <script>
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');
@@ -287,4 +313,25 @@
             container.classList.remove("right-panel-active");
         });
     </script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/magnific-popup.min.js"></script>
+    <script src="/js/isotope.js"></script>
+    <script src="/js/waypoint.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/fancybox.js"></script>
+    <script src="/js/wow.js"></script>
+    <script src="/js/gmap-script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYzby4yYDVaXPmtu4jZAGR258K6IYwjIY&libraries"></script>
+    <script src="/js/form-validator.js"></script>
+    <script src="/js/form-validate-script.js"></script>
+    <script src="/js/date-time-picker.js"></script>
+    <script src="/js/jquery.filer.min.js"></script>
+    <script src="/js/emojionearea.min.js"></script>
+    <script src="/js/tooltipster.bundle.min.js"></script>
+    <script src="/js/smooth-scrolling.js"></script>
+    <script src="/js/main.js"></script>
 @endsection
