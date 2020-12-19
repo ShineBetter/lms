@@ -147,7 +147,7 @@
                                             {{--                                            <li><a href="sign-up.html">sign-up</a></li>--}}
                                             {{--                                            <li><a href="login.html">login</a></li>--}}
                                             {{--                                            <li><a href="recover.html">recover</a></li>--}}
-                                            <li><a href="/course-grid">فروشگاه</a></li>
+{{--                                            <li><a href="/course-grid">فروشگاه</a></li>--}}
                                             {{--                                            <li><a href="../checkout.blade.php">checkout</a></li>--}}
                                             {{--                                            <li><a href="error.html">error 404 page</a></li>--}}
                                         </ul>

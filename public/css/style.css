@@ -10742,6 +10742,22 @@ body {
     .main-menu > ul > li .dropdown-menu-item:after {
         display: none;
     }
+    .welcome-h1 {
+        font-size: 20px;
+    }
+    .register-login {
+        font-size: 12px;
+    }
+    .button-login, .button-login-stpr, .button-login{
+        padding: 1px 4px;
+    }
+    .input-welcome {
+        background-color: #eee;
+        border: none;
+        padding: 4px 0;
+        margin: 8px 0;
+        width: 168%;
+    }
 }
 
 @media (min-width: 992px) {
