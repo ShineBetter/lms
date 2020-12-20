@@ -301,7 +301,7 @@
                     },
                     success: function (res) {
                         console.log(res)
-                        window.location = "{{route('result')}}"
+                        window.location = "{{route('result',['teacher' => }}" +  res.teacher{{])}}
                     }
                 })
             }

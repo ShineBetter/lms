@@ -18,7 +18,7 @@
                                 {{--                                    <img src="/images/angular.png" alt="">--}}
                                 {{--                                </a>--}}
                                 <p>
-                                    <a href="#">ریاضی</a><span class="d-block font-size-13"></span>
+                                    <a href="#">ریاضی</a><span class="d-block font-size-13">استاد {{$teacher->email}}</span>
                                 </p>
                             </div>
                         </li>

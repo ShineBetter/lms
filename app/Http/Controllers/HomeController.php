@@ -110,7 +110,8 @@ class HomeController extends Controller
                 ]);
             }
         }
-        $teacher = User::where('id',quiz::where('id',$quiz_id)->first()->teacher_id)->first();
+        $quiz = quiz::where('id',$quiz_id)->first();
+        $teacher = \App\User::where('id',$quiz->teacher_id)->first();
         return $teacher;
     }
 

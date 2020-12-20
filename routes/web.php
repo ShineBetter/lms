@@ -39,7 +39,7 @@ Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->nam
 Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
 Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
 Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
-Route::view('/quiz-result','backend.admin.quizResult.quizResult')->middleware('auth')->name('02');
+Route::view('/quiz-result','backend.admin.quizResult.quizResult')->middleware('auth')->name('result');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //questions route
