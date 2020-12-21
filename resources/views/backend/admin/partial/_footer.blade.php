@@ -128,19 +128,18 @@
     })
 
     // ending quiz and check answers
-    $('.end_quiz').on('click',function () {
-        $.ajax({
-            url: "{{route('checkAnswers')}}",
-            type:'post',
-            data:{
-                quiz_id: $('.exam_quizz_id').attr('qi'),
-            },
-            success: function (res) {
-                console.log(res)
-                window.location = "{{route('result',['teacher' => res.teacher])}}"
-            }
-        })
-    })
+    {{--$('.end_quiz').on('click',function () {--}}
+    {{--    $.ajax({--}}
+    {{--        url: "{{route('checkAnswers')}}",--}}
+    {{--        type:'post',--}}
+    {{--        data:{--}}
+    {{--            quiz_id: $('.exam_quizz_id').attr('qi'),--}}
+    {{--        },--}}
+    {{--        success: function (res) {--}}
+    {{--            console.log(res)--}}
+    {{--        }--}}
+    {{--    })--}}
+    {{--})--}}
 
     // get previous question and answers & ...
     $('.prev_question').on('click', function () {

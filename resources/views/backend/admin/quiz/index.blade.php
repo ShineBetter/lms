@@ -150,7 +150,7 @@
                                             </tr>
                                         @elseif($item->quiz_permission == 'same')
                                             @php($user_quiz = DB::table('user_quiz')->where('quiz_id',$item->id)->first())
-                                            @if($user_quiz->user_id == auth()->id())
+                                            @if($user_quiz != null && $user_quiz->user_id == auth()->id())
                                                 <tr>
                                                     <td scope="row">
                                                         <div class="statement-info">

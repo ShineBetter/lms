@@ -234,12 +234,16 @@
                                     <span class="button-text">سوال بعدی</span>
                                 </button>
                             @endif
+                            <form action="{{route('checkAnswers')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="quiz_id" value="{{$quiz->id}}"/>
                             <button class="end_quiz d-none">
                                 <span class="circle" aria-hidden="true">
                                           <span class="icon arrow"></span>
                                         </span>
                                 <span class="button-text">پایان آزمون</span>
                             </button>
+                            </form>
                             @if($previous_question != null)
                                 <button class="prev_question" question_id="{{$previous_question->id}}">
                                         <span class="circle" aria-hidden="true">
@@ -301,7 +305,7 @@
                     },
                     success: function (res) {
                         console.log(res)
-                        window.location = "{{route('result',['teacher' => }}" +  res.teacher{{])}}
+                        window.location = ""
                     }
                 })
             }
