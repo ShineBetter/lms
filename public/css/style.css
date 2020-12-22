@@ -10769,7 +10769,7 @@ body {
     .sign-in-container {
         width: 100% !important;
     }
-    .button-login {
+    #btn-register-again {
         display: block !important;
     }
 }
@@ -11680,7 +11680,9 @@ body {
 }
 
 .mess-dropdown {
-    position: relative;
+    position: absolute;
+    background: azure;
+    left: 0;
 }
 
 .mess-dropdown .btn-box {
@@ -17116,6 +17118,6 @@ body {
     transform: translateX(20%);
 }
 
-.button-login {
+#btn-register-again {
     display: none;
 }

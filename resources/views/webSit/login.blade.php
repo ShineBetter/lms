@@ -22,7 +22,7 @@
             <input class="input-welcome" type="email" name="email" placeholder="ایمیل"/>
             <input class="input-welcome" type="password" name="password" placeholder="پسورد"/>
             <button class="button-login">ورود</button>
-            <a href="{{asset('/register')}}" class="button-login">
+            <a href="{{asset('/register')}}" class="button-login" id="btn-register-again">
                 ثبت نام کنید
             </a>
             {{ Form::close() }}
