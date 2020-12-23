@@ -1,5 +1,4 @@
 (function ($) {
-    "use strict";
     $(window).on('load', function () {
         $('.preloader').delay('500').fadeOut(2000);
     });
