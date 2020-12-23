@@ -202,3 +202,12 @@ Route::delete("/form-main-free/delete/{id}","FormFreecourseController@destroy")-
 Route::get("/form-news/a","FormNewsController@index")->middleware("auth")->name("formNews.index");
 Route::get("/form-news","FormNewsController@store")->name("formNews.store");
 Route::delete("/form-news/delete/{id}","FormNewsController@destroy")->middleware("auth")->name("formNews.destroy");
+
+///////formFaq
+
+Route::get("/form-faq/a","FormFaqController@index")->middleware("auth")->name("formFaq.index");
+Route::get("/form-faq","FormFaqController@store")->name("formFaq.store");
+Route::get("/form-faq/show/{id}","FormFaqController@show")->middleware("auth")->name("formFaq.show");
+Route::put("/form-faq/update/{id}","FormFaqController@update")->middleware("auth")->name("formFaq.update");
+Route::delete("/form-faq/delete/{id}","FormFaqController@destroy")->middleware("auth")->name("formFaq.destroy");
+
