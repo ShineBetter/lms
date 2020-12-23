@@ -14,21 +14,22 @@
         .register-elearning {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25),
-            0 10px 10px rgba(0,0,0,0.22);
-            position: relative;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            position: absolute;
             overflow: hidden;
             width: 768px;
             max-width: 100%;
-            height: 100%;
-            top: 2em;
+            height: 51%;
+            top: 11em;
             margin-bottom: 0em;
             direction: rtl;
             margin-left: auto;
             margin-right: auto;
+            right: 0;
+            left: 0;
         }
 
-        .welcome-h1 {
+        .register-h1 {
             font-weight: bold;
             margin: 0;
             direction: rtl;
@@ -46,7 +47,7 @@
             margin: 20px 0 30px;
         }
 
-        .bottom-welcome span {
+        .bottom-register span {
             font-size: 12px;
         }
         .button-register-stpr {
@@ -96,7 +97,7 @@
             border-color: #FFFFFF;
         }
 
-        .welcome-form {
+        .register-form {
             background-color: #FFFFFF;
             display: flex;
             align-items: center;
@@ -107,7 +108,7 @@
             text-align: center;
         }
 
-        .input-welcome {
+        .input-register {
             background-color: #eee;
             border: none;
             padding: 12px 15px;
@@ -122,15 +123,16 @@
             top: 0;
             height: 100%;
             transition: all 0.6s ease-in-out;
+            left: 0;
         }
 
-        .sign-in-container {
+        .sign-in-container-register {
             left: 0;
             width: 50%;
             z-index: 2;
         }
 
-        .container.right-panel-active .sign-in-container {
+        .container.right-panel-active .sign-in-container-register {
             transform: translateX(100%);
         }
 
@@ -160,7 +162,7 @@
             }
         }
 
-        .overlay-container {
+        .overlay-container-register {
             position: absolute;
             top: 0;
             left: 50%;
@@ -172,7 +174,7 @@
             direction: ltr;
         }
 
-        .container.right-panel-active .overlay-container{
+        .container.right-panel-active .overlay-container-register{
             transform: translateX(-100%);
         }
 
@@ -227,53 +229,112 @@
         .container.right-panel-active .overlay-right {
             transform: translateX(20%);
         }
+        @media only screen and (min-width: 320px) and (max-width: 479px) {
+            .input-register {
+                background-color: #eee;
+                border: none;
+                padding: 8px 3px;
+                margin: 8px 0;
+                width: 180%;
+            }
+            .button-register-stpr {
+                font-size: 11px;
+                padding: 12px 8px;
+            }
+            .register-elearning {
+                height: 30%;
+                top: 17em;
+            }
+            .register-h1 {
+                font-size: 21px;
+                padding: 0;
+            }
+        }
     </style>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br>
     <div class="container register-elearning" id="container">
-        <div class="form-container sign-in-container">
-            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'welcome-form','files' => true])}}
-                <h1 class="welcome-h1">ثبت نام دانش آموز</h1>
-                <span class="text-dark bottom-welcome">لطفا فرم زیر را پر کنید.</span>
-                <input class="input-welcome" type="text" name="name" placeholder="نام"/>
-                <input class="input-welcome" type="text" name="lastName" placeholder="نام خانوادگی"/>
-                <input class="input-welcome" type="email" name="email" placeholder="ایمیل"/>
-                <input class="input-welcome" type="number" name="nationalNumber" placeholder="کد ملی"/>
-                <input class="input-welcome" type="text" name="level" placeholder="پایه تحصیلی"/>
-                <input class="input-welcome" type="date" name="birthday" value="1990/01/01" placeholder="تاریخ تولد"/>
-                <input class="input-welcome" type="text" name="parentName" placeholder="نام اولیاء"/>
-                <input class="input-welcome" type="number" name="Phone" placeholder="شماره تلفن"/>
-                <input class="input-welcome" type="text" name="address" placeholder="آدرس"/>
+        <div class="form-container sign-in-container-register">
+            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'register-form','files' => true])}}
+                <h1 class="register-h1">ثبت نام دانش آموز</h1>
+                <span class="text-dark bottom-register">لطفا فرم زیر را پر کنید.</span>
+                <input class="input-register" type="text" name="name" placeholder="نام"/>
+                <input class="input-register" type="text" name="lastName" placeholder="نام خانوادگی"/>
+                <input class="input-register" type="email" name="email" placeholder="ایمیل"/>
+                <input class="input-register" type="number" name="nationalNumber" placeholder="کد ملی"/>
+                <input class="input-register" type="text" name="level" placeholder="پایه تحصیلی"/>
+                <input class="input-register" type="date" name="birthday" value="1990/01/01" placeholder="تاریخ تولد"/>
+                <input class="input-register" type="text" name="parentName" placeholder="نام اولیاء"/>
+                <input class="input-register" type="number" name="Phone" placeholder="شماره تلفن"/>
+                <input class="input-register" type="text" name="address" placeholder="آدرس"/>
                 <input type="submit" class="button-register" value="ثبت نام"/>
             {{ Form::close() }}
 
         </div>
         <div class="form-container sign-up-container">
-            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'welcome-form','files' => true])}}
-            <h1 class="welcome-h1">ثبت نام والدین</h1>
-                <span class="text-dark bottom-welcome">لطفا فرم زیر را پر کنید.</span>
-                <input class="input-welcome" name="name" type="text" placeholder="نام"/>
-                <input class="input-welcome" type="text" name="lastName" placeholder="نام خانوادگی"/>
-                <input class="input-welcome" type="email" name="email" placeholder="ایمیل"/>
-                <input class="input-welcome" type="number" name="nationalNumber" placeholder="کدملی"/>
-                <input class="input-welcome" type="number" name="mobile" placeholder="شماره تماس"/>
-                <input class="input-welcome" type="text" name="address" placeholder="آدرس"/>
+            {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'register-form','files' => true])}}
+            <h1 class="register-h1">ثبت نام والدین</h1>
+                <span class="text-dark bottom-register">لطفا فرم زیر را پر کنید.</span>
+                <input class="input-register" name="name" type="text" placeholder="نام"/>
+                <input class="input-register" type="text" name="lastName" placeholder="نام خانوادگی"/>
+                <input class="input-register" type="email" name="email" placeholder="ایمیل"/>
+                <input class="input-register" type="number" name="nationalNumber" placeholder="کدملی"/>
+                <input class="input-register" type="number" name="mobile" placeholder="شماره تماس"/>
+                <input class="input-register" type="text" name="address" placeholder="آدرس"/>
                 <input type="submit" class="button-register" value="ثبت نام"/>
             {{ Form::close() }}
         </div>
-        <div class="overlay-container">
+        <div class="overlay-container-register">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1 class="welcome-h1">خوش آمدید به آموزشگاه ...</h1>
+                    <h1 class="register-h1">خوش آمدید به آموزشگاه ...</h1>
                     <button class="button-register-ghost button-register-stpr" id="signIn">ورود دانش آموز</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1 class="welcome-h1">خوش آمدید به آموزشگاه...</h1>
+                    <h1 class="register-h1">خوش آمدید به آموزشگاه...</h1>
                     <button class="button-register-ghost button-register-stpr" id="signUp">ورود اولیاء</button>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <Br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <Br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <Br><br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <Br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <Br>
     <script>
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');
