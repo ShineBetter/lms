@@ -9501,7 +9501,7 @@ body {
 
 .header-social-profile {
     border-right: 1px solid rgba(127, 136, 151, 0.1);
-    padding-right: 20px;
+    padding-left: 20px;
     margin-right: 15px;
     height: 48px;
     display: -webkit-flex;
@@ -10804,6 +10804,9 @@ body {
     .logo-right-button {
         display: none;
     }
+    .header-widget {
+        text-align: center;
+    }
 }
 
 .logo-right-button .user-action li {
@@ -12100,11 +12103,17 @@ body {
     .user-bread-content {
         margin-bottom: 30px;
     }
+    .dashboard-nav-container {
+        z-index: 99999;
+    }
 }
 
 @media (max-width: 375px) {
     .user-bread-content {
         display: block !important;
+    }
+    .dashboard-nav-container {
+        z-index: 99999;
     }
 }
 
@@ -12122,12 +12131,18 @@ body {
         margin-right: 20px;
         margin-bottom: 0;
     }
+    .dashboard-nav-container {
+        z-index: 99999;
+    }
 }
 
 @media (max-width: 375px) {
     .breadcrumb-content.dashboard-bread-content .bread-img-wrap {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+    .dashboard-nav-container {
+        z-index: 99999;
     }
 }
 
@@ -12260,6 +12275,9 @@ body {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .profile-detail .list-items li .profile-desc {
         width: 400px;
+    }
+    .dashboard-nav-container {
+        z-index: 99999;
     }
 }
 
