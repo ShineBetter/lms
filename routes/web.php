@@ -111,6 +111,8 @@ Route::get('/about', function () {
     return view('webSit.about');
 });
 
+Route::view('/select','backend.admin.selected');
+
 //profile setting route
 Route::get('/user/profile','profileController@getInformation')->name('profile')->middleware('auth');;
 Route::post('/user/profile/save/info','profileController@saveInformation')->name('profile.save.info')->middleware('auth');;

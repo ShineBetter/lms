@@ -3,11 +3,11 @@
 @section('cntd')
     @parent
     @php
-    use Carbon\Carbon;
-        $header="";
-        $loader="dont";
-        $sidebar="";
-        $sidebar="";
+        use Carbon\Carbon;
+            $header="";
+            $loader="dont";
+            $sidebar="";
+            $sidebar="";
     @endphp
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
@@ -23,9 +23,9 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         @can('Admin')
-                            <div class="card-box-shared-title">
-                                <x-btn route="quiz.create"/>
-                            </div>
+{{--                            <div class="card-box-shared-title">--}}
+                                <x-btn class="card-box-shared" route="quiz.create"/>
+{{--                            </div>--}}
                         @endcan
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -123,10 +123,12 @@
                                                     <div class="statement-info">
                                                         <ul class="list-items">
                                                             <li>
-                                                                <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                        type="button" class="btn btn-info"
-                                                                        style="font-size: 15px;font-family: Tahoma"
-                                                                        value="ویرایش"></a>
+                                                                @can('Admin')
+                                                                    <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                                            type="button" class="btn btn-info"
+                                                                            style="font-size: 15px;font-family: Tahoma"
+                                                                            value="ویرایش"></a>
+                                                                @endcan
                                                                 @if($item->pay_status == 1)
                                                                     @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
                                                                         {{Form::open(['route' => 'quiz','method' => 'post'])}}
@@ -142,7 +144,9 @@
                                                                     {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
                                                                     {{ Form::close() }}
                                                                 @endif
-                                                                <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                                @can('Admin')
+                                                                    <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                                @endcan
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -222,10 +226,12 @@
                                                         <div class="statement-info">
                                                             <ul class="list-items">
                                                                 <li>
-                                                                    <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                            type="button" class="btn btn-info"
-                                                                            style="font-size: 15px;font-family: Tahoma"
-                                                                            value="ویرایش"></a>
+                                                                    @can('Admin')
+                                                                        <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                                                type="button" class="btn btn-info"
+                                                                                style="font-size: 15px;font-family: Tahoma"
+                                                                                value="ویرایش"></a>
+                                                                    @endcan
                                                                     @if($item->pay_status == 1)
                                                                         @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
                                                                             {{Form::open(['route' => 'quiz','method' => 'post'])}}
@@ -241,7 +247,10 @@
                                                                         {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
                                                                         {{ Form::close() }}
                                                                     @endif
-                                                                    <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                                    @can('Admin')
+                                                                        <x-delbtn route="quiz.destroy"
+                                                                                  id="{{$item->id}}"/>
+                                                                    @endcan
                                                                 </li>
                                                             </ul>
                                                         </div>

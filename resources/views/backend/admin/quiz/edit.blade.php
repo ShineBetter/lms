@@ -84,7 +84,8 @@
                                                 <div class="form-group">
                                                     <select class="form-control" name="teacher_id" id="teacher_id">
                                                         @foreach($teachers as $teacher)
-                                                            <option {{$teacher->id == $data->teacher_id ? 'selected' : ''}} value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
+                                                            <option
+                                                                {{$teacher->id == $data->teacher_id ? 'selected' : ''}} value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -104,33 +105,40 @@
                                                 </div>
                                             </div>
                                             <style>
-                                                .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-                                                    background-image: none !important;
+                                                .dropdown-content li {
+                                                    width: 50%;
+                                                    display: inline-block;
+                                                    text-align: right;
+                                                    direction: rtl;
                                                 }
 
-                                                .custom-checkbox input[type=checkbox]:not(:checked) + label:after, .custom-checkbox input[type=checkbox]:checked + label:after {
-                                                    content: '' !important;
-                                                }
-
-                                                .badge {
-                                                    padding: 0.7em !important;
-                                                    padding-left: 0.7em !important;
-                                                    background: #e2e2e2 !important;
-                                                    margin-right: 0.5em;
-                                                }
-                                                .dashboardcode-bsmultiselect{
+                                                .select-wrapper {
                                                     display: none;
                                                 }
+
+                                                .select-wrapper input.select-dropdown {
+                                                    font-family: Vazir !important;
+                                                }
+
+                                                .select-wrapper .caret {
+                                                    right: unset !important;
+                                                    left: 0 !important;
+                                                }
+
+                                                #sm_select_all, .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+                                                    width: 100% !important;
+                                                }
                                             </style>
-                                            <div class="input-box">
-                                                <select name="some_student[]" id="some_student"
-                                                        class="form-control multiSelect" multiple="multiple"
-                                                        style="display: none;">
-                                                    @foreach($students as $item)
-                                                        <option value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
+                                            <select multiple name="some_student[]" class="select_all">
+                                                <option value="" disabled selected>انتخاب کنید</option>
+                                                @foreach($students as $item)
+                                                    @foreach($studentSelected as $selected)
+                                                        {{dd($students)}}
+                                                        <option
+                                                                value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
                                                     @endforeach
-                                                </select>
-                                            </div>
+                                                @endforeach
+                                            </select>
                                         </div><!-- end col-lg-6 -->
                                     </div><!-- end row -->
                                     <div class="row">

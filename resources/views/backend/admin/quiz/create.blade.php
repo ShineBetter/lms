@@ -1,5 +1,8 @@
 @extends('backend.admin.partial._master')
 @section('title','آزمون')
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+@endsection
 @section('cntd')
     @parent
     @php
@@ -84,12 +87,14 @@
                                                 <div class="form-group">
                                                     <select class="form-control" name="teacher_id" id="teacher_id">
                                                         @foreach($teachers as $teacher)
-                                                            <option value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
+                                                            <option
+                                                                value="{{$teacher->id}}">{{$teacher->profile->name}} {{$teacher->profile->lastName}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
+
                                         <div class="col-lg-12 col-sm-12">
                                             <div class="input-box">
                                                 <div class="student_radio_inputs_group">
@@ -104,35 +109,36 @@
                                                 </div>
                                             </div>
                                             <style>
-                                                .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-                                                    background-image: none !important;
+                                                .dropdown-content li {
+                                                    width: 50%;
+                                                    display: inline-block;
+                                                    text-align: right;
+                                                    direction: rtl;
                                                 }
-
-                                                .custom-checkbox input[type=checkbox]:not(:checked) + label:after, .custom-checkbox input[type=checkbox]:checked + label:after {
-                                                    content: '' !important;
-                                                }
-
-                                                .badge {
-                                                    padding: 0.7em !important;
-                                                    padding-left: 0.7em !important;
-                                                    background: #e2e2e2 !important;
-                                                    margin-right: 0.5em;
-                                                }
-
-                                                .dashboardcode-bsmultiselect {
+                                                .select-wrapper{
                                                     display: none;
                                                 }
+
+                                                .select-wrapper input.select-dropdown {
+                                                    font-family: Vazir !important;
+                                                }
+
+                                                .select-wrapper .caret {
+                                                    right: unset !important;
+                                                    left: 0 !important;
+                                                }
+
+                                                #sm_select_all, .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+                                                    width: 100% !important;
+                                                }
                                             </style>
-                                            <div class="input-box">
-                                                <select name="some_student[]" id="some_student"
-                                                        class="form-control multiSelect" multiple="multiple"
-                                                        style="display: none;">
-                                                    @foreach($data as $item)
-                                                        <option
-                                                            value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                            <select multiple name="some_student[]" class="select_all">
+                                                <option value="" disabled selected>انتخاب کنید</option>
+                                                @foreach($data as $item)
+                                                    <option
+                                                        value="{{$item->id}}">{{$item->profile->name}} {{$item->profile->lastName}}</option>
+                                                @endforeach
+                                            </select>
                                         </div><!-- end col-lg-6 -->
 
                                     </div><!-- end row -->
@@ -144,7 +150,6 @@
                                         </div>
                                     </div><!-- end row -->
                                     {{ Form::close() }}
-
                                 </div>
                             </div>
                         </div><!-- end card-box-shared-body -->
@@ -153,5 +158,24 @@
             </div><!-- end row -->
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-content-wrap -->
-
 @endsection
+@push('custosm-scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('select').val([1]);
+            $('.select_all').formSelect();
+            $('select.select_all').siblings('ul').prepend('<li id=sm_select_all><span>انتخاب همه</span></li>');
+            $('li#sm_select_all').on('click', function () {
+                var jq_elem = $(this),
+                    jq_elem_span = jq_elem.find('span'),
+                    select_all = jq_elem_span.text() == 'انتخاب همه',
+                    set_text = select_all ? 'برداشتن انتخاب ها' : 'انتخاب همه';
+                jq_elem_span.text(set_text);
+                jq_elem.siblings('li').filter(function () {
+                    return $(this).find('input').prop('checked') != select_all;
+                }).click();
+            });
+        })
+    </script>
+@endpush

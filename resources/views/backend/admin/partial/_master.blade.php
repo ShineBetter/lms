@@ -73,4 +73,3 @@
     </section>
 @show
 @includeWhen(empty($footer),'backend.admin.partial._footer')
-

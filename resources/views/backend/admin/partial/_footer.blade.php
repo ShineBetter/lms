@@ -1,8 +1,12 @@
 <div id="scroll-top">
     <i class="fa fa-angle-up" title="Go top"></i>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
 <script src="{{ asset("template_sit/js/jquery-3.4.1.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/popper.min.js")}}"></script>
 <script src="{{ asset("template_sit/js/bootstrap.min.js")}}"></script>
@@ -23,6 +27,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script src="{{asset("css/owl.carousel.min.js")}}"></script>
+
+
 <script>
 
     // set csrf token in meta tag
@@ -31,7 +37,6 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
     let number = $('.exam_question_number').html();
     let end_display = $('.exam_question_max_number').html();
     if (number == end_display) {
@@ -96,7 +101,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
-                $('.exam_question_title').attr('question_id',res.questions.id)
+                $('.exam_question_title').attr('question_id', res.questions.id)
 
                 $('.exam_form input:radio').each(function () {
                     if (res.checkedRadio != null) {
@@ -127,20 +132,6 @@
         })
     })
 
-    // ending quiz and check answers
-    {{--$('.end_quiz').on('click',function () {--}}
-    {{--    $.ajax({--}}
-    {{--        url: "{{route('checkAnswers')}}",--}}
-    {{--        type:'post',--}}
-    {{--        data:{--}}
-    {{--            quiz_id: $('.exam_quizz_id').attr('qi'),--}}
-    {{--        },--}}
-    {{--        success: function (res) {--}}
-    {{--            console.log(res)--}}
-    {{--        }--}}
-    {{--    })--}}
-    {{--})--}}
-
     // get previous question and answers & ...
     $('.prev_question').on('click', function () {
         let pre = $(this);
@@ -160,7 +151,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
-                $('.exam_question_title').attr('question_id',res.questions.id)
+                $('.exam_question_title').attr('question_id', res.questions.id)
                 $('.exam_form input:radio').each(function () {
                     if (res.checkedRadio != null) {
                         if (res.checkedRadio.answer == $(this).val()) {
@@ -213,7 +204,7 @@
                 $('.answer_radio_two').find('label').html(res.questions.answer_two)
                 $('.answer_radio_three').find('label').html(res.questions.answer_three)
                 $('.answer_radio_four').find('label').html(res.questions.answer_four)
-                $('.exam_question_title').attr('question_id',res.questions.id)
+                $('.exam_question_title').attr('question_id', res.questions.id)
                 $('.exam_question_number').html(number)
                 let end_display = $('.exam_question_max_number').html();
 
@@ -421,18 +412,12 @@
 </script>
 <script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>
-    $(".multiSelect").bsMultiSelect({
-        cssPatch: {
-            choices: {columnCount: '5'},
-            choice_hover: 'text-success',
-        },
-    });
 
     $('#some_students').change('checked', function () {
-        $('.dashboardcode-bsmultiselect').fadeIn();
+        $('.select-wrapper').fadeIn();
     })
     $('#all_students').change('checked', function () {
-        $('.dashboardcode-bsmultiselect').fadeOut();
+        $('.select-wrapper').fadeOut();
     })
 </script>
 @stack('custosm-scripts')

@@ -54,12 +54,6 @@ class QuizController extends Controller
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {
             $quiz->quiz_permission = 'some';
-        }
-        $quiz->save();
-        if ($request->students == 1) {
-            $quiz->quiz_permission = 'all';
-        } elseif ($request->students == 2) {
-            $quiz->quiz_permission = 'some';
             $students = $request->some_student;
             foreach ($students as $item) {
                 DB::table('user_quiz')->insert([
@@ -68,6 +62,7 @@ class QuizController extends Controller
                 ]);
             }
         }
+        $quiz->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';
         session()->flash('status', $comment);
         return redirect()->route('quiz.index');
@@ -106,7 +101,8 @@ class QuizController extends Controller
         $end_date = Carbon::createFromTimestamp($data->quiz_exp_date)->format('Y-m-d');
         $students = User::where('user_role','student')->get();
         $teachers = User::where('user_role','teacher')->get();
-        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students, 'teachers' => $teachers, 'start_time' => $start_time, 'end_time' => $end_time, 'start_date' => $start_date, 'end_date' => $end_date]);
+        $studentSelected = DB::table('user_quiz')->where(['quiz_id' => $id])->pluck('user_id');
+        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students, 'studentSelected' => $studentSelected, 'teachers' => $teachers, 'start_time' => $start_time, 'end_time' => $end_time, 'start_date' => $start_date, 'end_date' => $end_date]);
     }
 
     /**
