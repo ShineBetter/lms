@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use AliBayat\LaravelCategorizable\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::resource('banner','BannerController')->middleware('auth');
 //level route
 Route::resource('level','LevelController')->middleware('auth');
 
+//category route
+Route::resource('category','CategoryController')->middleware('auth');
+
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');
 
@@ -103,6 +107,8 @@ Route::get('/userLevels/{level_id}/{user_id}/edit','userLevelsController@edit')-
 
 //make test in database
 Route::get('/cr/{id}','teacherController@cr');
+Route::get('/cat',function (){
+});
 
 
 
