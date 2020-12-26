@@ -17139,3 +17139,26 @@ body {
 #btn-register-again {
     display: none;
 }
+.mySlides {
+    height: 80vh;
+    display:none
+}
+.mySlides img {
+    height: 80vh;
+}
+.w3-content {
+    max-width: 100%;
+    width: 100%;
+}
+.w3-display-right {
+    right: 2%;
+}
+.w3-display-left {
+    left: 2%;
+}
+.text-slider {
+    top: -42vh;
+    text-align: right;
+    direction: rtl;
+    color: white;
+}

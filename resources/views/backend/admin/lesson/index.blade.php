@@ -65,11 +65,17 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('lesson.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
-                                                            <x-delbtn route="lesson.destroy" id="{{$item->id}}"/>
+                                                            <a href="{{route('lesson.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                            </a>
+
+                                                            <a href="{{route('lesson.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>
