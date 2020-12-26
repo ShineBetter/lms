@@ -11,8 +11,8 @@
         padding: 9px 15px;
         border-radius: 50px;
         position: relative;
-        box-shadow: 0 0 40px -10px #000;
-        color: #505050;
+        box-shadow: 0 0 6px 0px #50505061;
+        color: #51be78;
     }
     .span-notif {
         float: right;
@@ -58,19 +58,30 @@
         color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0 30px -10px #000;
     }
-
+    .img-notif {
+        width: 20%;
+        border-radius: 50px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    .minmassage {
+        font-size: 12px;
+    }
 </style>
 <header class="header-menu-area dashboard-header">
     <div class="header-menu-content dashboard-menu-content"
-         style="direction: rtl"
-    >
+         style="direction: rtl">
         <div class="container-fluid">
             <div class="main-menu-content">
                 <div class="row align-items-center">
                     <div class="col-lg-2">
+                        <a href="{{route('index')}}" class="home-header">
+                            <i class="fas fa-home"></i>
+                        </a>
                         <div class="logo-box">
-                            <a href="index.html" class="logo"><img src="{{asset('template_sit/images/logo.png')}}"
-                                                                   alt="logo"></a>
+                            <a href="index.html" class="logo">
+                                <img src="{{asset('template_sit/images/logo.png')}}" alt="logo">
+                            </a>
                             <div class="menu-toggler">
                                 <i class="fa fa-bars"></i>
                                 <i class="fa fa-times"></i>
@@ -125,114 +136,37 @@
                                 <div class="header-action-button d-flex align-items-center">
                                     <div class="notification-wrap d-flex align-items-center">
                                         <div class="notification-item mr-3">
-{{--                                            <div class="dropdown ">--}}
-{{--                                                <button class="notification-btn dropdown-toggle" type="button"--}}
-{{--                                                        id="messageDropdownMenu" data-toggle="dropdown"--}}
-{{--                                                        aria-haspopup="true" aria-expanded="false">--}}
-{{--                                                    <i class=""></i>--}}
-{{--                                                    <span class="quantity">5</span>--}}
-{{--                                                </button>--}}
-{{--                                                <div class="dropdown-menu" aria-labelledby="messageDropdownMenu"--}}
-{{--                                                     style="--}}
-{{--                                                    left: 0 !important;--}}
-{{--                                                    right: unset;--}}
-{{--                                                "--}}
-{{--                                                >--}}
-{{--                                                    <div class="mess-dropdown">--}}
-{{--                                                        <div class="mess__title">--}}
-{{--                                                            <h4 class="widget-title">Messages</h4>--}}
-{{--                                                        </div><!-- end mess__title -->--}}
-{{--                                                        <div class="mess__body">--}}
-{{--                                                            <a href="dashboard-message.html" class="d-block">--}}
-{{--                                                                <div class="mess__item">--}}
-{{--                                                                    <div class="avatar dot-status">--}}
-{{--                                                                        <img--}}
-{{--                                                                            src="{{asset('template_sit/images/team7.jpg')}}"--}}
-{{--                                                                            alt="Team img">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="content">--}}
-{{--                                                                        <h4 class="widget-title">Michelle Moreno</h4>--}}
-{{--                                                                        <p class="text">Thanks for reaching out. I'm--}}
-{{--                                                                            quite busy right now on many</p>--}}
-{{--                                                                        <span class="time">5 min ago</span>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div><!-- end mess__item -->--}}
-{{--                                                            </a>--}}
-{{--                                                            <a href="dashboard-message.html" class="d-block">--}}
-{{--                                                                <div class="mess__item">--}}
-{{--                                                                    <div class="avatar dot-status online-status">--}}
-{{--                                                                        <img--}}
-{{--                                                                            src="{{asset('template_sit/images/team8.jpg')}}"--}}
-{{--                                                                            alt="Team img">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="content">--}}
-{{--                                                                        <h4 class="widget-title">Alex Smith</h4>--}}
-{{--                                                                        <p class="text">Thanks for reaching out. I'm--}}
-{{--                                                                            quite busy right now on many</p>--}}
-{{--                                                                        <span class="time">2 days ago</span>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div><!-- end mess__item -->--}}
-{{--                                                            </a>--}}
-{{--                                                            <a href="dashboard-message.html" class="d-block">--}}
-{{--                                                                <div class="mess__item">--}}
-{{--                                                                    <div class="avatar dot-status">--}}
-{{--                                                                        <img--}}
-{{--                                                                            src="{{asset('template_sit/images/team9.jpg')}}"--}}
-{{--                                                                            alt="Team img">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="content">--}}
-{{--                                                                        <h4 class="widget-title">Michelle Moreno</h4>--}}
-{{--                                                                        <p class="text">Thanks for reaching out. I'm--}}
-{{--                                                                            quite busy right now on many</p>--}}
-{{--                                                                        <span class="time">5 min ago</span>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div><!-- end mess__item -->--}}
-{{--                                                            </a>--}}
-{{--                                                            <a href="dashboard-message.html" class="d-block">--}}
-{{--                                                                <div class="mess__item">--}}
-{{--                                                                    <div class="avatar dot-status online-status">--}}
-{{--                                                                        <img--}}
-{{--                                                                            src="{{asset('template_sit/images/team7.jpg')}}"--}}
-{{--                                                                            alt="Team img">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="content">--}}
-{{--                                                                        <h4 class="widget-title">Alex Smith</h4>--}}
-{{--                                                                        <p class="text">Thanks for reaching out. I'm--}}
-{{--                                                                            quite busy right now on many</p>--}}
-{{--                                                                        <span class="time">2 days ago</span>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div><!-- end mess__item -->--}}
-{{--                                                            </a>--}}
-{{--                                                            <a href="dashboard-message.html" class="d-block">--}}
-{{--                                                                <div class="mess__item">--}}
-{{--                                                                    <div class="avatar dot-status">--}}
-{{--                                                                        <img--}}
-{{--                                                                            src="{{asset('template_sit/images/team8.jpg')}}"--}}
-{{--                                                                            alt="Team img">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="content">--}}
-{{--                                                                        <h4 class="widget-title">Alex Smith</h4>--}}
-{{--                                                                        <p class="text">Thanks for reaching out. I'm--}}
-{{--                                                                            quite busy right now on many</p>--}}
-{{--                                                                        <span class="time">2 days ago</span>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div><!-- end mess__item -->--}}
-{{--                                                            </a>--}}
-{{--                                                        </div><!-- end mess__body -->--}}
-{{--                                                        <div class="btn-box p-2 text-center">--}}
-{{--                                                            <a href="dashboard-message.html">Show All Message</a>--}}
-{{--                                                        </div><!-- end btn-box -->--}}
-{{--                                                    </div><!-- end mess-dropdown -->--}}
-{{--                                                </div><!-- end dropdown-menu -->--}}
-{{--                                            </div><!-- end dropdown -->--}}
+
                                             <div class="menu-notif">
                                                 <div class="title" onclick="f()"><i class="fa fa-envelope"></i>
+                                                    <span class="quantity">5</span>
                                                     <div class="arrow"></div>
                                                 </div>
                                                 <div class="dropdown dropdown-notif" style="position: absolute">
-                                                    <p class="p-notif">پیام جدید از استاد معرفی<span class="span-notif"></span></p>
-                                                    <p class="p-notif">پیام جدید از مدیریت<span class="span-notif"></span></p>
-                                                    <p class="p-notif">پیام خوانده شده از ... <span class="span-notif"></span></p>
+                                                    <p class="p-notif">
+                                                        <img src="http://127.0.0.1:8000/template_sit/images/team7.jpg" alt="John-doe" class="img-notif">
+                                                        پیام جدید از استاد معرفی<span class="span-notif"></span>
+                                                        <br>
+                                                     <span class="minmassage">
+                                                         بنا به عدم حضور در امتحان ریاضی شما ...
+                                                     </span>
+                                                    </p>
+                                                    <p class="p-notif">
+                                                    <img src="http://127.0.0.1:8000/template_sit/images/team7.jpg" alt="John-doe" class="img-notif">
+                                                    پیام جدید از استاد معرفی<span class="span-notif"></span>
+                                                        <br>
+                                                    <span class="minmassage">
+                                                         بنا به عدم حضور در امتحان ریاضی شما ...
+                                                     </span>
+                                                    </p>
+                                                    <p class="p-notif">
+                                                        <img src="http://127.0.0.1:8000/template_sit/images/team7.jpg" alt="John-doe" class="img-notif">
+                                                        پیام جدید از مدیریت<span class="span-notif"></span>
+                                                        <br>
+                                                        <span class="minmassage">
+                                                         بنا به عدم حضور در امتحان ریاضی شما ...
+                                                     </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>

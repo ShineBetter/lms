@@ -115,10 +115,11 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
+                                                            <a href="{{route('quiz.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                            </a>
                                                             @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
                                                                 {{Form::open(['route' => 'quiz','method' => 'post'])}}
                                                                 <input type="hidden" name="quiz_id"
@@ -126,7 +127,11 @@
                                                                 {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
                                                                 {{ Form::close() }}
                                                             @endif
-                                                            <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                            <a href="{{route('quiz.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>

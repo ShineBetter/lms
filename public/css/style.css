@@ -11936,13 +11936,13 @@ body {
 
 .dashboard-nav-trigger-btn {
     background-color: rgba(127, 136, 151, 0.1);
-    border: 1px solid rgba(127, 136, 151, 0.2);
-    padding: 10px 15px 10px 45px;
+    border: 1px solid rgb(40 167 69 / 24%);
+    padding: 10px 15px 10px 15px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    border-radius: 4px;
+    border-radius: 50%;
     cursor: pointer;
-    color: #7f8897;
+    color: #28a745;
     font-size: 16px;
     display: inline-block;
     position: relative;
@@ -17162,3 +17162,6 @@ body {
     direction: rtl;
     color: white;
 }
+
+
+/*اسلایدر*/

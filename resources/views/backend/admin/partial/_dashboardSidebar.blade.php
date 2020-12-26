@@ -1,7 +1,7 @@
 <div class="dashboard-sidebar">
     <div class="dashboard-nav-trigger">
         <div class="dashboard-nav-trigger-btn">
-            <i class="fa fa-bars"></i> Dashboard Nav
+            <i class="fas fa-arrow-circle-left"></i>
         </div>
     </div>
     <div class="dashboard-nav-container">
