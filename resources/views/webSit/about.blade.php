@@ -278,7 +278,7 @@
                         <div class="team-detail">
                             <h3 class="team__title">استاد رهنما</h3>
                             <p class="team__meta">ریاضی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alex Smith">read his bio</a>
+                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alex Smith">اطلاعات بیشتر</a>
                         </div>
                     </div><!-- end team-item -->
                 </div><!-- end col-lg-3 -->
@@ -290,7 +290,7 @@
                         <div class="team-detail">
                             <h3 class="team__title">استاد ربیع</h3>
                             <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Rose Taylor">read his bio</a>
+                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Rose Taylor">اطلاعات بیشتر</a>
                         </div>
                     </div><!-- end team-item -->
                 </div><!-- end col-lg-3 -->
@@ -302,7 +302,7 @@
                         <div class="team-detail">
                             <h3 class="team__title">استاد ربیع</h3>
                             <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Jef Collin">read his bio</a>
+                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Jef Collin">اطلاعات بیشتر</a>
                         </div>
                     </div><!-- end team-item -->
                 </div><!-- end col-lg-3 -->
@@ -338,7 +338,7 @@
                         <div class="team-detail">
                             <h3 class="team__title">استاد ربیع</h3>
                             <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Kevin Martin">read his bio</a>
+                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Kevin Martin">اطلاعات بیشتر</a>
                         </div>
                     </div><!-- end team-item -->
                 </div><!-- end col-lg-3 -->
@@ -379,116 +379,116 @@
 <!--================================
          START TESTIMONIAL AREA
 =================================-->
-<section class="testimonial-area padding-top-120px padding-bottom-110px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="section-heading">
-                    <h5 class="section__meta">گواهی نامه</h5>
-                    <h2 class="section__title">از اموزشگا ...</h2>
-                    <span class="section-divider"></span>
-                    <p class="section__desc">
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                    </p>
-                </div><!-- end section-heading -->
-                <div class="btn-box">
+{{--<section class="testimonial-area padding-top-120px padding-bottom-110px">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="section-heading">--}}
+{{--                    <h5 class="section__meta">گواهی نامه</h5>--}}
+{{--                    <h2 class="section__title">از اموزشگا ...</h2>--}}
+{{--                    <span class="section-divider"></span>--}}
+{{--                    <p class="section__desc">--}}
+{{--                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.--}}
+{{--                    </p>--}}
+{{--                </div><!-- end section-heading -->--}}
+{{--                <div class="btn-box">--}}
 {{--                    <a href="about.blade.php" class="theme-btn">explore all</a>--}}
-                </div>
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-8">
-                <div class="testimonial-subtitle pb-3">
-                    <h3 class="widget-title font-weight-medium">بیش از 500 دانش اموز در اموزشگاه ما در حال یادگیری هستند</h3>
-                </div>
-                <div class="testimonial-carousel-2 ltr">
-                    <div class="testimonial-item testimonial-item-layout-2 ltr">
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">عادلی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item testimonial-item-layout-2">
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img2.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">عادلی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item testimonial-item-layout-2">
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img3.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">عادلی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item testimonial-item-layout-2">
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img4.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">عادلی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                    </div><!-- end testimonial-item -->
-                </div><!-- end testimonial-carousel-2 -->
-            </div><!-- end col-lg-8 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end testimonial-area -->
+{{--                </div>--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-8">--}}
+{{--                <div class="testimonial-subtitle pb-3">--}}
+{{--                    <h3 class="widget-title font-weight-medium">بیش از 500 دانش اموز در اموزشگاه ما در حال یادگیری هستند</h3>--}}
+{{--                </div>--}}
+{{--                <div class="testimonial-carousel-2 ltr">--}}
+{{--                    <div class="testimonial-item testimonial-item-layout-2 ltr">--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">عادلی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item testimonial-item-layout-2">--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img2.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">عادلی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item testimonial-item-layout-2">--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img3.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">عادلی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item testimonial-item-layout-2">--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img4.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">عادلی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                </div><!-- end testimonial-carousel-2 -->--}}
+{{--            </div><!-- end col-lg-8 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--    </div><!-- end container -->--}}
+{{--</section><!-- end testimonial-area -->--}}
 <!--================================
         END TESTIMONIAL AREA
 =================================-->
