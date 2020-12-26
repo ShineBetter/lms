@@ -26,8 +26,17 @@
                                 <div class="contact-form-action">
                                     {{ Form::model($data,['route'=>['formFaq.update', $data->id], 'method' => 'put','files' => false
 ])}}
-
-                                        <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="input-box">
+                                            {{Form::label('time', 'تاریخ', ['class' => 'label-text'])}}
+                                            <span class="primary-color-2 ml-1">*</span>
+                                            <div class="form-group">
+                                                {!! Form::text('time', $data->time, ['class' => 'form-control','disabled']) !!}
+                                                <span class="la la-file-text-o input-icon"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-12 col-sm-12">
                                             <div class="input-box">
                                                 {{Form::label('text', 'پیام', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
