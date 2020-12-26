@@ -59,7 +59,12 @@ Route::resource('banner','BannerController')->middleware('auth');
 Route::resource('level','LevelController')->middleware('auth');
 
 //category route
+
+
 Route::resource('category','CategoryController')->middleware('auth');
+
+//product route
+Route::resource('product','CategoryController')->middleware('auth');
 
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');
