@@ -413,12 +413,6 @@
 <script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>
 
-    $('#some_students').change('checked', function () {
-        $('.select-wrapper').fadeIn();
-    })
-    $('#all_students').change('checked', function () {
-        $('.select-wrapper').fadeOut();
-    })
 </script>
 @stack('custosm-scripts')
 </body>

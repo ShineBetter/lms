@@ -45,7 +45,7 @@
                                                 {{Form::label('quiz_start', 'زمان شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::time('quiz_start', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::time('quiz_start',  \Carbon\Carbon::now()->format('H:i'), ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -55,7 +55,7 @@
                                                 {{Form::label('quiz_exp', 'زمان پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::time('quiz_exp', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::time('quiz_exp',  \Carbon\Carbon::now()->addMinutes(10)->format('H:i'), ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -65,7 +65,7 @@
                                                 {{Form::label('quiz_start_date', 'تاریخ شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_start_date', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::date('quiz_start_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                                 {{Form::label('quiz_exp_date', 'تاریخ پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_exp_date', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::date('quiz_exp_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>

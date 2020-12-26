@@ -23,9 +23,9 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         @can('Admin')
-{{--                            <div class="card-box-shared-title">--}}
-                                <x-btn class="card-box-shared" route="quiz.create"/>
-{{--                            </div>--}}
+                            {{--                            <div class="card-box-shared-title">--}}
+                            <x-btn class="card-box-shared" route="quiz.create"/>
+                            {{--                            </div>--}}
                         @endcan
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -46,17 +46,19 @@
                                     <tbody>
                                     @foreach($data as $key => $item)
                                         @php
-                                            $start_time = Carbon::createFromTimestamp($item->quiz_start)->format('H:i');
-                                            $end_time = Carbon::createFromTimestamp($item->quiz_exp)->format('H:i');
-                                            $start_date = Carbon::createFromTimestamp($item->quiz_start_date)->format('Y-m-d');
-                                            $end_date = Carbon::createFromTimestamp($item->quiz_exp_date)->format('Y-m-d');
+                                            $start_time = Carbon::createFromTimestamp($item->quiz_start);
+                                            $end_time = Carbon::createFromTimestamp($item->quiz_exp);
+                                            $start_date = Carbon::createFromTimestamp($item->quiz_start_date);
+                                            $end_date = Carbon::createFromTimestamp($item->quiz_exp_date);
+                                            $now = \Carbon\Carbon::now();
                                         @endphp
-                                        @if($item->quiz_permission == 'all')
+                                        @if($item->quiz_permission == 'all' || \Illuminate\Support\Facades\Gate::check('Admin'))
                                             <tr>
                                                 <td scope="row">
                                                     <div class="statement-info">
                                                         <ul class="list-items">
                                                             <li class="mb-1">
+
                                                                 <p>{{ $key + $data->firstItem() }}</p>
                                                             </li>
                                                         </ul>
@@ -72,28 +74,28 @@
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$start_time}}</li>
+                                                            <li>{{$start_time->format('H:i')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$end_time}}</li>
+                                                            <li>{{$end_time->format('H:i')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$start_date}}</li>
+                                                            <li>{{$start_date->format('Y-m-d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$end_date}}</li>
+                                                            <li>{{$end_date->format('Y-m-d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -129,13 +131,16 @@
                                                                             style="font-size: 15px;font-family: Tahoma"
                                                                             value="ویرایش"></a>
                                                                 @endcan
-                                                                @if($item->pay_status == 1)
-                                                                    @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
-                                                                        {{Form::open(['route' => 'quiz','method' => 'post'])}}
-                                                                        <input type="hidden" name="quiz_id"
-                                                                               value="{{$item->id}}">
-                                                                        {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
-                                                                        {{ Form::close() }}
+                                                                @if($item->pay_status == 1 && $start_date->year <= $now->year && $start_date->month <= $now->month && $start_date->day <= $now->day && $end_date->year >= $now->year && $end_date->month >= $now->month && $end_date->day >= $now->day)
+                                                                    @if($item->quiz_start <= $now->timestamp && $item->quiz_exp >= $now->timestamp)
+
+                                                                        @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                            <input type="hidden" name="quiz_id"
+                                                                                   value="{{$item->id}}">
+                                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                            {{ Form::close() }}
+                                                                        @endif
                                                                     @endif
                                                                 @else
                                                                     {{Form::open(['route' => 'examPay','method' => 'post'])}}
@@ -152,110 +157,117 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @elseif($item->quiz_permission == 'same')
+                                        @else
                                             @php($user_quiz = DB::table('user_quiz')->where('quiz_id',$item->id)->first())
-                                            @if($user_quiz != null && $user_quiz->user_id == auth()->id())
-                                                <tr>
-                                                    <td scope="row">
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li class="mb-1">
-                                                                    <p>{{ $key + $data->firstItem() }}</p>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>{{$item->quiz_name}}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>{{$start_time}}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>{{$end_time}}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>{{$start_date}}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>{{$end_date}}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                @if($item->user_id != null)
-                                                                    <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
-                                                                @else
-                                                                    <li>مشخص نشده است</li>
-                                                                @endif
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                @if($item->last_editor_user_id != null)
-                                                                    <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
-                                                                @else
-                                                                    <li>ویرایش نشده است</li>
-                                                                @endif
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statement-info">
-                                                            <ul class="list-items">
-                                                                <li>
-                                                                    @can('Admin')
-                                                                        <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                                type="button" class="btn btn-info"
-                                                                                style="font-size: 15px;font-family: Tahoma"
-                                                                                value="ویرایش"></a>
-                                                                    @endcan
-                                                                    @if($item->pay_status == 1)
-                                                                        @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
-                                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
-                                                                            <input type="hidden" name="quiz_id"
-                                                                                   value="{{$item->id}}">
-                                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
-                                                                            {{ Form::close() }}
-                                                                        @endif
+                                            @if($user_quiz != null)
+                                                @if($user_quiz->user_id == Auth::id())
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li class="mb-1">
+                                                                        <p>{{ $key + $data->firstItem() }}</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>{{$item->quiz_name}}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>{{$start_time->format('H:i')}}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>{{$end_time->format('H:i')}}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>{{$start_date->format('Y-m-d')}}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>{{$end_date->format('Y-m-d')}}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    @if($item->user_id != null)
+                                                                        <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
                                                                     @else
-                                                                        {{Form::open(['route' => 'examPay','method' => 'post'])}}
-                                                                        <input type="hidden" name="quiz_id"
-                                                                               value="{{$item->id}}">
-                                                                        {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
-                                                                        {{ Form::close() }}
+                                                                        <li>مشخص نشده است</li>
                                                                     @endif
-                                                                    @can('Admin')
-                                                                        <x-delbtn route="quiz.destroy"
-                                                                                  id="{{$item->id}}"/>
-                                                                    @endcan
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    @if($item->last_editor_user_id != null)
+                                                                        <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
+                                                                    @else
+                                                                        <li>ویرایش نشده است</li>
+                                                                    @endif
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="statement-info">
+                                                                <ul class="list-items">
+                                                                    <li>
+                                                                        @can('Admin')
+                                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                                                    type="button" class="btn btn-info"
+                                                                                    style="font-size: 15px;font-family: Tahoma"
+                                                                                    value="ویرایش"></a>
+                                                                        @endcan
+                                                                        @if($start_date->year <= $now->year && $start_date->month <= $now->month && $start_date->day <= $now->day && $end_date->year >= $now->year && $end_date->month >= $now->month && $end_date->day >= $now->day && $item->quiz_start <= $now->timestamp && $item->quiz_exp >= $now->timestamp)
+                                                                            @if($item->pay_status == 1)
+                                                                                @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                                    {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                                    <input type="hidden"
+                                                                                           name="quiz_id"
+                                                                                           value="{{$item->id}}">
+                                                                                    {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                                    {{ Form::close() }}
+                                                                                @endif
+                                                                            @else
+                                                                                {{Form::open(['route' => 'examPay','method' => 'post'])}}
+                                                                                <input type="hidden" name="quiz_id"
+                                                                                       value="{{$item->id}}">
+                                                                                {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
+                                                                                {{ Form::close() }}
+                                                                            @endif
+                                                                        @endif
+
+                                                                        @can('Admin')
+                                                                            <x-delbtn
+                                                                                route="quiz.destroy"
+                                                                                id="{{$item->id}}"/>
+                                                                        @endcan
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                             @endif
                                         @endif
                                     @endforeach

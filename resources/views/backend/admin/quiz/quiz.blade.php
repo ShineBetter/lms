@@ -265,7 +265,7 @@
             </div>
         </div>
     @else
-        <p class="text-center ">آزمون بسته است</p>
+        <p class="text-center m-5 p-5 text-white bg-danger ">آزمون بسته است</p>
     @endif
     <script>
 
