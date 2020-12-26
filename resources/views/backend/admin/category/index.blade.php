@@ -3,10 +3,11 @@
 @section('cntd')
     @parent
     @php
-        $header="";
-        $loader="dont";
-        $sidebar="";
-        $sidebar="";
+        use AliBayat\LaravelCategorizable\Category;
+            $header="";
+            $loader="dont";
+            $sidebar="";
+            $sidebar="";
     @endphp
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
@@ -31,6 +32,7 @@
                                     <tr>
                                         <th scope="col">ردیف</th>
                                         <th scope="col">دسته بندی</th>
+                                        <th scope="col">زیر دسته</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -50,6 +52,17 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>{{$item->name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->parent_id != null)
+                                                        <li>{{Category::where('id',$item->parent_id)->first()->name}}</li>
+                                                        @else
+                                                        <li>تعریف نشده است</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </td>

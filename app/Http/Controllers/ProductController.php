@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createCategoryRequest;
 use App\Http\Requests\editQuestionRequest;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use AliBayat\LaravelCategorizable\Category;
 use phpDocumentor\Reflection\DocBlock\Tags\Version;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
