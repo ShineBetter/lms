@@ -83,6 +83,35 @@
                             class="la la-power-off"></i>
                         <p class="w-100">خروج</p>
                     </a></li>
+{{--                ///////////////////--}}
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
+                            class="la la-graduation-cap"></i>
+                        <p class="w-100">دوره های ثبت نام شده</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-message"><i class="la la-bell"></i>
+                        <p class="w-100">پیام ها</p> <span class="badge badge-info radius-rounded p-1 ml-1">2</span>
+                    </a>
+                </li>
+                <li class="sidenav__item"><a class="text-center" href="/dashboard-reviews"><i class="la la-star"></i>
+                        <p class="w-100">دوره های تایید شده</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('mainpage.index') }}"><i class="la la-dollar"></i>
+                        <p class="w-100">3 ستون صفحه اصلی</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('mainCount.index') }}"><i class="la la-money"></i>
+                        <p class="w-100">اسلایدر صفحه اصلی</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('formFree.index') }}"><i
+                            class="la la-shopping-cart"></i>
+                        <p class="w-100">علاقه مندان به دوره رایگان</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('formNews.index') }}"><i
+                            class="la la-plus-circle"></i>
+                        <p class="w-100">داوطلبان دریافت اخبار</p>
+                    </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('formFaq.index') }}"><i class="la la-cog"></i>
+                        <p class="w-100">درخواست مشاوره</p>
+                    </a></li>
             </ul>
         </div><!-- end side-menu-wrap -->
         @endcan
