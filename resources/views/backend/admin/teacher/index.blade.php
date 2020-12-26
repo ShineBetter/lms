@@ -85,20 +85,69 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('teacher.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
-                                                            <a href="{{route('teacher-warn',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="اخطار"></a>
-                                                            <a href="{{route('teacher-kick',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="اخراج"></a>
-                                                            <x-btn type="" route="userLessons.index" routeParam="{{$item->id}}" class="btn-info" title="دروس"/>
-                                                            <x-delbtn route="teacher.destroy" id="{{$item->id}}"/>
+{{--                                                            <a href="{{route('teacher.edit',$item->id)}}"><input--}}
+{{--                                                                    type="button" class="btn btn-info"--}}
+{{--                                                                    style="font-size: 15px;font-family: Tahoma"--}}
+{{--                                                                    value="ویرایش"></a>--}}
+                                                            <a href="{{route('teacher.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                            </a>
+{{--                                                            <button type="button"--}}
+{{--                                                                    user-name="{{$profile->name}} {{$profile->lastName}}"--}}
+{{--                                                                     user-id="{{$item->id}}"--}}
+{{--                                                                    class="btn btn-warning teacher-warn-btn">اخطار--}}
+{{--                                                            </button>--}}
+                                                            <a href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="اخطار" user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                               user-id="{{$item->id}}">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-notif"><i class="fas fa-exclamation-triangle"></i></span>
+                                                                <span class="flip-backnotif"><i class="fas fa-exclamation"></i></span>
+                                                            </a>
+                                                            @if($item->kick == 0)
+{{--                                                                <button type="button"--}}
+{{--                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"--}}
+{{--                                                                        user-id="{{$item->id}}"--}}
+{{--                                                                        kicked="0"--}}
+{{--                                                                        class="btn btn-danger teacher-kick-btn">اخراج--}}
+{{--                                                                </button>--}}
+                                                                <button href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="اخراج"  user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                                        user-id="{{$item->id}}"
+                                                                        kicked="0">
+                                                                    <span class="text-edit"></span>
+                                                                    <span class="flip-alarm"><i class="fas fa-times-circle"></i></span>
+                                                                    <span class="flip-exit"><i class="fas fa-times"></i></span>
+                                                                </button>
+                                                            @elseif($item->kick == 1)
+{{--                                                                <button type="button"--}}
+{{--                                                                        user-name="{{$profile->name}} {{$profile->lastName}}"--}}
+{{--                                                                        user-id="{{$item->id}}"--}}
+{{--                                                                        kicked="1"--}}
+{{--                                                                        class="btn btn-danger teacher-kick-btn">بازگشت کاربر--}}
+{{--                                                                </button>--}}
+                                                                <button href="#" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="بازگشتن" user-name="{{$profile->name}} {{$profile->lastName}}"
+                                                                        user-id="{{$item->id}}"
+                                                                        kicked="1">
+                                                                    <span class="text-edit"></span>
+                                                                    <span class="flip-alarm"><i class="fas fa-undo-alt"></i></span>
+                                                                    <span class="flip-exit"><i class="fas fa-trash-restore-alt"></i></span>
+                                                                </button>
+                                                            @endif
+                                                            <a href="{{route('userLessons.index',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="دروس">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-lesson"><i class="fas fa-book-reader"></i></span>
+                                                                <span class="flip-backlesson"><i class="fas fa-book"></i></span>
+                                                            </a>
+{{--                                                            <x-btn type="" route="userLessons.index"--}}
+{{--                                                                   routeParam="{{$item->id}}" class="btn-info"--}}
+{{--                                                                   title="دروس"/>--}}
+{{--                                                            <x-delbtn route="teacher.destroy" id="{{$item->id}}"/>--}}
+                                                            <a href="{{route('teacher.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>

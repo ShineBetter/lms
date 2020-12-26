@@ -19,6 +19,30 @@ class studentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function setWarn(Request $request, $id, $text)
+    {
+        if ($request->ajax()) {
+            $user = User::where('id', $id)->first();
+            $user->warn = 1;
+            $user->warn_text = $text;
+            $user->save();
+        }
+    }
+
+    public function kick(Request $request,$id,$status)
+    {
+        if ($request->ajax()) {
+            $user = User::where('id', $id)->first();
+
+            if ($status == 'kick') {
+                $user->kick = 1;
+            }
+            elseif ($status == 'back'){
+                $user->kick = 0;
+            }
+            $user->save();
+        }
+    }
 
     public function index()
     {

@@ -3,8 +3,6 @@
 @section('cnt')
     @php
         $loader="dont";
-
-
     @endphp
 <!--======================================
         START HEADER AREA
@@ -19,69 +17,110 @@
          START SLIDER AREA
 =================================-->
 <section class="slider-area">
-    <div class="hero-slide owl-dot-and-nav">
-        <div class="single-slide-item slide-bg1">
-            <div class="container">
+{{--    <div class="hero-slide owl-dot-and-nav">--}}
+{{--        <div class="single-slide-item slide-bg1">--}}
+{{--            <div class="container">--}}
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-heading">
-                            <h2 class="section__title text-white">سلام به اموزشگاه میربلند <br> خوش امدید</h2>
-                            <p class="section__desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                                <br>اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        <div class="w3-content w3-display-container">
+                    <div class="w3-display-container">
+                        <img class="mySlides w3-animate-fading" src="/images/img3.jpg" style="width:100%">
+{{--                            <div class="w3-display-middle w3-container w3-padding-16 w3-black">--}}
+{{--                                French Alps--}}
+{{--                            </div>--}}
+                    </div>
+                    <div class="w3-display-container">
+                        <img class="mySlides w3-animate-fading" src="/images/img2.jpg" style="width:100%">
+                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
+                          <h2>
+                              به آموزشگاه میربلندی خوش آمدید
+                          </h2>
+                            <p>
+                                این آموزشگاه شما را به سمت هدف سوق میدهد...
                             </p>
                         </div>
-                        <div class="btn-box d-flex align-items-center">
-{{--                            <a href="/admission" class="theme-btn theme-btn-hover-light">برای عضویت در سایت ما</a>--}}
+                    </div>
+                    <div class="w3-display-container">
+                        <img class="mySlides w3-animate-fading" src="/images/img1.jpg" style="width:100%">
+{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
+{{--                            <h2>--}}
+{{--                                به آموزشگاه میربلندی خوش آمدید--}}
+{{--                            </h2>--}}
+{{--                            <p>--}}
+{{--                                این آموزشگاه شما را به سمت هدف سوق میدهد...--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+                    </div>
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+
+                    </div>
+                    {{--                    </div><!-- col-lg-12 -->--}}
+                </div><!-- row -->
+{{--            </div><!-- container -->--}}
+{{--        </div><!-- end single-slide-item -->--}}
+{{--        <div class="single-slide-item slide-bg2">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="section-heading text-center">--}}
+{{--                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>--}}
+{{--                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                                <br>زمان مورد نیاز شامل حروفچینی--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                        <div class="btn-box d-flex align-items-center justify-content-center">--}}
+{{--                            <a href="../admission.blade.php" class="theme-btn theme-btn-hover-light">شروع کن</a>--}}
 {{--                            <a href="home-rtl#" class="btn-text video-play-btn ml-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=cRXm1p-CNyk" data-speed="700">--}}
 {{--                                Watch Preview<i class="la la-play icon-btn ml-2"></i>--}}
 {{--                            </a>--}}
-                        </div>
-                    </div><!-- col-lg-12 -->
-                </div><!-- row -->
-            </div><!-- container -->
-        </div><!-- end single-slide-item -->
-        <div class="single-slide-item slide-bg2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-heading text-center">
-                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>
-                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                                <br>زمان مورد نیاز شامل حروفچینی
-                            </p>
-                        </div>
-                        <div class="btn-box d-flex align-items-center justify-content-center">
-                            <a href="../admission.blade.php" class="theme-btn theme-btn-hover-light">شروع کن</a>
-{{--                            <a href="home-rtl#" class="btn-text video-play-btn ml-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=cRXm1p-CNyk" data-speed="700">--}}
-{{--                                Watch Preview<i class="la la-play icon-btn ml-2"></i>--}}
-{{--                            </a>--}}
-                        </div>
-                    </div><!-- col-lg-12 -->
-                </div><!-- row -->
-            </div><!-- container -->
-        </div><!-- end single-slide-item -->
-        <div class="single-slide-item slide-bg3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-heading text-right">
-                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>
-                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                                <br>زمان مورد نیاز شامل حروفچینی
-                            </p>
-                        </div>
-                        <div class="btn-box hero-btn-right d-flex align-items-center justify-content-end">
+{{--                        </div>--}}
+{{--                    </div><!-- col-lg-12 -->--}}
+{{--                </div><!-- row -->--}}
+{{--            </div><!-- container -->--}}
+{{--        </div><!-- end single-slide-item -->--}}
+{{--        <div class="single-slide-item slide-bg3">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="section-heading text-right">--}}
+{{--                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>--}}
+{{--                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                                <br>زمان مورد نیاز شامل حروفچینی--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                        <div class="btn-box hero-btn-right d-flex align-items-center justify-content-end">--}}
 {{--                            <a href="home-rtl#" class="btn-text video-play-btn mr-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=cRXm1p-CNyk" data-speed="700">--}}
 {{--                                <i class="la la-play icon-btn mr-2"></i>Watch Preview--}}
 {{--                            </a>--}}
-                            <a href="/admission" class="theme-btn theme-btn-hover-light">عصویت</a>
-                        </div>
-                    </div><!-- col-lg-12 -->
-                </div><!-- row -->
-            </div><!-- container -->
-        </div><!-- end single-slide-item -->
-    </div><!-- end hero-slide -->
+{{--                            <a href="/admission" class="theme-btn theme-btn-hover-light">عصویت</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- col-lg-12 -->--}}
+{{--                </div><!-- row -->--}}
+{{--            </div><!-- container -->--}}
+{{--        </div><!-- end single-slide-item -->--}}
+{{--    </div><!-- end hero-slide -->--}}
 </section><!-- end slider-area -->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+    </script>
 <!--================================
         END SLIDER AREA
 =================================-->
@@ -1876,275 +1915,275 @@
 <!--======================================
         START COURSE AREA
 ======================================-->
-<section class="course-area padding-top-120px">
-    <div class="course-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h5 class="section__meta">پر فروش ترین </h5>
-                        <h2 class="section__title">پر فروش ترین محصولات</h2>
-                        <span class="section-divider"></span>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row margin-top-28px ltr">
-                <div class="col-lg-12">
-                    <div class="tab-content">
-                        <div class="course-carousel owl-dot-and-nav">
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>
-                                    <div class="card-badge">
-                                        <span class="badge-label">bestseller</span>
-                                    </div>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
-                                <div class="card-image">
-                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                    <div class="card-badge">
-                                        <span class="badge-label">highest rated</span>
-                                    </div>
-                                </div><!-- end card-image -->
-                                <div class="card-content">
-                                    <p class="card__label">
-                                        <span class="card__label-text">استاندارد</span>
-                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                    </p>
-                                    <h3 class="card__title">
-                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
-                                    </h3>
-                                    <p class="card__author">
-                                        <a href="teacher-detail">استاد سماواتی</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex mt-2 mb-3">
-                                        <ul class="review-stars">
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star"></span></li>
-                                            <li><span class="la la-star-o"></span></li>
-                                        </ul>
-                                        <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                    </div><!-- end rating-wrap -->
-                                    <div class="card-action">
-                                        <ul class="card-duration d-flex justify-content-between align-items-center">
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                            </li>
-                                            <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div><!-- end card-action -->
-                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                        <span class="card__price">58.00تومان</span>
-                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
-                                    </div><!-- end card-price-wrap -->
-                                </div><!-- end card-content -->
-                            </div><!-- end card-item -->
-                        </div><!-- end course-carousel -->
-                    </div><!-- end tab-content -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end course-wrapper -->
-</section><!-- end courses-area -->
+{{--<section class="course-area padding-top-120px">--}}
+{{--    <div class="course-wrapper">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="section-heading text-center">--}}
+{{--                        <h5 class="section__meta">پر فروش ترین </h5>--}}
+{{--                        <h2 class="section__title">پر فروش ترین محصولات</h2>--}}
+{{--                        <span class="section-divider"></span>--}}
+{{--                    </div><!-- end section-heading -->--}}
+{{--                </div><!-- end col-lg-12 -->--}}
+{{--            </div><!-- end row -->--}}
+{{--            <div class="row margin-top-28px ltr">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="tab-content">--}}
+{{--                        <div class="course-carousel owl-dot-and-nav">--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>--}}
+{{--                                    <div class="card-badge">--}}
+{{--                                        <span class="badge-label">bestseller</span>--}}
+{{--                                    </div>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                <div class="card-image">--}}
+{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                    <div class="card-badge">--}}
+{{--                                        <span class="badge-label">highest rated</span>--}}
+{{--                                    </div>--}}
+{{--                                </div><!-- end card-image -->--}}
+{{--                                <div class="card-content">--}}
+{{--                                    <p class="card__label">--}}
+{{--                                        <span class="card__label-text">استاندارد</span>--}}
+{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                    </p>--}}
+{{--                                    <h3 class="card__title">--}}
+{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                    </h3>--}}
+{{--                                    <p class="card__author">--}}
+{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                    </p>--}}
+{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                        <ul class="review-stars">--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star"></span></li>--}}
+{{--                                            <li><span class="la la-star-o"></span></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                    </div><!-- end rating-wrap -->--}}
+{{--                                    <div class="card-action">--}}
+{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div><!-- end card-action -->--}}
+{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                        <span class="card__price">58.00تومان</span>--}}
+{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                    </div><!-- end card-price-wrap -->--}}
+{{--                                </div><!-- end card-content -->--}}
+{{--                            </div><!-- end card-item -->--}}
+{{--                        </div><!-- end course-carousel -->--}}
+{{--                    </div><!-- end tab-content -->--}}
+{{--                </div><!-- end col-lg-12 -->--}}
+{{--            </div><!-- end row -->--}}
+{{--        </div><!-- end container -->--}}
+{{--    </div><!-- end course-wrapper -->--}}
+{{--</section><!-- end courses-area -->--}}
 <!--======================================
         END COURSE AREA
 ======================================-->
@@ -2155,32 +2194,38 @@
 <section class="funfact-area text-center overflow-hidden padding-top-85px padding-bottom-85px">
     <div class="container">
         <div class="row">
+            @php
+    $count1=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",1)->first();
+    $count2=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",2)->first();
+    $count3=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",3)->first();
+    $count4=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",4)->first();
+            @endphp
             <div class="col-lg-3 column-td-half">
                 <div class="counter-item">
                     <span class="la la-bullhorn count__icon"></span>
-                    <h4 class="count__title counter">520</h4>
-                    <p class="count__meta">دانش اموز</p>
+                    <h4 class="count__title counter">{{$count4->count}}</h4>
+                    <p class="count__meta">{{$count4->text}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 column-td-half">
                 <div class="counter-item">
                     <span class="la la-globe count__icon"></span>
-                    <h4 class="count__title counter text-color">552</h4>
-                    <p class="count__meta">دوره اموزشی</p>
+                    <h4 class="count__title counter text-color">{{$count3->count}}</h4>
+                    <p class="count__meta">{{$count3->text}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 column-td-half">
                 <div class="counter-item">
                     <span class="la la-users count__icon"></span>
-                    <h4 class="count__title counter text-color-2">97</h4>
-                    <p class="count__meta">دبیر</p>
+                    <h4 class="count__title counter text-color-2">{{$count2->count}}</h4>
+                    <p class="count__meta">{{$count2->text}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 column-td-half">
                 <div class="counter-item">
                     <span class="la la-certificate count__icon"></span>
-                    <h4 class="count__title counter text-color-3">20</h4>
-                    <p class="count__meta">سال سابقه درخشان</p>
+                    <h4 class="count__title counter text-color-3">{{$count1->count}}</h4>
+                    <p class="count__meta">{{$count1->text}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
         </div><!-- end row -->
@@ -2350,342 +2395,345 @@
 <!--================================
          START TESTIMONIAL AREA
 =================================-->
-<section class="testimonial-area section-bg padding-top-120px padding-bottom-110px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h5 class="section__meta">نظرات</h5>
-                    <h2 class="section__title">نظرات شما <br> درباره ما</h2>
-                    <span class="section-divider"></span>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-    <div class="container-fluid">
-        <div class="row margin-top-28px ltr">
-            <div class="col-lg-12">
-                <div class="testimonial-carousel">
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img2.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img3.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img4.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img5.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img6.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img2.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img3.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img4.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img5.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img6.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img2.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-header">
-                            <img src="/images/testi-img3.jpg" alt="small-avatar">
-                            <div class="testimonial__name">
-                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>
-                                <span class="testimonial__name-meta">دانش اموز</span>
-                                <ul class="review-stars d-inline-block">
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star"></span></li>
-                                    <li><span class="la la-star-o"></span></li>
-                                </ul>
-                            </div>
-                        </div><!-- end testimonial-header -->
-                        <div class="testimonial__desc">
-                            <p class="testimonial__desc-desc">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                            </p>
-                        </div><!-- end testimonial__desc -->
-                    </div><!-- end testimonial-item -->
-                </div><!-- end testimonial-wrap -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- container-fluid -->
-</section><!-- end testimonial-area -->
+
+{{--     نظرات --}}
+{{--<section class="testimonial-area section-bg padding-top-120px padding-bottom-110px">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="section-heading text-center">--}}
+{{--                    <h5 class="section__meta">نظرات</h5>--}}
+{{--                    <h2 class="section__title">نظرات شما <br> درباره ما</h2>--}}
+{{--                    <span class="section-divider"></span>--}}
+{{--                </div><!-- end section-heading -->--}}
+{{--            </div><!-- end col-lg-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--    </div><!-- end container -->--}}
+{{--    <div class="container-fluid">--}}
+{{--        <div class="row margin-top-28px ltr">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="testimonial-carousel">--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img2.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img3.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img4.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img5.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img6.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img2.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img3.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img4.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img5.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img6.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img2.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                    <div class="testimonial-item">--}}
+{{--                        <div class="testimonial-header">--}}
+{{--                            <img src="/images/testi-img3.jpg" alt="small-avatar">--}}
+{{--                            <div class="testimonial__name">--}}
+{{--                                <h3 class="testimonial__name-title">کیوان معتمدی</h3>--}}
+{{--                                <span class="testimonial__name-meta">دانش اموز</span>--}}
+{{--                                <ul class="review-stars d-inline-block">--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star"></span></li>--}}
+{{--                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end testimonial-header -->--}}
+{{--                        <div class="testimonial__desc">--}}
+{{--                            <p class="testimonial__desc-desc">--}}
+{{--                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
+{{--                            </p>--}}
+{{--                        </div><!-- end testimonial__desc -->--}}
+{{--                    </div><!-- end testimonial-item -->--}}
+{{--                </div><!-- end testimonial-wrap -->--}}
+{{--            </div><!-- end col-lg-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--    </div><!-- container-fluid -->--}}
+{{--</section><!-- end testimonial-area -->--}}
+{{--    پایان نظرات--}}
 <!--================================
         END TESTIMONIAL AREA
 =================================-->
@@ -2921,227 +2969,234 @@
 <!-- ================================
        START BLOG AREA
 ================================= -->
-<section class="blog-area padding-top-120px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h5 class="section__meta section__metalight">جدید ترین</h5>
-                    <h2 class="section__title text-white">جدیدترین محصولات</h2>
-                    <span class="section-divider section-divider-light"></span>
-                </div><!-- end section-heading -->
-            </div><!-- end col-md-12 -->
-        </div><!-- end row -->
-        <div class="row margin-top-30px ltr">
-            <div class="col-lg-12">
-                <div class="blog-post-carousel owl-dot-and-nav">
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
+
+
+
+{{--    جدیدترین محصولات--}}
+{{--<section class="blog-area padding-top-120px">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="section-heading text-center">--}}
+{{--                    <h5 class="section__meta section__metalight">جدید ترین</h5>--}}
+{{--                    <h2 class="section__title text-white">جدیدترین محصولات</h2>--}}
+{{--                    <span class="section-divider section-divider-light"></span>--}}
+{{--                </div><!-- end section-heading -->--}}
+{{--            </div><!-- end col-md-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--        <div class="row margin-top-30px ltr">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="blog-post-carousel owl-dot-and-nav">--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
 {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
-                    <div class="card-item blog-card">
-                        <div class="card-image">
-                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                            <div class="card-badge">
-                                <span class="badge-label">24 ابان</span>
-                            </div>
-                        </div><!-- end card-image -->
-                        <div class="card-content">
-                            <h3 class="card__title mt-0">
-                                <a href="../blog-single.blade.php">همایش زیست دهم</a>
-                            </h3>
-                            <div class="card-action">
-                                <ul class="card-duration d-flex align-items-center">
-                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>
-                                    {{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
-                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>
-                                </ul>
-                            </div><!-- end card-action -->
-                        </div><!-- end card-content -->
-                    </div><!-- end card-item -->
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
+{{--                    <div class="card-item blog-card">--}}
+{{--                        <div class="card-image">--}}
+{{--                            <a href="../blog-single.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
+{{--                            <div class="card-badge">--}}
+{{--                                <span class="badge-label">24 ابان</span>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end card-image -->--}}
+{{--                        <div class="card-content">--}}
+{{--                            <h3 class="card__title mt-0">--}}
+{{--                                <a href="../blog-single.blade.php">همایش زیست دهم</a>--}}
+{{--                            </h3>--}}
+{{--                            <div class="card-action">--}}
+{{--                                <ul class="card-duration d-flex align-items-center">--}}
+{{--                                    <li>By<a href="home-rtl#" class="blog-admin-name">دبیر: یوسفی</a></li>--}}
+{{--                                    --}}{{--                                    <li><span class="blog__panel-comment">4 Comments</span></li>--}}
+{{--                                    <li><span class="blog__panel-likes">ظرفیت محدود</span></li>--}}
+{{--                                </ul>--}}
+{{--                            </div><!-- end card-action -->--}}
+{{--                        </div><!-- end card-content -->--}}
+{{--                    </div><!-- end card-item -->--}}
 
 
-                </div><!-- end blog-post-carousel -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end blog-area -->
+{{--                </div><!-- end blog-post-carousel -->--}}
+{{--            </div><!-- end col-lg-12 -->--}}
+{{--        </div><!-- end row -->--}}
+{{--    </div><!-- end container -->--}}
+{{--</section><!-- end blog-area -->--}}
+{{--    پایان جدید ترین محصولات--}}
+
+
 <!-- ================================
        START BLOG AREA
 ================================= -->
@@ -3575,9 +3630,9 @@
 <script src="/js/bootstrap-select.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="/js/isotope.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="/js/isotope.js"></script>
 <script src="/js/waypoint.min.js"></script>
 <script src="/js/jquery.counterup.min.js"></script>
 <script src="/js/particles.min.js"></script>

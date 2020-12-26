@@ -33,8 +33,19 @@ Route::post('user/register','FrontEndController@registerSubmit')->name('register
 Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
-Route::get('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
+Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
+Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
+Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
 Route::resource('quiz','QuizController')->middleware('auth');
+
+//questions route
+Route::resource('questions','QuestionsController')->middleware('auth');
+
+//quizResult route
+Route::resource('quizResult','QuizResultController')->middleware('auth');
+
 //role route
 Route::resource('role','RoleController')->middleware('auth');
 
@@ -55,6 +66,8 @@ Route::resource('parent','ParentsController')->middleware(['auth']);
 
 //teacher list route
 Route::resource('teacher','teacherController')->middleware('auth');
+Route::get('teacher/warn/{id}/{text}','teacherController@setWarn')->middleware('auth')->name('teacher-warn');
+Route::get('teacher/kick/{id}/{status}','teacherController@kick')->middleware('auth')->name('teacher-kick');
 Route::resource('ticket','TicketController')->middleware('auth');
 Route::get('teacher/warn/{id}','teacherController@setWarn')->middleware('auth')->name('teacher-warn');
 Route::get('ticket/close/{id}','TicketController@close')->middleware('auth')->name('ticket.close');
@@ -103,9 +116,9 @@ Route::get('/user/profile/delete/profile/image','profileController@deleteProfile
 Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
 
 Route::view('/teachers','webSit.teachers');
-Route::view('/teacher-detail','webSit.teacher-detail');
-Route::view('/student-quiz-result-details-2','student-quiz-result-details-2');
-Route::view('/student-quiz-result-details','webSit.student-quiz-result-details');
+Route::view('/teacher-detail/{id}','webSit.teacher-detail')->name("teacher-detail");
+Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
+//Route::view('/quizResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
 Route::view('/student-path-assessment','student-path-assessment');
 Route::view('/shopping-cart','shopping-cart');
@@ -147,7 +160,7 @@ Route::get("/aboutText","AboutTextController@index")->middleware("auth")->name("
 Route::get("/aboutText/edit/{id}","AboutTextController@edit")->middleware("auth")->name("aboutText.edit");
 Route::put("/aboutText/update{id}","AboutTextController@update")->middleware("auth")->name("aboutText.update");
 
-///////////midel col-4
+///////////midel col-4->ok
 Route::get("/midel-4","Midel4Controller@index")->middleware("auth")->name("midel-4.index");
 Route::get("/midel-4/edit/{id}","Midel4Controller@edit")->middleware("auth")->name("midel-4.edit");
 Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")->name("midel-4.update");

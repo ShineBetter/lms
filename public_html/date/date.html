@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-language" content="fa-IR">
+	<title>تقویم فارسی</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="js-persian-cal.css">
+	<script type="text/javascript" src="js-persian-cal.min.js"></script>
+</head>
+
+<body>
+	<div>
+		<label for="pcal1" class="date-picker">تاریخ را وارد کنید: </label><br>
+		<input type="text" id="pcal1" class="pdate"><br>
+		<hr>
+
+	</div>
+
+	<script type="text/javascript">
+		var objCal1 = new MDTB.persianCalendar( 'pcal1' );
+
+	</script>
+</body>
+
+</html>

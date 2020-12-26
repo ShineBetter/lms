@@ -25,21 +25,29 @@ class teacherController extends Controller
         return view('backend.admin.teacher.index', ['data' => $data]);
     }
 
-    public function warnSet($id)
+    public function setWarn(Request $request, $id, $text)
     {
+        if ($request->ajax()) {
         $user = User::where('id', $id)->first();
         $user->warn = 1;
+        $user->warn_text = $text;
         $user->save();
+        }
     }
-    public function kick($id)
-    {
-        $user = User::where('id', $id)->first();
-        $user->kick = 1;
-        $user->save();
-        $comment = 'دبیر با موفقیت اخراج شد ';
-        session()->flash('status', $comment);
-        return redirect()->route('teacher.index');
 
+    public function kick(Request $request,$id,$status)
+    {
+        if ($request->ajax()) {
+            $user = User::where('id', $id)->first();
+
+            if ($status == 'kick') {
+                $user->kick = 1;
+            }
+            elseif ($status == 'back'){
+                $user->kick = 0;
+            }
+            $user->save();
+        }
     }
 
     /**
@@ -120,7 +128,7 @@ class teacherController extends Controller
                 'nullable',
                 'string',
                 'email',
-                Rule::unique('users','email')->ignore($id),
+                Rule::unique('users', 'email')->ignore($id),
             ],
         ];
         $message = [

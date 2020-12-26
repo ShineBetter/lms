@@ -45,132 +45,153 @@
 <section class="team-area section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team.jpg" alt="">
+            @php
+                $aboutTeachers=\Illuminate\Support\Facades\DB::table('about_teachers')->get()
+            @endphp
+            @foreach($aboutTeachers as $aboutTeacher)
+                <div class="col-lg-4 column-td-half">
+                    <div class="team-item">
+                        <div class="team-img-box">
+                            <img src="{{asset($aboutTeacher->picture)}}" alt="">
+                            <ul class="social-profile">
+                                <li class="text-white">{{$aboutTeacher->filed}}</li>
+                            </ul>
+                        </div>
+                        <div class="team-detail">
+                            <h3 class="team__title"><a href="teacher-detail.html">{{$aboutTeacher->header}}</a></h3>
+                            <p class="team__meta">{{$aboutTeacher->filed}}</p>
+{{--                            <a href="{{route('teacher-detail',$aboutTeacher->id)}}" class="theme-btn theme-btn-light" >--}}
+                                                    <a href="{{route('teacher-detail',$aboutTeacher->id)}}" class="theme-btn">پروفایل</a>
+                        </div>
+                    </div><!-- end team-item -->
+                </div>
+            @endforeach
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team2.jpg" alt="">
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team2.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team3.jpg" alt="">
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team3.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team4.jpg" alt="">
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team4.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team5.jpg" alt="">
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team5.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team6.jpg" alt="">
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
+{{--            <div class="col-lg-4 column-td-half">--}}
+{{--                <div class="team-item">--}}
+{{--                    <div class="team-img-box">--}}
+{{--                        <img src="/images/team6.jpg" alt="">--}}
 {{--                        <ul class="social-profile">--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-instagram"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="far fa-envelope"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fab fa-telegram-plane"></i></a></li>--}}
 {{--                            <li><a href="teachers.html#"><i class="fas fa-phone"></i></a></li>--}}
 {{--                        </ul>--}}
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی
-                        </p>
+{{--                    </div>--}}
+{{--                    <div class="team-detail">--}}
+{{--                        <h3 class="team__title"><a href="teacher-detail.html">کرامتی</a></h3>--}}
+{{--                        <p class="team__meta">شیمی</p>--}}
+{{--                        <p class="team__text">--}}
+{{--                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی--}}
+{{--                        </p>--}}
 {{--                        <a href="teacher-detail.html" class="theme-btn">پروفایل</a>--}}
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
+{{--                    </div>--}}
+{{--                </div><!-- end team-item -->--}}
+{{--            </div><!-- end col-lg-4 -->--}}
         </div><!-- end row -->
         <div class="row">
             <div class="col-lg-12">

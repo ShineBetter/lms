@@ -28,8 +28,22 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/tooltipster.bundle.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/line-awesome.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/animate.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/owl.theme.default.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-select.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/magnific-popup.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/fancybox.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/jquery.filer.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/tooltipster.bundle.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/jqvmap.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- end inject -->
     <style>
 

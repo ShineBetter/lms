@@ -20,6 +20,11 @@ class CreateQuizzesTable extends Migration
             $table->string('quiz_exp')->nullable();
             $table->string('quiz_start_date')->nullable();
             $table->string('quiz_exp_date')->nullable();
+            $table->string('quiz_permission')->nullable()->default('all');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('last_editor_user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('last_editor_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

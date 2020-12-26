@@ -22,9 +22,9 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         @can('Admin')
-                        <div class="card-box-shared-title">
-                            <x-btn route="quiz.create"/>
-                        </div>
+                            <div class="card-box-shared-title">
+                                <x-btn route="quiz.create"/>
+                            </div>
                         @endcan
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -33,8 +33,12 @@
                                     <tr>
                                         <th scope="col">ردیف</th>
                                         <th scope="col">آزمون</th>
+                                        <th scope="col">تایم شروع</th>
+                                        <th scope="col">تایم انقضا</th>
                                         <th scope="col">تاریخ شروع</th>
                                         <th scope="col">تاریخ انقضا</th>
+                                        <th scope="col">سازنده آزمون</th>
+                                        <th scope="col">آخرین ویرایشگر</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -74,11 +78,54 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
+                                                        <li>{{$item->quiz_start_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_exp_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->user_id != null)
+                                                            <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
+                                                        @else
+                                                            <li>مشخص نشده است</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->last_editor_user_id != null)
+                                                            <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
+                                                        @else
+                                                            <li>ویرایش نشده است</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
                                                         <li>
                                                             <a href="{{route('quiz.edit',$item->id)}}"><input
                                                                     type="button" class="btn btn-info"
                                                                     style="font-size: 15px;font-family: Tahoma"
                                                                     value="ویرایش"></a>
+                                                            @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                <input type="hidden" name="quiz_id"
+                                                                       value="{{$item->id}}">
+                                                                {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                {{ Form::close() }}
+                                                            @endif
                                                             <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
                                                         </li>
                                                     </ul>
