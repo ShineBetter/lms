@@ -11,6 +11,18 @@
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
+    <style>
+        .flip-login, .flip-plus {
+            position: absolute;
+            left: 49px;
+            top: -1em;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+    </style>
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
@@ -71,7 +83,7 @@
                                                                 <span class="flip-back"><i class="fas fa-pen-square"></i></span>
                                                             </a>
 
-                                                            <a href="{{route('lesson.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                            <a href="{{route('lesson.destroy',$item->id)}}" class="btn-edit trash" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
                                                                 <span class="text-edit"></span>
                                                                 <span class="flip-login"><i class="fas fa-user-times"></i></span>
                                                                 <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
