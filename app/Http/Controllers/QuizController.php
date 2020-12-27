@@ -19,8 +19,8 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $data = quiz::paginate(10);
-        return view('backend.admin.quiz.index', ['data' => $data]);
+        $data = quiz::all();
+        return view('backend.admin.quiz.index', ['data' => $data,'row' => 1]);
     }
 
     /**

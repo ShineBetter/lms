@@ -27,7 +27,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script src="{{asset("css/owl.carousel.min.js")}}"></script>
-
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
 <script>
 
@@ -37,6 +37,12 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    $(document).ready( function () {
+        $('.table').DataTable();
+    } );
+
+
     let number = $('.exam_question_number').html();
     let end_display = $('.exam_question_max_number').html();
     if (number == end_display) {

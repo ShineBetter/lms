@@ -19,7 +19,9 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "trez/raygan-sms": "^2.0",
+      "ext-soap": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
