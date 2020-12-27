@@ -107,15 +107,31 @@ class ProductController extends Controller
      */
     public function update(editQuestionRequest $request, $id)
     {
-        $product = new Product();
+        $product = Product::findOrFail($id);
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_discount = $request->product_discount;
-        $product->product_img = $request->product_img;
+        $file = $request->file('product_img');
+        if (!empty($file)){
+            $file_name = "images/product-image/product-photo-" . time() . '-' .$file->getClientOriginalName();
+            Image::make($file->getRealPath())->resize(200,200)->save($file_name);
+            $product->product_img = $file_name;
+        }
         $product->product_short_desc = $request->product_short_desc;
         $product->product_desc = $request->product_desc;
         $product->category_id = $request->category_id;
         $product->product_file = $request->product_file;
+        if ($request->product_count_status == 1){
+            $product->product_count = -1;
+        }else{
+            $product->product_count = $request->product_count;
+        }
+        if ($request->product_status == null){
+            $product->product_status = 0;
+        }else{
+            $product->product_status = 1;
+        }
+        $product->created_at = now()->timestamp;
         $product->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status',$comment);
@@ -134,5 +150,17 @@ class ProductController extends Controller
         $comment = 'عملیات حذف بدرستی انجام شد';
         session()->flash('status',$comment);
         return back();
+    }
+
+    public function changeProductStatus(Request $request)
+    {
+        $id = $request->id;
+        $product = Product::findOrFail($id);
+        if ($product->product_status == 0){
+            $product->product_status = 1;
+        }else{
+            $product->product_status = 0;
+        }
+        $product->save();
     }
 }

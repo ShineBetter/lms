@@ -1,5 +1,61 @@
 @extends('backend.admin.partial._master')
 @section('title','محصولات')
+@section('css')
+    <style>
+        .lbl {
+            position: relative;
+            display: block;
+            height: 20px;
+            width: 44px;
+            background: #898989;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lbl:after {
+            position: absolute;
+            left: -2px;
+            top: -3px;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 100px;
+            background: #fff;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+            content: '';
+            transition: all 0.3s ease;
+        }
+        .lbl:active:after {
+            transform: scale(1.15, 0.85);
+        }
+        .cbx:checked ~ label {
+            background: #6fbeb5;
+        }
+        .cbx:checked ~ label:after {
+            left: 20px;
+            background: #179588;
+        }
+        .cbx:disabled ~ label {
+            background: #d5d5d5;
+            pointer-events: none;
+        }
+        .cbx:disabled ~ label:after {
+            background: #bcbdbc;
+        }
+        .cntr {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .press {
+            margin-bottom: 40px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+@endsection
 @section('cntd')
     @parent
     @php
@@ -36,14 +92,16 @@
                                         <th scope="col">تخفیف</th>
                                         <th scope="col">تاریخ ثبت</th>
                                         <th scope="col">دسته بندی</th>
+                                        <th scope="col">موجودی انبار</th>
+                                        <th scope="col">وضعیت انتشار</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $item)
                                         @php
-                                        $discount_price = $item->product_price * $item->product_discount / 100;
-                                        $discount_price = $item->product_price - $discount_price;
+                                            $discount_price = $item->product_price * $item->product_discount / 100;
+                                            $discount_price = $item->product_price - $discount_price;
                                         @endphp
                                         <tr>
                                             <td scope="row">
@@ -86,7 +144,22 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->price}}</li>
+                                                        <li>{{Category::where('id',$item->category_id)->first()->name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->product_count == -1 ? 'نامحدود' : $item->product_count}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li><input type="checkbox" name="product_status" value="0" pid="{{$item->id}}" id="checked-{{$item->id}}" class="product_status_radio cbx hidden" {{$item->product_status == 1 ? 'checked' : ''}}/>
+                                                            <label for="checked-{{$item->id}}" class="lbl"></label></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -94,15 +167,22 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('product.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                            <a href="{{route('product.edit',$item->id)}}"
+                                                               class="btn-edit" data-bs-toggle="tooltip"
+                                                               data-bs-placement="top" title="ویرایش">
                                                                 <span class="text-edit"></span>
-                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
-                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                                <span class="flip-front"><i
+                                                                        class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i
+                                                                        class="fas fa-pen-square"></i></span>
                                                             </a>
 
-                                                            <button href="{{route('product.destroy',$item->id)}}" class="btn-edit trash" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                            <button href="{{route('product.destroy',$item->id)}}"
+                                                                    class="btn-edit trash" data-bs-toggle="tooltip"
+                                                                    data-bs-placement="top" title="حذف">
                                                                 <span class="text-edit"></span>
-                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-login"><i
+                                                                        class="fas fa-user-times"></i></span>
                                                                 <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
                                                             </button>
                                                         </li>

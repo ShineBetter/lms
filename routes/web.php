@@ -65,6 +65,7 @@ Route::resource('category','CategoryController')->middleware('auth');
 
 //product route
 Route::resource('product','ProductController')->middleware('auth');
+Route::post('product/status','ProductController@changeProductStatus')->middleware('auth');
 
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');

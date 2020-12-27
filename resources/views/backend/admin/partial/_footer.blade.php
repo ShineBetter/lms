@@ -377,6 +377,20 @@
             $('.statement-table').html($(data).find('.statement-table').html())
         });
     });
+    // change product status
+    $(document).on('click', '.product_status_radio', function (e) {
+        // e.preventDefault(); // does not go through with the link.
+        var $this = $(this);
+        $.post({
+            type: 'post',
+            url: 'product/status',
+            data: {
+                'id': $this.attr('pid'),
+            }
+        }).done(function (data) {
+            console.log(data)
+        });
+    });
 
     // ajax pagination
     $(document).on('click', '.pagination a', function (event) {
