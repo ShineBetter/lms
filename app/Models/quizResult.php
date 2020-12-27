@@ -17,9 +17,10 @@ class quizResult extends Model
         return $this->hasOne(quiz::class,'id');
     }
 
-    public function questions()
+    public function questions($quiz_id,$user_id)
     {
-        return $this->belongsTo(questions::class,'id');
+        $question_count = DB::table('user_question')->where(['quiz_id' => $quiz_id, 'user_id' => $user_id])->count();
+        return $question_count;
     }
 
     public function correct_answers($user_id,$quiz_id)

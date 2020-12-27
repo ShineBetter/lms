@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset("template_sit/css/tooltipster.bundle.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/jqvmap.css") }}">
     <link rel="stylesheet" href="{{ asset("template_sit/css/style.css") }}">
+
     <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}">
     <link rel="stylesheet" href="{{ asset("css/line-awesome.css") }}">
@@ -72,4 +73,3 @@
     </section>
 @show
 @includeWhen(empty($footer),'backend.admin.partial._footer')
-

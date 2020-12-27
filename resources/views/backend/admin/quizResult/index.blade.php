@@ -43,81 +43,83 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $item)
-                                        @php
-                                        $correct_answers = $item->correct_answers($item->user_id,$item->quiz_id);
-                                        $score = $item->score($item->user_id,$item->quiz_id);
-                                        @endphp
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li class="mb-1">
-                                                            <p>{{ $key + $data->firstItem() }}</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$item->quiz->quiz_name}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$item->users->profile->name}} {{$item->users->profile->lastName}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$item->questions->count()}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$correct_answers}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$item->questions->count() - $correct_answers}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>{{$score}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li class="{{$score >= 10?'text-success':'text-danger'}}">{{$score >= 10? 'قبول':'مردود'}}</li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="statement-info">
-                                                    <ul class="list-items">
-                                                        <li>
-                                                            <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    value="نمایش کارنامه"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @if($item != null)
+                                            @php
+                                                $correct_answers = $item->correct_answers($item->user_id,$item->quiz_id);
+                                                $score = $item->score($item->user_id,$item->quiz_id);
+                                            @endphp
+                                            <tr>
+                                                <td scope="row">
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li class="mb-1">
+                                                                <p>{{ $key + $data->firstItem() }}</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$item->quiz->quiz_name}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$item->users->profile->name}} {{$item->users->profile->lastName}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$item->questions($item->quiz_id,$item->user_id)}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$correct_answers}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$item->questions($item->quiz_id,$item->user_id) - $correct_answers}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>{{$score}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li class="{{$score >= 50?'text-success':'text-danger'}}">{{$score >= 50? 'قبول':'مردود'}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="statement-info">
+                                                        <ul class="list-items">
+                                                            <li>
+                                                                <a href="{{route('quiz.edit',$item->id)}}"><input
+                                                                        type="button" class="btn btn-info"
+                                                                        value="نمایش کارنامه"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>

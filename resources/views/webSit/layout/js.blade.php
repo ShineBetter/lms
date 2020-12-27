@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-select.min.js')}}" ></script>
+<script src="{{asset('js/owl.carousel.min.js')}}" defer></script>
+<script src="{{asset('js/isotope.js')}}"></script>
+<script src="{{asset('js/waypoint.min.js')}}"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('js/fancybox.js')}}"></script>
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/date-time-picker.js')}}"></script>
+<script src="{{asset('js/jquery.filer.min.js')}}"></script>
+<script src="{{asset('js/smooth-scrolling.js')}}"></script>
+<script src="{{asset('js/tooltipster.bundle.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
+=======
 {{--<script src="/js/jquery-3.4.1.min.js"></script>--}}
 {{--<script src="/js/popper.min.js"></script>--}}
 {{--<script src="/js/bootstrap.min.js"></script>--}}
@@ -18,4 +35,8 @@
 <script src="/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/owl.carousel.min.js"></script>
+=======
+>>>>>>> 36cc36409aaca036a0f780c5407cb7879d0f9f65
+>>>>>>> 6bbf22183b9dea6caf42f0232d8c7764303a6dcb
