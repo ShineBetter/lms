@@ -199,6 +199,11 @@ Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("
 Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
 Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
 Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
+/////mainpage slider
+
+Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
+Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
+Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");
 
 //////////form-client
 /// main page course free

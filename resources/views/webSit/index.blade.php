@@ -21,35 +21,44 @@
 {{--        <div class="single-slide-item slide-bg1">--}}
 {{--            <div class="container">--}}
                 <div class="row">
+                    @php
+                    $slider1=\Illuminate\Support\Facades\DB::table('main_sliders')->where("id",1)->first();
+                    $slider2=\Illuminate\Support\Facades\DB::table('main_sliders')->where("id",2)->first();
+                    $slider3=\Illuminate\Support\Facades\DB::table('main_sliders')->where("id",3)->first();
+                    @endphp
                     <div class="col-lg-12">
                         <div class="w3-content w3-display-container">
                     <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="/images/img3.jpg" style="width:100%">
-{{--                            <div class="w3-display-middle w3-container w3-padding-16 w3-black">--}}
-{{--                                French Alps--}}
-{{--                            </div>--}}
-                    </div>
+                        <img class="mySlides w3-animate-fading" src="{{asset($slider1->picture)}}" style="width:100%">
+                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
+                            <h2>
+                                {{$slider1->header}}
+                            </h2>
+                            <p>
+                                {{$slider1->text}}
+                            </p>
+                        </div>                    </div>
                     <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="/images/img2.jpg" style="width:100%">
+                        <img class="mySlides w3-animate-fading" src="{{asset($slider2->picture)}}" style="width:100%">
                         <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
                           <h2>
-                              به آموزشگاه میربلندی خوش آمدید
+                              {{$slider2->header}}
                           </h2>
                             <p>
-                                این آموزشگاه شما را به سمت هدف سوق میدهد...
+                                {{$slider2->text}}
                             </p>
                         </div>
                     </div>
                     <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="/images/img1.jpg" style="width:100%">
-{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
-{{--                            <h2>--}}
-{{--                                به آموزشگاه میربلندی خوش آمدید--}}
-{{--                            </h2>--}}
-{{--                            <p>--}}
-{{--                                این آموزشگاه شما را به سمت هدف سوق میدهد...--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
+                        <img class="mySlides w3-animate-fading" src="{{asset($slider3->picture)}}" style="width:100%">
+                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
+                            <h2>
+                                {{$slider3->header}}
+                            </h2>
+                            <p>
+                                {{$slider3->text}}
+                            </p>
+                        </div>
                     </div>
                         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -130,16 +139,21 @@
  ======================================-->
 <section class="feature-area text-center padding-bottom-90px">
     <div class="container">
+        @php
+        $col1=\Illuminate\Support\Facades\DB::table('mainpage3cols')->where("id",1)->first();
+        $col2=\Illuminate\Support\Facades\DB::table('mainpage3cols')->where("id",2)->first();
+        $col3=\Illuminate\Support\Facades\DB::table('mainpage3cols')->where("id",3)->first();
+        @endphp
         <div class="feature-content-wrap">
             <div class="row">
                 <div class="col-lg-4 column-td-half">
                     <div class="info-box info-box-color-1">
                         <div class="hover-overlay"></div>
                         <div class="icon-element mx-auto">
-                            <i class="fas fa-edit"></i>
+                            <i class="{{$col1->icon}}"></i>
                         </div>
-                        <h3 class="info__title"> دریافت گواهینامه ها</h3>
-                        <p class="info__text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <h3 class="info__title">{{$col1->header}}</h3>
+                        <p class="info__text">{{$col1->text}}</p>
 {{--                        <a href="home-rtl#" class="text-btn">read more</a>--}}
                     </div><!-- end info-box -->
                 </div><!-- end col-lg-3 -->
@@ -147,10 +161,10 @@
                     <div class="info-box info-box-color-2">
                         <div class="hover-overlay"></div>
                         <div class="icon-element mx-auto">
-                            <i class="fas fa-users"></i>
+                            <i class="{{$col2->icon}}"></i>
                         </div>
-                        <h3 class="info__title">معلمان خبره</h3>
-                        <p class="info__text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <h3 class="info__title">{{$col2->header}}</h3>
+                        <p class="info__text">{{$col2->text}}</p>
 {{--                        <a href="home-rtl#" class="text-btn">read more</a>--}}
                     </div><!-- end info-box -->
                 </div><!-- end col-lg-3 -->
@@ -158,10 +172,10 @@
                     <div class="info-box info-box-color-3">
                         <div class="hover-overlay"></div>
                         <div class="icon-element mx-auto">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="{{$col3->icon}}"></i>
                         </div>
-                        <h3 class="info__title">ارتباط آسان</h3>
-                        <p class="info__text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <h3 class="info__title">{{$col3->header}}</h3>
+                        <p class="info__text">{{$col3->text}}</p>
 {{--                        <a href="home-rtl#" class="text-btn">read more</a>--}}
                     </div><!-- end info-box -->
                 </div><!-- end col-lg-3 -->
