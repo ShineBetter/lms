@@ -7,370 +7,664 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
     <title>slider</title>
     <style>
-        /*@media (min-width: 768px) {*/
-        /*    !* show 3 items *!*/
-        /*    .carousel-inner .active,*/
-        /*    .carousel-inner .active + .carousel-item,*/
-        /*    .carousel-inner .active + .carousel-item + .carousel-item {*/
-        /*        display: block;*/
-        /*    }*/
-
-        /*    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),*/
-        /*    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,*/
-        /*    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {*/
-        /*        transition: none;*/
-        /*    }*/
-
-        /*    .carousel-inner .carousel-item-next,*/
-        /*    .carousel-inner .carousel-item-prev {*/
-        /*        position: relative;*/
-        /*        transform: translate3d(0, 0, 0);*/
-        /*    }*/
-
-        /*    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {*/
-        /*        position: absolute;*/
-        /*        top: 0;*/
-        /*        right: -33.3333%;*/
-        /*        z-index: -1;*/
-        /*        display: block;*/
-        /*        visibility: visible;*/
-        /*    }*/
-
-        /*    !* left or forward direction *!*/
-        /*    .active.carousel-item-left + .carousel-item-next.carousel-item-left,*/
-        /*    .carousel-item-next.carousel-item-left + .carousel-item,*/
-        /*    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,*/
-        /*    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {*/
-        /*        position: relative;*/
-        /*        transform: translate3d(-100%, 0, 0);*/
-        /*        visibility: visible;*/
-        /*    }*/
-
-        /*    !* farthest right hidden item must be abso position for animations *!*/
-        /*    .carousel-inner .carousel-item-prev.carousel-item-right {*/
-        /*        position: absolute;*/
-        /*        top: 0;*/
-        /*        left: 0;*/
-        /*        z-index: -1;*/
-        /*        display: block;*/
-        /*        visibility: visible;*/
-        /*    }*/
-
-        /*    !* right or prev direction *!*/
-        /*    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,*/
-        /*    .carousel-item-prev.carousel-item-right + .carousel-item,*/
-        /*    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,*/
-        /*    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {*/
-        /*        position: relative;*/
-        /*        transform: translate3d(100%, 0, 0);*/
-        /*        visibility: visible;*/
-        /*        display: block;*/
-        /*        visibility: visible;*/
-        /*    }*/
-        /*}*/
-        /*body {*/
-        /*    background: #D18B49;*/
-        /*    color: rgba(0, 0, 0, 0.6);*/
-        /*    font-family: "Roboto", sans-serif;*/
-        /*    font-size: 14px;*/
-        /*    line-height: 1.6em;*/
-        /*    -webkit-font-smoothing: antialiased;*/
-        /*    -moz-osx-font-smoothing: grayscale;*/
-        /*    -webkit-transition: 0.5s ease;*/
-        /*    transition: 0.5s ease;*/
-        /*}*/
-
-        .btn-massage {
-            border-radius: 2px;
-            padding: 8px 12px;
-            color: #D18B49;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            text-transform: uppercase;
-            -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
-        }
-
-        .card-massage {
-            background: #FFFFFF;
-            max-width: 400px;
-            margin: 50px auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            box-sizing: border-box;
-            padding: 48px;
-            text-align: center;
-        }
-
-        .slides-massage {
-            position: relative;
-            overflow: hidden;
-            -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
-        }
-
-        .slide.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .thumbnail-massage {
-            margin: 0 0 48px;
-        }
-
-        .title-massage {
-            margin: 0 0 12px;
-            color: #D18B49;
-            font-size: 24px;
-            -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
-        }
-
-        .description {
-            margin: 0 0 48px;
-        }
-
-        .footer-massages-slide {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -webkit-box-pack: justify;
-            -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            margin: 0 -12px -12px;
-        }
-
-        [ripple] {
-            z-index: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        [ripple] .ripple {
-            position: absolute;
-            background: #d6d6d6;
-            width: 60px;
-            height: 60px;
-            border-radius: 100%;
-            -webkit-transform: scale(0);
-            -ms-transform: scale(0);
-            transform: scale(0);
-            -webkit-animation: ripple 2s;
-            animation: ripple 2s;
-        }
-
-        @-webkit-keyframes ripple {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                opacity: 0.2;
+        @media (min-width: 768px) {
+            /* show 3 items */
+            .carousel-inner .active,
+            .carousel-inner .active + .carousel-item,
+            .carousel-inner .active + .carousel-item + .carousel-item {
+                display: block;
             }
-            100% {
-                -webkit-transform: scale(20);
-                transform: scale(20);
-                opacity: 0;
+
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+                transition: none;
+            }
+
+            .carousel-inner .carousel-item-next,
+            .carousel-inner .carousel-item-prev {
+                position: relative;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                position: absolute;
+                top: 0;
+                right: -33.3333%;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* left or forward direction */
+            .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+            .carousel-item-next.carousel-item-left + .carousel-item,
+            .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+            .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+                position: relative;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+
+            /* farthest right hidden item must be abso position for animations */
+            .carousel-inner .carousel-item-prev.carousel-item-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* right or prev direction */
+            .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+            .carousel-item-prev.carousel-item-right + .carousel-item,
+            .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+            .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+                position: relative;
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+                display: block;
+                visibility: visible;
             }
         }
 
-        @keyframes ripple {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                opacity: 0.2;
-            }
-            100% {
-                -webkit-transform: scale(20);
-                transform: scale(20);
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 <body>
-<div class="card-massage">
-    <div class="slides-massage">
-        <div slide-id="1" slide-color="#D18B49" class="slide active">
-            <div class="thumbnail-massage">
-                <img src="/images/img8.jpg"/>
+<div class="container-fluid">
+    <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner row w-100 mx-auto">
+            <div class="carousel-item col-md-4 active">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="title-massage">لیلا حاتمی</h1>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-        <div slide-id="2" slide-color="#542F13" class="slide">
-            <div class="thumbnail-massage">
-                <img src="/images/img8.jpg"/>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="title-massage">مریلا زارعی</h1>
-            <p class="description">Nam tristique porttitor erat sed convallis. Donec id iaculis massa, id pulvinar
-                odio. </p>
-        </div>
-        <div slide-id="3" slide-color="#A5AAAE" class="slide">
-            <div class="thumbnail-massage">
-                <img src="/images/img8.jpg"/>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="title-massage">شهاب حسینی</h1>
-            <p class="description">Ut condimentum facilisis turpis in tincidunt.</p>
-        </div>
-        <div slide-id="4" slide-color="#ED8D1F" class="slide">
-            <div class="thumbnail-massage">
-                <img src="/images/img8.jpg"/>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="title-massage">پزمان بازغی</h1>
-            <p class="description"> Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia Curae; Proin vulputate massa ut iaculis eleifend. </p>
-        </div>
-        <div slide-id="5" slide-color="#C4C8CB" class="slide">
-            <div class="thumbnail-massage">
-                <img src="/images/img8.jpg"/>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="title-massage">مهرداد صدقیان</h1>
-            <p class="description">Phasellus accumsan nisi ac ex ultrices dignissim. </p>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <div class="card">
+                        <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                        <div class="card-image">
+                            <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                            <div class="card-badge">
+                                <span class="badge-label">highest rated</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                                <!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+<!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->
+                    <div class="card-image">
+                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                        <div class="card-badge">
+                            <span class="badge-label">highest rated</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
+                           <!-- end card-image -->
+                            <div class="card-content">
+                                <p class="card__label">
+                                    <span class="card__label-text">استاندارد</span>
+                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                </p>
+                                <h3 class="card__title">
+                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                </h3>
+                                <p class="card__author">
+                                    <a href="teacher-detail">استاد سماواتی</a>
+                                </p>
+                                <div class="rating-wrap d-flex mt-2 mb-3">
+                                    <ul class="review-stars">
+                                        <li><span class="la la-star"></span></li>
+                                        <li><span class="la la-star"></span></li>
+                                        <li><span class="la la-star"></span></li>
+                                        <li><span class="la la-star"></span></li>
+                                        <li><span class="la la-star-o"></span></li>
+                                    </ul>
+                                    <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                </div><!-- end rating-wrap -->
+                                <div class="card-action">
+                                    <ul class="card-duration d-flex justify-content-between align-items-center">
+                                        <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                        </li>
+                                        <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                        </li>
+                                    </ul>
+                                </div><!-- end card-action -->
+                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                    <span class="card__price">58.00تومان</span>
+                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                </div><!-- end card-price-wrap -->
+                            </div><!-- end card-content -->
+                        </div><!-- end card-item -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="footer-massages-slide">
-        <a id="prev" href="#" ripple="" ripple-color="#666666" class="btn-massage">قبلی</a>
-        <a id="next" href="#" ripple="" ripple-color="#666666" class="btn-massage">بعدی</a>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        $("#myCarousel").on("slide.bs.carousel", function(e) {-->
-<!--            var $e = $(e.relatedTarget);-->
-<!--            var idx = $e.index();-->
-<!--            var itemsPerSlide = 3;-->
-<!--            var totalItems = $(".carousel-item").length;-->
-
-<!--            if (idx >= totalItems - (itemsPerSlide - 1)) {-->
-<!--                var it = itemsPerSlide - (totalItems - idx);-->
-<!--                for (var i = 0; i < it; i++) {-->
-<!--                    // append slides-massage to end-->
-<!--                    if (e.direction == "left") {-->
-<!--                        $(".carousel-item")-->
-<!--                            .eq(i)-->
-<!--                            .appendTo(".carousel-inner");-->
-<!--                    } else {-->
-<!--                        $(".carousel-item")-->
-<!--                            .eq(0)-->
-<!--                            .appendTo($(this).find(".carousel-inner"));-->
-<!--                    }-->
-<!--                }-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-
-<!--</script>-->
 <script>
-    $(document).ready(function () {
-        var getslideHeight = $('.slide.active').height();
+    $(document).ready(function() {
+        $("#myCarousel").on("slide.bs.carousel", function(e) {
+            var $e = $(e.relatedTarget);
+            var idx = $e.index();
+            var itemsPerSlide = 3;
+            var totalItems = $(".carousel-item").length;
 
-        $('.slides-massage').css({
-            height: getslideHeight
-        });
-
-        function calcslideHeight() {
-            getslideHeight = $('.slide.active').height();
-
-            $('.slides-massage').css({
-                height: getslideHeight
-            });
-        }
-
-        function animateContentColor() {
-            var getslideColor = $('.slide.active').attr('slide-color');
-
-            $('.card-massage').css({
-                background: getslideColor
-            });
-
-            $('.title-massage').css({
-                color: getslideColor
-            });
-
-            $('.btn-massage').css({
-                color: getslideColor
-            });
-        }
-
-        var slideItem = $('.slide'),
-            slideCurrentItem = slideItem.filter('.active');
-
-        $('#next').on('click', function (e) {
-            e.preventDefault();
-
-            var nextItem = slideCurrentItem.next();
-
-            slideCurrentItem.removeClass('active');
-
-            if (nextItem.length) {
-
-                slideCurrentItem = nextItem.addClass('active');
-            } else {
-                slideCurrentItem = slideItem.first().addClass('active');
+            if (idx >= totalItems - (itemsPerSlide - 1)) {
+                var it = itemsPerSlide - (totalItems - idx);
+                for (var i = 0; i < it; i++) {
+                    // append slides to end
+                    if (e.direction == "left") {
+                        $(".carousel-item")
+                            .eq(i)
+                            .appendTo(".carousel-inner");
+                    } else {
+                        $(".carousel-item")
+                            .eq(0)
+                            .appendTo($(this).find(".carousel-inner"));
+                    }
+                }
             }
-
-            calcslideHeight();
-            animateContentColor();
-        });
-
-        $('#prev').on('click', function (e) {
-            e.preventDefault();
-
-            var prevItem = slideCurrentItem.prev();
-
-            slideCurrentItem.removeClass('active');
-
-            if (prevItem.length) {
-                slideCurrentItem = prevItem.addClass('active');
-            } else {
-                slideCurrentItem = slideItem.last().addClass('active');
-            }
-
-            calcslideHeight();
-            animateContentColor();
-        });
-
-        // Ripple
-        $('[ripple]').on('click', function (e) {
-            var rippleDiv = $('<div class="ripple" />'),
-                rippleSize = 60,
-                rippleOffset = $(this).offset(),
-                rippleY = e.pageY - rippleOffset.top,
-                rippleX = e.pageX - rippleOffset.left,
-                ripple = $('.ripple');
-
-            rippleDiv.css({
-                top: rippleY - (rippleSize / 2),
-                left: rippleX - (rippleSize / 2),
-                background: $(this).attr("ripple-color")
-            }).appendTo($(this));
-
-            window.setTimeout(function () {
-                rippleDiv.remove();
-            }, 1900);
         });
     });
+
 </script>
+
 </body>
 </html>
 
