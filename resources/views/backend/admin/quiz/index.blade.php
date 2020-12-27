@@ -12,6 +12,18 @@
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
+    <style>
+        .flip-login, .flip-plus {
+            position: absolute;
+            left: 49px;
+            top: -1em;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+    </style>
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
@@ -46,6 +58,102 @@
                                     <tbody>
                                     @foreach($data as $key => $item)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                                        <tr>
+                                            <td scope="row">
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li class="mb-1">
+                                                            <p>{{ $key + $data->firstItem() }}</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_start}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_exp}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_start_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->quiz_exp_date}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->user_id != null)
+                                                            <li>{{$item->quizCreator->profile->name}} {{$item->quizCreator->profile->lastName}}</li>
+                                                        @else
+                                                            <li>مشخص نشده است</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        @if($item->last_editor_user_id != null)
+                                                            <li>{{$item->quizEditor->profile->name}} {{$item->quizEditor->profile->lastName}}</li>
+                                                        @else
+                                                            <li>ویرایش نشده است</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>
+                                                            <a href="{{route('quiz.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                            </a>
+                                                            @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                <input type="hidden" name="quiz_id"
+                                                                       value="{{$item->id}}">
+                                                                {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                {{ Form::close() }}
+                                                            @endif
+                                                            <a href="{{route('quiz.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+>>>>>>> 87aae281e3cd904de59d36d4808641ca87cfe040
                                         @php
                                             $start_time = Carbon::createFromTimestamp($item->quiz_start);
                                             $end_time = Carbon::createFromTimestamp($item->quiz_exp);
@@ -127,10 +235,15 @@
                                                         <ul class="list-items">
                                                             <li>
                                                                 @can('Admin')
-                                                                    <a href="{{route('quiz.edit',$item->id)}}"><input
-                                                                            type="button" class="btn btn-info"
-                                                                            style="font-size: 15px;font-family: Tahoma"
-                                                                            value="ویرایش"></a>
+{{--                                                                    <a href="{{route('quiz.edit',$item->id)}}"><input--}}
+{{--                                                                            type="button" class="btn btn-info"--}}
+{{--                                                                            style="font-size: 15px;font-family: Tahoma"--}}
+{{--                                                                            value="ویرایش"></a>--}}
+                                                                    <a href="{{route('quiz.edit',$item->id)}}" class="btn-edit" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                        <span class="text-edit"></span>
+                                                                        <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                        <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                                    </a>
                                                                 @endcan
                                                                 @if($item->pay_status == 1 && $start_date->year <= $now->year && $start_date->month <= $now->month && $start_date->day <= $now->day && $end_date->year >= $now->year && $end_date->month >= $now->month && $end_date->day >= $now->day)
                                                                     @if($item->quiz_start <= $now->timestamp && $item->quiz_exp >= $now->timestamp)
@@ -271,6 +384,7 @@
                                                 @endif
                                             @endif
                                         @endif
+<<<<<<< HEAD
 =======
                                         <tr>
                                             <td scope="row">
@@ -366,6 +480,8 @@
                                             </td>
                                         </tr>
 >>>>>>> 9adad69cac9c784a1acc6036866fb5f4d98d42b4
+=======
+>>>>>>> 87aae281e3cd904de59d36d4808641ca87cfe040
                                     @endforeach
                                     </tbody>
                                 </table>

@@ -41,6 +41,10 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $item)
+                                        @php
+                                        $discount_price = $item->product_price * $item->product_discount / 100;
+                                        $discount_price = $item->product_price - $discount_price;
+                                        @endphp
                                         <tr>
                                             <td scope="row">
                                                 <div class="statement-info">
@@ -54,21 +58,21 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->name}}</li>
+                                                        <li>{{$item->product_name}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->price}}</li>
+                                                        <li>{{$item->product_price}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->discount}}</li>
+                                                        <li>{{$item->product_discount}}% - ({{$discount_price}})</li>
                                                     </ul>
                                                 </div>
                                             </td>

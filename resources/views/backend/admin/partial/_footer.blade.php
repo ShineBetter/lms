@@ -409,6 +409,19 @@
             }
         });
     }
+
+    $('#some_students').change('checked', function () {
+        $('.select-wrapper').fadeIn(500);
+    })
+    $('#all_students').change('checked', function () {
+        $('.select-wrapper').fadeOut(500);
+    })
+    $('#limit_product_count').change('checked', function () {
+        $('.product_count_div').fadeIn(500);
+    })
+    $('#unlimit_product_count').change('checked', function () {
+        $('.product_count_div').fadeOut(500);
+    })
 </script>
 <script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createCategoryRequest;
+use App\Http\Requests\createProductRequest;
 use App\Http\Requests\editQuestionRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -40,16 +41,15 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createCategoryRequest $request)
+    public function store(createProductRequest $request)
     {
         $product = new Product();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_discount = $request->product_discount;
         $file = $request->file('product_img');
-        dd($file);
         if (!empty($file)){
-            $file_name = "images/product-image/product-photo-" . time() .'.'.$file->getClientOriginalName();
+            $file_name = "images/product-image/product-photo-" . time() . '-' .$file->getClientOriginalName();
             Image::make($file->getRealPath())->resize(200,200)->save($file_name);
             $product->product_img = $file_name;
         }
@@ -57,6 +57,17 @@ class ProductController extends Controller
         $product->product_desc = $request->product_desc;
         $product->category_id = $request->category_id;
         $product->product_file = $request->product_file;
+        if ($request->product_count_status == 1){
+            $product->product_count = -1;
+        }else{
+            $product->product_count = $request->product_count;
+        }
+        if ($request->product_status == null){
+            $product->product_status = 0;
+        }else{
+            $product->product_status = 1;
+        }
+        $product->created_at = now()->timestamp;
         $product->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';
         session()->flash('status', $comment);

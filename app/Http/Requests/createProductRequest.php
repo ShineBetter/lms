@@ -27,11 +27,11 @@ class createProductRequest extends FormRequest
             'product_name' => 'required|string|max:50',
             'product_discount' => 'integer|between:0,100',
             'product_price' => 'required|integer|min:0',
-            'product_img' => 'required|image|size:720',
+            'product_img' => 'required|image|max:720',
             'product_short_desc' => 'required|string|max:150',
             'product_desc' => 'required|string|max:500',
             'category_id' => 'required|integer',
-            'product_file' => 'required|file|size:102400',
+            'product_file' => 'required|file|max:102400',
         ];
     }
 
@@ -48,7 +48,7 @@ class createProductRequest extends FormRequest
             'product_price.min' => 'قیمت محصول باید حداقل 0 تومان باشد',
             'product_img.image' => 'فیلد تصویر محصول باید از نوع تصویر (jpg, png ,...) باشد',
             'product_img.required' => 'بارگزاری تصویر محصول الزامی است',
-            'product_img.size' => 'تصویر محصول محصول باید حداکثر 700 کیلوبایت باشد',
+            'product_img.max' => 'تصویر محصول محصول باید حداکثر 700 کیلوبایت باشد',
             'product_short_desc.string' => 'فیلد توضیح مختصر محصول باید از نوع رشته ای باشد',
             'product_short_desc.required' => 'وارد کردن توضیح مختصر محصول الزامی است',
             'product_short_desc.max' => 'توضیح مختصر محصول باید حداکثر 150 کاراکتر باشد',
@@ -59,7 +59,7 @@ class createProductRequest extends FormRequest
             'category_id.required' => 'وارد کردن دسته بندی محصول الزامی است',
             'product_file.file' => 'فیلد فایل محصول باید از نوع فایل باشد',
             'product_file.required' => 'بارگزاری فایل محصول الزامی است',
-            'product_file.size' => 'فایل محصول باید حداکثر 100 مگ باشد',
+            'product_file.max' => 'فایل محصول باید حداکثر 100 مگ باشد',
         ];
     }
 }
