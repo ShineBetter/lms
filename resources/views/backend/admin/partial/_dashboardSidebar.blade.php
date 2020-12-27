@@ -123,7 +123,6 @@
                     </a></li>
             </ul>
         </div><!-- end side-menu-wrap -->
-
         @endcan
         @can('Teacher')
             <div class="panel-type-title text-center p-3"><span>پنل استاد</span></div>

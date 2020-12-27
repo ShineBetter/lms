@@ -5,7 +5,16 @@
 
 
 @endphp
+@php
 
+    $text1=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",1)->first();
+    $text2=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",2)->first();
+    $text3=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",3)->first();
+    $text4=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",4)->first();
+    $count1=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",1)->first();
+    $count4=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",4)->first();
+    $count3=\Illuminate\Support\Facades\DB::table('main_counts')->where("id",3)->first();
+@endphp
 <!--======================================
         START HEADER AREA
     ======================================-->
@@ -23,7 +32,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb-content about-breadcrumb-content">
                     <div class="section-heading">
-                        <p class="section__meta section__metalight">به اموزشگاه .. خوش امدید</p>
+                        <p class="section__meta section__metalight">به اموزشگاه میربلند خوش امدید</p>
                         <h2 class="section__title">نگاهی کوتاه <br>مجموعه ما</h2>
                     </div>
                     <div class="btn-box">
@@ -49,18 +58,14 @@
             <div class="col-lg-6">
                 <div class="about-content-box pt-0 text-right">
                     <div class="section-heading">
-                        <h5 class="section__meta">درباره ما</h5>
-                        <h2 class="section__title line-height-50">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h2>
+                        <h5 class="section__meta">{{$text1->heading}}</h5>
+                        <h2 class="section__title line-height-50">{{$text1->header}}</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc mb-4">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                            {{$text1->text}}
                         </p>
                     </div><!-- end section-heading -->
-                    <ul class="list-items">
-                        <li><i class="la la-check-circle"></i> تمام و دشواری موجود در ارائه راهکارها و شرایط سخت .</li>
-                        <li><i class="la la-check-circle"></i> تمام و دشواری موجود در ارائه راهکارها و شرایط سخت .</li>
-                        <li><i class="la la-check-circle"></i>  تمام و دشواری موجود در ارائه راهکارها و شرایط سخت .</li>
-                    </ul>
+
                 </div>
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">
@@ -72,8 +77,8 @@
                                     <img src="/images/img15.jpg" alt="">
                                     <div class="img-content-inner">
                                         <div class="img-content-inner__inner">
-                                            <h3 class="widget-title">6,900</h3>
-                                            <span>آزمون</span>
+                                            <h3 class="widget-title text-center">{{$count3->count}}</h3>
+                                            <span>{{$count3->text}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -85,8 +90,8 @@
                                     <img src="/images/img16.jpg" alt="">
                                     <div class="img-content-inner">
                                         <div class="img-content-inner__inner">
-                                            <h3 class="widget-title">550</h3>
-                                            <span>دانش آموز</span>
+                                            <h3 class="widget-title text-center">{{$count4->count}}</h3>
+                                            <span>{{$count4->text}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -98,8 +103,8 @@
                                     <img src="/images/img22.jpg" alt="">
                                     <div class="img-content-inner">
                                         <div class="img-content-inner__inner">
-                                            <h3 class="widget-title">40</h3>
-                                            <span>همایش</span>
+                                            <h3 class="widget-title text-center">{{$count1->count}}</h3>
+                                            <span>{{$count1->text}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -109,32 +114,37 @@
                 </div>
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->
+        @php
+            $midel1=\Illuminate\Support\Facades\DB::table('midel-4s')->where("id",1)->first();
+            $midel2=\Illuminate\Support\Facades\DB::table('midel-4s')->where("id",2)->first();
+            $midel3=\Illuminate\Support\Facades\DB::table('midel-4s')->where("id",3)->first();
+        @endphp
         <div class="about-widget-wrap choose-area margin-top-120px text-center">
             <div class="row">
                 <div class="col-lg-4 column-td-half">
                     <div class="post-card post-card-layout-2">
                         <div class="post-card-content">
-                            <img src="/images/img33.jpg" alt="" class="img-fluid">
-                            <h2 class="widget-title mt-4 mb-2">برترین دبیران</h2>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                            <img src="{{asset($midel1->picture)}}" alt="" class="img-fluid">
+                            <h2 class="widget-title mt-4 mb-2">{{$midel1->header}}</h2>
+                            <p>{{$midel1->text}}</p>
                         </div><!-- end post-card-content -->
                     </div>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
                     <div class="post-card post-card-layout-2">
                         <div class="post-card-content">
-                            <img src="/images/img34.jpg" alt="" class="img-fluid">
-                            <h2 class="widget-title mt-4 mb-2">پیشرفته ترین آزمونها</h2>
-                            <p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                            <img src="{{asset($midel2->picture)}}" alt="" class="img-fluid">
+                            <h2 class="widget-title mt-4 mb-2">{{$midel2->header}}</h2>
+                            <p>{{$midel2->text}}</p>
                         </div><!-- end post-card-content -->
                     </div>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
                     <div class="post-card post-card-layout-2 mb-3">
                         <div class="post-card-content">
-                            <img src="/images/img35.jpg" alt="" class="img-fluid">
-                            <h2 class="widget-title mt-4 mb-2">کامل ترین همایشات</h2>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.n</p>
+                            <img src="{{asset($midel3->picture)}}" alt="" class="img-fluid">
+                            <h2 class="widget-title mt-4 mb-2">{{$midel3->header}}</h2>
+                            <p>{{$midel3->text}}</p>
                         </div><!-- end post-card-content -->
                     </div>
                 </div><!-- end col-lg-4 -->
@@ -152,6 +162,17 @@
 <!--======================================
         START MISSION AREA
  ======================================-->
+@php
+
+ $pic1=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",1)->first();
+ $pic2=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",2)->first();
+ $pic3=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",3)->first();
+ $pic4=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",4)->first();
+ $pic5=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",5)->first();
+ $pic6=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",6)->first();
+ $pic7=\Illuminate\Support\Facades\DB::table('aboutpics')->where("id",7)->first();
+
+@endphp
 <section class="mission-area section-bg padding-top-120px padding-bottom-110px">
     <div class="container">
         <div class="row">
@@ -160,22 +181,22 @@
                     <div class="row">
                         <div class="col-lg-6 column-td-half">
                             <div class="img-box img-box-4">
-                                <img src="/images/img8.jpg" alt="">
+                                <img src="{{asset($pic1->picture)}}" alt="">
                             </div>
                         </div><!-- end col-lg-6 -->
                         <div class="col-lg-6 column-td-half">
                             <div class="img-box img-box-4">
-                                <img src="/images/img10.jpg" alt="">
+                                <img src="{{asset($pic2->picture)}}" alt="">
                             </div>
                         </div><!-- end col-lg-6 -->
                         <div class="col-lg-6 column-td-half">
                             <div class="img-box img-box-4">
-                                <img src="/images/img11.jpg" alt="">
+                                <img src="{{asset($pic3->picture)}}" alt="">
                             </div>
                         </div><!-- end col-lg-6 -->
                         <div class="col-lg-6 column-td-half">
                             <div class="img-box img-box-4">
-                                <img src="/images/img12.jpg" alt="">
+                                <img src="{{asset($pic4->picture)}}" alt="">
                             </div>
                         </div><!-- end col-lg-6 -->
                     </div><!-- end row -->
@@ -184,15 +205,13 @@
             <div class="col-lg-6">
                 <div class="about-content-box padding-left-60px">
                     <div class="section-heading">
-                        <h5 class="section__meta">هدف ما</h5>
-                        <h2 class="section__title">ماموریت ما</h2>
+                        <h5 class="section__meta">{{$text2->heading}}</h5>
+                        <h2 class="section__title">{{$text2->header}}</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc mb-3">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            {{$text2->text}}
                         </p>
-                        <h3 class="widget-title font-weight-medium font-size-18">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        </h3>
+
                     </div><!-- end section-heading -->
                 </div>
             </div><!-- end col-lg-6 -->
@@ -212,11 +231,11 @@
             <div class="col-lg-12">
                 <div class="about-content-box">
                     <div class="section-heading">
-                        <h5 class="section__meta">ماجرای اموزشگاه...</h5>
-                        <h2 class="section__title">داستان ما</h2>
+                        <h5 class="section__meta">{{$text3->heading}}</h5>
+                        <h2 class="section__title">{{$text3->header}}</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc">
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            {{$text3->text}}
                         </p>
                     </div><!-- end section-heading -->
                 </div>
@@ -226,12 +245,12 @@
             <div class="row">
                 <div class="col-lg-4 column-td-half">
                     <div class="story-img-item">
-                        <img src="/images/img37.jpg" alt="">
+                        <img src="{{asset($pic5->picture)}}" alt="">
                     </div>
                 </div><!-- end col-lg-4 -->
                  <div class="col-lg-4 column-td-half">
                     <div class="story-img-item">
-                        <img src="/images/img38.jpg" alt="">
+                        <img src="{{asset($pic6->picture)}}" alt="">
 {{--                        <div class="story-video">--}}
 {{--                            <a href="about.blade.php#" class="btn-text video-play-btn" data-fancybox="video" data-src="https://www.youtube.com/watch?v=VqIp_sO8OVQ" data-speed="700">--}}
 {{--                                <i class="fas fa-play icon-btn"></i>--}}
@@ -241,7 +260,7 @@
                 </div><!-- end col-lg-4 -->
                  <div class="col-lg-4 column-td-half">
                     <div class="story-img-item">
-                        <img src="/images/img39.jpg" alt="">
+                        <img src="{{asset($pic7->picture)}}" alt="">
                     </div>
                 </div><!-- end col-lg-4 -->
             </div><!-- end row -->
@@ -263,109 +282,115 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <h5 class="section__meta">مدیریت</h5>
-                    <h2 class="section__title">مدیریت مجموعه</h2>
+                    <h2 class="section__title">اقای میربلند</h2>
                     <span class="section-divider"></span>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="team-member-wrap margin-top-30px">
             <div class="row">
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد رهنما</h3>
-                            <p class="team__meta">ریاضی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alex Smith">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team2.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Rose Taylor">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team3.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Jef Collin">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team4.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team5.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team6.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Kevin Martin">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team7.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 column-td-half">
-                    <div class="team-item team-layout-2">
-                        <div class="team-img-box">
-                            <img src="/images/team8.jpg" alt="">
-                        </div>
-                        <div class="team-detail">
-                            <h3 class="team__title">استاد ربیع</h3>
-                            <p class="team__meta">شیمی</p>
-                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>
-                        </div>
-                    </div><!-- end team-item -->
-                </div><!-- end col-lg-3 -->
+                @php
+                    $aboutTeachers=\Illuminate\Support\Facades\DB::table('about_teachers')->get()
+                @endphp
+                @foreach($aboutTeachers as $aboutTeacher)
+                    <div class="col-lg-3 column-td-half">
+                        <div class="team-item team-layout-2">
+                            <div class="team-img-box">
+                                <img src="{{asset($aboutTeacher->picture)}}" alt="">
+                            </div>
+                            <div class="team-detail">
+                                <h3 class="team__title">{{$aboutTeacher->header}}</h3>
+                                <p class="team__meta">{{$aboutTeacher->filed}}</p>
+                                <a href="{{route('teacher-detail',$aboutTeacher->id)}}" class="theme-btn theme-btn-light" >اطلاعات بیشتر</a>
+                            </div>
+                        </div><!-- end team-item -->
+                    </div>
+                @endforeach
+               <!-- end col-lg-3 -->
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team2.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Rose Taylor">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team3.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Jef Collin">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team4.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team5.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team6.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Kevin Martin">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team7.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
+{{--                <div class="col-lg-3 column-td-half">--}}
+{{--                    <div class="team-item team-layout-2">--}}
+{{--                        <div class="team-img-box">--}}
+{{--                            <img src="/images/team8.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="team-detail">--}}
+{{--                            <h3 class="team__title">استاد ربیع</h3>--}}
+{{--                            <p class="team__meta">شیمی</p>--}}
+{{--                            <a href="javascript:void(0)" class="theme-btn theme-btn-light" data-toggle="modal" data-target=".team-modal-form" data-whatever="Alper Doein">اطلاعات بیشتر</a>--}}
+{{--                        </div>--}}
+{{--                    </div><!-- end team-item -->--}}
+{{--                </div><!-- end col-lg-3 -->--}}
             </div><!-- end row -->
         </div>
     </div><!-- end container -->

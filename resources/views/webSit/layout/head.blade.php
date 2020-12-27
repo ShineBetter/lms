@@ -13,6 +13,7 @@
     <link rel="icon" sizes="16x16" href="/images/favicon.png">
 
     <!-- inject:css -->
+<<<<<<< HEAD
 {{--    <link rel="stylesheet" href="/css/bootstrap.min.css">--}}
 {{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" href="/css/font-awesome.min.css">--}}
@@ -37,6 +38,19 @@
     <link rel="stylesheet" href="{{ asset('css/tooltipster.bundle.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{{--    <link rel="stylesheet" href="/css/bootstrap.min.css">--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/line-awesome.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/fancybox.css">
+    <link rel="stylesheet" href="/css/tooltipster.bundle.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 {{--    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">--}}

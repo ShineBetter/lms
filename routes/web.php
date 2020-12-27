@@ -131,7 +131,7 @@ Route::get('/user/profile/delete/profile/image','profileController@deleteProfile
 Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
 
 Route::view('/teachers','webSit.teachers');
-Route::view('/teacher-detail','webSit.teacher-detail');
+Route::view('/teacher-detail/{id}','webSit.teacher-detail')->name("teacher-detail");
 Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
 Route::view('/examResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
@@ -175,7 +175,7 @@ Route::get("/aboutText","AboutTextController@index")->middleware("auth")->name("
 Route::get("/aboutText/edit/{id}","AboutTextController@edit")->middleware("auth")->name("aboutText.edit");
 Route::put("/aboutText/update{id}","AboutTextController@update")->middleware("auth")->name("aboutText.update");
 
-///////////midel col-4
+///////////midel col-4->ok
 Route::get("/midel-4","Midel4Controller@index")->middleware("auth")->name("midel-4.index");
 Route::get("/midel-4/edit/{id}","Midel4Controller@edit")->middleware("auth")->name("midel-4.edit");
 Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")->name("midel-4.update");
@@ -204,6 +204,11 @@ Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("
 Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
 Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
 Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
+/////mainpage slider
+
+Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
+Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
+Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");
 
 //////////form-client
 /// main page course free
@@ -223,4 +228,5 @@ Route::get("/form-faq","FormFaqController@store")->name("formFaq.store");
 Route::get("/form-faq/show/{id}","FormFaqController@show")->middleware("auth")->name("formFaq.show");
 Route::put("/form-faq/update/{id}","FormFaqController@update")->middleware("auth")->name("formFaq.update");
 Route::delete("/form-faq/delete/{id}","FormFaqController@destroy")->middleware("auth")->name("formFaq.destroy");
-
+//slider
+Route::view('/slider','webSit.slider.slider');
