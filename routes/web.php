@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use AliBayat\LaravelCategorizable\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,12 @@ Route::get('/panel', 'HomeController@index')->name('panel');
 
 //quiz route
 Route::post('/exam', 'HomeController@quiz')->middleware('auth')->name('quiz');
+Route::post('/exam/pay', 'HomeController@examPay')->middleware('auth')->name('examPay');
 Route::post('/exam/next', 'HomeController@getQuestion')->middleware('auth')->name('getQuestion');
 Route::post('/exam/sendAnswer', 'HomeController@sendAnswer')->middleware('auth')->name('sendAnswer');
 Route::post('/exam/getFirst', 'HomeController@getFirstAnswer')->middleware('auth')->name('getFirstAnswer');
 Route::post('/checkAnswers', 'HomeController@checkAnswers')->middleware('auth')->name('checkAnswers');
+Route::view('/quiz-result','backend.admin.quizResult.quizResult')->middleware('auth')->name('result');
 Route::resource('quiz','QuizController')->middleware('auth');
 
 //questions route
@@ -54,6 +57,9 @@ Route::resource('banner','BannerController')->middleware('auth');
 
 //level route
 Route::resource('level','LevelController')->middleware('auth');
+
+//category route
+Route::resource('category','CategoryController')->middleware('auth');
 
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');
@@ -101,6 +107,8 @@ Route::get('/userLevels/{level_id}/{user_id}/edit','userLevelsController@edit')-
 
 //make test in database
 Route::get('/cr/{id}','teacherController@cr');
+Route::get('/cat',function (){
+});
 
 
 
@@ -108,6 +116,8 @@ Route::get('/cr/{id}','teacherController@cr');
 Route::get('/about', function () {
     return view('webSit.about');
 });
+
+Route::view('/select','backend.admin.selected');
 
 //profile setting route
 Route::get('/user/profile','profileController@getInformation')->name('profile')->middleware('auth');;
@@ -118,7 +128,7 @@ Route::post('/user/profile/change/password','profileController@changePassword')-
 Route::view('/teachers','webSit.teachers');
 Route::view('/teacher-detail/{id}','webSit.teacher-detail')->name("teacher-detail");
 Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
-//Route::view('/quizResult','backend.admin.quizResult.quizResult');
+Route::view('/examResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
 Route::view('/student-path-assessment','student-path-assessment');
 Route::view('/shopping-cart','shopping-cart');

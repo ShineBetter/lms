@@ -10,6 +10,9 @@
         </div><!-- end humburger-menu -->
         @can('Admin')
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 35d12d31294b3480083973f53e57c896a0ba571f
         <div class="panel-type-title text-center p-3"><span>پنل مدیریت</span></div>
         <div class="side-menu-wrap">
             <ul class="side-menu-ul">
@@ -56,6 +59,10 @@
                             class="la la-graduation-cap"></i>
                         <p class="w-100">دوره های ثبت نام شده</p>
                     </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{route('category.index')}}"><i class="la la-bell"></i>
+                        <p class="w-100">دسته بندی محصولات</p>
+                    </a>
+                </li>
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-message"><i class="la la-bell"></i>
                         <p class="w-100">پیام ها</p> <span class="badge badge-info radius-rounded p-1 ml-1">2</span>
                     </a>
@@ -80,10 +87,7 @@
                 <li class="sidenav__item"><a class="text-center" href="{{ route('profile') }}"><i class="la la-cog"></i>
                         <p class="w-100">تنظیمات سایت</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="{{ route('user.logout') }}"><i
-                            class="la la-power-off"></i>
-                        <p class="w-100">خروج</p>
-                    </a></li>
+
 {{--                ///////////////////--}}
                 <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
                             class="la la-graduation-cap"></i>
@@ -113,8 +117,13 @@
                 <li class="sidenav__item"><a class="text-center" href="{{ route('formFaq.index') }}"><i class="la la-cog"></i>
                         <p class="w-100">درخواست مشاوره</p>
                     </a></li>
+                <li class="sidenav__item"><a class="text-center" href="{{ route('user.logout') }}"><i
+                            class="la la-power-off"></i>
+                        <p class="w-100">خروج</p>
+                    </a></li>
             </ul>
         </div><!-- end side-menu-wrap -->
+<<<<<<< HEAD
 =======
             <div class="panel-type-title text-center p-3"><span>پنل مدیریت</span></div>
             <div class="side-menu-wrap">
@@ -200,6 +209,9 @@
                 </ul>
             </div><!-- end side-menu-wrap -->
 >>>>>>> 36cc36409aaca036a0f780c5407cb7879d0f9f65
+=======
+
+>>>>>>> 35d12d31294b3480083973f53e57c896a0ba571f
         @endcan
         @can('Teacher')
             <div class="panel-type-title text-center p-3"><span>پنل استاد</span></div>

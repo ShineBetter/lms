@@ -7,6 +7,7 @@ use App\Models\quiz;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
@@ -29,8 +30,9 @@ class QuizController extends Controller
      */
     public function create()
     {
-        $data = User::where('user_role','student')->get();
-        return view('backend.admin.quiz.create', ['data' => $data]);
+        $data = User::where('user_role', 'student')->get();
+        $teachers = User::where('user_role', 'teacher')->get();
+        return view('backend.admin.quiz.create', ['data' => $data, 'teachers' => $teachers]);
     }
 
     /**
@@ -43,11 +45,12 @@ class QuizController extends Controller
     {
         $quiz = new quiz();
         $quiz->quiz_name = $request->quiz_name;
-        $quiz->quiz_start = Carbon::createFromFormat('H:i',$request->quiz_start)->timestamp;
-        $quiz->quiz_exp = Carbon::createFromFormat('H:i',$request->quiz_exp)->timestamp;
-        $quiz->quiz_exp_date =  Carbon::createFromFormat('Y-m-d',$request->quiz_exp_date)->timestamp;
-        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d',$request->quiz_start_date)->timestamp;
+        $quiz->quiz_start = Carbon::createFromFormat('H:i', $request->quiz_start)->timestamp;
+        $quiz->quiz_exp = Carbon::createFromFormat('H:i', $request->quiz_exp)->timestamp;
+        $quiz->quiz_exp_date = Carbon::createFromFormat('Y-m-d', $request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d', $request->quiz_start_date)->timestamp;
         $quiz->user_id = auth()->id();
+        $quiz->teacher_id = $request->teacher_id;
         if ($request->students == 1) {
             $quiz->quiz_permission = 'all';
         } elseif ($request->students == 2) {
@@ -66,6 +69,7 @@ class QuizController extends Controller
                 ]);
             }
         }
+        $quiz->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';
         session()->flash('status', $comment);
         return redirect()->route('quiz.index');
@@ -98,8 +102,15 @@ class QuizController extends Controller
     public function edit($id)
     {
         $data = quiz::findorfail($id);
-        $students = User::where('user_role','student')->get();
-        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students]);
+        $start_time = Carbon::createFromTimestamp($data->quiz_start)->format('H:i');
+        $end_time = Carbon::createFromTimestamp($data->quiz_exp)->format('H:i');
+        $start_date = Carbon::createFromTimestamp($data->quiz_start_date)->format('Y-m-d');
+        $end_date = Carbon::createFromTimestamp($data->quiz_exp_date)->format('Y-m-d');
+        $students = User::where('user_role', 'student')->get();
+        $teachers = User::where('user_role', 'teacher')->get();
+        $studentSelected = DB::table('user_quiz')->where(['quiz_id' => $id])->pluck('user_id');
+
+        return view('backend.admin.quiz.edit', ['data' => $data, 'students' => $students, 'studentSelected' => $studentSelected, 'teachers' => $teachers, 'start_time' => $start_time, 'end_time' => $end_time, 'start_date' => $start_date, 'end_date' => $end_date]);
     }
 
     /**
@@ -113,29 +124,39 @@ class QuizController extends Controller
     {
         $quiz = quiz::where('id', $id)->first();
         $quiz->quiz_name = $request->quiz_name;
-        $quiz->quiz_start = $request->quiz_start;
-        $quiz->quiz_exp = $request->quiz_exp;
-        $quiz->quiz_start_date = $request->quiz_start_date;
-        $quiz->quiz_exp_date = $request->quiz_exp_date;
+        $quiz->quiz_start = Carbon::createFromFormat('H:i', $request->quiz_start)->timestamp;
+        $quiz->quiz_exp = Carbon::createFromFormat('H:i', $request->quiz_exp)->timestamp;
+        $quiz->quiz_exp_date = Carbon::createFromFormat('Y-m-d', $request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d', $request->quiz_start_date)->timestamp;
         $quiz->last_editor_user_id = auth()->id();
-        if ($request->students == 1) {
-            $quiz->quiz_permission = 'all';
-        } elseif ($request->students == 2) {
-            $quiz->quiz_permission = 'some';
-        }
+        $quiz->teacher_id = $request->teacher_id;
+//        if ($request->students == 1) {
+//            $quiz->quiz_permission = 'all';
+//        } elseif ($request->students == 2) {
+//            $quiz->quiz_permission = 'some';
+//        }
         $quiz->save();
-        if ($request->students == 1) {
-            $quiz->quiz_permission = 'all';
-        } elseif ($request->students == 2) {
-            $quiz->quiz_permission = 'some';
-            $students = $request->some_student;
-            foreach ($students as $item) {
-                DB::table('user_quiz')->where('quiz_id', '=', $id)->update([
-                    'user_id' => $item,
-                    'quiz_id' => $quiz->id
-                ]);
-            }
-        }
+//        if ($request->students == 1) {
+//            $quiz->quiz_permission = 'all';
+//        } elseif ($request->students == 2) {
+//            $quiz->quiz_permission = 'some';
+//            $students = $request->some_student;
+//            foreach ($students as $item) {
+//                $user_quiz_row_count = DB::table('user_quiz')->where(['quiz_id' => $id,'user_id' => $item])->count();
+//                if ($user_quiz_row_count > 0) {
+//                    DB::table('user_quiz')->where('quiz_id', '=', $id)->where('user_id', '!=', $item)->delete();
+////                    DB::table('user_quiz')->where('quiz_id', '=', $id)->update([
+////                        'user_id' => $item,
+////                        'quiz_id' => $quiz->id
+////                    ]);
+//                } else {
+//                    DB::table('user_quiz')->insert([
+//                        'user_id' => $item,
+//                        'quiz_id' => $quiz->id
+//                    ]);
+//                }
+//            }
+//        }
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status', $comment);
         return redirect()->route('quiz.index');
