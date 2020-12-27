@@ -1,40 +1,29 @@
 @extends('backend.admin.partial._master')
-@section('title','پایه ها')
+@section('title','محصولات')
 @section('cntd')
     @parent
     @php
-        $header="";
-        $loader="dont";
-        $sidebar="";
-        $sidebar="";
+        use AliBayat\LaravelCategorizable\Category;
+            $header="";
+            $loader="dont";
+            $sidebar="";
+            $sidebar="";
     @endphp
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
-    <style>
-        .flip-login, .flip-plus {
-            position: absolute;
-            left: 49px;
-            top: -1em;
-            -webkit-transform-style: flat;
-            transform-style: flat;
-            -webkit-transition: -webkit-transform .3s ease-out;
-            -o-transition: -o-transform .3s ease-out;
-            transition: transform .3s ease-out;
-        }
-    </style>
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h3 class="widget-title">پایه ها</h3>
+                    <h3 class="widget-title">محصولات</h3>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <x-btn route="level.create"/>
+                            <x-btn route="product.create"/>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -42,7 +31,11 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">ردیف</th>
-                                        <th scope="col">پایه</th>
+                                        <th scope="col">نام</th>
+                                        <th scope="col">قیمت</th>
+                                        <th scope="col">تخفیف</th>
+                                        <th scope="col">تاریخ ثبت</th>
+                                        <th scope="col">دسته بندی</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
                                     </thead>
@@ -61,7 +54,35 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->level_title}}</li>
+                                                        <li>{{$item->name}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->price}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->discount}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->created_at}}</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="statement-info">
+                                                    <ul class="list-items">
+                                                        <li>{{$item->price}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -69,17 +90,17 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('level.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                            <a href="{{route('product.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
                                                                 <span class="text-edit"></span>
                                                                 <span class="flip-front"><i class="fas fa-user-edit"></i></span>
                                                                 <span class="flip-back"><i class="fas fa-pen-square"></i></span>
                                                             </a>
 
-                                                            <a href="{{route('level.destroy',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                            <button href="{{route('product.destroy',$item->id)}}" class="btn-edit trash" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
                                                                 <span class="text-edit"></span>
                                                                 <span class="flip-login"><i class="fas fa-user-times"></i></span>
                                                                 <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
-                                                            </a>
+                                                            </button>
                                                         </li>
                                                     </ul>
                                                 </div>

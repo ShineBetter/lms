@@ -64,7 +64,7 @@ Route::resource('level','LevelController')->middleware('auth');
 Route::resource('category','CategoryController')->middleware('auth');
 
 //product route
-Route::resource('product','CategoryController')->middleware('auth');
+Route::resource('product','ProductController')->middleware('auth');
 
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');

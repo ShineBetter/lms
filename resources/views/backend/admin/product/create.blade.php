@@ -1,5 +1,5 @@
 @extends('backend.admin.partial._master')
-@section('title','دسته بندی')
+@section('title','محصولات')
 @section('cntd')
     @parent
     @php
@@ -7,6 +7,7 @@
         $loader="dont";
         $sidebar="";
     @endphp
+    <!-- end dashboard-sidebar -->
     @isset($errors)
         @foreach($errors->all() as $message)
             <x-alert type="warning" text="{{$message}}"/>
@@ -18,39 +19,12 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <h3 class="widget-title">اطلاعات دسته بندی</h3>
+                            <h3 class="widget-title">اطلاهات محصول</h3>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="user-form">
                                 <div class="contact-form-action">
-                                    {{ Form::model($data,['route'=>['category.update',$data->id], 'method' => 'put','files' => true])}}
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="input-box">
-                                                {{Form::label('category_name', 'نام دسته بندی', ['class' => 'label-text'])}}
-                                                <span class="primary-color-2 ml-1">*</span>
-                                                <div class="form-group">
-                                                    {!! Form::text('category_name', $data->name, ['class' => 'form-control','placeholder' => 'نام دسته بندی']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        @if($category->toArray() != null)
-                                            <div class="col-lg-6 col-sm-6">
-                                                <div class="input-box">
-                                                    {{Form::label('category_name', 'زیردسته', ['class' => 'label-text'])}}
-                                                    <div class="form-group">
-                                                        <select class="form-control" name="parent_category" id="parent_category">
-                                                            <option value="" class="disabled" selected>انتخاب کنید</option>
-                                                            @foreach($category as $item)
-                                                                <option {{$item->id == $data->parent_id ? 'selected' : ''}} value="{{$item->id}}">{{$item->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-6 -->
-                                        @endif
-                                    </div><!-- end row -->
+                                    {{ Form::open(['route'=>'product.store', 'method' => 'post','files' => true])}}
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
@@ -64,10 +38,10 @@
                                         </div><!-- end col-lg-6 -->
                                         <div class="col-lg-6 col-sm-6">
                                             <div class="input-box">
-                                                {{Form::label('product_name', 'قیمت محصول', ['class' => 'label-text'])}}
+                                                {{Form::label('product_price', 'قیمت محصول (تومان)', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::number('product_name', null, ['class' => 'form-control','placeholder' => '50.000']) !!}
+                                                    {!! Form::number('product_price', null, ['class' => 'form-control','placeholder' => '50.000']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -76,7 +50,7 @@
                                             <div class="input-box">
                                                 {{Form::label('product_discount', 'درصد تخفیف', ['class' => 'label-text'])}}
                                                 <div class="form-group">
-                                                    {!! Form::number('product_discount', null, ['class' => 'form-control','placeholder' => '50']) !!}
+                                                    {!! Form::number('product_discount', null, ['class' => 'form-control','placeholder' => '50','min' => '0','max' => '100']) !!}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -117,7 +91,7 @@
                                                     {{Form::label('category_id', 'دسته بندی محصول', ['class' => 'label-text'])}}
                                                     <span class="primary-color-2 ml-1">*</span>
                                                     <div class="form-group">
-                                                        <select name="category_id" id="category_id">
+                                                        <select class="form-control" name="category_id" id="category_id">
                                                             @foreach($data as $item)
                                                                 <option value="{{$item->id}}">{{$item->name}}</option>
                                                             @endforeach
@@ -136,24 +110,30 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
-                                        @if($data->toArray() != null)
-                                            <div class="col-lg-6 col-sm-6">
-                                                <div class="input-box">
-                                                    {{Form::label('category_name', 'زیردسته', ['class' => 'label-text'])}}
-                                                    <span class="primary-color-2 ml-1">*</span>
-                                                    <div class="form-group">
-                                                        <select class="form-control" name="parent_category"
-                                                                id="parent_category">
-                                                            <option value="" class="disabled" selected>انتخاب کنید
-                                                            </option>
-                                                            @foreach($data as $item)
-                                                                <option value="{{$item->id}}">{{$item->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                <div class="product_count_radio_inputs_group">
+                                                    <input type="radio" class="product_count_radio_input" checked
+                                                           name="product_count" value="1" id="unlimit_product_count"/>
+                                                    <label for="unlimit_product_count" class="student_radio_input_lable">تعداد نامحدود</label>
+                                                    <input type="radio" class="product_count_radio_input" name="product_count"
+                                                           value="2" id="limit_product_count"/>
+                                                    <label for="limit_product_count" class="student_radio_input_lable">تعداد محدود</label>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                        @endif
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::number('product_count',['class' => 'form-control','min' => 0])}}
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                    </div><!-- end row -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            {!! Form::submit('ثبت', ['class' => 'theme-btn float-left']) !!}
+
+                                            {{--                                            <x-btn type="submit" title="ثبت" class="theme-btn float-left"/>--}}
+                                        </div>
                                     </div><!-- end row -->
                                     {{ Form::close() }}
 
