@@ -32,7 +32,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::text('category_name', null, ['class' => 'form-control','placeholder' => 'نام دسته بندی']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <span class="fa fa-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
