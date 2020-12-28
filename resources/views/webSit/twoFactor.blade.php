@@ -216,7 +216,7 @@
     </style>
     <div class="container">
         <form id="form">
-            <h1>TWO-FACTOR AUTHENTICATION</h1>
+            <h1>تایید شماره</h1>
             <div class="form__group form__pincode">
                 <label>Enter 6-digit code from your authenticator application</label>
                 <input type="tel" name="pincode-1" maxlength="1" pattern="[\d]*" tabindex="1" placeholder="·" autocomplete="off">
@@ -226,10 +226,10 @@
                 <input type="tel" name="pincode-5" maxlength="1" pattern="[\d]*" tabindex="5" placeholder="·" autocomplete="off">
                 <input type="tel" name="pincode-6" maxlength="1" pattern="[\d]*" tabindex="6" placeholder="·" autocomplete="off">
             </div>
-            <div class="form__buttons">
-                <a href="#" class="button button--primary" disabled>Continue</a>
-            </div>
         </form>
+        <div class="form__buttons">
+            <button class="btn btn-outline-primary ResendCode">ارسال مجدد کد تایید</button>
+        </div>
     </div>
 
 

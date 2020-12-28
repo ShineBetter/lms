@@ -25,7 +25,9 @@ Auth::routes(['register'=>false]);
 Route::get('user/login','FrontEndController@login')->name('login.form');
 Route::get('user/logout','FrontEndController@logout')->name('user.logout');
 Route::post('user/login','FrontEndController@submitLogin')->name('login.submit');
-Route::view('user/verify','webSit.twoFactor')->name('twofactor');
+Route::view('user/twofactor','webSit.twoFactor')->name('twofactor.page');
+Route::post('user/verify','FrontEndController@sendTwoFactor')->name('twofactor');
+Route::post('user/verify-check','FrontEndController@checkTwoFactor')->name('twofactor.check');
 
 //register route
 Route::get('user/register','FrontEndController@register')->name('register.form');
@@ -51,7 +53,7 @@ Route::resource('questions','QuestionsController')->middleware('auth');
 Route::resource('quizResult','QuizResultController')->middleware('auth');
 
 //role route
-Route::resource('role','RoleController')->middleware('auth');
+Route::resource('userRoles','userRoles')->middleware('auth');
 
 //banner route
 Route::resource('banner','BannerController')->middleware('auth');

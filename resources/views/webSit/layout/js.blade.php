@@ -27,7 +27,24 @@
 
 
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     $(document).ready(function($){
+
+
+        $('.ResendCode').on('click', function () {
+            $.ajax({
+                url: '{{route("twofactor")}}',
+                type:'post',
+                success: function (data) {
+                    console.log(data)
+                }
+            })
+        })
         // setting
         var debug = false;
 
@@ -65,7 +82,7 @@
             , $sixth = $form.find('[name=pincode-6]');
 
         // submit button
-        var $button = $form.find('.button--primary');
+        // var $button = $form.find('.button--primary');
 
         // all fields
         $inputs
@@ -352,19 +369,20 @@
                         // send request
                         _req = $.ajax({
                             type: 'POST',
-                            url: '/api/tfa',
+                            url: '{{route("twofactor.check")}}',
                             data: {
                                 'code': _pincode.join(''),
-                                '_csrf': ''
                             }
                         })
                             .done(function(data, textStatus, jqXHR) {
+                                console.log(data)
                                 try {
                                     ! debug || console.log('data', data);
 
                                     if (data.ok === true) {
                                         $group.addClass('form__group--success');
-                                        $button.removeAttr('disabled');
+                                        // $button.removeAttr('disabled');
+                                        window.location = '/';
                                     }
 
                                     if (data.ok === false) {
