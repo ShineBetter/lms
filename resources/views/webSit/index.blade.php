@@ -27,108 +27,50 @@
                     $slider3=\Illuminate\Support\Facades\DB::table('main_sliders')->where("id",3)->first();
                     @endphp
                     <div class="col-lg-12">
-                        <div class="w3-content w3-display-container">
-                    <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="{{asset($slider1->picture)}}" style="width:100%">
-                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
-                            <h2>
-                                {{$slider1->header}}
-                            </h2>
-                            <p>
-                                {{$slider1->text}}
-                            </p>
-                        </div>                    </div>
-                    <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="{{asset($slider2->picture)}}" style="width:100%">
-                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
-                          <h2>
-                              {{$slider2->header}}
-                          </h2>
-                            <p>
-                                {{$slider2->text}}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w3-display-container">
-                        <img class="mySlides w3-animate-fading" src="{{asset($slider3->picture)}}" style="width:100%">
-                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">
-                            <h2>
-                                {{$slider3->header}}
-                            </h2>
-                            <p>
-                                {{$slider3->text}}
-                            </p>
-                        </div>
-                    </div>
-                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-                    </div>
-
+{{--                        <div class="w3-content w3-display-container">--}}
+{{--                    <div class="w3-display-container">--}}
+{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider1->picture)}}" style="width:100%">--}}
+{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
+{{--                            <h2>--}}
+{{--                                {{$slider1->header}}--}}
+{{--                            </h2>--}}
+{{--                            <p>--}}
+{{--                                {{$slider1->text}}--}}
+{{--                            </p>--}}
+{{--                        </div>                    </div>--}}
+{{--                    <div class="w3-display-container">--}}
+{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider2->picture)}}" style="width:100%">--}}
+{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
+{{--                          <h2>--}}
+{{--                              {{$slider2->header}}--}}
+{{--                          </h2>--}}
+{{--                            <p>--}}
+{{--                                {{$slider2->text}}--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="w3-display-container">--}}
+{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider3->picture)}}" style="width:100%">--}}
+{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
+{{--                            <h2>--}}
+{{--                                {{$slider3->header}}--}}
+{{--                            </h2>--}}
+{{--                            <p>--}}
+{{--                                {{$slider3->text}}--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>--}}
+{{--                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>--}}
+{{--                    </div>--}}
+@include('websit.slider.slider');
                     </div>
                     {{--                    </div><!-- col-lg-12 -->--}}
                 </div><!-- row -->
-{{--            </div><!-- container -->--}}
-{{--        </div><!-- end single-slide-item -->--}}
-{{--        <div class="single-slide-item slide-bg2">--}}
-{{--            <div class="container">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-lg-12">--}}
-{{--                        <div class="section-heading text-center">--}}
-{{--                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>--}}
-{{--                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
-{{--                                <br>زمان مورد نیاز شامل حروفچینی--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                        <div class="btn-box d-flex align-items-center justify-content-center">--}}
-{{--                            <a href="../admission.blade.php" class="theme-btn theme-btn-hover-light">شروع کن</a>--}}
-{{--                            <a href="home-rtl#" class="btn-text video-play-btn ml-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=cRXm1p-CNyk" data-speed="700">--}}
-{{--                                Watch Preview<i class="la la-play icon-btn ml-2"></i>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div><!-- col-lg-12 -->--}}
-{{--                </div><!-- row -->--}}
-{{--            </div><!-- container -->--}}
-{{--        </div><!-- end single-slide-item -->--}}
-{{--        <div class="single-slide-item slide-bg3">--}}
-{{--            <div class="container">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-lg-12">--}}
-{{--                        <div class="section-heading text-right">--}}
-{{--                            <h2 class="section__title text-white">مجموعه ما بهترین استاتید را دربردارد <br> دوره های بسیار متفاوت</h2>--}}
-{{--                            <p class="section__desc"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است--}}
-{{--                                <br>زمان مورد نیاز شامل حروفچینی--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                        <div class="btn-box hero-btn-right d-flex align-items-center justify-content-end">--}}
-{{--                            <a href="home-rtl#" class="btn-text video-play-btn mr-4" data-fancybox="video" data-src="https://www.youtube.com/watch?v=cRXm1p-CNyk" data-speed="700">--}}
-{{--                                <i class="la la-play icon-btn mr-2"></i>Watch Preview--}}
-{{--                            </a>--}}
-{{--                            <a href="/admission" class="theme-btn theme-btn-hover-light">عصویت</a>--}}
-{{--                        </div>--}}
-{{--                    </div><!-- col-lg-12 -->--}}
-{{--                </div><!-- row -->--}}
-{{--            </div><!-- container -->--}}
-{{--        </div><!-- end single-slide-item -->--}}
-{{--    </div><!-- end hero-slide -->--}}
+
 </section><!-- end slider-area -->
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex-1].style.display = "block";
-        }
     </script>
 <!--================================
         END SLIDER AREA

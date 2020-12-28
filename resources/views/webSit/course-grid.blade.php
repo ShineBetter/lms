@@ -1086,152 +1086,105 @@
                                 <h3 class="widget-title">دسته بندی ها</h3>
                                 <span class="section-divider"></span>
                                 <ul class="filter-by-category">
+
                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb1">
-                                            <label for="chb1" class="primary-color">دوره ها<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
+                                        <input type="checkbox" id="chb2">
+                                        <label for="chb2" class="primary-color">دوره ها</label>
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
+
                                             <input type="checkbox" id="chb2">
-                                            <label for="chb2" class="primary-color">همایشات<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
+                                            <label for="chb2" class="primary-color">همایشات</label>
+
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
                                             <input type="checkbox" id="chb3">
-                                            <label for="chb3" class="primary-color">آزمون ها<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
+                                            <label for="chb3" class="primary-color">آزمون ها</label>
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
                                             <input type="checkbox" id="chb4">
-                                            <label for="chb4" class="primary-color">فیلم آموزشی<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
+                                            <label for="chb4" class="primary-color">فیلم آموزشی</label>
                                     </li>
                                      <li>
-                                        <div class="custom-checkbox">
                                             <input type="checkbox" id="chb5">
-                                            <label for="chb5" class="primary-color">نمونه سوالات<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
+                                            <label for="chb5" class="primary-color">نمونه سوالات</label>
                                     </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb6">--}}
-{{--                                            <label for="chb6" class="primary-color">Typography<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb7">--}}
-{{--                                            <label for="chb7" class="primary-color">Web Development<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb8">--}}
-{{--                                            <label for="chb8" class="primary-color">Photography<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb9">--}}
-{{--                                            <label for="chb9" class="primary-color">Illustration<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb10">--}}
-{{--                                            <label for="chb10" class="primary-color">Programing<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb11">--}}
-{{--                                            <label for="chb11" class="primary-color">Communications<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb12">--}}
-{{--                                            <label for="chb12" class="primary-color">Finance<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb13">--}}
-{{--                                            <label for="chb13" class="primary-color">3D Design<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb14">--}}
-{{--                                            <label for="chb14" class="primary-color">Database<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
+
                                 </ul>
+
                             </div><!-- end sidebar-widget -->
-                            <div class="sidebar-widget">
-                                <h3 class="widget-title">زمان ویدیو</h3>
-                                <span class="section-divider"></span>
-                                <ul class="filter-by-level">
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb15">
-                                            <label for="chb15" class="primary-color">0-2 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb16">
-                                            <label for="chb16" class="primary-color">3-6 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb17">
-                                            <label for="chb17" class="primary-color">7-14 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb18">--}}
-{{--                                            <label for="chb18" class="primary-color">16+ ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                </ul>
-                            </div><!-- end sidebar-widget -->
+
                             <div class="sidebar-widget">
                                 <h3 class="widget-title">سطح</h3>
                                 <span class="section-divider"></span>
-                                <ul class="filter-by-level">
+                                <ul class="filter-by-rating filter-by-rating-2">
                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb19">
-                                            <label for="chb19" class="primary-color">همه سطوح<span class="ml-2 font-size-14 primary-color-3">(20,300)</span></label>
-                                        </div>
+                                        <span>
+                                            <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span>
+                                        </span>
+                                        <span class="ml-1">
+                                            <span class="mr-1 primary-color">پیشرفته</span>
+{{--                                            <span>(13,000)</span>--}}
+                                        </span>
+                                        <label class="review-label">
+                                            <input type="radio" checked="checked" name="review-radio">
+                                            <span class="review-mark"></span>
+                                        </label>
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb20">
-                                            <label for="chb20" class="primary-color">پیشرفته<span class="ml-2 font-size-14 primary-color-3">(5,300)</span></label>
-                                        </div>
+                                        <span>
+                                           <span class="la la-star"></span> <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span>
+                                        </span>
+                                        <span class="ml-1">
+                                            <span class="mr-1 primary-color">متوسط</span>
+{{--                                            <span>(5,000)</span>--}}
+                                        </span>
+                                        <label class="review-label">
+                                            <input type="radio" name="review-radio">
+                                            <span class="review-mark"></span>
+                                        </label>
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb21">
-                                            <label for="chb21" class="primary-color">استاندارد<span class="ml-2 font-size-14 primary-color-3">(3,300)</span></label>
-                                        </div>
+                                        <span>
+                                            <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
+                                        </span>
+                                        <span class="ml-1">
+                                            <span class="mr-1 primary-color">استاندارد</span>
+{{--                                            <span>(3,000)</span>--}}
+                                        </span>
+                                        <label class="review-label">
+                                            <input type="radio" name="review-radio">
+                                            <span class="review-mark"></span>
+                                        </label>
                                     </li>
                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb22">
-                                            <label for="chb22" class="primary-color">متوسط<span class="ml-2 font-size-14 primary-color-3">(1,300)</span></label>
-                                        </div>
+                                         <span>
+                                            <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
+                                        </span>
+                                        <span class="ml-1">
+                                            <span class="mr-1 primary-color">همه سطوح</span>
+{{--                                            <span>(3,000)</span>--}}
+                                        </span>
+                                        <label class="review-label">
+                                            <input type="radio" name="review-radio">
+                                            <span class="review-mark"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            <span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
+                                        </span>
+{{--                                        <span class="ml-1">--}}
+{{--                                            <span class="mr-1 primary-color">1.0 & up</span>--}}
+{{--                                            <span>(3,000)</span>--}}
+{{--                                        </span>--}}
+                                        <label class="review-label">
+                                            <input type="radio" name="review-radio">
+                                            <span class="review-mark"></span>
+                                        </label>
                                     </li>
                                 </ul>
-                            </div><!-- end sidebar-widget -->
+                            </div>
 {{--                            <div class="sidebar-widget">--}}
 {{--                                <h3 class="widget-title">Language</h3>--}}
 {{--                                <span class="section-divider"></span>--}}
@@ -1899,4 +1852,5 @@
 <script src="/js/smooth-scrolling.js"></script>
 <script src="/js/tooltipster.bundle.min.js"></script>
 <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 @endsection

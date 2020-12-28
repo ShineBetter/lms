@@ -201,7 +201,8 @@ Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")-
 Route::get("/aboutTeacher","AboutTeacherController@index")->middleware("auth")->name("aboutTeacher.index");
 Route::get("/aboutTeacher/edit/{id}","AboutTeacherController@edit")->middleware("auth")->name("aboutTeacher.edit");
 Route::put("/aboutTeacher/update{id}","AboutTeacherController@update")->middleware("auth")->name("aboutTeacher.update");
-
+Route::view('/teachers','webSit.teachers');
+Route::view('/teacher-detail/{id}','webSit.teacher-detail')->name("teacher-detail");
 ///////////aboutpiuc
 Route::get("/aboutpic","AboutpicController@index")->middleware("auth")->name("aboutpic.index");
 Route::get("/aboutpic/edit/{id}","AboutpicController@edit")->middleware("auth")->name("aboutpic.edit");
@@ -221,9 +222,13 @@ Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("
 Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
 Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
 Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
+/////mainpage slider
 
+Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
+Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
+Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");
 //////////form-client
-/// main page course free
+/// main page course free res
 Route::get("/form-main-free/a","FormFreecourseController@index")->middleware("auth")->name("formFree.index");
 Route::get("/form-main-free","FormFreecourseController@store")->name("formFree.store");
 Route::delete("/form-main-free/delete/{id}","FormFreecourseController@destroy")->middleware("auth")->name("formFree.destroy");
