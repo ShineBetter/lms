@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\userRoles;
 use Illuminate\Http\Request;
 
 class UserRolesController extends Controller
@@ -16,7 +15,7 @@ class UserRolesController extends Controller
     public function index()
     {
         $data = User::where('id', '!=', \auth()->id())->get();
-        return view('backend.admin.userRoles.index', ['data' => $data, 'row' => 0]);
+        return view('backend.admin.userRoles.index', ['data' => $data, 'row' => 1]);
     }
 
     /**
@@ -41,7 +40,7 @@ class UserRolesController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $role = $user->user_role;
+        $role = $request->user_role;
         if ($role == 'admin') {
             $user->user_role = 'admin';
         } elseif ($role == 'teacher') {

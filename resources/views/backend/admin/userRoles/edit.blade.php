@@ -32,7 +32,7 @@
                                                 {{Form::label('user_role', 'نقش', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    <select name="user_role" id="user_role">
+                                                    <select class="form-control" name="user_role" id="user_role">
                                                         <option {{$data->user_role == 'admin' ? 'selected' : ''}} value="admin">مدیر</option>
                                                         <option {{$data->user_role == 'teacher' ? 'selected' : ''}} value="teacher">استاد</option>
                                                         <option {{$data->user_role == 'parent' ? 'selected' : ''}} value="parent">اولیا</option>

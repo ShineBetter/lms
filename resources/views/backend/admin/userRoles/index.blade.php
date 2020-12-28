@@ -34,7 +34,7 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <x-btn route="userRoles.create"/>
+
                         </div>
                         <div class="card-box-shared-body">
                             <div class="statement-table purchase-table table-responsive mb-5">
@@ -54,7 +54,7 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li class="mb-1">
-                                                            <p>{{ $key + $data->firstItem() }}</p>
+                                                            <p>{{ $row++ }}</p>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -62,7 +62,7 @@
                                             <td>
                                                 <div class="statement-info">
                                                     <ul class="list-items">
-                                                        <li>{{$item->profile->name}} {{$item->profile_lastName}}</li>
+                                                        <li>{{$item->profile->name}} {{$item->profile->lastName}}</li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -102,7 +102,6 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                {{ $data->links() }}
                             </div>
                         </div>
                     </div>

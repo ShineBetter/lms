@@ -53,7 +53,7 @@ Route::resource('questions','QuestionsController')->middleware('auth');
 Route::resource('quizResult','QuizResultController')->middleware('auth');
 
 //role route
-Route::resource('userRoles','userRoles')->middleware('auth');
+Route::resource('userRoles','UserRolesController')->middleware(['auth','can:Admin']);
 
 //banner route
 Route::resource('banner','BannerController')->middleware('auth');
