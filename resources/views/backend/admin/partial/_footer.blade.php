@@ -27,8 +27,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset("template_sit/js/main.js")}}"></script>
 <script src="{{asset("css/owl.carousel.min.js")}}"></script>
-
-
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('template_sit/js/jquery.mpdatepicker.js')}}"></script>
 <script>
 
     // set csrf token in meta tag
@@ -37,6 +37,13 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    $(document).ready( function () {
+        $('.table').DataTable();
+    } );
+
+
+
     let number = $('.exam_question_number').html();
     let end_display = $('.exam_question_max_number').html();
     if (number == end_display) {
@@ -377,6 +384,20 @@
             $('.statement-table').html($(data).find('.statement-table').html())
         });
     });
+    // change product status
+    $(document).on('click', '.product_status_radio', function (e) {
+        // e.preventDefault(); // does not go through with the link.
+        var $this = $(this);
+        $.post({
+            type: 'post',
+            url: 'product/status',
+            data: {
+                'id': $this.attr('pid'),
+            }
+        }).done(function (data) {
+            console.log(data)
+        });
+    });
 
     // ajax pagination
     $(document).on('click', '.pagination a', function (event) {
@@ -409,6 +430,19 @@
             }
         });
     }
+
+    $('#some_students').change('checked', function () {
+        $('.select-wrapper').fadeIn(500);
+    })
+    $('#all_students').change('checked', function () {
+        $('.select-wrapper').fadeOut(500);
+    })
+    $('#limit_product_count').change('checked', function () {
+        $('.product_count_div').fadeIn(500);
+    })
+    $('#unlimit_product_count').change('checked', function () {
+        $('.product_count_div').fadeOut(500);
+    })
 </script>
 <script src={{asset("template_sit/dist/js/BsMultiSelect.js")}}></script>
 <script>

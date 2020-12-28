@@ -164,6 +164,7 @@ return [
         \AliBayat\LaravelCategorizable\CategorizableServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Anetwork\Validation\PersianValidationServiceProvider::class,
+        Trez\RayganSms\RayganSmsServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'RayganSms' => Trez\RayganSms\Facades\RayganSms::class,
     ],
 
 ];

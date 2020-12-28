@@ -50,15 +50,27 @@
                 <li class="sidenav__item"><a class="text-center" href="{{ route('conference.index') }}"><i class="fas fa-id-badge"></i>
                         <p class="w-100">همایشات</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
-                            class="fas fa-clipboard-check"></i>
-                        <p class="w-100">دوره های ثبت نام شده</p>
+{{--<<<<<<< HEAD--}}
+{{--                <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i--}}
+{{--                            class="fas fa-clipboard-check"></i>--}}
+{{--                        <p class="w-100">دوره های ثبت نام شده</p>--}}
+{{--=======--}}
+                <li class="sidenav__item"><a class="text-center" href="{{route('questions.index')}}"><i
+                            class="fas fa-graduation-cap"></i>
+                        <p class="w-100">سوالات</p>
+
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="{{route('category.index')}}"><i class="fas fa-database"></i>
                         <p class="w-100">دسته بندی محصولات</p>
                     </a>
                 </li>
-                <li class="sidenav__item"><a class="text-center" href="{{route('category.index')}}"><i class="fas fa-shopping-cart"></i>
+
+{{--                <li class="sidenav__item"><a class="text-center" href="{{route('category.index')}}"></i>--}}
+{{--                   --}}
+{{--                    </a>--}}
+{{--                </li>--}}
+                <li class="sidenav__item"><a class="text-center" href="{{route('product.index')}}"><i class="fas fa-shopping-cart"></i>
+
                         <p class="w-100">محصولات</p>
                     </a>
                 </li>

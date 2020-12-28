@@ -36,5 +36,20 @@
 <script src="/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/owl.carousel.min.js"></script>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 36cc36409aaca036a0f780c5407cb7879d0f9f65
+=======
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/owl.carousel.min.js"></script>
+>>>>>>> 9adad69cac9c784a1acc6036866fb5f4d98d42b4
+=======
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/owl.carousel.min.js"></script>
+=======
+>>>>>>> 36cc36409aaca036a0f780c5407cb7879d0f9f65
+>>>>>>> 6bbf22183b9dea6caf42f0232d8c7764303a6dcb
+>>>>>>> 87aae281e3cd904de59d36d4808641ca87cfe040
+>>>>>>> ef43ad2723743f94ae6c59903bbc9417a51d48a7

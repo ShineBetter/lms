@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createCategoryRequest;
+use App\Http\Requests\createProductRequest;
 use App\Http\Requests\editQuestionRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use AliBayat\LaravelCategorizable\Category;
+use Intervention\Image\Facades\Image;
 use phpDocumentor\Reflection\DocBlock\Tags\Version;
 
 class ProductController extends Controller
@@ -18,8 +20,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Category::paginate(10);
-        return view('backend.admin.category.index',['data' => $data]);
+        $data = Product::paginate(10);
+        return view('backend.admin.product.index',['data' => $data]);
     }
 
     /**
@@ -30,7 +32,7 @@ class ProductController extends Controller
     public function create()
     {
         $data = Category::get();
-        return view('backend.admin.category.create',['data' => $data]);
+        return view('backend.admin.product.create',['data' => $data]);
     }
 
     /**
@@ -39,15 +41,37 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createCategoryRequest $request)
+    public function store(createProductRequest $request)
     {
-        $category = new Category();
-        $category->name = $request->category_name;
-        $category->parent_id = $request->parent_category;
-        $category->save();
+        $product = new Product();
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_discount = $request->product_discount;
+        $file = $request->file('product_img');
+        if (!empty($file)){
+            $file_name = "images/product-image/product-photo-" . time() . '-' .$file->getClientOriginalName();
+            Image::make($file->getRealPath())->resize(200,200)->save($file_name);
+            $product->product_img = $file_name;
+        }
+        $product->product_short_desc = $request->product_short_desc;
+        $product->product_desc = $request->product_desc;
+        $product->category_id = $request->category_id;
+        $product->product_file = $request->product_file;
+        if ($request->product_count_status == 1){
+            $product->product_count = -1;
+        }else{
+            $product->product_count = $request->product_count;
+        }
+        if ($request->product_status == null){
+            $product->product_status = 0;
+        }else{
+            $product->product_status = 1;
+        }
+        $product->created_at = now()->timestamp;
+        $product->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';
         session()->flash('status', $comment);
-        return redirect()->route('category.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -69,9 +93,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $data = Category::find($id);
+        $data = Product::find($id);
         $category = Category::get();
-        return view('backend.admin.category.edit',['data' => $data,'category' => $category]);
+        return view('backend.admin.product.edit',['data' => $data,'category' => $category]);
     }
 
     /**
@@ -83,13 +107,35 @@ class ProductController extends Controller
      */
     public function update(editQuestionRequest $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->name = $request->category_name;
-        $category->parent_id = $request->parent_category;
-        $category->save();
+        $product = Product::findOrFail($id);
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_discount = $request->product_discount;
+        $file = $request->file('product_img');
+        if (!empty($file)){
+            $file_name = "images/product-image/product-photo-" . time() . '-' .$file->getClientOriginalName();
+            Image::make($file->getRealPath())->resize(200,200)->save($file_name);
+            $product->product_img = $file_name;
+        }
+        $product->product_short_desc = $request->product_short_desc;
+        $product->product_desc = $request->product_desc;
+        $product->category_id = $request->category_id;
+        $product->product_file = $request->product_file;
+        if ($request->product_count_status == 1){
+            $product->product_count = -1;
+        }else{
+            $product->product_count = $request->product_count;
+        }
+        if ($request->product_status == null){
+            $product->product_status = 0;
+        }else{
+            $product->product_status = 1;
+        }
+        $product->created_at = now()->timestamp;
+        $product->save();
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status',$comment);
-        return redirect()->route('category.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -100,9 +146,21 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findOrFail($id)->delete();
+        $category = Product::findOrFail($id)->delete();
         $comment = 'عملیات حذف بدرستی انجام شد';
         session()->flash('status',$comment);
         return back();
+    }
+
+    public function changeProductStatus(Request $request)
+    {
+        $id = $request->id;
+        $product = Product::findOrFail($id);
+        if ($product->product_status == 0){
+            $product->product_status = 1;
+        }else{
+            $product->product_status = 0;
+        }
+        $product->save();
     }
 }
