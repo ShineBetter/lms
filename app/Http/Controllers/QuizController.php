@@ -47,8 +47,8 @@ class QuizController extends Controller
         $quiz->quiz_name = $request->quiz_name;
         $quiz->quiz_start = Carbon::createFromFormat('H:i', $request->quiz_start)->timestamp;
         $quiz->quiz_exp = Carbon::createFromFormat('H:i', $request->quiz_exp)->timestamp;
-        $quiz->quiz_exp_date = Carbon::createFromFormat('Y-m-d', $request->quiz_exp_date)->timestamp;
-        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d', $request->quiz_start_date)->timestamp;
+        $quiz->quiz_exp_date = Carbon::createFromFormat('Y/m/d', $request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y/m/d', $request->quiz_start_date)->timestamp;
         $quiz->user_id = auth()->id();
         $quiz->teacher_id = $request->teacher_id;
         if ($request->students == 1) {
@@ -126,8 +126,8 @@ class QuizController extends Controller
         $quiz->quiz_name = $request->quiz_name;
         $quiz->quiz_start = Carbon::createFromFormat('H:i', $request->quiz_start)->timestamp;
         $quiz->quiz_exp = Carbon::createFromFormat('H:i', $request->quiz_exp)->timestamp;
-        $quiz->quiz_exp_date = Carbon::createFromFormat('Y-m-d', $request->quiz_exp_date)->timestamp;
-        $quiz->quiz_start_date = Carbon::createFromFormat('Y-m-d', $request->quiz_start_date)->timestamp;
+        $quiz->quiz_exp_date = Carbon::createFromFormat('Y/m/d', $request->quiz_exp_date)->timestamp;
+        $quiz->quiz_start_date = Carbon::createFromFormat('Y/m/d', $request->quiz_start_date)->timestamp;
         $quiz->last_editor_user_id = auth()->id();
         $quiz->teacher_id = $request->teacher_id;
 //        if ($request->students == 1) {

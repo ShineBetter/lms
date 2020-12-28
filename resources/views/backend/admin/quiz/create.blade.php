@@ -65,7 +65,8 @@
                                                 {{Form::label('quiz_start_date', 'تاریخ شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_start_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+                                                    <input type="text" name="quiz_start_date" class="pdatepicker">
+{{--                                                    {!! Form::date('quiz_start_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}--}}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -75,7 +76,8 @@
                                                 {{Form::label('quiz_exp_date', 'تاریخ پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_exp_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+                                                    <input type="text" name="quiz_exp_date" class="pdatepicker">
+{{--                                                    {!! Form::date('quiz_exp_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}--}}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>

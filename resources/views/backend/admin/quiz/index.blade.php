@@ -49,7 +49,7 @@
                                             $start_time = Carbon::createFromTimestamp($item->quiz_start);
                                             $end_time = Carbon::createFromTimestamp($item->quiz_exp);
                                             $start_date = Carbon::createFromTimestamp($item->quiz_start_date);
-                                            $end_date = Carbon::createFromTimestamp($item->quiz_exp_date);
+                                            $end_date = Carbon::createFromTimestamp($item->quiz_start_date);
                                             $now = \Carbon\Carbon::now();
                                         @endphp
                                         @if($item->quiz_permission == 'all' || \Illuminate\Support\Facades\Gate::check('Admin'))
@@ -87,14 +87,14 @@
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$start_date->format('Y-m-d')}}</li>
+                                                            <li>{{$start_date->format('Y/m/d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$end_date->format('Y-m-d')}}</li>
+                                                            <li>{{$end_date->format('Y/m/d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -194,14 +194,14 @@
                                                         <td>
                                                             <div class="statement-info">
                                                                 <ul class="list-items">
-                                                                    <li>{{$start_date->format('Y-m-d')}}</li>
+                                                                    <li>{{$start_date->format('Y/m/d')}}</li>
                                                                 </ul>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="statement-info">
                                                                 <ul class="list-items">
-                                                                    <li>{{$end_date->format('Y-m-d')}}</li>
+                                                                    <li>{{$end_date->format('Y/m/d')}}</li>
                                                                 </ul>
                                                             </div>
                                                         </td>

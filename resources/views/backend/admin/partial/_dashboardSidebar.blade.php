@@ -63,7 +63,7 @@
                         <p class="w-100">محصولات</p>
                     </a>
                 </li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-message"><i class="la la-bell"></i>
+                <li class="sidenav__item"><a class="text-center" href="{{route('ticket.index')}}"><i class="la la-bell"></i>
                         <p class="w-100">پیام ها</p> <span class="badge badge-info radius-rounded p-1 ml-1">2</span>
                     </a>
                 </li>

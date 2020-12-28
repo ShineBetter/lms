@@ -2,7 +2,6 @@
 @section('title','آزمون')
 @section('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="{{asset('template_sit/css/jquery.mpdatepicker.css')}}">
 @endsection
 @section('cntd')
     @parent
@@ -67,8 +66,8 @@
                                                 {{Form::label('quiz_start_date', 'تاریخ شروع', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    <input type="text" class="pdatepicker">
-                                                    {!! Form::date('quiz_start_date', $start_date, ['class' => 'form-control']) !!}
+                                                    <input type="text" class="pdatepicker" name="quiz_start_date">
+{{--                                                    {!! Form::date('quiz_start_date', $start_date, ['class' => 'form-control']) !!}--}}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -78,7 +77,8 @@
                                                 {{Form::label('quiz_exp_date', 'تاریخ پایان', ['class' => 'label-text'])}}
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
-                                                    {!! Form::date('quiz_exp_date', $end_date, ['class' => 'form-control']) !!}
+                                                    <input type="text" class="pdatepicker" name="quiz_exp_date">
+{{--                                                    {!! Form::date('quiz_exp_date', $end_date, ['class' => 'form-control']) !!}--}}
                                                     <span class="la la-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
@@ -182,15 +182,9 @@
 @push('custosm-scripts')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="{{asset('template_sit/js/Pdatepicker.min.js')}}"></script>
+
 
     <script>
-        $( document ).ready(function() {
-            $(".pdatepicker").mpdatepicker({
-                'timePicker': false
-            });
-
-        });
 
         $('#some_students').change('checked', function () {
             $('.select-wrapper').fadeIn();

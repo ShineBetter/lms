@@ -224,3 +224,4 @@ Route::get("/form-faq/show/{id}","FormFaqController@show")->middleware("auth")->
 Route::put("/form-faq/update/{id}","FormFaqController@update")->middleware("auth")->name("formFaq.update");
 Route::delete("/form-faq/delete/{id}","FormFaqController@destroy")->middleware("auth")->name("formFaq.destroy");
 
+Route::view('/messages','backend.admin.messages.messages')->middleware('auth')->name('messages');

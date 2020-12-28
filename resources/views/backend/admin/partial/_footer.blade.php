@@ -29,6 +29,7 @@
 <script src="{{asset("css/owl.carousel.min.js")}}"></script>
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('template_sit/js/jquery.mpdatepicker.js')}}"></script>
+{{--<script src="{{asset('template_sit/js/Pdatepicker.min.js')}}"></script>--}}
 <script>
 
     // set csrf token in meta tag
@@ -40,9 +41,11 @@
 
     $(document).ready( function () {
         $('.table').DataTable();
+
+        $(".pdatepicker").mpdatepicker({
+            'timePicker': false
+        });
     } );
-
-
 
     let number = $('.exam_question_number').html();
     let end_display = $('.exam_question_max_number').html();
