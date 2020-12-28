@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\createConferenceRequest;
 use App\Http\Requests\editConferenceRequest;
 use App\Models\conference;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -36,7 +37,7 @@ class ConferenceController extends Controller
         $conference->price = $request->price;
         $conference->count = $request->count;
         $conference->description = $request->description;
-        $conference->date = $request->date;
+        $conference->date = Carbon::createFromFormat("Y-m-d",$request->date)->timestamp;
         $conference->offer=$request->offer;
         $conference->save();
         $comment = 'اطلاعات ، بدرستی ذخیره شد';

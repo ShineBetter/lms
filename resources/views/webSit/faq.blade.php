@@ -58,74 +58,74 @@
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
-            <div class="row mt-3">
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-1 flex-shrink-0">
-                            <i class="fas fa-school"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--            <div class="row mt-3">--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-1 flex-shrink-0">--}}
+{{--                            <i class="fas fa-school"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-2 flex-shrink-0">
-                            <i class="fas fa-user-graduate"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-2 flex-shrink-0">--}}
+{{--                            <i class="fas fa-user-graduate"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-3 flex-shrink-0">
-                            <i class="far fa-user"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-3 flex-shrink-0">--}}
+{{--                            <i class="far fa-user"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-4 flex-shrink-0">
-                            <i class="far fa-file-word"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-4 flex-shrink-0">--}}
+{{--                            <i class="far fa-file-word"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-5 flex-shrink-0">
-                            <i class="far fa-edit"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-5 flex-shrink-0">--}}
+{{--                            <i class="far fa-edit"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <a href="/faq" class="icon-box d-flex align-items-center">
-                        <div class="icon-element icon-element-bg-6 flex-shrink-0">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div><!-- end icon-element-->
-                        <div class="info-content">
-                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--                <div class="col-lg-4 column-td-half">--}}
+{{--                    <a href="/faq" class="icon-box d-flex align-items-center">--}}
+{{--                        <div class="icon-element icon-element-bg-6 flex-shrink-0">--}}
+{{--                            <i class="fas fa-chalkboard-teacher"></i>--}}
+{{--                        </div><!-- end icon-element-->--}}
+{{--                        <div class="info-content">--}}
+{{--                            <h4 class="info__title font-size-18 primary-color font-weight-bold">چطور ثبت نام کنیم؟</h4>--}}
 {{--                            <span class="info__meta primary-color-3">ثبت نام</span>--}}
-                        </div><!-- end info-content -->
-                    </a>
-                </div><!-- end col-lg-4 -->
-            </div>
+{{--                        </div><!-- end info-content -->--}}
+{{--                    </a>--}}
+{{--                </div><!-- end col-lg-4 -->--}}
+{{--            </div>--}}
         </div><!-- end container -->
     </section><!-- end faq-topic -->
 <!-- ================================
@@ -141,19 +141,25 @@
             <div class="col-lg-7">
                 <div class="faq-body">
                     <div class="accordion accordion-shared accordion-shared-2" id="accordionExample">
+                        @php
+                            $qa1=\Illuminate\Support\Facades\DB::table('qas')->where('id',1)->first();
+                            $qa2=\Illuminate\Support\Facades\DB::table('qas')->where('id',2)->first();
+                            $qa3=\Illuminate\Support\Facades\DB::table('qas')->where('id',3)->first();
+                            $qa4=\Illuminate\Support\Facades\DB::table('qas')->where('id',4)->first();
+                        @endphp
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <i class="fas fa-angle-up"></i>
                                         <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                                    {{$qa1->q}}
                                     </button>
                                 </h2>
                             </div><!-- end card-header -->
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                                    <p>{{$qa1->a}}</p>
                                 </div><!-- end card-body -->
                             </div><!-- end collapse -->
                         </div><!-- end card -->
@@ -163,13 +169,13 @@
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         <i class="fas fa-angle-up"></i>
                                         <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                                        {{$qa2->q}}
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                                    <p>{{$qa2->a}}</p>
                                 </div><!-- end card-body -->
                             </div><!-- end collapse -->
                         </div><!-- end card -->
@@ -179,7 +185,7 @@
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         <i class="fas fa-angle-up"></i>
                                         <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                                        {{$qa3->q}}
                                     </button>
                                 </h2>
                             </div>
@@ -188,89 +194,25 @@
                             @endif
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
+                                    <p>{{$qa3->a}} </p>
                                 </div><!-- end card-body -->
                             </div><!-- end collapse -->
                         </div><!-- end card -->
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <i class="fas fa-angle-up"></i>
-                                        <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
-                                    </p>
-                                    </div><!-- end card-body -->
-                            </div><!-- end collapse -->
-                        </div><!-- end card -->
-                        <div class="card">
-                            <div class="card-header" id="headingFive">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        <i class="fas fa-angle-up"></i>
-                                        <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
-                                </div><!-- end card-body -->
-                            </div><!-- end collapse -->
-                        </div><!-- end card -->
-                        <div class="card">
-                            <div class="card-header" id="headingSix">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        <i class="fas fa-angle-up"></i>
-                                        <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-                                <div class="card-body">
-                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
-                                </div><!-- end card-body -->
-                            </div><!-- end collapse -->
-                        </div><!-- end card -->
-                        <div class="card">
-                            <div class="card-header" id="headingSeven">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        <i class="fas fa-angle-up"></i>
-                                        <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
-                                </div><!-- end card-body -->
-                            </div><!-- end collapse -->
-                        </div><!-- end card -->
+                       <!-- end card -->
                         <div class="card">
                             <div class="card-header" id="headingEight">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                         <i class="fas fa-angle-up"></i>
                                         <i class="fas fa-angle-down"></i>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                                    {{$qa4->q}}
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                                        {{$qa4->a}}
                                     </p>
                                 </div><!-- end card-body -->
                             </div><!-- end collapse -->

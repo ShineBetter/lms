@@ -155,6 +155,23 @@ Route::get("/social/create","ContactController@create")->middleware("auth")->nam
 Route::delete("/social/delete{id}","ContactController@destroy")->middleware("auth")->name("social.destroy");
 Route::post("/social/store","ContactController@store")->middleware("auth")->name("social.store");
 Route::post("/contact-form","ContactController@insertForm")->name("contact-form");
+//????????????????main page categury
+
+
+Route::get("/catmainpage","CatMainpageController@index")->middleware("auth")->name("catmainpage.index");
+Route::get("/catmainpage/edit/{id}","CatMainpageController@edit")->middleware("auth")->name("catmainpage.edit");
+Route::put("/catmainpage/update{id}","CatMainpageController@update")->middleware("auth")->name("catmainpage.update");
+
+//????????????????contact question and answer
+
+
+Route::get("/qa","CatMainpageController@index")->middleware("auth")->name("qa.index");
+Route::get("/qa/edit/{id}","CatMainpageController@edit")->middleware("auth")->name("qa.edit");
+Route::put("/qa/update{id}","CatMainpageController@update")->middleware("auth")->name("qa.update");
+
+
+
+
 
 //////////////////////about us panel dinamic
 /// comment panel///////
