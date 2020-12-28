@@ -21,17 +21,24 @@
                     <div class="header-widget d-flex align-items-center justify-content-end">
                         <div class="header-right-info">
                             <ul class="header-social-profile">
+{{--                                @php--}}
+{{--                                    $data=\Illuminate\Support\Facades\DB::table('socials')->get()--}}
+{{--                                @endphp--}}
+{{--                                @foreach($data as $item)--}}
+{{--                                    <li><a name="{{$item->social_name}}" href="{{$item->social_link}}"><i--}}
+{{--                                                class="{{$item->social_icon}}"></i></a></li>--}}
+{{--                                @endforeach--}}
                                 @php
-                                    $data=\Illuminate\Support\Facades\DB::table('socials')->get()
+                                    $socials=\Illuminate\Support\Facades\DB::table('socials')->get()
                                 @endphp
-                                @foreach($data as $item)
-                                    <li><a name="{{$item->social_name}}" href="{{$item->social_link}}"><i
-                                                class="{{$item->social_icon}}"></i></a></li>
+                                @foreach($socials as $social)
+                                    <li><a name="{{$social->social_name}}" href="{{$social->social_link}}"><i
+                                                class="{{$social->social_icon}}"></i></a></li>
                                 @endforeach
-                                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+{{--                                    <li><a href=""><i class="fab fa-facebook"></i></a></li>--}}
+{{--                                    <li><a href=""><i class="fab fa-twitter"></i></a></li>--}}
+{{--                                    <li><a href=""><i class="fab fa-instagram"></i></a></li>--}}
+{{--                                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>--}}
                             </ul>
                         </div><!-- end header-right-info -->
                         <div class="header-right-info">
@@ -70,23 +77,23 @@
                                             {{--                                            <li><a href="/my-courses">امتحانات من</a></li>--}}
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a>دانش آموزان</a>
-                                        <ul class="dropdown-menu-item">
-                                            {{--                                            <li><a href="/student-detail">student detail</a></li>--}}
-                                            <li><a href="/student-quiz">آزمون</a></li>
-                                            {{--                                            <li><a href="/student-quiz-result">quiz results</a> <span class="new-page-badge">New</span></li>--}}
-                                            <li><a href="/student-quiz-result-details">پاسخ آزمون</a></li>
-                                            <li><a href="/student-quiz-result-details-2">کارنامه</a></li>
-                                            {{--                                            <li><a href="/student-path-assessment">جواب صفحات</a> <span class="new-page-badge">New</span></li>--}}
-                                            {{--                                            <li><a href="/student-path-assessment-result">Skill result</a> <span class="new-page-badge">New</span></li>--}}
-                                        </ul>
-                                    </li>
+{{--                                    <li>--}}
+{{--                                        <a>دانش آموزان</a>--}}
+{{--                                        <ul class="dropdown-menu-item">--}}
+{{--                                            --}}{{--                                            <li><a href="/student-detail">student detail</a></li>--}}
+{{--                                            <li><a href="/student-quiz">آزمون</a></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-quiz-result">quiz results</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                            <li><a href="/student-quiz-result-details">پاسخ آزمون</a></li>--}}
+{{--                                            <li><a href="/student-quiz-result-details-2">کارنامه</a></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-path-assessment">جواب صفحات</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-path-assessment-result">Skill result</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
                                     <li>
                                         <a>صفحات</a>
                                         <ul class="dropdown-menu-item">
                                             {{--                                            <li><a href="dashboard.html">dashboard</a></li>--}}
-                                            <li><a href="/about">درباره ما</a></li>
+
                                             <li><a href="/teachers">دبیران</a></li>
                                             <li><a href="/teacher-detail">پروفایل دبیران</a></li>
                                             {{--                                            <li><a href="../become-a-teacher.blade.php">become instructor</a></li>--}}
@@ -112,6 +119,7 @@
                                     {{--                                            <li><a href="../blog-single.blade.php">blog detail</a></li>--}}
                                     {{--                                        </ul>--}}
                                     {{--                                    </li>--}}
+                                    <li><a href="/about">درباره ما</a></li>
                                     <li><a href="/contact">تماس با ما</a></li>
                                 </ul><!-- end ul -->
                             </nav><!-- end main-menu -->

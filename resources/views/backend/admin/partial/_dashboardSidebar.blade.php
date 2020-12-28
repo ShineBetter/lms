@@ -51,9 +51,9 @@
                 <li class="sidenav__item"><a class="text-center" href="{{ route('conference.index') }}"><i class="la la-bolt"></i>
                         <p class="w-100">همایشات</p>
                     </a></li>
-                <li class="sidenav__item"><a class="text-center" href="/dashboard-enrolled-courses"><i
+                <li class="sidenav__item"><a class="text-center" href="{{route('questions.index')}}"><i
                             class="la la-graduation-cap"></i>
-                        <p class="w-100">دوره های ثبت نام شده</p>
+                        <p class="w-100">سوالات</p>
                     </a></li>
                 <li class="sidenav__item"><a class="text-center" href="{{route('category.index')}}"><i class="la la-bell"></i>
                         <p class="w-100">دسته بندی محصولات</p>
@@ -123,7 +123,6 @@
                     </a></li>
             </ul>
         </div><!-- end side-menu-wrap -->
-
         @endcan
         @can('Teacher')
             <div class="panel-type-title text-center p-3"><span>پنل استاد</span></div>

@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
 
-=======
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 {{--    <link rel="stylesheet" href="/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="/css/fancybox.css">
     <link rel="stylesheet" href="/css/tooltipster.bundle.css">
     <link rel="stylesheet" href="/css/style.css">
->>>>>>> 36cc36409aaca036a0f780c5407cb7879d0f9f65
+
 {{--    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{ asset('css/line-awesome.css')}}">--}}

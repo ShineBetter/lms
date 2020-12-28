@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\mainSlider;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -30,7 +29,6 @@ class MainSliderController extends Controller
         $comment = 'ویرایش اطلاعات موفقیت آمیز بود';
         session()->flash('status', $comment);
         return redirect()->route('mainSlider.index');
-
     }
 
     public function edit($id)
