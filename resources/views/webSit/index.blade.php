@@ -193,89 +193,59 @@
 <section class="category-area padding-bottom-90px">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
-                <div class="section-heading">
-                    <h5 class="section__meta">دسته بندی</h5>
-                    <h2 class="section__title">دسته های محبوب</h2>
+            <div class="col-lg-12 ">
+                <div class="section-heading text-center">
+                    <h5 class="section__meta">خدمات</h5>
+                    <h2 class="section__title">دسته بندی خدمات ما</h2>
                     <span class="section-divider"></span>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-9 -->
-            <div class="col-lg-3">
-                <div class="btn-box h-100 d-flex align-items-center justify-content-end">
-                    <a href="home-rtl#" class="theme-btn">همه دسته بندی ها</a>
-                </div><!-- end btn-box-->
-            </div><!-- end col-lg-3 -->
+{{--            <div class="col-lg-3">--}}
+{{--                <div class="btn-box h-100 d-flex align-items-center justify-content-end">--}}
+{{--                    <a href="home-rtl#" class="theme-btn">همه دسته بندی ها</a>--}}
+{{--                </div><!-- end btn-box-->--}}
+{{--            </div><!-- end col-lg-3 -->--}}
         </div><!-- end row -->
         <div class="category-wrapper margin-top-28px">
             <div class="row">
+                @php
+                    $cat1=\Illuminate\Support\Facades\DB::table('cat_mainpages')->where("id",1)->first();
+                    $cat2=\Illuminate\Support\Facades\DB::table('cat_mainpages')->where("id",2)->first();
+                    $cat3=\Illuminate\Support\Facades\DB::table('cat_mainpages')->where("id",3)->first();
+
+                @endphp
                 <div class="col-lg-4 column-td-half">
                     <div class="category-item">
-                        <img src="/images/img1.jpg" alt="">
+                        <img src="{{asset($cat1->picture)}}" style="height:17rem;">
                         <div class="category-content">
                             <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">دوره ها</a></h3>
-                                <p class="cat__meta">9 دوره</p>
-                                <a href="home-rtl#" class="theme-btn">نمونه</a>
+                                <h3 class="cat__title"><a href="home-rtl#">{{$cat1->header}}</a></h3>
+                                <p class="cat__meta">{{$cat1->count}}</p>
+                                <a href="/course-grid" class="theme-btn"> نمونه</a>
                             </div>
                         </div><!-- end category-content -->
                     </div><!-- end category-item -->
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
                     <div class="category-item">
-                        <img src="/images/img2.jpg" alt="">
+                        <img src="{{asset($cat2->picture)}}" style="height:17rem;">
                         <div class="category-content">
                             <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">همایشات</a></h3>
-                                <p class="cat__meta">7 همایش</p>
-                                <a href="home-rtl#" class="theme-btn">نمونه</a>
+                                <h3 class="cat__title"><a href="home-rtl#">{{$cat2->header}}</a></h3>
+                                <p class="cat__meta">{{$cat2->count}}</p>
+                                <a href="/course-grid" class="theme-btn"> نمونه</a>
                             </div>
                         </div><!-- end category-content -->
                     </div><!-- end category-item -->
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4 column-td-half">
                     <div class="category-item">
-                        <img src="/images/img3.jpg" alt="">
+                        <img src="{{asset($cat3->picture)}}" style="height:17rem;">
                         <div class="category-content">
                             <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">ازمون ها</a></h3>
-                                <p class="cat__meta">8 ازمون</p>
-                                <a href="home-rtl#" class="theme-btn">نمونه</a>
-                            </div>
-                        </div><!-- end category-content -->
-                    </div><!-- end category-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <div class="category-item">
-                        <img src="/images/img4.jpg" alt="">
-                        <div class="category-content">
-                            <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">فیلم اموزشی</a></h3>
-                                <p class="cat__meta">6 فیلم</p>
-                                <a href="home-rtl#" class="theme-btn"> نمونه</a>
-                            </div>
-                        </div><!-- end category-content -->
-                    </div><!-- end category-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <div class="category-item">
-                        <img src="/images/img5.jpg" alt="">
-                        <div class="category-content">
-                            <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">پادکست</a></h3>
-                                <p class="cat__meta">7 پادکست</p>
-                                <a href="home-rtl#" class="theme-btn">نمونه</a>
-                            </div>
-                        </div><!-- end category-content -->
-                    </div><!-- end category-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 column-td-half">
-                    <div class="category-item">
-                        <img src="/images/img6.jpg" alt="">
-                        <div class="category-content">
-                            <div class="category-inner">
-                                <h3 class="cat__title"><a href="home-rtl#">فایل اموزشی</a></h3>
-                                <p class="cat__meta">8 فایل</p>
-                                <a href="home-rtl#" class="theme-btn">نمونه</a>
+                                <h3 class="cat__title"><a href="home-rtl#">{{$cat3->header}}</a></h3>
+                                <p class="cat__meta">{{$cat3->count}}</p>
+                                <a href="/pricing-table" class="theme-btn"> نمونه</a>
                             </div>
                         </div><!-- end category-content -->
                     </div><!-- end category-item -->
@@ -2732,146 +2702,41 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <h5 class="section__meta">دبیران</h5>
-                    <h2 class="section__title">برترین دبیران</h2>
+                    <h2 class="section__title">اساتید کجموعه</h2>
                     <span class="section-divider"></span>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row margin-top-28px ltr">
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team2.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team3.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team4.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team5.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="team-item">
-                    <div class="team-img-box">
-                        <img src="/images/team6.jpg" alt="">
-                        <ul class="social-profile">
-                            <li><a href="home-rtl#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="home-rtl#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-detail">
-                        <h3 class="team__title"><a href="teacher-detail">مرادی</a></h3>
-                        <p class="team__meta">شیمی</p>
-                        <p class="team__text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-                        </p>
-                        <a href="teacher-detail" class="theme-btn">دیدن پروفایل</a>
-                    </div>
-                </div><!-- end team-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="btn-box text-center">
-                    <a href="/teachers" class="theme-btn">تمام دبیران</a>
-                </div><!-- end btn-box -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
+            @php
+                $aboutTeachers=\Illuminate\Support\Facades\DB::table('about_teachers')->limit(6)->get();
+            @endphp
+            @foreach($aboutTeachers as $aboutTeacher)
+                <div class="col-lg-4 column-td-half">
+                    <div class="team-item">
+                        <div class="team-img-box">
+                            <img src="{{asset($aboutTeacher->picture)}}" alt="">
+                            <ul class="social-profile">
+                                <li class="text-white">{{$aboutTeacher->filed}}</li>
+                            </ul>
+                        </div>
+                        <div class="team-detail">
+                            <h3 class="team__title"><a href="teacher-detail.html">{{$aboutTeacher->header}}</a></h3>
+                            <p class="team__meta">{{$aboutTeacher->filed}}</p>
+                            {{--                            <a href="{{route('teacher-detail',$aboutTeacher->id)}}" class="theme-btn theme-btn-light" >--}}
+                            <a href="{{route('teacher-detail',$aboutTeacher->id)}}" class="theme-btn">پروفایل</a>
+                        </div>
+                    </div><!-- end team-item -->
+                </div>
+            @endforeach
+            <div class="row w-100">
+                <div class="col-lg-12">
+                    <div class="btn-box text-center">
+                        <a href="/teachers" class="theme-btn">تمام دبیران</a>
+                    </div><!-- end btn-box -->
+                </div><!-- end col-lg-12 -->
+            </div>
+           <!-- end row -->
     </div><!-- end container -->
 </section><!-- end team-area -->
 <!--======================================
@@ -3244,12 +3109,12 @@
             <div class="col-lg-12">
                 <div class="get-start-content">
                     <div class="section-heading text-center">
-                        <h5 class="section__meta section__metalight">برترین اموزشگاه در...</h5>
+                        <h5 class="section__meta section__metalight">برترین اموزشگاه در میربلند</h5>
                         <h2 class="section__title text-white">نمره های درخشان <br> رتبه های برتر</h2>
                         <span class="section-divider section-divider-light"></span>
                     </div><!-- end section-heading -->
                     <div class="btn-box margin-top-20px">
-                        <a href="home-rtl#" class="theme-btn theme-btn-hover-light">ثبت نام</a>
+                        <a href="user/login" class="theme-btn theme-btn-hover-light">ثبت نام</a>
                     </div>
                 </div><!-- end get-start-content -->
             </div><!-- end col-lg-12 -->
@@ -3274,13 +3139,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
+                @php
+             $text4=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",4)->first();
+             $text5=\Illuminate\Support\Facades\DB::table('about_texts')->where("id",5)->first();
+
+                @endphp
                 <div class="benefit-heading padding-top-120px">
                     <div class="section-heading">
-                        <h5 class="section__meta">شرو کن</h5>
-                        <h2 class="section__title">با اموزشگاه ... شروع کن</h2>
+                        <h5 class="section__meta">{{$text4->heading}}</h5>
+                        <h2 class="section__title">{{$text4->header}}</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                            {{$text4->text}}
                         </p>
                     </div><!-- end section-heading -->
                     <div class="row">
@@ -3289,7 +3159,7 @@
                                 <span class="la la-mouse-pointer icon-element icon-bg-1">
                                     <i class="far fa-copy"></i>
                                 </span>
-                                <h4 class="widget-title">100,000 دوره</h4>
+                                <h4 class="widget-title">دوره های حرفه ای</h4>
                             </div><!-- end info-icon-box -->
                         </div><!-- end col-lg-4 -->
                         <div class="col-lg-4 column-td-half">
@@ -3297,7 +3167,7 @@
                                 <span class="la la-bolt icon-element icon-bg-2">
                                     <i class="fas fa-user-graduate"></i>
                                 </span>
-                                <h4 class="widget-title">450دانش اموز</h4>
+                                <h4 class="widget-title">نتایج برتر</h4>
                             </div><!-- end info-icon-box -->
                         </div><!-- end col-lg-4 -->
                         <div class="col-lg-4 column-td-half">
@@ -3305,7 +3175,7 @@
                                 <span class="la la-users icon-element icon-bg-3">
                                     <i class="fas fa-chalkboard-teacher"></i>
                                 </span>
-                                <h4 class="widget-title">دبیران</h4>
+                                <h4 class="widget-title">دبیران متخصص</h4>
                             </div><!-- end info-icon-box -->
                         </div><!-- end col-lg-4 -->
                     </div><!-- end row -->
@@ -3381,17 +3251,15 @@
             <div class="col-lg-7">
                 <div class="register-heading">
                     <div class="section-heading">
-                        <h5 class="section__meta">ثبت نام</h5>
-                        <h2 class="section__title">ثبت نام در مجموعه ی ما</h2>
+                        <h5 class="section__meta">{{$text5->heading}}</h5>
+                        <h2 class="section__title">{{$text5->header}}</h2>
                         <span class="section-divider"></span>
-                        <p class="section__desc mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                        </p>
-                        <p class="section__desc">
-                            در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        <p class="section__desc mb-2">
+                            {{$text5->text}}
                         </p>
                     </div><!-- end section-heading -->
                     <div class="btn-box">
-                        <a href="home-rtl#" class="theme-btn">get started</a>
+                        <a href="{{route('login.form')}}" class="theme-btn">ثبت نام</a>
                     </div>
                 </div><!-- end register-heading -->
             </div><!-- end col-lg-7 -->

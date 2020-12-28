@@ -46,75 +46,37 @@
 <section class="package-area section--padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 column-td-half">
-                <div class="package-item">
-                    <div class="package-title">
-                        <h3 class="package__price">519<span>تومان</span></h3>
-                        <h3 class="package__title">قیمت کل</h3>
-                    </div><!-- end package-title -->
-                    <ul class="list-items margin-bottom-35px text-right">
-                        <li><i class="la la-check"></i>  2آزمون</li>
-                        <li><i class="la la-check"></i>   جزوه کامل</li>
-                        <li><i class="la la-check"></i> نمونه سوالات </li>
-                        <li><i class="la la-check"></i> حل تمرینات </li>
-                        <li><i class="la la-check"></i> حل مشکلات درسی </li>
-                        <li><i class="la la-check"></i> دبیر: رهنما </li>
-                        <li><i class="la la-check"></i>  زمان: 22/2/99</li>
-                        <li><i class="la la-check"></i> 6روز</li>
-                    </ul>
-                    <div class="btn-box">
-                        <a href="pricing-table.html#" class="theme-btn">خرید همایش</a>
-                        {{--                        <p class="package__meta">no hidden charges!</p>--}}
-                    </div>
-                </div><!-- end package-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="package-item package-item-active">
-                    <div class="package-tooltip">
-                        <span class="package__tooltip">شگفت انگیز</span>
-                    </div><!-- end package-tooltip -->
-                    <div class="package-title">
-                        <h3 class="package__price">519<span>تومان</span></h3>
-                        <h3 class="package__title">قیمت کل</h3>
-                    </div><!-- end package-title -->
-                    <ul class="list-items margin-bottom-35px text-right">
-                        <li><i class="la la-check"></i>  2آزمون</li>
-                        <li><i class="la la-check"></i>   جزوه کامل</li>
-                        <li><i class="la la-check"></i> نمونه سوالات </li>
-                        <li><i class="la la-check"></i> حل تمرینات </li>
-                        <li><i class="la la-check"></i> حل مشکلات درسی </li>
-                        <li><i class="la la-check"></i> دبیر: رهنما </li>
-                        <li><i class="la la-check"></i>  زمان: 22/2/99</li>
-                        <li><i class="la la-check"></i> 6روز</li>
-                    </ul>
-                    <div class="btn-box">
-                        <a href="pricing-table.html#" class="theme-btn">خرید همایش</a>
-{{--                        <p class="package__meta">no hidden charges!</p>--}}
-                    </div>
-                </div><!-- end package-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 column-td-half">
-                <div class="package-item">
-                    <div class="package-title">
-                        <h3 class="package__price">519<span>تومان</span></h3>
-                        <h3 class="package__title">قیمت کل</h3>
-                    </div><!-- end package-title -->
-                    <ul class="list-items margin-bottom-35px text-right">
-                        <li><i class="la la-check"></i>  2آزمون</li>
-                        <li><i class="la la-check"></i>   جزوه کامل</li>
-                        <li><i class="la la-check"></i> نمونه سوالات </li>
-                        <li><i class="la la-check"></i> حل تمرینات </li>
-                        <li><i class="la la-check"></i> حل مشکلات درسی </li>
-                        <li><i class="la la-check"></i> دبیر: رهنما </li>
-                        <li><i class="la la-check"></i>  زمان: 22/2/99</li>
-                        <li><i class="la la-check"></i> 6روز</li>
-                    </ul>
-                    <div class="btn-box">
-                        <a href="pricing-table.html#" class="theme-btn">خرید همایش</a>
-{{--                        <p class="package__meta">no hidden charges!</p>--}}
-                    </div>
-                </div><!-- end package-item -->
-            </div><!-- end col-lg-4 -->
+            @php
+                $coferance=\Illuminate\Support\Facades\DB::table('conferences')->get();
+
+            @endphp
+                @foreach($coferance as $conf)
+                <div class="col-lg-4 column-td-half">
+                    <div class="package-item">
+                        <div class="package-title text-center">
+                            <h3 class="package__title">قیمت کل</h3>
+
+                            <h3 class="package__price">{{$conf->price}} <span>تومان</span></h3>
+
+                        </div><!-- end package-title -->
+                        <ul class="list-items margin-bottom-35px text-center">
+                            <li><i class="la la-check"></i><img src="{{asset($conf->picture)}}" class="w-100 rounded" style="height: 12rem;"></li>
+                            <li><i class="la la-check"></i>{{$conf->name}}</li>
+                            <li><i class="la la-check"></i>ظرفیت : {{$conf->count}}</li>
+                            <li><p style="height: 7rem;overflow: auto">{{$conf->description}}</p></li>
+
+
+                            <li><i class="la la-check"></i>{{\Carbon\Carbon::createFromTimestamp($conf->date)->format("Y-m-d")}}</li>
+                        </ul>
+                        <div class="btn-box">
+                            <a href="pay?{{$conf->id}}" class="theme-btn">خرید همایش</a>
+                            {{--                        <p class="package__meta">no hidden charges!</p>--}}
+                        </div>
+                    </div><!-- end package-item -->
+                </div>
+                @endforeach
+            <!-- end col-lg-4 -->
+<!-- end col-lg-4 -->
         </div><!-- end row -->
     </div><!-- end container -->
 </section><!-- end package-area -->
