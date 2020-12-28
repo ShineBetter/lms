@@ -65,11 +65,15 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('mainCount.edit',$item->id)}}"><input
-                                                                    type="button" class="btn btn-info"
-                                                                    style="font-size: 15px;font-family: Tahoma"
-                                                                    value="ویرایش"></a>
-
+{{--                                                            <a href="{{route('mainCount.edit',$item->id)}}"><input--}}
+{{--                                                                    type="button" class="btn btn-info"--}}
+{{--                                                                    style="font-size: 15px;font-family: Tahoma"--}}
+{{--                                                                    value="ویرایش"></a>--}}
+                                                            <a href="{{route('mainCount.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                <span class="text-edit"></span>
+                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>

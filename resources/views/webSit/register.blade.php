@@ -1,5 +1,5 @@
 @extends('webSit.layout.head')
-@section('title','ورود')
+@section('title','ثبت نام')
 @section('cnt')
     @php
         $header = "";
@@ -257,20 +257,27 @@
     <br>
     <br>
     <Br>
+    @isset($errors)
+        @foreach($errors->all() as $message)
+            <x-alert type="warning" text="{{$message}}"/>
+        @endforeach
+    @endisset
     <div class="container register-elearning" id="container">
         <div class="form-container sign-in-container-register">
             {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'register-form','files' => true])}}
                 <h1 class="register-h1">ثبت نام دانش آموز</h1>
                 <span class="text-dark bottom-register">لطفا فرم زیر را پر کنید.</span>
-                <input class="input-register" type="text" name="name" placeholder="نام"/>
-                <input class="input-register" type="text" name="lastName" placeholder="نام خانوادگی"/>
-                <input class="input-register" type="email" name="email" placeholder="ایمیل"/>
-                <input class="input-register" type="number" name="nationalNumber" placeholder="کد ملی"/>
-                <input class="input-register" type="text" name="level" placeholder="پایه تحصیلی"/>
-                <input class="input-register" type="date" name="birthday" value="1990/01/01" placeholder="تاریخ تولد"/>
-                <input class="input-register" type="text" name="parentName" placeholder="نام اولیاء"/>
-                <input class="input-register" type="number" name="Phone" placeholder="شماره تلفن"/>
-                <input class="input-register" type="text" name="address" placeholder="آدرس"/>
+                <input value="{{old('name')}}" class="input-register" type="text" name="name" placeholder="نام"/>
+                <input value="{{old('lastName')}}" class="input-register" type="text" name="lastName" placeholder="نام خانوادگی"/>
+                <input value="{{old('email')}}" class="input-register" type="email" name="email" placeholder="ایمیل"/>
+                <input value="{{old('password')}}" class="input-register" type="password" name="password" placeholder="پسورد"/>
+                <input value="{{old('nationalNumber')}}" class="input-register" type="number" name="nationalNumber" placeholder="کد ملی"/>
+                <input value="{{old('birthday')}}" class="input-register pdatepicker" type="text" name="birthday" placeholder="تاریخ تولد"/>
+                <input value="{{old('parentName')}}" class="input-register" type="text" name="parentName" placeholder="نام اولیاء"/>
+                <input value="{{old('mobile')}}" class="input-register" type="number" name="mobile" placeholder="شماره موبایل"/>
+                <input value="{{old('phone')}}"  class="input-register" type="number" name="phone" placeholder="شماره تلفن"/>
+                <input value="{{old('address')}}" class="input-register" type="text" name="address" placeholder="آدرس"/>
+                <input type="hidden" name="parent" value="0">
                 <input type="submit" class="button-register" value="ثبت نام"/>
             {{ Form::close() }}
 
@@ -285,6 +292,7 @@
                 <input class="input-register" type="number" name="nationalNumber" placeholder="کدملی"/>
                 <input class="input-register" type="number" name="mobile" placeholder="شماره تماس"/>
                 <input class="input-register" type="text" name="address" placeholder="آدرس"/>
+                <input type="hidden" name="parent" value="0">
                 <input type="submit" class="button-register" value="ثبت نام"/>
             {{ Form::close() }}
         </div>
@@ -292,11 +300,11 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1 class="register-h1">خوش آمدید به آموزشگاه ...</h1>
-                    <button class="button-register-ghost button-register-stpr" id="signIn">ورود دانش آموز</button>
+                    <button class="button-register-ghost button-register-stpr" id="signIn">ثبت نام دانش آموز</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1 class="register-h1">خوش آمدید به آموزشگاه...</h1>
-                    <button class="button-register-ghost button-register-stpr" id="signUp">ورود اولیاء</button>
+                    <button class="button-register-ghost button-register-stpr" id="signUp">ثبت نام اولیاء</button>
                 </div>
             </div>
         </div>

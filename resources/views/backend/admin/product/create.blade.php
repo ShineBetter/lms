@@ -32,7 +32,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::text('product_name', null, ['class' => 'form-control','placeholder' => 'نام محصول']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-angle-bottom input-icon"></i>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -42,7 +42,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::number('product_price', null, ['class' => 'form-control','placeholder' => '50.000']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-angle-bottom input-icon"></i>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -51,7 +51,7 @@
                                                 {{Form::label('product_discount', 'درصد تخفیف', ['class' => 'label-text'])}}
                                                 <div class="form-group">
                                                     {!! Form::number('product_discount', null, ['class' => 'form-control','placeholder' => '50','min' => '0','max' => '100']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-angle-bottom input-icon"></i>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -61,7 +61,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::file('product_img', ['class' => 'form-control']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+{{--                                                    <i class="fas fa-angle-right input-icon"></i>--}}
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -71,7 +71,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::text('product_short_desc', null, ['class' => 'form-control','placeholder' => 'توضیح مختصر درباره محصول']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-angle-bottom input-icon"></i>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -81,7 +81,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::textarea('product_desc', null, ['class' => 'form-control','placeholder' => 'توضیح کامل درباره محصول']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+{{--                                                    <i class="fas fa-angle-bottom input-icon"></i>--}}
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -107,7 +107,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::file('product_file', ['class' => 'form-control']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+{{--                                                    <i class="fas fa-angle-bottom input-icon"></i>--}}
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->

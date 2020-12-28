@@ -25,6 +25,7 @@ Auth::routes(['register'=>false]);
 Route::get('user/login','FrontEndController@login')->name('login.form');
 Route::get('user/logout','FrontEndController@logout')->name('user.logout');
 Route::post('user/login','FrontEndController@submitLogin')->name('login.submit');
+Route::view('user/verify','webSit.twoFactor')->name('twofactor');
 
 //register route
 Route::get('user/register','FrontEndController@register')->name('register.form');

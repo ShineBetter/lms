@@ -13,7 +13,7 @@
     <link rel="icon" sizes="16x16" href="/images/favicon.png">
 
     <!-- inject:css -->
-<<<<<<< HEAD
+
 {{--    <link rel="stylesheet" href="/css/bootstrap.min.css">--}}
 {{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" href="/css/font-awesome.min.css">--}}
@@ -68,6 +68,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.green.min.css" />
+    <link rel="stylesheet" href="{{asset('template_sit/css/jquery.mpdatepicker.css')}}">
 
 </head>
 <body>

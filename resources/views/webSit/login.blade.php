@@ -37,7 +37,7 @@
                     فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
                     می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده
                 </p>
-                <button class="button-login">ثبت نام کنید</button>
+                <a href="{{route('register.form')}}" class="button-login">ثبت نام کنید</a>
             </form>
         </div>
         <div class="overlay-container">
@@ -54,34 +54,34 @@
             </div>
         </div>
     </div>
-<br>
+    <br>
     <br>
     <br>
     <br>
     <br>
     <Br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <Br><br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <Br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <Br><br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <Br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <Br>
     <script>
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');
@@ -107,7 +107,8 @@
     <script src="/js/fancybox.js"></script>
     <script src="/js/wow.js"></script>
     <script src="/js/gmap-script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYzby4yYDVaXPmtu4jZAGR258K6IYwjIY&libraries"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYzby4yYDVaXPmtu4jZAGR258K6IYwjIY&libraries"></script>
     <script src="/js/form-validator.js"></script>
     <script src="/js/form-validate-script.js"></script>
     <script src="/js/date-time-picker.js"></script>

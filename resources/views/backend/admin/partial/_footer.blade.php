@@ -29,7 +29,7 @@
 <script src="{{asset("css/owl.carousel.min.js")}}"></script>
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('template_sit/js/jquery.mpdatepicker.js')}}"></script>
-{{--<script src="{{asset('template_sit/js/Pdatepicker.min.js')}}"></script>--}}
+<script src="{{asset('template_sit/js/Pdatepicker.min.js')}}"></script>
 <script>
 
     // set csrf token in meta tag
