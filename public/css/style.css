@@ -4196,7 +4196,7 @@ body {
 
 .meta-data .review-stars {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
 }
 

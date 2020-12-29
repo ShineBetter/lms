@@ -135,9 +135,9 @@ Route::view('/shopping-cart','shopping-cart');
 Route::view('/pricing-table','webSit.pricing-table');
 Route::view('/my-courses','webSit.my-courses');
 Route::view('/faq','webSit.faq');
-Route::view('/course-grid','webSit.course-grid');
+Route::view('/course-grid','webSit.course-grid')->name("grid");
 Route::view('/contact','webSit.contact')->name("contact-main");
-Route::view('/course-details','webSit.course-details');
+Route::view('/course-details/{id}','webSit.course-details')->name("course-details");
 
 
 
@@ -181,6 +181,7 @@ Route::post("/comments/store","CommentController@store")->middleware("auth")->na
 Route::get("/comments/create","CommentController@create")->middleware("auth")->name("comment.create");
 Route::delete("/comments/delete{id}","CommentController@destroy")->middleware("auth")->name("comment.destroy");
 Route::put("/comments/update{id}","CommentController@update")->middleware("auth")->name("comment.update");
+Route::post("/comments/storestudent","CommentController@storestudent")->middleware("auth")->name("store.storestudent");
 
 /////////text panel///////
 Route::get("/aboutText","AboutTextController@index")->middleware("auth")->name("aboutText.index");

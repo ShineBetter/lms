@@ -27,7 +27,7 @@
                         <h2 class="section__title">فروشگاه</h2>
                     </div>
                     <ul class="breadcrumb__list">
-                        <li class="active__list-item"><a href="../index.blade.php">خانـه<i class="fas fa-angle-left mr-2"></i></a></li>
+                        <li class="active__list-item"><a href="/">خانـه<i class="fas fa-angle-left mr-2"></i></a></li>
                         <li class="active__list-item">صفحه ها<i class="fas fa-angle-left mr-2"></i></li>
                         <li>فروشگاه</li>
                     </ul>
@@ -82,990 +82,503 @@
             </div><!-- end row -->
             <div class="course-content-wrapper mt-4">
                 <div class="row">
+
                     <div class="col-lg-8">
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view" aria-labelledby="grid-view-tab">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
+                                    @php
+                                        $quizzes=\Illuminate\Support\Facades\DB::table('quizzes')->paginate(8);
+                                    @endphp
+                                    @foreach($quizzes as $quiz)
+
+                                        <div class="col-lg-6">
+                                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                                                <div class="card-image">
+                                                    <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                                    <div class="card-badge">
+{{--                                                        <span class="badge-label">پرفروش</span>--}}
+                                                    </div>
+                                                </div><!-- end card-image -->
+                                                <div class="card-content">
+
+                                                    <h3 class="card__title">
+                                                        <a href="course-details">{{$quiz->quiz_name}}</a>
+                                                    </h3>
+                                                    <p class="card__author mb-3">
+                                                        <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
+                                                    </p>
+                                                    <!-- end rating-wrap -->
+                                                    <div class="card-action">
+                                                        <ul class="card-duration d-flex justify-content-between align-items-center mb-2">
+                                                            <li>
+                                                                <i class="la la-clock-o"></i>{{$quiz->quiz_start}}
+
+                                                            </li>
+                                                            <li>
                                                         <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                            <i class="la la-clock-o"></i>تاریخ شروع
                                                         </span>
-                                                        </li>
-                                                        <li>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                                            <li>
+                                                                <i class="la la-clock-o"></i> {{$quiz->quiz_start_date}}
+
+                                                            </li>
+                                                            <li>
                                                         <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                            <i class="la la-clock-o"></i>زمان شروع
                                                         </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img10.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">highest rated</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img11.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6">
-                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-6 -->
+                                                            </li>
+                                                        </ul>
+                                                    </div><!-- end card-action -->
+                                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                                        <span class="card__price">تومان58.00</span>
+                                                        <a href="{{route('course-details',$quiz->id)}}" class="text-white theme-btn">اطلاعات بیشتر</a>
+                                                    </div><!-- end card-price-wrap -->
+                                                </div><!-- end card-content -->
+                                            </div><!-- end card-item -->
+                                        </div><!-- end col-lg-6 -->
+
+
+                                    @endforeach
+
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
+{{--                                            <div class="card-image">--}}
+{{--                                                <a href="#" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                                <div class="card-badge">--}}
+{{--                                                    <span class="badge-label">پرفروش</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div><!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details">شیمی دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author mb-3">--}}
+{{--                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center mb-2">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i>99/10/12--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>تاریخ شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i>زمان شروع--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">تومان58.00</span>--}}
+{{--                                                    <a href="{{route('course-details',1)}}" class="text-white theme-btn">اطلاعات بیشتر</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div><!-- end col-lg-6 -->--}}
                                 </div><!-- end course-block -->
                             </div><!-- end tab-pane -->
-                            <div role="tabpanel" class="tab-pane fade" id="list-view" aria-labelledby="list-view-tab">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_1">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img13.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_2">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img12.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_3">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img11.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">highest rated</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_4">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img10.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_5">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img9.jpg" alt=""></a>
-                                                <div class="card-badge">
-                                                    <span class="badge-label">bestseller</span>
-                                                </div>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="card-item card-list-layout card-preview" data-tooltip-content="#tooltip_content_6">
-                                            <div class="card-image">
-                                                <a href="course-details" class="card__img"><img src="/images/img8.jpg" alt=""></a>
-                                            </div><!-- end card-image -->
-                                            <div class="card-content">
-                                                <p class="card__label">
-                                                    <span class="card__label-text">پشرفته</span>
-                                                    <a href="course-grid.html#" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>
-                                                </p>
-                                                <h3 class="card__title">
-                                                    <a href="course-details">شیمی پایه هستم</a>
-                                                </h3>
-                                                <p class="card__author">
-                                                    <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
-                                                </p>
-                                                <div class="rating-wrap d-flex mt-2 mb-3">
-                                                    <ul class="review-stars">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star-o"></span></li>
-                                                    </ul>
-                                                    <span class="star-rating-wrap">
-                                                    <span class="star__rating">4.4</span>
-                                                    <span class="star__count">(20)</span>
-                                                </span>
-                                                </div><!-- end rating-wrap -->
-                                                <div class="card-action">
-                                                    <ul class="card-duration d-flex justify-content-between align-items-center">
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-play-circle"></i> 45 کلاس
-                                                        </span>
-                                                        </li>
-                                                        <li>
-                                                        <span class="meta__date">
-                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
-                                                        </span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end card-action -->
-                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                    <span class="card__price">تومان58.00</span>
-                                                    <a href="course-grid.html#" class="text-btn">افزودن به سبد خرید</a>
-                                                </div><!-- end card-price-wrap -->
-                                            </div><!-- end card-content -->
-                                        </div><!-- end card-item -->
-                                    </div><!-- end col-lg-12 -->
-                                </div><!-- end course-block -->
-                            </div><!-- end tab-pane -->
+<!-- end tab-pane -->
                         </div><!-- end tab-content -->
                     </div><!-- end col-lg-8 -->
                     <div class="col-lg-4">
@@ -1083,154 +596,9 @@
                                 </div><!-- end contact-form-action -->
                             </div><!-- end sidebar-widget -->
                             <div class="sidebar-widget">
-                                <h3 class="widget-title">دسته بندی ها</h3>
+                                <h3 class="widget-title">فیلتر قیمت</h3>
                                 <span class="section-divider"></span>
-                                <ul class="filter-by-category">
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb1">
-                                            <label for="chb1" class="primary-color">دوره ها<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb2">
-                                            <label for="chb2" class="primary-color">همایشات<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb3">
-                                            <label for="chb3" class="primary-color">آزمون ها<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb4">
-                                            <label for="chb4" class="primary-color">فیلم آموزشی<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
-                                    </li>
-                                     <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb5">
-                                            <label for="chb5" class="primary-color">نمونه سوالات<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>
-                                        </div>
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb6">--}}
-{{--                                            <label for="chb6" class="primary-color">Typography<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb7">--}}
-{{--                                            <label for="chb7" class="primary-color">Web Development<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb8">--}}
-{{--                                            <label for="chb8" class="primary-color">Photography<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb9">--}}
-{{--                                            <label for="chb9" class="primary-color">Illustration<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb10">--}}
-{{--                                            <label for="chb10" class="primary-color">Programing<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb11">--}}
-{{--                                            <label for="chb11" class="primary-color">Communications<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                     <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb12">--}}
-{{--                                            <label for="chb12" class="primary-color">Finance<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb13">--}}
-{{--                                            <label for="chb13" class="primary-color">3D Design<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb14">--}}
-{{--                                            <label for="chb14" class="primary-color">Database<span class="ml-2 font-size-14 primary-color-3">(12,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                </ul>
-                            </div><!-- end sidebar-widget -->
-                            <div class="sidebar-widget">
-                                <h3 class="widget-title">زمان ویدیو</h3>
-                                <span class="section-divider"></span>
-                                <ul class="filter-by-level">
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb15">
-                                            <label for="chb15" class="primary-color">0-2 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb16">
-                                            <label for="chb16" class="primary-color">3-6 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb17">
-                                            <label for="chb17" class="primary-color">7-14 ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-{{--                                        <div class="custom-checkbox">--}}
-{{--                                            <input type="checkbox" id="chb18">--}}
-{{--                                            <label for="chb18" class="primary-color">16+ ساعت<span class="ml-2 font-size-14 primary-color-3">(10,300)</span></label>--}}
-{{--                                        </div>--}}
-                                    </li>
-                                </ul>
-                            </div><!-- end sidebar-widget -->
-                            <div class="sidebar-widget">
-                                <h3 class="widget-title">سطح</h3>
-                                <span class="section-divider"></span>
-                                <ul class="filter-by-level">
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb19">
-                                            <label for="chb19" class="primary-color">همه سطوح<span class="ml-2 font-size-14 primary-color-3">(20,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb20">
-                                            <label for="chb20" class="primary-color">پیشرفته<span class="ml-2 font-size-14 primary-color-3">(5,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb21">
-                                            <label for="chb21" class="primary-color">استاندارد<span class="ml-2 font-size-14 primary-color-3">(3,300)</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="chb22">
-                                            <label for="chb22" class="primary-color">متوسط<span class="ml-2 font-size-14 primary-color-3">(1,300)</span></label>
-                                        </div>
-                                    </li>
-                                </ul>
+
                             </div><!-- end sidebar-widget -->
 {{--                            <div class="sidebar-widget">--}}
 {{--                                <h3 class="widget-title">Language</h3>--}}
@@ -1350,7 +718,7 @@
 {{--                                </ul>--}}
 {{--                            </div><!-- end sidebar-widget -->--}}
                             <div class="sidebar-widget">
-                                <h3 class="widget-title">بر حسب ارزان ترین</h3>
+                                <h3 class="widget-title">براساس قیمت</h3>
                                 <span class="section-divider"></span>
                                 <ul class="filter-by-rating filter-by-rating-2">
                                     <li>
@@ -1358,8 +726,7 @@
                                             <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span>
                                         </span>
                                         <span class="ml-1">
-                                            <span class="mr-1 primary-color">5.0</span>
-                                            <span>(13,000)</span>
+                                            <span class="mr-1 primary-color">ارزان ترین</span>
                                         </span>
                                         <label class="review-label">
                                             <input type="radio" checked="checked" name="review-radio">
@@ -1371,8 +738,7 @@
                                            <span class="la la-star"></span> <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span>
                                         </span>
                                         <span class="ml-1">
-                                            <span class="mr-1 primary-color">4.5 & up</span>
-                                            <span>(5,000)</span>
+                                            <span class="mr-1 primary-color">گران ترین</span>
                                         </span>
                                         <label class="review-label">
                                             <input type="radio" name="review-radio">
@@ -1384,40 +750,14 @@
                                             <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
                                         </span>
                                         <span class="ml-1">
-                                            <span class="mr-1 primary-color">3.0 & up</span>
-                                            <span>(3,000)</span>
+                                            <span class="mr-1 primary-color">رایگان</span>
                                         </span>
                                         <label class="review-label">
                                             <input type="radio" name="review-radio">
                                             <span class="review-mark"></span>
                                         </label>
                                     </li>
-                                    <li>
-                                         <span>
-                                            <span class="la la-star"></span><span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
-                                        </span>
-                                        <span class="ml-1">
-                                            <span class="mr-1 primary-color">2.0 & up</span>
-                                            <span>(3,000)</span>
-                                        </span>
-                                        <label class="review-label">
-                                            <input type="radio" name="review-radio">
-                                            <span class="review-mark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <span class="la la-star"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span><span class="la la-star-o"></span>
-                                        </span>
-                                        <span class="ml-1">
-                                            <span class="mr-1 primary-color">1.0 & up</span>
-                                            <span>(3,000)</span>
-                                        </span>
-                                        <label class="review-label">
-                                            <input type="radio" name="review-radio">
-                                            <span class="review-mark"></span>
-                                        </label>
-                                    </li>
+
                                 </ul>
                             </div><!-- end sidebar-widget -->
 {{--                            <div class="sidebar-widget">--}}
@@ -1517,29 +857,29 @@
                         </div>
                     </div><!-- end col-lg-4 -->
                 </div><!-- end row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-navigation-wrap text-center mt-5">
-                            <div class="page-navigation-inner d-inline-block">
-                                <div class="page-navigation mx-auto">
-                                    <a href="course-grid.html#" class="page-go page-prev">
-                                        <i class="fas fa-chevron-circle-left"></i>
-                                    </a>
-                                    <ul class="page-navigation-nav">
-                                        <li><a href="/course-grid.html" class="page-go-link">1</a></li>
-                                        <li class="active"><a href="/course-grid" class="page-go-link">2</a></li>
-                                        <li><a href="/course-grid" class="page-go-link">3</a></li>
-                                        <li><a href="/course-grid" class="page-go-link">4</a></li>
-                                        <li><a href="/course-grid" class="page-go-link">5</a></li>
-                                    </ul>
-                                    <a href="course-grid.html#" class="page-go page-next">
-                                        <i class="fas fa-chevron-circle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- end page-navigation-wrap -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="page-navigation-wrap text-center mt-5">--}}
+{{--                            <div class="page-navigation-inner d-inline-block">--}}
+{{--                                <div class="page-navigation mx-auto">--}}
+{{--                                    <a href="course-grid.html#" class="page-go page-prev">--}}
+{{--                                        <i class="fas fa-chevron-circle-left"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <ul class="page-navigation-nav">--}}
+{{--                                        <li><a href="/course-grid.html" class="page-go-link">1</a></li>--}}
+{{--                                        <li class="active"><a href="/course-grid" class="page-go-link">2</a></li>--}}
+{{--                                        <li><a href="/course-grid" class="page-go-link">3</a></li>--}}
+{{--                                        <li><a href="/course-grid" class="page-go-link">4</a></li>--}}
+{{--                                        <li><a href="/course-grid" class="page-go-link">5</a></li>--}}
+{{--                                    </ul>--}}
+{{--                                    <a href="course-grid.html#" class="page-go page-next">--}}
+{{--                                        <i class="fas fa-chevron-circle-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- end page-navigation-wrap -->--}}
+{{--                    </div><!-- end col-lg-12 -->--}}
+{{--                </div><!-- end row -->--}}
             </div><!-- end card-content-wrapper -->
         </div><!-- end container -->
     </div><!-- end course-wrapper -->
@@ -1738,6 +1078,7 @@
 {{--                        <li><span class="la la-star"></span></li>--}}
 {{--                        <li><span class="la la-star-o"></span></li>--}}
 {{--                    </ul>--}}
+    {{$quizzes->links()}}
 {{--                    <span class="star-rating-wrap">--}}
 {{--                        <span class="star__rating">4.4</span>--}}
 {{--                        <span class="star__count">(20)</span>--}}
