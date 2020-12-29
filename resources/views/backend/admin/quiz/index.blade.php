@@ -49,7 +49,7 @@
                                             $start_time = Carbon::createFromTimestamp($item->quiz_start);
                                             $end_time = Carbon::createFromTimestamp($item->quiz_exp);
                                             $start_date = Carbon::createFromTimestamp($item->quiz_start_date);
-                                            $end_date = Carbon::createFromTimestamp($item->quiz_exp_date);
+                                            $end_date = Carbon::createFromTimestamp($item->quiz_start_date);
                                             $now = \Carbon\Carbon::now();
                                         @endphp
                                         @if($item->quiz_permission == 'all' || \Illuminate\Support\Facades\Gate::check('Admin'))
@@ -58,8 +58,7 @@
                                                     <div class="statement-info">
                                                         <ul class="list-items">
                                                             <li class="mb-1">
-
-                                                                <p>{{ $key + $data->firstItem() }}</p>
+                                                                <p>{{$row++}}</p>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -88,14 +87,14 @@
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$start_date->format('Y-m-d')}}</li>
+                                                            <li>{{$start_date->format('Y/m/d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="statement-info">
                                                         <ul class="list-items">
-                                                            <li>{{$end_date->format('Y-m-d')}}</li>
+                                                            <li>{{$end_date->format('Y/m/d')}}</li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -131,26 +130,26 @@
                                                                             style="font-size: 15px;font-family: Tahoma"
                                                                             value="ویرایش"></a>
                                                                 @endcan
-                                                                @if($item->pay_status == 1 && $start_date->year <= $now->year && $start_date->month <= $now->month && $start_date->day <= $now->day && $end_date->year >= $now->year && $end_date->month >= $now->month && $end_date->day >= $now->day)
-                                                                    @if($item->quiz_start <= $now->timestamp && $item->quiz_exp >= $now->timestamp)
-
-                                                                        @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
-                                                                            {{Form::open(['route' => 'quiz','method' => 'post'])}}
-                                                                            <input type="hidden" name="quiz_id"
-                                                                                   value="{{$item->id}}">
-                                                                            {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
-                                                                            {{ Form::close() }}
-                                                                        @endif
+                                                                @if($start_date->year <= $now->year && $start_date->month <= $now->month && $start_date->day <= $now->day && $end_date->year >= $now->year && $end_date->month >= $now->month && $end_date->day >= $now->day && $item->quiz_start <= $now->timestamp && $item->quiz_exp >= $now->timestamp)
+                                                                    @if($item->pay_status == 1)
+                                                                            @if(\App\Models\questions::where('quiz_id',$item->id)->count() > 0)
+                                                                                {{Form::open(['route' => 'quiz','method' => 'post'])}}
+                                                                                <input type="hidden" name="quiz_id"
+                                                                                       value="{{$item->id}}">
+                                                                                {!! Form::submit('ورود', ['class' => 'btn btn-warning']) !!}
+                                                                                {{ Form::close() }}
+                                                                            @endif
+                                                                    @else
+                                                                        {{Form::open(['route' => 'examPay','method' => 'post'])}}
+                                                                        <input type="hidden" name="quiz_id"
+                                                                               value="{{$item->id}}">
+                                                                        {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
+                                                                        {{ Form::close() }}
                                                                     @endif
-                                                                @else
-                                                                    {{Form::open(['route' => 'examPay','method' => 'post'])}}
-                                                                    <input type="hidden" name="quiz_id"
-                                                                           value="{{$item->id}}">
-                                                                    {!! Form::submit('پرداخت', ['class' => 'btn btn-success']) !!}
-                                                                    {{ Form::close() }}
                                                                 @endif
                                                                 @can('Admin')
-                                                                    <x-delbtn route="quiz.destroy" id="{{$item->id}}"/>
+                                                                    <x-delbtn route="quiz.destroy"
+                                                                              id="{{$item->id}}"/>
                                                                 @endcan
                                                             </li>
                                                         </ul>
@@ -166,7 +165,7 @@
                                                             <div class="statement-info">
                                                                 <ul class="list-items">
                                                                     <li class="mb-1">
-                                                                        <p>{{ $key + $data->firstItem() }}</p>
+                                                                        <p>{{$row++}}</p>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -195,14 +194,14 @@
                                                         <td>
                                                             <div class="statement-info">
                                                                 <ul class="list-items">
-                                                                    <li>{{$start_date->format('Y-m-d')}}</li>
+                                                                    <li>{{$start_date->format('Y/m/d')}}</li>
                                                                 </ul>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="statement-info">
                                                                 <ul class="list-items">
-                                                                    <li>{{$end_date->format('Y-m-d')}}</li>
+                                                                    <li>{{$end_date->format('Y/m/d')}}</li>
                                                                 </ul>
                                                             </div>
                                                         </td>
@@ -273,7 +272,7 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                {{ $data->links() }}
+                                {{--                                {{ $data->links() }}--}}
                             </div>
                         </div>
                     </div>

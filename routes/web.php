@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use AliBayat\LaravelCategorizable\Category;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Trez\RayganSms\Facades\RayganSms;
+    /*
+    |--------------------------------------------------------------------------
+    | Web Routes
+    |--------------------------------------------------------------------------
+    |
+    | Here is where you can register web routes for your application. These
+    | routes are loaded by the RouteServiceProvider within a group which
+    | contains the "web" middleware group. Now create something great!
+    |
+    */
 
 
 //index route
@@ -25,6 +25,9 @@ Auth::routes(['register'=>false]);
 Route::get('user/login','FrontEndController@login')->name('login.form');
 Route::get('user/logout','FrontEndController@logout')->name('user.logout');
 Route::post('user/login','FrontEndController@submitLogin')->name('login.submit');
+Route::view('user/twofactor','webSit.twoFactor')->name('twofactor.page');
+Route::post('user/verify','FrontEndController@sendTwoFactor')->name('twofactor');
+Route::post('user/verify-check','FrontEndController@checkTwoFactor')->name('twofactor.check');
 
 //register route
 Route::get('user/register','FrontEndController@register')->name('register.form');
@@ -50,7 +53,7 @@ Route::resource('questions','QuestionsController')->middleware('auth');
 Route::resource('quizResult','QuizResultController')->middleware('auth');
 
 //role route
-Route::resource('role','RoleController')->middleware('auth');
+Route::resource('userRoles','UserRolesController')->middleware(['auth','can:Admin']);
 
 //banner route
 Route::resource('banner','BannerController')->middleware('auth');
@@ -59,7 +62,12 @@ Route::resource('banner','BannerController')->middleware('auth');
 Route::resource('level','LevelController')->middleware('auth');
 
 //category route
+
+
 Route::resource('category','CategoryController')->middleware('auth');
+
+//product route
+Route::resource('product','ProductController')->middleware('auth');
 
 //conference route
 Route::resource('conference','ConferenceController')->middleware('auth');
@@ -126,7 +134,7 @@ Route::get('/user/profile/delete/profile/image','profileController@deleteProfile
 Route::post('/user/profile/change/password','profileController@changePassword')->name('profile.change.password')->middleware('auth');;
 
 Route::view('/teachers','webSit.teachers');
-Route::view('/teacher-detail/{id}','webSit.teacher-detail')->name("teacher-detail");
+Route::view('/teacher-detail','webSit.teacher-detail');
 Route::view('/student-quiz-result-details-2','webSit.student-quiz-result-details-2');
 Route::view('/examResult','backend.admin.quizResult.quizResult');
 Route::view('/student-quiz','student-quiz');
@@ -188,7 +196,7 @@ Route::get("/aboutText","AboutTextController@index")->middleware("auth")->name("
 Route::get("/aboutText/edit/{id}","AboutTextController@edit")->middleware("auth")->name("aboutText.edit");
 Route::put("/aboutText/update{id}","AboutTextController@update")->middleware("auth")->name("aboutText.update");
 
-///////////midel col-4->ok
+///////////midel col-4
 Route::get("/midel-4","Midel4Controller@index")->middleware("auth")->name("midel-4.index");
 Route::get("/midel-4/edit/{id}","Midel4Controller@edit")->middleware("auth")->name("midel-4.edit");
 Route::put("/midel-4/update{id}","Midel4Controller@update")->middleware("auth")->name("midel-4.update");
@@ -217,11 +225,6 @@ Route::put("/mainpage/update{id}","Mainpage3colController@update")->middleware("
 Route::get("/mainCount","MainCountController@index")->middleware("auth")->name("mainCount.index");
 Route::get("/mainCount/edit/{id}","MainCountController@edit")->middleware("auth")->name("mainCount.edit");
 Route::put("/mainCount/update{id}","MainCountController@update")->middleware("auth")->name("mainCount.update");
-/////mainpage slider
-
-Route::get("/mainSlider","MainSliderController@index")->middleware("auth")->name("mainSlider.index");
-Route::get("/mainSlider/edit/{id}","MainSliderController@edit")->middleware("auth")->name("mainSlider.edit");
-Route::put("/mainSlider/update{id}","MainSliderController@update")->middleware("auth")->name("mainSlider.update");
 
 //////////form-client
 /// main page course free
@@ -242,3 +245,4 @@ Route::get("/form-faq/show/{id}","FormFaqController@show")->middleware("auth")->
 Route::put("/form-faq/update/{id}","FormFaqController@update")->middleware("auth")->name("formFaq.update");
 Route::delete("/form-faq/delete/{id}","FormFaqController@destroy")->middleware("auth")->name("formFaq.destroy");
 
+Route::view('/messages','backend.admin.messages.messages')->middleware('auth')->name('messages');

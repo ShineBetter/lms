@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createUserRequest;
 use App\Models\Banner;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\Session;
+use Trez\RayganSms\Facades\RayganSms;
+
 class FrontEndController extends Controller
 {
     public function login()
@@ -18,16 +21,23 @@ class FrontEndController extends Controller
 
     public function submitLogin(Request $request)
     {
-        $data= $request->all();
-        if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'],'status'=>'active'])){
-            Session::put('user',$data['email']);
-            request()->session()->flash('success','ورود شما موفقیت آمیز
+        $data = $request->all();
+        if (Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'status' => 'active'])) {
+            if (Auth::user()->mobile_code == 1) {
+                Session::put('user', $data['email']);
+                request()->session()->flash('success', 'ورود شما موفقیت آمیز
 
              بود.');
-            return redirect()->route('index');
-        }
-        else{
-            request()->session()->flash('errors','نام کاربری و یا رمز عبور اشتباه است دوباره تلاش کنید!');
+                return redirect()->route('index');
+            }else{
+                $code = mt_rand(100000, 999999);
+                Auth::user()->mobile_code = $code;
+                Auth::user()->save();
+                RayganSms::sendAuthCode(Auth::user()->profile->mobile,"code : $code", false);
+                return view('webSit.twoFactor');
+            }
+        } else {
+            request()->session()->flash('errors', 'نام کاربری و یا رمز عبور اشتباه است دوباره تلاش کنید!');
             return redirect()->back();
         }
     }
@@ -39,36 +49,71 @@ class FrontEndController extends Controller
 
     public function registerSubmit(createUserRequest $request)
     {
+        $code = mt_rand(100000, 999999);
         $user = new User();
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->user_role = 'student';
-        $user->save();
-        $user->profile()->insert([
-            'user_id' => $user->id,
-            'name' => $request->name,
-            'lastName' => $request->lastName,
-            'nationalNumber' => 2,
-            'phone' => '0919',
-            'mobile' => '0919',
-            'date_of_birth' => '0919',
-            'address' => '0919',
-            'photo' => '0919'
-        ]);
-        Session::put('user',$request->email);
-        request()->session()->flash('success','ثبت نام شما با موفقیت انجام شد');
-        return redirect()->route('panel');
+        $user->mobile_code = $code;
+        if ($request->parent == 0) {
+            $user->user_role = 'student';
+        } else {
+            $user->user_role = 'parent';
+        }
+        if ($user->save()) {
+            $user->profile()->insert([
+                'user_id' => $user->id,
+                'name' => $request->name,
+                'lastName' => $request->lastName,
+                'parent_name' => $request->parentName,
+                'nationalNumber' => $request->nationalNumber,
+                'phone' => $request->phone,
+                'mobile' => $request->mobile,
+                'date_of_birth' => Carbon::createFromFormat('Y/m/d', $request->birthday)->timestamp,
+                'address' => $request->address,
+                'photo' => '0919',
+                'created_at' => now(),
+            ]);
+        }
+        RayganSms::sendAuthCode($request->mobile,"code : $code", false);
+        Session::put('user', $request->email);
+        Session::put('auth_id', $user->id);
+        request()->session()->flash('success', 'ثبت نام شما با موفقیت انجام شد');
+        return redirect()->route('twofactor.page');
     }
-    public function logout(){
+
+    public function sendTwoFactor()
+    {
+        $code = mt_rand(100000, 999999);
+        $user = User::where('id',\session('auth_id'))->first();
+        $user->mobile_code = $code;
+        $user->save();
+        RayganSms::sendAuthCode($user->profile->mobile,"code : $code", false);
+    }
+
+    public function checkTwoFactor(Request $request)
+    {
+        $user = User::where('id',\session('auth_id'))->first();
+        if ($user->mobile_code == $request->code){
+            $user->mobile_code = 1;
+            $user->save();
+            $data = ['ok' => true];
+        }else{
+            $data = ['ok' => false];
+        }
+        return $data;
+    }
+
+    public function logout()
+    {
         auth()->logout();
-        request()->session()->flash('success','خروج از حساب با موفقیت انجام شد.');
+        request()->session()->flash('success', 'خروج از حساب با موفقیت انجام شد.');
         return redirect(route('index'));
     }
 
     public function index()
     {
-        $banner=Banner::orderby('id','desc')->take(3)->skip(0)->get();
-        return view('webSit.index',['banner'=>$banner]);
+        $banner = Banner::orderby('id', 'desc')->take(3)->skip(0)->get();
+        return view('webSit.index', ['banner' => $banner]);
     }
 
 

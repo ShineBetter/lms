@@ -424,7 +424,7 @@
                                         <div class="card-image">
                                             <a href="course-details.blade.php" class="card__img"><img src="/images/img10.jpg" alt=""></a>
                                             <div class="card-badge">
-                                                <span class="badge-label">highest rated</span>
+                                                <span class="badge-label">پر فروش ترین</span>
                                             </div>
                                         </div><!-- end card-image -->
                                         <div class="card-content">
@@ -1899,275 +1899,747 @@
 <!--======================================
         START COURSE AREA
 ======================================-->
-{{--<section class="course-area padding-top-120px">--}}
-{{--    <div class="course-wrapper">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="section-heading text-center">--}}
-{{--                        <h5 class="section__meta">پر فروش ترین </h5>--}}
-{{--                        <h2 class="section__title">پر فروش ترین محصولات</h2>--}}
-{{--                        <span class="section-divider"></span>--}}
-{{--                    </div><!-- end section-heading -->--}}
-{{--                </div><!-- end col-lg-12 -->--}}
-{{--            </div><!-- end row -->--}}
-{{--            <div class="row margin-top-28px ltr">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <div class="course-carousel owl-dot-and-nav">--}}
-{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_1">--}}
-{{--                                <div class="card-image">--}}
-{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
-{{--                                </div><!-- end card-image -->--}}
-{{--                                <div class="card-content">--}}
-{{--                                    <p class="card__label">--}}
-{{--                                        <span class="card__label-text">استاندارد</span>--}}
-{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
-{{--                                    </p>--}}
-{{--                                    <h3 class="card__title">--}}
-{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="card__author">--}}
-{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
-{{--                                    </p>--}}
-{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
-{{--                                        <ul class="review-stars">--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star-o"></span></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <span class="star-rating-wrap">--}}
-{{--                                                    <span class="star__rating">4.4</span>--}}
-{{--                                                    <span class="star__count">(20)</span>--}}
-{{--                                                </span>--}}
-{{--                                    </div><!-- end rating-wrap -->--}}
-{{--                                    <div class="card-action">--}}
-{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
-{{--                                            <li>--}}
-{{--                                                        <span class="meta__date">--}}
-{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
-{{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
-{{--                                                        <span class="meta__date">--}}
-{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
-{{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div><!-- end card-action -->--}}
-{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
-{{--                                        <span class="card__price">58.00تومان</span>--}}
-{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
-{{--                                    </div><!-- end card-price-wrap -->--}}
-{{--                                </div><!-- end card-content -->--}}
-{{--                            </div><!-- end card-item -->--}}
-{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_2">--}}
-{{--                                <div class="card-image">--}}
-{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img11.jpg" alt=""></a>--}}
-{{--                                    <div class="card-badge">--}}
-{{--                                        <span class="badge-label">bestseller</span>--}}
+<section class="course-area padding-top-120px">
+    <div class="course-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading text-center">
+                        <h5 class="section__meta">پر فروش ترین </h5>
+                        <h2 class="section__title">پر فروش ترین محصولات</h2>
+                        <span class="section-divider"></span>
+                    </div><!-- end section-heading -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+            <div class="container-fluid">
+                <div role="tabpanel" class="tab-pane fade show active" id="tab1">
+                    <div class="row">
+                        <div class="col-lg-4 column-td-half">
+                            <div class="card-item card-preview tooltipstered" data-tooltip-content="#tooltip_content_1">
+                                <div class="card-image">
+                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>
+                                    <div class="card-badge">
+                                        <span class="badge-label">پرفروش ترین</span>
+                                    </div>
+                                </div><!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div><!-- end col-lg-4 -->
+                        <div class="col-lg-4 column-td-half">
+                            <div class="card-item card-preview tooltipstered" data-tooltip-content="#tooltip_content_2">
+                                <div class="card-image">
+                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>
+                                    <div class="card-badge">
+                                        <span class="badge-label">پرفروش ترین</span>
+                                    </div>
+                                </div><!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div><!-- end col-lg-4 -->
+                        <div class="col-lg-4 column-td-half">
+                            <div class="card-item card-preview tooltipstered" data-tooltip-content="#tooltip_content_6">
+                                <div class="card-image">
+                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img13.jpg" alt=""></a>
+                                    <div class="card-badge">
+                                        <span class="badge-label">پرفروش ترین</span>
+                                    </div>
+                                </div><!-- end card-image -->
+                                <div class="card-content">
+                                    <p class="card__label">
+                                        <span class="card__label-text">استاندارد</span>
+                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist"><span class="la la-heart-o"></span></a>
+                                    </p>
+                                    <h3 class="card__title">
+                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>
+                                    </h3>
+                                    <p class="card__author">
+                                        <a href="teacher-detail">استاد سماواتی</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex mt-2 mb-3">
+                                        <ul class="review-stars">
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star"></span></li>
+                                            <li><span class="la la-star-o"></span></li>
+                                        </ul>
+                                        <span class="star-rating-wrap">
+                                                    <span class="star__rating">4.4</span>
+                                                    <span class="star__count">(20)</span>
+                                                </span>
+                                    </div><!-- end rating-wrap -->
+                                    <div class="card-action">
+                                        <ul class="card-duration d-flex justify-content-between align-items-center">
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-play-circle"></i> 45 کلاس
+                                                        </span>
+                                            </li>
+                                            <li>
+                                                        <span class="meta__date">
+                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه
+                                                        </span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- end card-action -->
+                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">
+                                        <span class="card__price">58.00تومان</span>
+                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>
+                                    </div><!-- end card-price-wrap -->
+                                </div><!-- end card-content -->
+                            </div><!-- end card-item -->
+                        </div><!-- end col-lg-4 -->
+                    </div><!-- end course-block -->
+                </div>
+{{--                <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>--}}
+{{--                <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
+{{--                    <div class="carousel-inner row w-100 mx-auto">--}}
+{{--                        <div class="carousel-item col-md-4 active">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
 {{--                                    </div>--}}
-{{--                                </div><!-- end card-image -->--}}
-{{--                                <div class="card-content">--}}
-{{--                                    <p class="card__label">--}}
-{{--                                        <span class="card__label-text">استاندارد</span>--}}
-{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
-{{--                                    </p>--}}
-{{--                                    <h3 class="card__title">--}}
-{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="card__author">--}}
-{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
-{{--                                    </p>--}}
-{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
-{{--                                        <ul class="review-stars">--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star-o"></span></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <span class="star-rating-wrap">--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
 {{--                                                    <span class="star__rating">4.4</span>--}}
 {{--                                                    <span class="star__count">(20)</span>--}}
 {{--                                                </span>--}}
-{{--                                    </div><!-- end rating-wrap -->--}}
-{{--                                    <div class="card-action">--}}
-{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
-{{--                                            <li>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div><!-- end card-action -->--}}
-{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
-{{--                                        <span class="card__price">58.00تومان</span>--}}
-{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
-{{--                                    </div><!-- end card-price-wrap -->--}}
-{{--                                </div><!-- end card-content -->--}}
-{{--                            </div><!-- end card-item -->--}}
-{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_3">--}}
-{{--                                <div class="card-image">--}}
-{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img12.jpg" alt=""></a>--}}
-{{--                                </div><!-- end card-image -->--}}
-{{--                                <div class="card-content">--}}
-{{--                                    <p class="card__label">--}}
-{{--                                        <span class="card__label-text">استاندارد</span>--}}
-{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
-{{--                                    </p>--}}
-{{--                                    <h3 class="card__title">--}}
-{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="card__author">--}}
-{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
-{{--                                    </p>--}}
-{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
-{{--                                        <ul class="review-stars">--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star-o"></span></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
 {{--                                                    <span class="star__rating">4.4</span>--}}
 {{--                                                    <span class="star__count">(20)</span>--}}
 {{--                                                </span>--}}
-{{--                                    </div><!-- end rating-wrap -->--}}
-{{--                                    <div class="card-action">--}}
-{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
-{{--                                            <li>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div><!-- end card-action -->--}}
-{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
-{{--                                        <span class="card__price">58.00تومان</span>--}}
-{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
-{{--                                    </div><!-- end card-price-wrap -->--}}
-{{--                                </div><!-- end card-content -->--}}
-{{--                            </div><!-- end card-item -->--}}
-{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_4">--}}
-{{--                                <div class="card-image">--}}
-{{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img9.jpg" alt=""></a>--}}
-{{--                                </div><!-- end card-image -->--}}
-{{--                                <div class="card-content">--}}
-{{--                                    <p class="card__label">--}}
-{{--                                        <span class="card__label-text">استاندارد</span>--}}
-{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
-{{--                                    </p>--}}
-{{--                                    <h3 class="card__title">--}}
-{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="card__author">--}}
-{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
-{{--                                    </p>--}}
-{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
-{{--                                        <ul class="review-stars">--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star-o"></span></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <span class="star-rating-wrap">--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
 {{--                                                    <span class="star__rating">4.4</span>--}}
 {{--                                                    <span class="star__count">(20)</span>--}}
 {{--                                                </span>--}}
-{{--                                    </div><!-- end rating-wrap -->--}}
-{{--                                    <div class="card-action">--}}
-{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
-{{--                                            <li>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div><!-- end card-action -->--}}
-{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
-{{--                                        <span class="card__price">58.00تومان</span>--}}
-{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
-{{--                                    </div><!-- end card-price-wrap -->--}}
-{{--                                </div><!-- end card-content -->--}}
-{{--                            </div><!-- end card-item -->--}}
-{{--                            <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card">--}}
+{{--                                    <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
+{{--                                        <div class="card-badge">--}}
+{{--                                            <span class="badge-label">highest rated</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                            <!-- end card-image -->--}}
+{{--                                            <div class="card-content">--}}
+{{--                                                <p class="card__label">--}}
+{{--                                                    <span class="card__label-text">استاندارد</span>--}}
+{{--                                                    <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                                </p>--}}
+{{--                                                <h3 class="card__title">--}}
+{{--                                                    <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                                </h3>--}}
+{{--                                                <p class="card__author">--}}
+{{--                                                    <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                                </p>--}}
+{{--                                                <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                    <ul class="review-stars">--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star"></span></li>--}}
+{{--                                                        <li><span class="la la-star-o"></span></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                    <span class="star-rating-wrap">--}}
+{{--                                                    <span class="star__rating">4.4</span>--}}
+{{--                                                    <span class="star__count">(20)</span>--}}
+{{--                                                </span>--}}
+{{--                                                </div><!-- end rating-wrap -->--}}
+{{--                                                <div class="card-action">--}}
+{{--                                                    <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li>--}}
+{{--                                                        <span class="meta__date">--}}
+{{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
+{{--                                                        </span>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div><!-- end card-action -->--}}
+{{--                                                <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                    <span class="card__price">58.00تومان</span>--}}
+{{--                                                    <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                                </div><!-- end card-price-wrap -->--}}
+{{--                                            </div><!-- end card-content -->--}}
+{{--                                        </div><!-- end card-item -->--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-item col-md-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <!--                    <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">-->--}}
 {{--                                <div class="card-image">--}}
 {{--                                    <a href="course-details.blade.php" class="card__img"><img src="/images/img8.jpg" alt=""></a>--}}
 {{--                                    <div class="card-badge">--}}
 {{--                                        <span class="badge-label">highest rated</span>--}}
 {{--                                    </div>--}}
-{{--                                </div><!-- end card-image -->--}}
-{{--                                <div class="card-content">--}}
-{{--                                    <p class="card__label">--}}
-{{--                                        <span class="card__label-text">استاندارد</span>--}}
-{{--                                        <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
-{{--                                    </p>--}}
-{{--                                    <h3 class="card__title">--}}
-{{--                                        <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="card__author">--}}
-{{--                                        <a href="teacher-detail">استاد سماواتی</a>--}}
-{{--                                    </p>--}}
-{{--                                    <div class="rating-wrap d-flex mt-2 mb-3">--}}
-{{--                                        <ul class="review-stars">--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star"></span></li>--}}
-{{--                                            <li><span class="la la-star-o"></span></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <span class="star-rating-wrap">--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <div class="card-item card-preview" data-tooltip-content="#tooltip_content_5">--}}
+{{--                                        <!-- end card-image -->--}}
+{{--                                        <div class="card-content">--}}
+{{--                                            <p class="card__label">--}}
+{{--                                                <span class="card__label-text">استاندارد</span>--}}
+{{--                                                <a href="/" class="card__collection-icon" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="la la-heart-o"></span></a>--}}
+{{--                                            </p>--}}
+{{--                                            <h3 class="card__title">--}}
+{{--                                                <a href="course-details.blade.php">ریاضی پایه دوازدهم</a>--}}
+{{--                                            </h3>--}}
+{{--                                            <p class="card__author">--}}
+{{--                                                <a href="teacher-detail">استاد سماواتی</a>--}}
+{{--                                            </p>--}}
+{{--                                            <div class="rating-wrap d-flex mt-2 mb-3">--}}
+{{--                                                <ul class="review-stars">--}}
+{{--                                                    <li><span class="la la-star"></span></li>--}}
+{{--                                                    <li><span class="la la-star"></span></li>--}}
+{{--                                                    <li><span class="la la-star"></span></li>--}}
+{{--                                                    <li><span class="la la-star"></span></li>--}}
+{{--                                                    <li><span class="la la-star-o"></span></li>--}}
+{{--                                                </ul>--}}
+{{--                                                <span class="star-rating-wrap">--}}
 {{--                                                    <span class="star__rating">4.4</span>--}}
 {{--                                                    <span class="star__count">(20)</span>--}}
 {{--                                                </span>--}}
-{{--                                    </div><!-- end rating-wrap -->--}}
-{{--                                    <div class="card-action">--}}
-{{--                                        <ul class="card-duration d-flex justify-content-between align-items-center">--}}
-{{--                                            <li>--}}
+{{--                                            </div><!-- end rating-wrap -->--}}
+{{--                                            <div class="card-action">--}}
+{{--                                                <ul class="card-duration d-flex justify-content-between align-items-center">--}}
+{{--                                                    <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-play-circle"></i> 45 کلاس--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
 {{--                                                        <span class="meta__date">--}}
 {{--                                                            <i class="la la-clock-o"></i> 3 ساعت 20 دقیقه--}}
 {{--                                                        </span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div><!-- end card-action -->--}}
-{{--                                    <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
-{{--                                        <span class="card__price">58.00تومان</span>--}}
-{{--                                        <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
-{{--                                    </div><!-- end card-price-wrap -->--}}
-{{--                                </div><!-- end card-content -->--}}
-{{--                            </div><!-- end card-item -->--}}
-{{--                        </div><!-- end course-carousel -->--}}
-{{--                    </div><!-- end tab-content -->--}}
-{{--                </div><!-- end col-lg-12 -->--}}
-{{--            </div><!-- end row -->--}}
-{{--        </div><!-- end container -->--}}
-{{--    </div><!-- end course-wrapper -->--}}
-{{--</section><!-- end courses-area -->--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
+{{--                                            </div><!-- end card-action -->--}}
+{{--                                            <div class="card-price-wrap d-flex justify-content-between align-items-center">--}}
+{{--                                                <span class="card__price">58.00تومان</span>--}}
+{{--                                                <a href="home-rtl#" class="text-btn">افزودن به سبر خرید</a>--}}
+{{--                                            </div><!-- end card-price-wrap -->--}}
+{{--                                        </div><!-- end card-content -->--}}
+{{--                                    </div><!-- end card-item -->--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">--}}
+{{--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                        <span class="sr-only">Previous</span>--}}
+{{--                    </a>--}}
+{{--                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">--}}
+{{--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                        <span class="sr-only">Next</span>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                @include('webSit.slider.slider')--}}
+            </div>
+        </div><!-- end container -->
+    </div><!-- end course-wrapper -->
+</section><!-- end courses-area -->
 <!--======================================
         END COURSE AREA
 ======================================-->
@@ -2276,18 +2748,22 @@
 =================================-->
 
 {{--     نظرات --}}
-{{--<section class="testimonial-area section-bg padding-top-120px padding-bottom-110px">--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-12">--}}
-{{--                <div class="section-heading text-center">--}}
-{{--                    <h5 class="section__meta">نظرات</h5>--}}
-{{--                    <h2 class="section__title">نظرات شما <br> درباره ما</h2>--}}
-{{--                    <span class="section-divider"></span>--}}
-{{--                </div><!-- end section-heading -->--}}
-{{--            </div><!-- end col-lg-12 -->--}}
-{{--        </div><!-- end row -->--}}
-{{--    </div><!-- end container -->--}}
+<section class="testimonial-area section-bg padding-top-120px padding-bottom-110px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h5 class="section__meta">نظرات</h5>
+                    <h2 class="section__title">نظرات شما <br> درباره ما</h2>
+                    <span class="section-divider"></span>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+
+
+
+
 {{--    <div class="container-fluid">--}}
 {{--        <div class="row margin-top-28px ltr">--}}
 {{--            <div class="col-lg-12">--}}
@@ -2611,7 +3087,7 @@
 {{--            </div><!-- end col-lg-12 -->--}}
 {{--        </div><!-- end row -->--}}
 {{--    </div><!-- container-fluid -->--}}
-{{--</section><!-- end testimonial-area -->--}}
+</section><!-- end testimonial-area -->
 {{--    پایان نظرات--}}
 <!--================================
         END TESTIMONIAL AREA
@@ -3506,26 +3982,58 @@
 
 
 <!-- template js files -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>--}}
+{{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>--}}
 {{--<script src="/js/jquery-3.4.1.min.js"></script>--}}
-<script src="/js/popper.min.js"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 {{--<script src="/js/bootstrap.min.js"></script>--}}
-<script src="/js/bootstrap-select.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
+<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="/js/isotope.js"></script>
-<script src="/js/waypoint.min.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<script src="/js/particles.min.js"></script>
-<script src="/js/particlesRun.js"></script>
-<script src="/js/fancybox.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/date-time-picker.js"></script>
-<script src="/js/jquery.filer.min.js"></script>
-<script src="/js/emojionearea.min.js"></script>
-<script src="/js/smooth-scrolling.js"></script>
-<script src="/js/tooltipster.bundle.min.js"></script>
-<script src="/js/main-rtl.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>
+{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>--}}
+<script src="{{asset('js/isotope.js')}}"></script>
+<script src="{{asset('js/waypoint.min.js')}}"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('js/particles.min.js')}}"></script>
+<script src="{{asset('js/particlesRun.js')}}"></script>
+<script src="{{asset('js/fancybox.js')}}"></script>
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/date-time-picker.js')}}"></script>
+<script src="{{asset('js/jquery.filer.min.js')}}"></script>
+<script src="{{asset('js/emojionearea.min.js')}}"></script>
+<script src="{{asset('js/smooth-scrolling.js')}}"></script>
+<script src="{{asset('js/tooltipster.bundle.min.js')}}"></script>
+<script src="{{asset('js/main-rtl.js')}}"></script>
+
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>--}}
+
+    <script>
+        $(document).ready(function() {
+            $("#myCarousel").on("slide.bs.carousel", function(e) {
+                var $e = $(e.relatedTarget);
+                var idx = $e.index();
+                var itemsPerSlide = 3;
+                var totalItems = $(".carousel-item").length;
+
+                if (idx >= totalItems - (itemsPerSlide - 1)) {
+                    var it = itemsPerSlide - (totalItems - idx);
+                    for (var i = 0; i < it; i++) {
+                        // append slides to end
+                        if (e.direction == "left") {
+                            $(".carousel-item")
+                                .eq(i)
+                                .appendTo(".carousel-inner");
+                        } else {
+                            $(".carousel-item")
+                                .eq(0)
+                                .appendTo($(this).find(".carousel-inner"));
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
 @endsection

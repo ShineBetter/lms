@@ -11,6 +11,18 @@
     @if(\Illuminate\Support\Facades\Session::has('status'))
         <x-alert type="success" text="{{\Illuminate\Support\Facades\Session::get('edit_status')}}"/>
     @endif
+    <style>
+        .flip-login, .flip-plus {
+            position: absolute;
+            left: 49px;
+            top: -1em;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+    </style>
     <div class="dashboard-content-wrap">
         <div class="container-fluid">
             <div class="row mt-5">

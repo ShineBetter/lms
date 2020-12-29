@@ -39,7 +39,6 @@
                                             <div class="col-lg-6 col-sm-6">
                                                 <div class="input-box">
                                                     {{Form::label('category_name', 'زیردسته', ['class' => 'label-text'])}}
-                                                    <span class="primary-color-2 ml-1">*</span>
                                                     <div class="form-group">
                                                         <select class="form-control" name="parent_category" id="parent_category">
                                                             <option value="" class="disabled" selected>انتخاب کنید</option>
@@ -53,11 +52,108 @@
                                         @endif
                                     </div><!-- end row -->
                                     <div class="row">
-                                        <div class="col-lg-12">
-                                            {!! Form::submit('ثبت', ['class' => 'theme-btn float-left']) !!}
-
-                                            {{--                                            <x-btn type="submit" title="ثبت" class="theme-btn float-left"/>--}}
-                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('product_name', 'نام محصول', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::text('product_name', null, ['class' => 'form-control','placeholder' => 'نام محصول']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('product_name', 'قیمت محصول', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::number('product_name', null, ['class' => 'form-control','placeholder' => '50.000']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('product_discount', 'درصد تخفیف', ['class' => 'label-text'])}}
+                                                <div class="form-group">
+                                                    {!! Form::number('product_discount', null, ['class' => 'form-control','placeholder' => '50']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('product_img', 'تصویر محصول', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::file('product_img', ['class' => 'form-control']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-12 col-sm-12">
+                                            <div class="input-box">
+                                                {{Form::label('product_short_desc', 'توضیح مختصر', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::text('product_short_desc', null, ['class' => 'form-control','placeholder' => 'توضیح مختصر درباره محصول']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-12 col-sm-12">
+                                            <div class="input-box">
+                                                {{Form::label('product_desc', 'توضیح کامل', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::textarea('product_desc', null, ['class' => 'form-control','placeholder' => 'توضیح کامل درباره محصول']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        @if($data->toArray() != null)
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="input-box">
+                                                    {{Form::label('category_id', 'دسته بندی محصول', ['class' => 'label-text'])}}
+                                                    <span class="primary-color-2 ml-1">*</span>
+                                                    <div class="form-group">
+                                                        <select name="category_id" id="category_id">
+                                                            @foreach($data as $item)
+                                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end col-lg-6 -->
+                                        @endif
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="input-box">
+                                                {{Form::label('product_file', 'فایل محصول', ['class' => 'label-text'])}}
+                                                <span class="primary-color-2 ml-1">*</span>
+                                                <div class="form-group">
+                                                    {!! Form::file('product_file', ['class' => 'form-control']) !!}
+                                                    <span class="la la-file-text-o input-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        @if($data->toArray() != null)
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="input-box">
+                                                    {{Form::label('category_name', 'زیردسته', ['class' => 'label-text'])}}
+                                                    <span class="primary-color-2 ml-1">*</span>
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="parent_category"
+                                                                id="parent_category">
+                                                            <option value="" class="disabled" selected>انتخاب کنید
+                                                            </option>
+                                                            @foreach($data as $item)
+                                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end col-lg-6 -->
+                                        @endif
                                     </div><!-- end row -->
                                     {{ Form::close() }}
 

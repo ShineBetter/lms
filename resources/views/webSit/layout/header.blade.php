@@ -77,23 +77,23 @@
                                             {{--                                            <li><a href="/my-courses">امتحانات من</a></li>--}}
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a>دانش آموزان</a>
-                                        <ul class="dropdown-menu-item">
-                                            {{--                                            <li><a href="/student-detail">student detail</a></li>--}}
-                                            <li><a href="/student-quiz">آزمون</a></li>
-                                            {{--                                            <li><a href="/student-quiz-result">quiz results</a> <span class="new-page-badge">New</span></li>--}}
-                                            <li><a href="/student-quiz-result-details">پاسخ آزمون</a></li>
-                                            <li><a href="/student-quiz-result-details-2">کارنامه</a></li>
-                                            {{--                                            <li><a href="/student-path-assessment">جواب صفحات</a> <span class="new-page-badge">New</span></li>--}}
-                                            {{--                                            <li><a href="/student-path-assessment-result">Skill result</a> <span class="new-page-badge">New</span></li>--}}
-                                        </ul>
-                                    </li>
+{{--                                    <li>--}}
+{{--                                        <a>دانش آموزان</a>--}}
+{{--                                        <ul class="dropdown-menu-item">--}}
+{{--                                            --}}{{--                                            <li><a href="/student-detail">student detail</a></li>--}}
+{{--                                            <li><a href="/student-quiz">آزمون</a></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-quiz-result">quiz results</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                            <li><a href="/student-quiz-result-details">پاسخ آزمون</a></li>--}}
+{{--                                            <li><a href="/student-quiz-result-details-2">کارنامه</a></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-path-assessment">جواب صفحات</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                            --}}{{--                                            <li><a href="/student-path-assessment-result">Skill result</a> <span class="new-page-badge">New</span></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
                                     <li>
                                         <a>صفحات</a>
                                         <ul class="dropdown-menu-item">
                                             {{--                                            <li><a href="dashboard.html">dashboard</a></li>--}}
-                                            <li><a href="/about">درباره ما</a></li>
+
                                             <li><a href="/teachers">دبیران</a></li>
                                             <li><a href="/teacher-detail">پروفایل دبیران</a></li>
                                             {{--                                            <li><a href="../become-a-teacher.blade.php">become instructor</a></li>--}}
@@ -119,6 +119,7 @@
                                     {{--                                            <li><a href="../blog-single.blade.php">blog detail</a></li>--}}
                                     {{--                                        </ul>--}}
                                     {{--                                    </li>--}}
+                                    <li><a href="/about">درباره ما</a></li>
                                     <li><a href="/contact">تماس با ما</a></li>
                                 </ul><!-- end ul -->
                             </nav><!-- end main-menu -->

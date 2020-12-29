@@ -59,9 +59,9 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         @if($item->parent_id != null)
-                                                        <li>{{Category::where('id',$item->parent_id)->first()->name}}</li>
+                                                            <li>{{Category::where('id',$item->parent_id)->first()->name}}</li>
                                                         @else
-                                                        <li>تعریف نشده است</li>
+                                                            <li>تعریف نشده است</li>
                                                         @endif
                                                     </ul>
                                                 </div>
@@ -70,15 +70,22 @@
                                                 <div class="statement-info">
                                                     <ul class="list-items">
                                                         <li>
-                                                            <a href="{{route('category.edit',$item->id)}}" class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                            <a href="{{route('category.edit',$item->id)}}"
+                                                               class="btn-edit" data-bs-toggle="tooltip"
+                                                               data-bs-placement="top" title="ویرایش">
                                                                 <span class="text-edit"></span>
-                                                                <span class="flip-front"><i class="fas fa-user-edit"></i></span>
-                                                                <span class="flip-back"><i class="fas fa-pen-square"></i></span>
+                                                                <span class="flip-front"><i
+                                                                        class="fas fa-user-edit"></i></span>
+                                                                <span class="flip-back"><i
+                                                                        class="fas fa-pen-square"></i></span>
                                                             </a>
 
-                                                            <button href="{{route('category.destroy',$item->id)}}" class="btn-edit trash" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                            <button href="{{route('category.destroy',$item->id)}}"
+                                                                    class="btn-edit trash" data-bs-toggle="tooltip"
+                                                                    data-bs-placement="top" title="حذف">
                                                                 <span class="text-edit"></span>
-                                                                <span class="flip-login"><i class="fas fa-user-times"></i></span>
+                                                                <span class="flip-login"><i
+                                                                        class="fas fa-user-times"></i></span>
                                                                 <span class="flip-plus"><i class="far fa-trash-alt"></i></span>
                                                             </button>
                                                         </li>
@@ -98,3 +105,4 @@
         </div><!-- end container-fluid -->
     </div><!-- end dashboard-content-wrap -->
 @endsection
+

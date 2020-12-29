@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Banner;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Trez\RayganSms\Facades\RayganSms;
 
 class HomeController extends Controller
 {
@@ -97,6 +98,9 @@ class HomeController extends Controller
         $quiz_id = $request->quiz_id;
         $user = Auth::id();
         $user_questions = DB::table('user_question')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->get();
+        $quiz = quiz::where('id', $quiz_id)->first();
+        $current_user = \App\User::where('id',$user)->first();
+
         $i = 0;
         DB::table('quiz_results')->insert([
             'user_id' => $user,
@@ -109,12 +113,16 @@ class HomeController extends Controller
                 $i++;
             }
             $user_score = $i * 100 / $user_questions->count();
-            if (DB::table('user_quiz')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->exists() == true) {
+            if (DB::table('user_quiz')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->count() > 0) {
                 DB::table('user_quiz')->where(['quiz_id' => $quiz_id, 'user_id' => $user])->update([
                     'correct_answers' => $i,
                     'score' => $user_score,
                     'updated_at' => now()->timestamp
                 ]);
+                $user_message = $current_user->profile->name . ' ' . $current_user->profile->lastName . ' عزیز نمره آزمون ' . $quiz->quiz_name . ' شما ' . $user_score . ' شده است' . '<br>' . 'شما در این آزمون ' . $user_score >= 50 ? 'قبول' : 'مردود' . ' شده اید' . '<br>' . ' با تشکر - آموزشگاه میربلند';
+                $parent_message = $current_user->profile->name . ' ' . $current_user->profile->lastName . ' عزیز نمره آزمون ' . $quiz->quiz_name . ' فرزند شما ' . $user_score . ' شده است' . '<br>' . 'فرزند شما در این آزمون ' . $user_score >= 50 ? 'قبول' : 'مردود' . ' شده اید' . '<br>' . ' با تشکر - آموزشگاه میربلند';
+                RayganSms::sendMessage($current_user->profile->mobile,$user_message);
+                RayganSms::sendMessage($current_user->getParentByAuthId()->first()->profile->mobile,$parent_message);
             } else {
                 DB::table('user_quiz')->insert([
                     'user_id' => $user,
@@ -128,12 +136,17 @@ class HomeController extends Controller
                     'quiz_id' => $quiz_id,
                     'created_at' => now()->timestamp,
                 ]);
+                $user_message = $current_user->profile->name . ' ' . $current_user->profile->lastName . ' عزیز نمره آزمون ' . $quiz->quiz_name . ' شما ' . $user_score . ' شده است' . '<br>' . 'شما در این آزمون ' . $user_score >= 50 ? 'قبول' : 'مردود' . ' شده اید' . '<br>' . ' با تشکر - آموزشگاه میربلند';
+                $parent_message = $current_user->profile->name . ' ' . $current_user->profile->lastName . ' عزیز نمره آزمون ' . $quiz->quiz_name . ' فرزند شما ' . $user_score . ' شده است' . '<br>' . 'فرزند شما در این آزمون ' . $user_score >= 50 ? 'قبول' : 'مردود' . ' شده اید' . '<br>' . ' با تشکر - آموزشگاه میربلند';
+                RayganSms::sendMessage($current_user->profile->mobile,$user_message);
+                RayganSms::sendMessage($current_user->getParentByAuthId()->first()->profile->mobile,$parent_message);
             }
         }
-        $quiz = quiz::where('id', $quiz_id)->first();
         $teacher = \App\User::where('id', $quiz->teacher_id)->first();
         $user_quiz = DB::table('user_quiz')->where(['quiz_id' => $quiz_id,'user_id' => $user])->first();
-        return view('backend.admin.quizResult.quizResult', ['teacher' => $teacher,'quiz' => $quiz,'user_quiz' => $user_quiz,'user_question' => $user_questions]);
+        $quiz_result = DB::table('quiz_results')->where(['quiz_id' => $quiz_id,'user_id' => $user])->first();
+
+        return view('backend.admin.quizResult.quizResult', ['teacher' => $teacher,'quiz' => $quiz,'user_quiz' => $user_quiz,'quiz_result' => $quiz_result,'user_question' => $user_questions]);
     }
 
     public function examPay(Request $request)

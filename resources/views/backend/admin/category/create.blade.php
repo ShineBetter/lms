@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <div class="card-box-shared">
                         <div class="card-box-shared-title">
-                            <h3 class="widget-title">اطلاعات</h3>
+                            <h3 class="widget-title">اطلاعات دسته بندی</h3>
                         </div>
                         <div class="card-box-shared-body">
                             <div class="user-form">
@@ -32,7 +32,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::text('category_name', null, ['class' => 'form-control','placeholder' => 'نام دسته بندی']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <span class="fa fa-file-text-o input-icon"></span>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->
@@ -40,7 +40,6 @@
                                             <div class="col-lg-6 col-sm-6">
                                                 <div class="input-box">
                                                     {{Form::label('category_name', 'زیردسته', ['class' => 'label-text'])}}
-                                                    <span class="primary-color-2 ml-1">*</span>
                                                     <div class="form-group">
                                                         <select class="form-control" name="parent_category" id="parent_category">
                                                             <option value="" class="disabled" selected>انتخاب کنید</option>

@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="quiz-content text-center">
-                        <p class="lead font-weight-regular font-size-18 text-color-rgba mb-0 pb-2">تاریخ صدور کارنامه : {{\Carbon\Carbon::createFromTimestamp($user_quiz->created_at)->format('Y/m/d')}}</p>
+                        <p class="lead font-weight-regular font-size-18 text-color-rgba mb-0 pb-2">تاریخ صدور کارنامه : {{\Carbon\Carbon::createFromTimestamp($quiz_result->created_at)->format('Y/m/d')}}</p>
                         <h2 class="section__title text-white padding-bottom-30px">نمره شما: {{$user_quiz->score}}</h2>
                         <div class="btn-box">
                             <a href="{{route('quizResult.index')}}" class="theme-btn theme-btn-light">کارنامه ها</a>

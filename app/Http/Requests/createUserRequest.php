@@ -24,7 +24,6 @@ class createUserRequest extends FormRequest
             'email' => 'string|required|unique:users,email|email',
             'address' => 'string|required|min:3',
             'password' => 'min:8',
-            'photo' => 'required|file|mimes:jpg,png,jpeg|max:1000',
         ];
     }
     public function messages()
