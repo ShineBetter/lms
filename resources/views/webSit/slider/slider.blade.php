@@ -49,7 +49,7 @@
         vertical-align: top;
         width: 2rem;
         height: 2rem;
-        margin: 0 0.5rem;
+        margin: 0.5rem 0.5rem;
         border-radius: 50%;
         border: 2px solid #fff;
         cursor: pointer;
@@ -107,7 +107,11 @@
     }
     .slide:nth-child(1) .slide__bg {
         left: 0;
+        background-color: #ff7171;
         background-image: url('{{asset($slider1->picture)}}');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .slide:nth-child(1) .slide__overlay-path {
         fill: #e99c7e;
@@ -122,7 +126,11 @@
     }
     .slide:nth-child(2) .slide__bg {
         left: -50%;
-        background-image: url('{{asset($slider1->picture)}}');
+        background-image: url('{{asset($slider2->picture)}}');
+        background-color: #ffd58e;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .slide:nth-child(2) .slide__overlay-path {
         fill: #e1ccae;
@@ -137,7 +145,11 @@
     }
     .slide:nth-child(3) .slide__bg {
         left: -100%;
-        background-image: url('{{asset($slider1->picture)}}');
+        background-color: #66d3ff;
+        background-image: url('{{asset($slider3->picture)}}');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .slide:nth-child(3) .slide__overlay-path {
         fill: #adc5cd;
@@ -145,6 +157,9 @@
     @media (max-width: 991px) {
         .slide:nth-child(3) .slide__text {
             background-color: rgba(173, 197, 205, 0.8);
+        }
+        ..slide__text-heading {
+            font-size: 25px;
         }
     }
     .slide:nth-child(4) {
@@ -216,7 +231,6 @@
         }
     }
     .slide__text-heading {
-        /*font-family: 'Polar', Helvetica, Arial, sans-serif;*/
         font-size: 2rem;
         margin-bottom: 2rem;
     }
@@ -227,7 +241,6 @@
         }
     }
     .slide__text-desc {
-        /*font-family: 'Open Sans', Helvetica, Arial, sans-serif;*/
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
     }
@@ -242,7 +255,6 @@
         position: relative;
         padding: 0.5rem;
         cursor: pointer;
-        /*font-family: 'Open Sans', Helvetica, Arial, sans-serif;*/
         font-size: 2.3rem;
         perspective: 1000px;
     }

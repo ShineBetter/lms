@@ -32,7 +32,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::text('header',null, ['class' => 'form-control','placeholder' => 'تیتر']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-file-text-o input-icon"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,7 +42,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::file('picture', ['class' => 'form-control']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-file-text-o input-icon"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                                 <span class="primary-color-2 ml-1">*</span>
                                                 <div class="form-group">
                                                     {!! Form::textarea('text', null, ['class' => 'form-control','placeholder' => 'متن']) !!}
-                                                    <span class="la la-file-text-o input-icon"></span>
+                                                    <i class="fas fa-file-text-o input-icon"></i>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-6 -->

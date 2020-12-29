@@ -64,7 +64,7 @@
                     <div class="col-lg-9">
                         <div class="menu-wrapper float-right">
                             <nav class="main-menu">
-                                <ul>
+                                <ul class="header-ul-web">
                                     <li>
                                         <a href="/">خانه</a>
                                     </li>
@@ -95,7 +95,7 @@
                                             {{--                                            <li><a href="dashboard.html">dashboard</a></li>--}}
 
                                             <li><a href="/teachers">دبیران</a></li>
-                                            <li><a href="/teacher-detail">پروفایل دبیران</a></li>
+{{--                                            <li><a href="/teacher-detail">پروفایل دبیران</a></li>--}}
                                             {{--                                            <li><a href="../become-a-teacher.blade.php">become instructor</a></li>--}}
                                             <li><a href="/faq">مشاوران</a></li>
                                             {{--                                            <li><a href="../admission.blade.php">admission</a></li>--}}
@@ -108,6 +108,62 @@
                                             {{--                                            <li><a href="../checkout.blade.php">checkout</a></li>--}}
                                             {{--                                            <li><a href="error.html">error 404 page</a></li>--}}
                                         </ul>
+                                    </li>
+                                    {{--                                    <li>--}}
+                                    {{--                                        <a href="home-rtl.html#">blog</a>--}}
+                                    {{--                                        <ul class="dropdown-menu-item">--}}
+                                    {{--                                            <li><a href="../blog-full-width.blade.php">blog full width </a></li>--}}
+                                    {{--                                            <li><a href="../blog-grid.blade.php">blog grid</a></li>--}}
+                                    {{--                                            <li><a href="../blog-left-sidebar.blade.php">blog left sidebar</a></li>--}}
+                                    {{--                                            <li><a href="../blog-right-sidebar.blade.php">blog right sidebar</a></li>--}}
+                                    {{--                                            <li><a href="../blog-single.blade.php">blog detail</a></li>--}}
+                                    {{--                                        </ul>--}}
+                                    {{--                                    </li>--}}
+                                    <li><a href="/about">درباره ما</a></li>
+                                    <li><a href="/contact">تماس با ما</a></li>
+                                </ul><!-- end ul -->
+                                <ul class="header-ul-mobile">
+                                    <li>
+                                        <a href="/">خانه</a>
+                                    </li>
+                                    <li>
+                                        <a>امتحانات</a>
+                                            <li><a href="/course-grid">صفحه امتحانات</a></li>
+                                            {{--                                            <li><a href="/course-details">امتحان</a></li>--}}
+                                            <li><a href="/course-grid">ازمون ها</a></li>
+                                            {{--                                            <li><a href="/my-courses">امتحانات من</a></li>--}}
+                                    </li>
+                                    {{--                                    <li>--}}
+                                    {{--                                        <a>دانش آموزان</a>--}}
+                                    {{--                                        <ul class="dropdown-menu-item">--}}
+                                    {{--                                            --}}{{--                                            <li><a href="/student-detail">student detail</a></li>--}}
+                                    {{--                                            <li><a href="/student-quiz">آزمون</a></li>--}}
+                                    {{--                                            --}}{{--                                            <li><a href="/student-quiz-result">quiz results</a> <span class="new-page-badge">New</span></li>--}}
+                                    {{--                                            <li><a href="/student-quiz-result-details">پاسخ آزمون</a></li>--}}
+                                    {{--                                            <li><a href="/student-quiz-result-details-2">کارنامه</a></li>--}}
+                                    {{--                                            --}}{{--                                            <li><a href="/student-path-assessment">جواب صفحات</a> <span class="new-page-badge">New</span></li>--}}
+                                    {{--                                            --}}{{--                                            <li><a href="/student-path-assessment-result">Skill result</a> <span class="new-page-badge">New</span></li>--}}
+                                    {{--                                        </ul>--}}
+                                    {{--                                    </li>--}}
+                                    <li>
+                                        <a>صفحات</a>
+
+                                            {{--                                            <li><a href="dashboard.html">dashboard</a></li>--}}
+
+                                            <li><a href="/teachers">دبیران</a></li>
+                                            {{--                                            <li><a href="/teacher-detail">پروفایل دبیران</a></li>--}}
+                                            {{--                                            <li><a href="../become-a-teacher.blade.php">become instructor</a></li>--}}
+                                            <li><a href="/faq">مشاوران</a></li>
+                                            {{--                                            <li><a href="../admission.blade.php">admission</a></li>--}}
+                                            {{--                                            <li><a href="gallery.html">gallery</a></li>--}}
+                                            <li><a href="/pricing-table">قیمت همایشات</a></li>
+                                            {{--                                            <li><a href="sign-up.html">sign-up</a></li>--}}
+                                            {{--                                            <li><a href="login.html">login</a></li>--}}
+                                            {{--                                            <li><a href="recover.html">recover</a></li>--}}
+                                            {{--                                            <li><a href="/course-grid">فروشگاه</a></li>--}}
+                                            {{--                                            <li><a href="../checkout.blade.php">checkout</a></li>--}}
+                                            {{--                                            <li><a href="error.html">error 404 page</a></li>--}}
+
                                     </li>
                                     {{--                                    <li>--}}
                                     {{--                                        <a href="home-rtl.html#">blog</a>--}}

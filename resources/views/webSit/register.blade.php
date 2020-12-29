@@ -279,12 +279,12 @@
             {{ Form::open(['route'=>'register.submit', 'method' => 'post','class' => 'register-form','files' => true])}}
             <h1 class="register-h1">ثبت نام والدین</h1>
                 <span class="text-dark bottom-register">لطفا فرم زیر را پر کنید.</span>
-                <input class="input-register" name="name" type="text" placeholder="نام"/>
-                <input class="input-register" type="text" name="lastName" placeholder="نام خانوادگی"/>
-                <input class="input-register" type="email" name="email" placeholder="ایمیل"/>
-                <input class="input-register" type="number" name="nationalNumber" placeholder="کدملی"/>
-                <input class="input-register" type="number" name="mobile" placeholder="شماره تماس"/>
-                <input class="input-register" type="text" name="address" placeholder="آدرس"/>
+                <input class="input-register" name="pname" type="text" placeholder="نام"/>
+                <input class="input-register" type="text" name="plastName" placeholder="نام خانوادگی"/>
+                <input class="input-register" type="email" name="pemail" placeholder="ایمیل"/>
+                <input class="input-register" type="number" name="pnationalNumber" placeholder="کدملی"/>
+                <input class="input-register" type="number" name="pmobile" placeholder="شماره تماس"/>
+                <input class="input-register" type="text" name="paddress" placeholder="آدرس"/>
                 <input type="submit" class="button-register" value="ثبت نام"/>
             {{ Form::close() }}
         </div>

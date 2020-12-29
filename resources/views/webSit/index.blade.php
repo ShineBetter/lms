@@ -27,51 +27,12 @@
                     $slider3=\Illuminate\Support\Facades\DB::table('main_sliders')->where("id",3)->first();
                     @endphp
                     <div class="col-lg-12">
-{{--                        <div class="w3-content w3-display-container">--}}
-{{--                    <div class="w3-display-container">--}}
-{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider1->picture)}}" style="width:100%">--}}
-{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
-{{--                            <h2>--}}
-{{--                                {{$slider1->header}}--}}
-{{--                            </h2>--}}
-{{--                            <p>--}}
-{{--                                {{$slider1->text}}--}}
-{{--                            </p>--}}
-{{--                        </div>                    </div>--}}
-{{--                    <div class="w3-display-container">--}}
-{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider2->picture)}}" style="width:100%">--}}
-{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
-{{--                          <h2>--}}
-{{--                              {{$slider2->header}}--}}
-{{--                          </h2>--}}
-{{--                            <p>--}}
-{{--                                {{$slider2->text}}--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="w3-display-container">--}}
-{{--                        <img class="mySlides w3-animate-fading" src="{{asset($slider3->picture)}}" style="width:100%">--}}
-{{--                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text-slider">--}}
-{{--                            <h2>--}}
-{{--                                {{$slider3->header}}--}}
-{{--                            </h2>--}}
-{{--                            <p>--}}
-{{--                                {{$slider3->text}}--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>--}}
-{{--                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>--}}
-{{--                    </div>--}}
 @include('websit.slider.slider');
                     </div>
-                    {{--                    </div><!-- col-lg-12 -->--}}
                 </div><!-- row -->
 
 </section><!-- end slider-area -->
-    <script>
 
-    </script>
 <!--================================
         END SLIDER AREA
 =================================-->

@@ -1083,6 +1083,40 @@
                                 </div><!-- end contact-form-action -->
                             </div><!-- end sidebar-widget -->
                             <div class="sidebar-widget">
+
+                                <h3 class="widget-title">فیلتر قیمت</h3>
+
+
+                                <div class="box-reng">
+
+{{--                                    <h3>Price <span>Range</span></h3>--}}
+                                    <div class="values">
+                                        <div><span id="first"></span>هزار تومان</div> - <div><span id="second"></span>هزار تومان</div>
+                                    </div>
+                                    <small>
+                                        محدوده فعلی:
+                                        <div><span id="third"></span>هزار تومان</div>
+                                    </small>
+
+                                    <div class="slider-reng" data-value-0="#first" data-value-1="#second" data-range="#third"></div>
+
+                                </div>
+
+                                <!-- dribbble -->
+                                <a class="dribbble" href="https://dribbble.com/shots/7268454-Rubber-Slider" target="_blank">
+                                    <img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt="">
+                                </a>
+
+
+{{--                                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>                            </div>--}}
+{{--                                    <input type="range">--}}
+{{--                                <p class="range-value">--}}
+{{--                                    <input type="text" id="amount" readonly>--}}
+{{--                                </p>--}}
+{{--                                <div id="slider-range" class="range-bar"></div>--}}
+{{--                                </div>--}}
+                            </div>
+                            <div class="sidebar-widget">
                                 <h3 class="widget-title">دسته بندی ها</h3>
                                 <span class="section-divider"></span>
                                 <ul class="filter-by-category">
@@ -1834,23 +1868,30 @@
 
 
 <!-- template js files -->
+    <!-- template js files -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>--}}
+    {{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>--}}
+    {{--<script src="/js/jquery-3.4.1.min.js"></script>--}}
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    {{--<script src="/js/bootstrap.min.js"></script>--}}
+    <script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    {{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>--}}
+    <script src="{{asset('js/isotope.js')}}"></script>
+    <script src="{{asset('js/waypoint.min.js')}}"></script>
+    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('js/particles.min.js')}}"></script>
+    <script src="{{asset('js/particlesRun.js')}}"></script>
+    <script src="{{asset('js/fancybox.js')}}"></script>
+    <script src="{{asset('js/wow.js')}}"></script>
+    <script src="{{asset('js/date-time-picker.js')}}"></script>
+    <script src="{{asset('js/jquery.filer.min.js')}}"></script>
+    <script src="{{asset('js/emojionearea.min.js')}}"></script>
+    <script src="{{asset('js/smooth-scrolling.js')}}"></script>
+    <script src="{{asset('js/tooltipster.bundle.min.js')}}"></script>
+    <script src="{{asset('js/main-rtl.js')}}"></script>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootstrap-select.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/magnific-popup.min.js"></script>
-<script src="/js/isotope.js"></script>
-<script src="/js/waypoint.min.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<script src="/js/fancybox.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/date-time-picker.js"></script>
-<script src="/js/jquery.filer.min.js"></script>
-<script src="/js/emojionearea.min.js"></script>
-<script src="/js/smooth-scrolling.js"></script>
-<script src="/js/tooltipster.bundle.min.js"></script>
-<script src="/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 @endsection
