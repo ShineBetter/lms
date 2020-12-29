@@ -15,13 +15,13 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "hekmatinasser/verta": "^1.11",
         "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
         "laravelcollective/html": "^6.2",
         "trez/raygan-sms": "^2.0"
-
     },
     "require-dev": {
         "facade/ignition": "^2.0",

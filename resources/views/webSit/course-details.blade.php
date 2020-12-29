@@ -1,8 +1,9 @@
 @extends('webSit.layout.head')
 @section('cnt')
     @php
+    use Hekmatinasser\Verta\Verta;
         $loader="dont";
-
+        use App\User;
         $id=\Illuminate\Support\Facades\Route::current()->parameter('id');
         $quiz=\Illuminate\Support\Facades\DB::table('quizzes')->where("id",$id)->first();
 
@@ -94,7 +95,7 @@
                                                 </a>
                                                 <ul class="list-items text-right">
                                                     <li><span class="fas fa-star"></span>{{$comment->name}}</li>
-                                                    <li><span class="fas fa-star"></span>{{$comment->date}}</li>
+{{--                                                    <li><span class="fas fa-star"></span>{{verta($comment->date)}}</li>--}}
 
                                                 </ul>
                                             </div><!-- end instructor-img -->
@@ -376,7 +377,7 @@
                     <div class="sidebar">
                         <div class="sidebar-widget sidebar-preview">
                            <div class="sidebar-preview-titles text-center">
-                               <h3 class="widget-title text-center">نام محصول</h3>
+                               <h3 class="widget-title text-center">{{$quiz->quiz_name}}</h3>
                                <span class="section-divider"></span>
                            </div>
                             <div class="preview-video-and-details">
@@ -387,13 +388,26 @@
                                     </a>
                                 </div>
                                 <div class="preview-course-content">
+
+                                    <p class="card__author mb-3 text-right">
+                                        <a href="#">دبیر:                                            <br> {{User::where('id',$quiz->teacher_id)->first()->profile->name}} {{User::where('id',$quiz->teacher_id)->first()->profile->lastName}}</a></span>
+                                        </a>
+                                    </p>
                                     <p class="preview-course__price d-flex align-items-center">
-                                        <span class="price-current">$76.99</span>
+                                        قیمت دوره:
+                                        <span class="price-current">
+                                            @if($quiz->quiz_prices == 0)
+                                                رایگان
+                                            @else
+                                                {{$quiz->quiz_prices}} تومان
+                                            @endif
+
+                                        </span>
 
                                     </p>
 
                                     <div class="buy-course-btn mb-3 text-center">
-                                        <a href="course-details.blade.php#" class="theme-btn w-100 mb-3">خرید دوره</a>
+                                        <a href="#" class="theme-btn w-100 mb-3">خرید دوره</a>
                                     </div>
 {{--                                    <div class="preview-course-incentives">--}}
 {{--                                        <p class="preview-course-incentives__text mb-4">--}}
@@ -475,6 +489,10 @@
                         <div class="sidebar-widget recent-widget text-center">
                             <h3 class="widget-title text-center">آخرین آزمون ها</h3>
                             <span class="section-divider"></span>
+                            @php
+                                $quizz=\Illuminate\Support\Facades\DB::table('quizzes')->limit(3)->get();
+                            @endphp
+                            @foreach($quizz as $quiz)
                             <div class="recent-item">
                                 <div class="recent-img">
                                     <a href="#">
@@ -482,46 +500,17 @@
                                     </a>
                                 </div><!-- end recent-img -->
                                 <div class="recentpost-body text-right pr-2">
-                                    <span class="recent__meta">25فروردین <a href="course-details.blade.php#">
-                                            <br>استاد معمولی</a></span>
+                                    <span class="recent__meta">برگزارکننده<a href="course-details.blade.php#">
+                                            <br> {{User::where('id',$quiz->teacher_id)->first()->profile->name}} {{User::where('id',$quiz->teacher_id)->first()->profile->lastName}}</a></span>
                                     <h4 class="recent__link">
-                                        <a href="course-details.blade.php">آزم.ن جامع عربی</a>
+                                        <a href="{{route("course-details",$quiz->id)}}">{{$quiz->quiz_name}}</a>
                                     </h4>
-                                    <p class="recent-course__price">30000تومان</p>
+{{--                                    <p class="recent-course__price">30000تومان</p>--}}
                                 </div><!-- end recent-img -->
                             </div><!-- end recent-item -->
-                            <div class="recent-item">
-                                <div class="recent-img">
-                                    <a href="course-details.blade.php">
-                                        <img src="/images/img20.jpg" alt="blog image">
-                                    </a>
-                                </div><!-- end recent-img -->
-                                <div class="recentpost-body text-right pr-2">
-                                    <span class="recent__meta">25فروردین <a href="course-details.blade.php#">
-                                            <br>استاد معمولی</a></span>
-                                    <h4 class="recent__link">
-                                        <a href="course-details.blade.php">آزم.ن جامع عربی</a>
-                                    </h4>
-                                    <p class="recent-course__price">30000تومان<span>$70.99</span></p>
-                                </div><!-- end recent-img -->
-                            </div><!-- end recent-item -->
-                            <div class="recent-item">
-                                <div class="recent-img">
-                                    <a href="course-details.blade.php">
-                                        <img src="/images/img21.jpg" alt="blog image">
-                                    </a>
-                                </div><!-- end recent-img -->
-                                <div class="recentpost-body text-right pr-2">
-                                    <span class="recent__meta">25فروردین <a href="course-details.blade.php#">
-                                            <br>استاد معمولی</a></span>
-                                    <h4 class="recent__link">
-                                        <a href="course-details.blade.php">آزم.ن جامع عربی</a>
-                                    </h4>
-                                    <p class="recent-course__price">Free</p>
-                                </div><!-- end recent-img -->
-                            </div><!-- end recent-item -->
+                            @endforeach
                             <div class="btn-box text-center">
-                                <a href="course-grid.html" class="theme-btn d-block">همه آزمون ها</a>
+                                <a href="{{route("grid")}}" class="theme-btn d-block">همه آزمون ها</a>
                             </div><!-- end btn-box -->
                         </div><!-- end sidebar-widget -->
                         <div class="sidebar-widget tag-widget text-center">

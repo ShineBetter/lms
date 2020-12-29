@@ -3,6 +3,7 @@
     @php
         $loader="dont";
 
+        use App\User;
 
     @endphp
 <!-- end cssload-loader -->
@@ -106,13 +107,14 @@
                                                         <a href="course-details">{{$quiz->quiz_name}}</a>
                                                     </h3>
                                                     <p class="card__author mb-3">
-                                                        <a href="teacher-detail.html">دبیر: استاد قاسمی</a>
+                                                        <a href="#">دبیر:                                            <br> {{User::where('id',$quiz->teacher_id)->first()->profile->name}} {{User::where('id',$quiz->teacher_id)->first()->profile->lastName}}</a></span>
+                                                        </a>
                                                     </p>
                                                     <!-- end rating-wrap -->
                                                     <div class="card-action">
                                                         <ul class="card-duration d-flex justify-content-between align-items-center mb-2">
                                                             <li>
-                                                                <i class="la la-clock-o"></i>{{$quiz->quiz_start}}
+                                                                <i class="la la-clock-o"></i>{{\Carbon\Carbon::createFromTimestamp($quiz->quiz_start)->format('H:i')}}
 
                                                             </li>
                                                             <li>
@@ -123,7 +125,7 @@
                                                         </ul>
                                                         <ul class="card-duration d-flex justify-content-between align-items-center">
                                                             <li>
-                                                                <i class="la la-clock-o"></i> {{$quiz->quiz_start_date}}
+                                                                <i class="la la-clock-o"></i> {{\Carbon\Carbon::createFromTimestamp($quiz->quiz_start_date)->format('Y/m/d')}}
 
                                                             </li>
                                                             <li>
@@ -134,7 +136,11 @@
                                                         </ul>
                                                     </div><!-- end card-action -->
                                                     <div class="card-price-wrap d-flex justify-content-between align-items-center">
-                                                        <span class="card__price">تومان58.00</span>
+                                                        <span class="card__price">  @if($quiz->quiz_prices == 0)
+                                                                رایگان
+                                                            @else
+                                                                {{$quiz->quiz_prices}} تومان
+                                                            @endif</span>
                                                         <a href="{{route('course-details',$quiz->id)}}" class="text-white theme-btn">اطلاعات بیشتر</a>
                                                     </div><!-- end card-price-wrap -->
                                                 </div><!-- end card-content -->

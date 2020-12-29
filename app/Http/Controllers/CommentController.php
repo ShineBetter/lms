@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\comment;
-
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CommentController extends Controller
 {
@@ -53,8 +54,11 @@ class CommentController extends Controller
 
     public function storestudent(Request $request)
     {
+        $reallastname=Auth::user()->profile->lastName;
+        $realname=Auth::user()->profile->name;
+
         $comment=new comment();
-        $comment->name="reza";
+        $comment->name=$realname .' '. $reallastname;
         $comment->text=$request->message;
         $comment->quiz_id=$request->quiz_id;
         $comment->date=Carbon::now()->timestamp;

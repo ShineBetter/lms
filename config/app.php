@@ -165,6 +165,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Anetwork\Validation\PersianValidationServiceProvider::class,
         Trez\RayganSms\RayganSmsServiceProvider::class,
+        Hekmatinasser\Verta\VertaServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'RayganSms' => Trez\RayganSms\Facades\RayganSms::class,
+        'Verta' => Hekmatinasser\Verta\Verta::class,
     ],
 
 ];
